@@ -9,15 +9,19 @@ from typing import Optional
 
 from ..models import Problem
 from .angles import AnglesTemplate
+from .arc_sector import ArcSectorTemplate
 from .area import RectangleAreaTemplate, TriangleAreaTemplate
 from .base import Template
 from .circle import CircleTemplate
 from .circle_theorems import CircleTheoremsTemplate
 from .distance_midpoint import DistanceMidpointTemplate
+from .parallel_lines import ParallelLinesTemplate
 from .polygon_angles import PolygonAnglesTemplate
 from .pythagorean import PythagoreanTemplate
+from .quadrilateral_area import ParallelogramAreaTemplate, TrapezoidAreaTemplate
 from .right_triangle_trig import RightTriangleTrigTemplate
 from .similar_triangles import SimilarTrianglesTemplate
+from .slope import SlopeTemplate
 from .special_right_triangles import SpecialRightTrianglesTemplate
 from .volume_surface_area import VolumeSurfaceAreaTemplate
 
@@ -27,10 +31,15 @@ _TEMPLATES: dict[str, Template] = {
         PythagoreanTemplate(),
         TriangleAreaTemplate(),
         RectangleAreaTemplate(),
+        ParallelogramAreaTemplate(),
+        TrapezoidAreaTemplate(),
         CircleTemplate(),
+        ArcSectorTemplate(),
         AnglesTemplate(),
+        ParallelLinesTemplate(),
         SimilarTrianglesTemplate(),
         DistanceMidpointTemplate(),
+        SlopeTemplate(),
         SpecialRightTrianglesTemplate(),
         RightTriangleTrigTemplate(),
         CircleTheoremsTemplate(),
@@ -123,6 +132,31 @@ _CONCEPT_REVIEWS: dict[str, list[str]] = {
         "Cone and pyramid volume are \\(\\frac{1}{3}\\) of the matching prism/cylinder.",
         "Sphere volume: \\(V = \\frac{4}{3}\\pi r^3\\); surface area \\(= 4\\pi r^2\\).",
     ],
+    "parallelogram_area": [
+        "Area of a parallelogram: \\(A = b \\cdot h\\), where \\(h\\) is the perpendicular height.",
+        "The slanted side is not the height; use the vertical distance between the bases.",
+        "Perimeter: \\(P = 2(b + s)\\), summing both pairs of sides.",
+    ],
+    "trapezoid_area": [
+        "A trapezoid has one pair of parallel sides, \\(b_1\\) and \\(b_2\\).",
+        "Area of a trapezoid: \\(A = \\tfrac{1}{2}(b_1 + b_2)\\,h\\).",
+        "The height \\(h\\) is perpendicular to both parallel sides.",
+    ],
+    "arc_sector": [
+        "A central angle \\(\\theta\\) cuts off a fraction \\(\\frac{\\theta}{360^\\circ}\\) of the circle.",
+        "Arc length: \\(\\frac{\\theta}{360^\\circ}\\cdot 2\\pi r\\).",
+        "Sector area: \\(\\frac{\\theta}{360^\\circ}\\cdot \\pi r^2\\).",
+    ],
+    "slope": [
+        "Slope measures steepness: \\(m = \\frac{y_2 - y_1}{x_2 - x_1}\\) (rise over run).",
+        "Parallel lines have equal slopes; perpendicular lines have slopes that multiply to \\(-1\\).",
+        "A horizontal line has slope \\(0\\); a vertical line has an undefined slope.",
+    ],
+    "parallel_lines": [
+        "When a transversal crosses parallel lines, corresponding, alternate interior, and alternate exterior angles are equal.",
+        "Co-interior (same-side interior) angles are supplementary (sum to \\(180^\\circ\\)).",
+        "Vertical angles are always equal; a linear pair sums to \\(180^\\circ\\).",
+    ],
 }
 
 
@@ -133,7 +167,7 @@ def template_concept_review(topic: str) -> list[str]:
 # Honors Geometry units, each mapping to the template topic ids that provide
 # instant practice for that unit. Ordered roughly by a typical course sequence.
 _HONORS_UNITS: list[tuple[str, list[str]]] = [
-    ("Parallel Lines & Angles", ["angles"]),
+    ("Parallel Lines & Angles", ["angles", "parallel_lines"]),
     ("Congruent & Similar Triangles", ["similar_triangles"]),
     ("Polygons", ["polygon_angles"]),
     ("Right Triangles & Trigonometry", [
@@ -141,10 +175,15 @@ _HONORS_UNITS: list[tuple[str, list[str]]] = [
         "special_right_triangles",
         "right_triangle_trig",
     ]),
-    ("Circles", ["circle", "circle_theorems"]),
-    ("Area & Perimeter", ["triangle_area", "rectangle_area"]),
+    ("Circles", ["circle", "circle_theorems", "arc_sector"]),
+    ("Area & Perimeter", [
+        "triangle_area",
+        "rectangle_area",
+        "parallelogram_area",
+        "trapezoid_area",
+    ]),
     ("Surface Area & Volume", ["volume_surface_area"]),
-    ("Coordinate Geometry", ["distance_midpoint"]),
+    ("Coordinate Geometry", ["distance_midpoint", "slope"]),
 ]
 
 

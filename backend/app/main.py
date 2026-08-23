@@ -14,7 +14,7 @@ from .analysis import (
     solve_analysis_question,
 )
 from .dify import dify_available, solve_image_with_dify
-from .example_cache import get_cached
+from .example_cache import get_cached, get_cached_topic
 from .llm import (
     active_provider,
     ai_reachable,
@@ -385,6 +385,10 @@ async def analysis_solve_image(
 
 @app.post("/api/analysis/practice", response_model=SolveResponse)
 def analysis_practice(req: AnalysisTopicRequest) -> SolveResponse:
+    cached = get_cached_topic(req.topic)
+    if cached is not None:
+        return SolveResponse.model_validate(cached)
+
     _require_ai()
     result = practice_analysis_topic(req.topic, req.count)
     if result is None:

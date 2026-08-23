@@ -47,6 +47,14 @@ _RULES: list[tuple[str, list[re.Pattern[str]]]] = [
         ],
     ),
     (
+        "arc_sector",
+        [
+            re.compile(r"\barc\s+length\b", re.I),
+            re.compile(r"\bsector\b", re.I),
+            re.compile(r"central\s+angle.*(circle|radius|arc)", re.I),
+        ],
+    ),
+    (
         "circle_theorems",
         [
             re.compile(r"inscribed\s+angle", re.I),
@@ -69,8 +77,10 @@ _RULES: list[tuple[str, list[re.Pattern[str]]]] = [
     (
         "polygon_angles",
         [
-            re.compile(r"interior\s+angle", re.I),
-            re.compile(r"exterior\s+angle", re.I),
+            re.compile(r"interior\s+angle.*(polygon|gon|sides?)", re.I),
+            re.compile(r"(polygon|gon|sides?).*interior\s+angle", re.I),
+            re.compile(r"exterior\s+angle.*(polygon|gon|sides?)", re.I),
+            re.compile(r"(polygon|gon|sides?).*exterior\s+angle", re.I),
             re.compile(
                 r"\b(pentagon|hexagon|heptagon|octagon|nonagon|decagon|dodecagon|polygon)\b",
                 re.I,
@@ -84,6 +94,18 @@ _RULES: list[tuple[str, list[re.Pattern[str]]]] = [
             re.compile(r"\bcircumference\b", re.I),
             re.compile(r"\bradius\b", re.I),
             re.compile(r"\bdiameter\b", re.I),
+        ],
+    ),
+    (
+        "parallelogram_area",
+        [
+            re.compile(r"parallelogram", re.I),
+        ],
+    ),
+    (
+        "trapezoid_area",
+        [
+            re.compile(r"trapezoid|trapezium", re.I),
         ],
     ),
     (
@@ -103,6 +125,16 @@ _RULES: list[tuple[str, list[re.Pattern[str]]]] = [
         ],
     ),
     (
+        "parallel_lines",
+        [
+            re.compile(r"transversal", re.I),
+            re.compile(r"corresponding\s+angle", re.I),
+            re.compile(r"alternate\s+(interior|exterior)\s+angle", re.I),
+            re.compile(r"co-?interior|same-?side\s+interior", re.I),
+            re.compile(r"parallel\s+lines?.*angle", re.I),
+        ],
+    ),
+    (
         "angles",
         [
             re.compile(r"complementary", re.I),
@@ -110,6 +142,14 @@ _RULES: list[tuple[str, list[re.Pattern[str]]]] = [
             re.compile(r"angle[s]?\s+of\s+a\s+triangle", re.I),
             re.compile(r"triangle.*angle", re.I),
             re.compile(r"\bangle[s]?\b", re.I),
+        ],
+    ),
+    (
+        "slope",
+        [
+            re.compile(r"\bslope\b", re.I),
+            re.compile(r"rise\s+over\s+run", re.I),
+            re.compile(r"(parallel|perpendicular)\s+lines?.*slope", re.I),
         ],
     ),
     (

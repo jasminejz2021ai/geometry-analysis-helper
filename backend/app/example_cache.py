@@ -40,6 +40,11 @@ def normalize(question: str) -> str:
     return re.sub(r"\s+", " ", (question or "").strip().lower())
 
 
+def topic_key(topic: str) -> str:
+    """Cache key for an Analysis topic (namespaced to avoid question clashes)."""
+    return "topic::" + normalize(topic)
+
+
 def _load() -> dict[str, dict]:
     try:
         with _CACHE_PATH.open("r", encoding="utf-8") as fh:
@@ -57,6 +62,11 @@ def get_cached(question: str) -> Optional[dict]:
     return _CACHE.get(normalize(question))
 
 
+def get_cached_topic(topic: str) -> Optional[dict]:
+    """Return the cached SolveResponse dict for an Analysis topic, or None."""
+    return _CACHE.get(topic_key(topic))
+
+
 def save_cache(entries: dict[str, dict]) -> None:
     """Persist the cache to disk and update the in-memory copy."""
     with _CACHE_PATH.open("w", encoding="utf-8") as fh:
@@ -70,3 +80,10 @@ def all_examples() -> list[tuple[str, bool]]:
     return [(q, False) for q in GEOMETRY_EXAMPLES] + [
         (q, True) for q in ANALYSIS_EXAMPLES
     ]
+
+
+def all_analysis_topics() -> list[str]:
+    """Flat list of every Analysis topic id (for topic-cache warming)."""
+    from .analysis import analysis_units
+
+    return [t["id"] for unit in analysis_units() for t in unit["topics"]]
