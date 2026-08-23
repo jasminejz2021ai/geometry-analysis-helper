@@ -3,7 +3,7 @@
 # a public tunnel to your machine's Ollama (see DEPLOY.md).
 services:
   - type: web
-    name: geometry-tutor-api
+    name: geometry-analysis-helper
     runtime: python
     rootDir: backend
     buildCommand: pip install -r requirements.txt

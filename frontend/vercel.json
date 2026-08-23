@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://geometry-tutor-api.onrender.com/api/:path*"
+      "destination": "https://geometry-analysis-helper-1.onrender.com/api/:path*"
     }
   ]
 }
