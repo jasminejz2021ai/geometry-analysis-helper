@@ -139,13 +139,21 @@ def _repair_json(text: str) -> str:
 
 
 def loads_lenient(text: str) -> dict:
-    """json.loads with a fallback that repairs invalid LaTeX backslashes."""
+    """json.loads that protects LaTeX backslash-commands from being parsed as
+    JSON control escapes.
+
+    LLMs emit LaTeX like ``\\begin``, ``\\times``, ``\\frac`` inside JSON
+    strings. Since ``\\b`` and ``\\t`` are valid JSON escapes (backspace/tab),
+    a naive ``json.loads`` silently corrupts them (e.g. ``\\times`` -> tab +
+    "imes"). We repair the raw text first so those commands survive, then fall
+    back to the plain parse if repair somehow breaks it.
+    """
     import json
 
     try:
-        return json.loads(text)
-    except json.JSONDecodeError:
         return json.loads(_repair_json(text))
+    except json.JSONDecodeError:
+        return json.loads(text)
 
 
 def _clean(text: str) -> str:
