@@ -36,6 +36,33 @@ def active_provider() -> str:
     return get_settings().fallback_provider.lower()
 
 
+def ai_reachable(timeout: float = 4.0) -> bool:
+    """Quick liveness check for the active AI provider.
+
+    Distinguishes "configured but offline" (e.g. the local Ollama tunnel is
+    down) from "not configured". Returns False fast instead of hanging on the
+    long inference timeout. Dify is assumed reachable when configured.
+    """
+    settings = get_settings()
+    if not settings.llm_enabled:
+        return False
+    if active_provider() == "dify":
+        return True
+    base = settings.llm_api_base
+    if not base:
+        # Real OpenAI/Anthropic with a key: assume reachable (network is fine).
+        return bool(settings.llm_api_key)
+    try:
+        url = base.rstrip("/") + "/models"
+        headers = {}
+        if settings.llm_api_key:
+            headers["Authorization"] = f"Bearer {settings.llm_api_key}"
+        resp = httpx.get(url, headers=headers, timeout=timeout)
+        return resp.status_code == 200
+    except httpx.HTTPError:
+        return False
+
+
 def _system_prompt() -> str:
     """System prompt, disabling Qwen3's <think> block for faster local runs."""
     model = get_settings().llm_model.lower()

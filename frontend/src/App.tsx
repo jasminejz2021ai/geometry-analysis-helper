@@ -10,6 +10,7 @@ import {
   solveImage,
 } from "./api";
 import GeometryBackground from "./components/GeometryBackground";
+import AiStatusBanner from "./components/AiStatusBanner";
 import ImageUpload from "./components/ImageUpload";
 import QuestionInput from "./components/QuestionInput";
 import ResultTabs from "./components/ResultTabs";
@@ -211,6 +212,7 @@ export default function App() {
 
       <main className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-4 py-8 md:grid-cols-[1fr_280px]">
         <div className="space-y-6">
+          <AiStatusBanner />
           <QuestionInput
             onSubmit={handleSubmit}
             loading={loading}

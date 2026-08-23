@@ -1,4 +1,5 @@
 import type {
+  AiStatus,
   ChatResponse,
   ChatTurn,
   CheckResponse,
@@ -77,6 +78,10 @@ export function chat(
   history: ChatTurn[] = [],
 ): Promise<ChatResponse> {
   return post<ChatResponse>("/api/chat", { question, context, history });
+}
+
+export function fetchAiStatus(): Promise<AiStatus> {
+  return get<AiStatus>("/api/ai-status");
 }
 
 export function fetchGroupedTopics(): Promise<GroupedTopicsResponse> {

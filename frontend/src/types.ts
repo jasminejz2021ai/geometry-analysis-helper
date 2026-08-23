@@ -72,6 +72,12 @@ export type ChatResponse = {
   answer: string;
 };
 
+export type AiStatus = {
+  configured: boolean;
+  online: boolean;
+  provider: string;
+};
+
 export type TopicRef = {
   id: string;
   title: string;

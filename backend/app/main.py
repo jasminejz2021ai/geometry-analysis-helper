@@ -16,6 +16,7 @@ from .analysis import (
 from .dify import dify_available, solve_image_with_dify
 from .llm import (
     active_provider,
+    ai_reachable,
     chat_reply,
     llm_available,
     local_vision_available,
@@ -64,6 +65,27 @@ def health() -> dict:
     }
 
 
+# Message shown when the AI provider is configured but unreachable (e.g. the
+# local Ollama tunnel or the host machine is down).
+_AI_OFFLINE = (
+    "The AI tutor is offline right now. This app's AI runs on a local machine "
+    "that isn't reachable at the moment. Geometry topics with built-in "
+    "templates still work — please try one of those, or check back later."
+)
+
+
+@app.get("/api/ai-status")
+def ai_status() -> dict:
+    """Lightweight status the frontend polls to show an 'AI offline' banner."""
+    configured = llm_available()
+    online = ai_reachable() if configured else False
+    return {
+        "configured": configured,
+        "online": online,
+        "provider": active_provider(),
+    }
+
+
 def _ai_source() -> str:
     """Response source label reflecting the active AI provider."""
     return "dify" if active_provider() == "dify" else "llm"
@@ -108,11 +130,13 @@ def solve(req: SolveRequest) -> SolveResponse:
             practice = template.generate(req.count)
             # Try to also solve the EXACT question the student typed via AI so
             # the "Solutions" tab answers their specific problem (not just a
-            # similar example). Best-effort: skipped if the AI is unavailable.
+            # similar example). Best-effort: skipped if the AI is unavailable
+            # or offline (avoids a long hang when the local tunnel is down).
             asked = None
-            ai_result = solve_fallback(req.question, 1)
-            if ai_result is not None:
-                asked = ai_result[1]
+            if ai_reachable(timeout=2.0):
+                ai_result = solve_fallback(req.question, 1)
+                if ai_result is not None:
+                    asked = ai_result[1]
             return SolveResponse(
                 source="template",
                 topic=topic,
@@ -123,6 +147,8 @@ def solve(req: SolveRequest) -> SolveResponse:
             )
 
     # No template matched -> route to the configured fallback (Dify or LLM).
+    if llm_available() and not ai_reachable():
+        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
     result = solve_fallback(req.question, req.count)
     if result is not None:
         source, original, practice, review = result
@@ -171,6 +197,8 @@ async def solve_image(
         raise HTTPException(status_code=422, detail="Image too large (max 10 MB).")
 
     count = max(1, min(count, 8))
+    if local_vision_available() and not ai_reachable():
+        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
     result = _solve_photo(
         content, image.filename or "problem.jpg", content_type, count, analysis=False
     )
@@ -226,6 +254,8 @@ def chat(req: ChatRequest) -> ChatResponse:
                 "Dify in the backend .env."
             ),
         )
+    if not ai_reachable():
+        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
     answer = chat_reply(
         req.question,
         context=req.context,
@@ -265,6 +295,8 @@ def _require_ai() -> None:
                 "direct/local LLM (e.g. Ollama via LLM_API_BASE) in the backend .env."
             ),
         )
+    if not ai_reachable():
+        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
 
 
 @app.get("/api/analysis-topics")
@@ -317,6 +349,8 @@ async def analysis_solve_image(
         raise HTTPException(status_code=422, detail="Image too large (max 10 MB).")
 
     count = max(1, min(count, 8))
+    if local_vision_available() and not ai_reachable():
+        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
     result = _solve_photo(
         content, image.filename or "problem.jpg", content_type, count, analysis=True
     )
