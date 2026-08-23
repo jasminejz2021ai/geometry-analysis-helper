@@ -10,7 +10,7 @@
         "\\text{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
         "b = \\sqrt{68^2 - 32^2}",
         "b = \\sqrt{4624 - 1024}",
-        "b = \\sqrt{3600} = 60\\ \\text{cm}"
+        "b = \\sqrt{3600} = 60 \\text{cm}"
       ],
       "unit": "cm",
       "diagram": {
@@ -35,7 +35,7 @@
           "\\text{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
           "b = \\sqrt{164^2 - 36^2}",
           "b = \\sqrt{26896 - 1296}",
-          "b = \\sqrt{25600} = 160\\ \\text{cm}"
+          "b = \\sqrt{25600} = 160 \\text{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -60,7 +60,7 @@
           "28^2 + 96^2 = c^2",
           "784 + 9216 = c^2",
           "10000 = c^2",
-          "c = \\sqrt{10000} = 100\\ \\text{cm}"
+          "c = \\sqrt{10000} = 100 \\text{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -84,7 +84,7 @@
           "\\text{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
           "b = \\sqrt{50^2 - 14^2}",
           "b = \\sqrt{2500 - 196}",
-          "b = \\sqrt{2304} = 48\\ \\text{cm}"
+          "b = \\sqrt{2304} = 48 \\text{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -109,7 +109,7 @@
           "32^2 + 60^2 = c^2",
           "1024 + 3600 = c^2",
           "4624 = c^2",
-          "c = \\sqrt{4624} = 68\\ \\text{cm}"
+          "c = \\sqrt{4624} = 68 \\text{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -156,7 +156,7 @@
         "A = \\pi r^2",
         "= \\pi \\cdot 12^2",
         "\\approx 3.14 \\cdot 144",
-        "\\approx 452.16\\ \\text{cm}^2"
+        "\\approx 452.16 \\text{cm}^2"
       ],
       "unit": "cm^2",
       "diagram": {
@@ -177,7 +177,7 @@
           "A = \\pi r^2",
           "= \\pi \\cdot 14^2",
           "\\approx 3.14 \\cdot 196",
-          "\\approx 615.44\\ \\text{cm}^2"
+          "\\approx 615.44 \\text{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -197,7 +197,7 @@
           "C = 2\\pi r",
           "= 2 \\cdot \\pi \\cdot 3",
           "\\approx 2 \\cdot 3.14 \\cdot 3",
-          "\\approx 18.84\\ \\text{cm}"
+          "\\approx 18.84 \\text{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -217,7 +217,7 @@
           "C = 2\\pi r",
           "= 2 \\cdot \\pi \\cdot 12",
           "\\approx 2 \\cdot 3.14 \\cdot 12",
-          "\\approx 75.36\\ \\text{cm}"
+          "\\approx 75.36 \\text{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -237,7 +237,7 @@
           "A = \\pi r^2",
           "= \\pi \\cdot 9^2",
           "\\approx 3.14 \\cdot 81",
-          "\\approx 254.34\\ \\text{cm}^2"
+          "\\approx 254.34 \\text{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -530,7 +530,7 @@
       "steps": [
         "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
         "= \\tfrac{1}{2} \\cdot 14 \\cdot 5",
-        "= 35\\ \\text{cm}^2"
+        "= 35 \\text{cm}^2"
       ],
       "unit": "cm^2",
       "diagram": {
@@ -554,7 +554,7 @@
         "steps": [
           "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
           "= \\tfrac{1}{2} \\cdot 8 \\cdot 18",
-          "= 72\\ \\text{cm}^2"
+          "= 72 \\text{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -577,7 +577,7 @@
         "steps": [
           "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
           "= \\tfrac{1}{2} \\cdot 20 \\cdot 5",
-          "= 50\\ \\text{cm}^2"
+          "= 50 \\text{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -600,7 +600,7 @@
         "steps": [
           "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
           "= \\tfrac{1}{2} \\cdot 15 \\cdot 11",
-          "= 82.5\\ \\text{cm}^2"
+          "= 82.5 \\text{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -623,7 +623,7 @@
         "steps": [
           "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
           "= \\tfrac{1}{2} \\cdot 19 \\cdot 11",
-          "= 104.5\\ \\text{cm}^2"
+          "= 104.5 \\text{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -761,7 +761,7 @@
     "topic": "analysis",
     "original": {
       "id": "8c6e861956da",
-      "prompt": "Prove $ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $ for all $ n /ge 1 $ by induction.",
+      "prompt": "Prove $ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $ for all $ n \\ge 1 $ by induction.",
       "answer": "$ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $",
       "steps": [
         "Base case $ n = 1 $: $ F_2 F_0 - F_1^2 = 1\\cdot 0 - 1^2 = -1 = (-1)^1 $.",
@@ -831,7 +831,7 @@
     ],
     "asked_solution": {
       "id": "8c6e861956da",
-      "prompt": "Prove $ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $ for all $ n /ge 1 $ by induction.",
+      "prompt": "Prove $ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $ for all $ n \\ge 1 $ by induction.",
       "answer": "$ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $",
       "steps": [
         "Base case $ n = 1 $: $ F_2 F_0 - F_1^2 = 1\\cdot 0 - 1^2 = -1 = (-1)^1 $.",
@@ -1031,7 +1031,7 @@
       "prompt": "Find the cross product of $\\langle 1,2,3 \\rangle$ and $\\langle 4,5,6 \\rangle$",
       "answer": "$\\langle -3, 6, -3 \\rangle$",
       "steps": [
-        "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 1 & 2 & 3 \\ 4 & 5 & 6 \\end{vmatrix}$",
+        "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k}  1 & 2 & 3  4 & 5 & 6 \\end{vmatrix}$",
         "Calculate $\\mathbf{i}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
         "Calculate $\\mathbf{j}$ component: $-(1 \\cdot 6 - 3 \\cdot 4) = -(6 - 12) = 6$",
         "Calculate $\\mathbf{k}$ component: $1 \\cdot 5 - 2 \\cdot 4 = 5 - 8 = -3$",
@@ -1046,7 +1046,7 @@
         "prompt": "Find the cross product of $\\langle 2,3,4 \\rangle$ and $\\langle 5,6,7 \\rangle$",
         "answer": "$\\langle -1, 2, -1 \\rangle$",
         "steps": [
-          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 2 & 3 & 4 \\ 5 & 6 & 7 \\end{vmatrix}$",
+          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k}  2 & 3 & 4  5 & 6 & 7 \\end{vmatrix}$",
           "Calculate $\\mathbf{i}$ component: $3 \\cdot 7 - 4 \\cdot 6 = 21 - 24 = -3$",
           "Calculate $\\mathbf{j}$ component: $-(2 \\cdot 7 - 4 \\cdot 5) = -(14 - 20) = 6$",
           "Calculate $\\mathbf{k}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
@@ -1060,7 +1060,7 @@
         "prompt": "Find the cross product of $\\langle -1,0,2 \\rangle$ and $\\langle 3,-4,5 \\rangle$",
         "answer": "$\\langle 8, -1, -4 \\rangle$",
         "steps": [
-          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ -1 & 0 & 2 \\ 3 & -4 & 5 \\end{vmatrix}$",
+          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k}  -1 & 0 & 2  3 & -4 & 5 \\end{vmatrix}$",
           "Calculate $\\mathbf{i}$ component: $0 \\cdot 5 - 2 \\cdot (-4) = 0 + 8 = 8$",
           "Calculate $\\mathbf{j}$ component: $-(-1 \\cdot 5 - 2 \\cdot 3) = -(-5 - 6) = 11$",
           "Calculate $\\mathbf{k}$ component: $-1 \\cdot (-4) - 0 \\cdot 3 = 4 - 0 = 4$",
@@ -1074,7 +1074,7 @@
         "prompt": "Find the cross product of $\\langle 0,1,-1 \\rangle$ and $\\langle 2,0,3 \\rangle$",
         "answer": "$\\langle 3, -1, -2 \\rangle$",
         "steps": [
-          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 0 & 1 & -1 \\ 2 & 0 & 3 \\end{vmatrix}$",
+          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k}  0 & 1 & -1  2 & 0 & 3 \\end{vmatrix}$",
           "Calculate $\\mathbf{i}$ component: $1 \\cdot 3 - (-1) \\cdot 0 = 3 - 0 = 3$",
           "Calculate $\\mathbf{j}$ component: $-(0 \\cdot 3 - (-1) \\cdot 2) = -(0 + 2) = -2$",
           "Calculate $\\mathbf{k}$ component: $0 \\cdot 0 - 1 \\cdot 2 = 0 - 2 = -2$",
@@ -1088,7 +1088,7 @@
         "prompt": "Find the cross product of $\\langle 1, -2, 3 \\rangle$ and $\\langle -3, 4, 5 \\rangle$",
         "answer": "$\\langle -22, -14, 2 \\rangle$",
         "steps": [
-          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 1 & -2 & 3 \\ -3 & 4 & 5 \\end{vmatrix}$",
+          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k}  1 & -2 & 3  -3 & 4 & 5 \\end{vmatrix}$",
           "Calculate $\\mathbf{i}$ component: $-2 \\cdot 5 - 3 \\cdot 4 = -10 - 12 = -22$",
           "Calculate $\\mathbf{j}$ component: $-(1 \\cdot 5 - 3 \\cdot (-3)) = -(5 + 9) = -14$",
           "Calculate $\\mathbf{k}$ component: $1 \\cdot 4 - (-2) \\cdot (-3) = 4 - 6 = -2$",
@@ -1108,7 +1108,7 @@
       "prompt": "Find the cross product of $\\langle 1,2,3 \\rangle$ and $\\langle 4,5,6 \\rangle$",
       "answer": "$\\langle -3, 6, -3 \\rangle$",
       "steps": [
-        "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 1 & 2 & 3 \\ 4 & 5 & 6 \\end{vmatrix}$",
+        "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k}  1 & 2 & 3  4 & 5 & 6 \\end{vmatrix}$",
         "Calculate $\\mathbf{i}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
         "Calculate $\\mathbf{j}$ component: $-(1 \\cdot 6 - 3 \\cdot 4) = -(6 - 12) = 6$",
         "Calculate $\\mathbf{k}$ component: $1 \\cdot 5 - 2 \\cdot 4 = 5 - 8 = -3$",

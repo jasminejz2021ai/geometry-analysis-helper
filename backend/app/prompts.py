@@ -165,6 +165,19 @@ def _clean(text: str) -> str:
     text = re.sub(r"(\\\[)\s*\\[ntr]\s*", r"\1", text)
     text = re.sub(r"\s*\\[ntr]\s*(\\\])", r"\1", text)
     text = re.sub(r"\s+", " ", text).strip()
+    # Reasoning models occasionally emit a forward slash instead of a backslash
+    # for LaTeX commands, e.g. "n /ge 1" or "/frac{a}{b}". Repair the common
+    # ones so KaTeX can render them. We only touch a known command list to
+    # avoid mangling genuine slashes like "1/2" or "km/h".
+    text = re.sub(
+        r"(?<![A-Za-z0-9])/(ge|geq|le|leq|ne|neq|times|cdot|div|pm|mp|"
+        r"frac|sqrt|sum|prod|int|lim|infty|dots|ldots|cdots|langle|rangle|"
+        r"alpha|beta|gamma|delta|theta|pi|lambda|mu|sigma|omega|Delta|Sigma|"
+        r"Omega|le|ge|in|notin|subset|cup|cap|forall|exists|Rightarrow|"
+        r"rightarrow|to|mapsto|sin|cos|tan|log|ln|binom|begin|end)\b",
+        r"\\\1",
+        text,
+    )
     # A backslash immediately followed by a space is a LaTeX control-space; when
     # it leaks into plain prose (e.g. "= 75\ cm") it renders as a literal "\".
     # Collapse "\ " to a single space so units read cleanly.
