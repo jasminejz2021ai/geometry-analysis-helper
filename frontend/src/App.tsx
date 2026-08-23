@@ -12,6 +12,7 @@ import {
 import GeometryBackground from "./components/GeometryBackground";
 import AiStatusBanner from "./components/AiStatusBanner";
 import ImageUpload from "./components/ImageUpload";
+import LoadingPanel from "./components/LoadingPanel";
 import QuestionInput from "./components/QuestionInput";
 import ResultTabs from "./components/ResultTabs";
 import TopicBrowser from "./components/TopicBrowser";
@@ -227,6 +228,12 @@ export default function App() {
             <div className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">
               {error}
             </div>
+          )}
+
+          {loading && (
+            <LoadingPanel
+              label={isAnalysis ? "Solving your Analysis question" : "Solving"}
+            />
           )}
 
           <ResultTabs

@@ -14,6 +14,7 @@ from .analysis import (
     solve_analysis_question,
 )
 from .dify import dify_available, solve_image_with_dify
+from .example_cache import get_cached
 from .llm import (
     active_provider,
     ai_reachable,
@@ -119,6 +120,10 @@ def _solve_photo(
 
 @app.post("/api/solve", response_model=SolveResponse)
 def solve(req: SolveRequest) -> SolveResponse:
+    cached = get_cached(req.question)
+    if cached is not None:
+        return SolveResponse.model_validate(cached)
+
     topic = classify(req.question)
 
     if topic is not None:
@@ -306,6 +311,10 @@ def analysis_topics() -> dict:
 
 @app.post("/api/analysis/solve", response_model=SolveResponse)
 def analysis_solve(req: AnalysisSolveRequest) -> SolveResponse:
+    cached = get_cached(req.question)
+    if cached is not None:
+        return SolveResponse.model_validate(cached)
+
     _require_ai()
     result = solve_analysis_question(req.question, req.count)
     if result is None:

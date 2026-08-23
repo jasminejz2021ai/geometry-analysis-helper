@@ -1,0 +1,1204 @@
+{
+  "find the hypotenuse of a right triangle with legs 6 and 8": {
+    "source": "template",
+    "topic": "pythagorean",
+    "original": {
+      "id": "fe543354dae7",
+      "prompt": "A right triangle has a hypotenuse of 68 cm and one leg of 32 cm. Find the length of the other leg.",
+      "answer": "60 cm",
+      "steps": [
+        "\\text{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
+        "b = \\sqrt{68^2 - 32^2}",
+        "b = \\sqrt{4624 - 1024}",
+        "b = \\sqrt{3600} = 60\\ \\text{cm}"
+      ],
+      "unit": "cm",
+      "diagram": {
+        "kind": "triangle",
+        "a": 32.0,
+        "b": null,
+        "c": 68.0,
+        "right_angle": true,
+        "labels": {
+          "a": "32 cm",
+          "b": "?",
+          "c": "68 cm"
+        }
+      }
+    },
+    "practice": [
+      {
+        "id": "e818f476f9c9",
+        "prompt": "A right triangle has a hypotenuse of 164 cm and one leg of 36 cm. Find the length of the other leg.",
+        "answer": "160 cm",
+        "steps": [
+          "\\text{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
+          "b = \\sqrt{164^2 - 36^2}",
+          "b = \\sqrt{26896 - 1296}",
+          "b = \\sqrt{25600} = 160\\ \\text{cm}"
+        ],
+        "unit": "cm",
+        "diagram": {
+          "kind": "triangle",
+          "a": 36.0,
+          "b": null,
+          "c": 164.0,
+          "right_angle": true,
+          "labels": {
+            "a": "36 cm",
+            "b": "?",
+            "c": "164 cm"
+          }
+        }
+      },
+      {
+        "id": "769efb54ca28",
+        "prompt": "A right triangle has legs of length 28 cm and 96 cm. Find the length of the hypotenuse.",
+        "answer": "100 cm",
+        "steps": [
+          "\\text{Use } a^2 + b^2 = c^2.",
+          "28^2 + 96^2 = c^2",
+          "784 + 9216 = c^2",
+          "10000 = c^2",
+          "c = \\sqrt{10000} = 100\\ \\text{cm}"
+        ],
+        "unit": "cm",
+        "diagram": {
+          "kind": "triangle",
+          "a": 28.0,
+          "b": 96.0,
+          "c": null,
+          "right_angle": true,
+          "labels": {
+            "a": "28 cm",
+            "b": "96 cm",
+            "c": "?"
+          }
+        }
+      },
+      {
+        "id": "2a241a219ad0",
+        "prompt": "A right triangle has a hypotenuse of 50 cm and one leg of 14 cm. Find the length of the other leg.",
+        "answer": "48 cm",
+        "steps": [
+          "\\text{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
+          "b = \\sqrt{50^2 - 14^2}",
+          "b = \\sqrt{2500 - 196}",
+          "b = \\sqrt{2304} = 48\\ \\text{cm}"
+        ],
+        "unit": "cm",
+        "diagram": {
+          "kind": "triangle",
+          "a": 14.0,
+          "b": null,
+          "c": 50.0,
+          "right_angle": true,
+          "labels": {
+            "a": "14 cm",
+            "b": "?",
+            "c": "50 cm"
+          }
+        }
+      },
+      {
+        "id": "041465c836dc",
+        "prompt": "A right triangle has legs of length 32 cm and 60 cm. Find the length of the hypotenuse.",
+        "answer": "68 cm",
+        "steps": [
+          "\\text{Use } a^2 + b^2 = c^2.",
+          "32^2 + 60^2 = c^2",
+          "1024 + 3600 = c^2",
+          "4624 = c^2",
+          "c = \\sqrt{4624} = 68\\ \\text{cm}"
+        ],
+        "unit": "cm",
+        "diagram": {
+          "kind": "triangle",
+          "a": 32.0,
+          "b": 60.0,
+          "c": null,
+          "right_angle": true,
+          "labels": {
+            "a": "32 cm",
+            "b": "60 cm",
+            "c": "?"
+          }
+        }
+      }
+    ],
+    "concept_review": [
+      "In a right triangle, the side opposite the right angle is the hypotenuse.",
+      "Pythagorean theorem: \\(a^2 + b^2 = c^2\\), where \\(c\\) is the hypotenuse.",
+      "Solve for a missing side by isolating it, e.g. \\(c = \\sqrt{a^2 + b^2}\\)."
+    ],
+    "asked_solution": {
+      "id": "424eae0fd990",
+      "prompt": "Find the hypotenuse of a right triangle with legs 6 and 8",
+      "answer": "10 units",
+      "steps": [
+        "Write formula: 6² + 8² = c²",
+        "Calculate squares: 36 + 64 = c²",
+        "Add values: 100 = c²",
+        "Take square root: c = √100 = 10"
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  },
+  "what is the area of a circle with radius 5?": {
+    "source": "template",
+    "topic": "circle",
+    "original": {
+      "id": "c7b643747166",
+      "prompt": "A circle has a radius of 12 cm. Find its area. Use π ≈ 3.14.",
+      "answer": "452.16 cm^2",
+      "steps": [
+        "A = \\pi r^2",
+        "= \\pi \\cdot 12^2",
+        "\\approx 3.14 \\cdot 144",
+        "\\approx 452.16\\ \\text{cm}^2"
+      ],
+      "unit": "cm^2",
+      "diagram": {
+        "kind": "circle",
+        "radius": 12.0,
+        "diameter": null,
+        "labels": {
+          "radius": "r = 12 cm"
+        }
+      }
+    },
+    "practice": [
+      {
+        "id": "5cef65af2536",
+        "prompt": "A circle has a radius of 14 cm. Find its area. Use π ≈ 3.14.",
+        "answer": "615.44 cm^2",
+        "steps": [
+          "A = \\pi r^2",
+          "= \\pi \\cdot 14^2",
+          "\\approx 3.14 \\cdot 196",
+          "\\approx 615.44\\ \\text{cm}^2"
+        ],
+        "unit": "cm^2",
+        "diagram": {
+          "kind": "circle",
+          "radius": 14.0,
+          "diameter": null,
+          "labels": {
+            "radius": "r = 14 cm"
+          }
+        }
+      },
+      {
+        "id": "8f8acbf14758",
+        "prompt": "A circle has a radius of 3 cm. Find its circumference. Use π ≈ 3.14.",
+        "answer": "18.84 cm",
+        "steps": [
+          "C = 2\\pi r",
+          "= 2 \\cdot \\pi \\cdot 3",
+          "\\approx 2 \\cdot 3.14 \\cdot 3",
+          "\\approx 18.84\\ \\text{cm}"
+        ],
+        "unit": "cm",
+        "diagram": {
+          "kind": "circle",
+          "radius": 3.0,
+          "diameter": null,
+          "labels": {
+            "radius": "r = 3 cm"
+          }
+        }
+      },
+      {
+        "id": "1307f9713d91",
+        "prompt": "A circle has a radius of 12 cm. Find its circumference. Use π ≈ 3.14.",
+        "answer": "75.36 cm",
+        "steps": [
+          "C = 2\\pi r",
+          "= 2 \\cdot \\pi \\cdot 12",
+          "\\approx 2 \\cdot 3.14 \\cdot 12",
+          "\\approx 75.36\\ \\text{cm}"
+        ],
+        "unit": "cm",
+        "diagram": {
+          "kind": "circle",
+          "radius": 12.0,
+          "diameter": null,
+          "labels": {
+            "radius": "r = 12 cm"
+          }
+        }
+      },
+      {
+        "id": "6e9ed043fe7e",
+        "prompt": "A circle has a radius of 9 cm. Find its area. Use π ≈ 3.14.",
+        "answer": "254.34 cm^2",
+        "steps": [
+          "A = \\pi r^2",
+          "= \\pi \\cdot 9^2",
+          "\\approx 3.14 \\cdot 81",
+          "\\approx 254.34\\ \\text{cm}^2"
+        ],
+        "unit": "cm^2",
+        "diagram": {
+          "kind": "circle",
+          "radius": 9.0,
+          "diameter": null,
+          "labels": {
+            "radius": "r = 9 cm"
+          }
+        }
+      }
+    ],
+    "concept_review": [
+      "Area of a circle: \\(A = \\pi r^2\\).",
+      "Circumference: \\(C = 2\\pi r = \\pi d\\).",
+      "The radius is half the diameter: \\(r = d/2\\)."
+    ],
+    "asked_solution": {
+      "id": "55d29e392fea",
+      "prompt": "What is the area of a circle with radius 5?",
+      "answer": "25π square units",
+      "steps": [
+        "Write formula: A = πr²",
+        "Substitute r = 5: A = π(5)²",
+        "Calculate 5² = 25",
+        "Multiply by π: A = 25π"
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  },
+  "two angles are complementary and one is 35 degrees": {
+    "source": "template",
+    "topic": "angles",
+    "original": {
+      "id": "8ac967acc396",
+      "prompt": "Two angles of a triangle measure 67 degrees and 54 degrees. Find the third angle.",
+      "answer": "59 degrees",
+      "steps": [
+        "\\text{The angles of a triangle sum to } 180^\\circ.",
+        "x = 180 - 67 - 54",
+        "x = 59^\\circ"
+      ],
+      "unit": "degrees",
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "a0bcc8356f6f",
+        "prompt": "Two angles are supplementary. One angle measures 136 degrees. Find the other angle.",
+        "answer": "44 degrees",
+        "steps": [
+          "\\text{Supplementary angles sum to } 180^\\circ.",
+          "x = 180 - 136",
+          "x = 44^\\circ"
+        ],
+        "unit": "degrees",
+        "diagram": null
+      },
+      {
+        "id": "be5eabe8ba8f",
+        "prompt": "Two angles of a triangle measure 80 degrees and 68 degrees. Find the third angle.",
+        "answer": "32 degrees",
+        "steps": [
+          "\\text{The angles of a triangle sum to } 180^\\circ.",
+          "x = 180 - 80 - 68",
+          "x = 32^\\circ"
+        ],
+        "unit": "degrees",
+        "diagram": null
+      },
+      {
+        "id": "a6169793a554",
+        "prompt": "Two angles are complementary. One angle measures 17 degrees. Find the other angle.",
+        "answer": "73 degrees",
+        "steps": [
+          "\\text{Complementary angles sum to } 90^\\circ.",
+          "x = 90 - 17",
+          "x = 73^\\circ"
+        ],
+        "unit": "degrees",
+        "diagram": null
+      },
+      {
+        "id": "f451bec5544a",
+        "prompt": "Two angles are supplementary. One angle measures 118 degrees. Find the other angle.",
+        "answer": "62 degrees",
+        "steps": [
+          "\\text{Supplementary angles sum to } 180^\\circ.",
+          "x = 180 - 118",
+          "x = 62^\\circ"
+        ],
+        "unit": "degrees",
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Complementary angles sum to \\(90^\\circ\\); supplementary angles sum to \\(180^\\circ\\).",
+      "The interior angles of a triangle sum to \\(180^\\circ\\).",
+      "Set up an equation from the relationship, then solve for the unknown angle."
+    ],
+    "asked_solution": {
+      "id": "c83fe2d289ec",
+      "prompt": "Two angles are complementary and one is 35°. Find the measure of the other angle.",
+      "answer": "55°",
+      "steps": [
+        "Let the unknown angle be x°",
+        "Set up equation: 35° + x° = 90°",
+        "Solve for x: x = 90° - 35° = 55°",
+        "Verify: 35° + 55° = 90°"
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  },
+  "find the distance between (1, 2) and (4, 6)": {
+    "source": "template",
+    "topic": "distance_midpoint",
+    "original": {
+      "id": "0545c6fd82f5",
+      "prompt": "Find the midpoint of the segment joining (1, 1) and (7, -7).",
+      "answer": "(4, -3)",
+      "steps": [
+        "M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}\\right)",
+        "= \\left(\\frac{1+7}{2}, \\frac{1+-7}{2}\\right)",
+        "= (4, -3)"
+      ],
+      "unit": null,
+      "diagram": {
+        "kind": "coordinate",
+        "points": [
+          [
+            1.0,
+            1.0
+          ],
+          [
+            7.0,
+            -7.0
+          ]
+        ],
+        "labels": [
+          "(1, 1)",
+          "(7, -7)"
+        ]
+      }
+    },
+    "practice": [
+      {
+        "id": "e287654cbd2d",
+        "prompt": "Find the midpoint of the segment joining (-2, 2) and (-5, -2).",
+        "answer": "(-3.5, 0)",
+        "steps": [
+          "M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}\\right)",
+          "= \\left(\\frac{-2+-5}{2}, \\frac{2+-2}{2}\\right)",
+          "= (-3.5, 0)"
+        ],
+        "unit": null,
+        "diagram": {
+          "kind": "coordinate",
+          "points": [
+            [
+              -2.0,
+              2.0
+            ],
+            [
+              -5.0,
+              -2.0
+            ]
+          ],
+          "labels": [
+            "(-2, 2)",
+            "(-5, -2)"
+          ]
+        }
+      },
+      {
+        "id": "dbb6233c0aec",
+        "prompt": "Find the distance between the points (6, 3) and (12, 11).",
+        "answer": "10",
+        "steps": [
+          "d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}",
+          "= \\sqrt{(12-6)^2 + (11-3)^2}",
+          "= \\sqrt{36 + 64}",
+          "= \\sqrt{100} = 10"
+        ],
+        "unit": "units",
+        "diagram": {
+          "kind": "coordinate",
+          "points": [
+            [
+              6.0,
+              3.0
+            ],
+            [
+              12.0,
+              11.0
+            ]
+          ],
+          "labels": [
+            "(6, 3)",
+            "(12, 11)"
+          ]
+        }
+      },
+      {
+        "id": "66e45d0a3df5",
+        "prompt": "Find the midpoint of the segment joining (0, 2) and (-5, -10).",
+        "answer": "(-2.5, -4)",
+        "steps": [
+          "M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}\\right)",
+          "= \\left(\\frac{0+-5}{2}, \\frac{2+-10}{2}\\right)",
+          "= (-2.5, -4)"
+        ],
+        "unit": null,
+        "diagram": {
+          "kind": "coordinate",
+          "points": [
+            [
+              0.0,
+              2.0
+            ],
+            [
+              -5.0,
+              -10.0
+            ]
+          ],
+          "labels": [
+            "(0, 2)",
+            "(-5, -10)"
+          ]
+        }
+      },
+      {
+        "id": "907497946a35",
+        "prompt": "Find the distance between the points (0, 0) and (-8, -6).",
+        "answer": "10",
+        "steps": [
+          "d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}",
+          "= \\sqrt{(-8-0)^2 + (-6-0)^2}",
+          "= \\sqrt{64 + 36}",
+          "= \\sqrt{100} = 10"
+        ],
+        "unit": "units",
+        "diagram": {
+          "kind": "coordinate",
+          "points": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              -8.0,
+              -6.0
+            ]
+          ],
+          "labels": [
+            "(0, 0)",
+            "(-8, -6)"
+          ]
+        }
+      }
+    ],
+    "concept_review": [
+      "Distance: \\(d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}\\).",
+      "Midpoint: \\(\\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}\\right)\\).",
+      "Substitute the coordinates carefully and simplify."
+    ],
+    "asked_solution": {
+      "id": "9e4ad915f0e4",
+      "prompt": "Find the distance between (1, 2) and (4, 6)",
+      "answer": "5 units",
+      "steps": [
+        "Calculate x difference: 4 - 1 = 3",
+        "Calculate y difference: 6 - 2 = 4",
+        "Square differences: 3² = 9, 4² = 16",
+        "Sum squares: 9 + 16 = 25",
+        "Take square root: √25 = 5"
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  },
+  "area of a triangle with base 10 and height 7": {
+    "source": "template",
+    "topic": "triangle_area",
+    "original": {
+      "id": "154eef9ad546",
+      "prompt": "A triangle has a base of 14 cm and a height of 5 cm. Find its area.",
+      "answer": "35 cm^2",
+      "steps": [
+        "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
+        "= \\tfrac{1}{2} \\cdot 14 \\cdot 5",
+        "= 35\\ \\text{cm}^2"
+      ],
+      "unit": "cm^2",
+      "diagram": {
+        "kind": "triangle",
+        "a": 14.0,
+        "b": 5.0,
+        "c": null,
+        "right_angle": true,
+        "labels": {
+          "a": "b = 14 cm",
+          "b": "h = 5 cm",
+          "c": ""
+        }
+      }
+    },
+    "practice": [
+      {
+        "id": "6d00324f3cd3",
+        "prompt": "A triangle has a base of 8 cm and a height of 18 cm. Find its area.",
+        "answer": "72 cm^2",
+        "steps": [
+          "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
+          "= \\tfrac{1}{2} \\cdot 8 \\cdot 18",
+          "= 72\\ \\text{cm}^2"
+        ],
+        "unit": "cm^2",
+        "diagram": {
+          "kind": "triangle",
+          "a": 8.0,
+          "b": 18.0,
+          "c": null,
+          "right_angle": true,
+          "labels": {
+            "a": "b = 8 cm",
+            "b": "h = 18 cm",
+            "c": ""
+          }
+        }
+      },
+      {
+        "id": "9f7ce2dabeca",
+        "prompt": "A triangle has a base of 20 cm and a height of 5 cm. Find its area.",
+        "answer": "50 cm^2",
+        "steps": [
+          "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
+          "= \\tfrac{1}{2} \\cdot 20 \\cdot 5",
+          "= 50\\ \\text{cm}^2"
+        ],
+        "unit": "cm^2",
+        "diagram": {
+          "kind": "triangle",
+          "a": 20.0,
+          "b": 5.0,
+          "c": null,
+          "right_angle": true,
+          "labels": {
+            "a": "b = 20 cm",
+            "b": "h = 5 cm",
+            "c": ""
+          }
+        }
+      },
+      {
+        "id": "cd54f18f68f1",
+        "prompt": "A triangle has a base of 15 cm and a height of 11 cm. Find its area.",
+        "answer": "82.5 cm^2",
+        "steps": [
+          "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
+          "= \\tfrac{1}{2} \\cdot 15 \\cdot 11",
+          "= 82.5\\ \\text{cm}^2"
+        ],
+        "unit": "cm^2",
+        "diagram": {
+          "kind": "triangle",
+          "a": 15.0,
+          "b": 11.0,
+          "c": null,
+          "right_angle": true,
+          "labels": {
+            "a": "b = 15 cm",
+            "b": "h = 11 cm",
+            "c": ""
+          }
+        }
+      },
+      {
+        "id": "42572e5c2503",
+        "prompt": "A triangle has a base of 19 cm and a height of 11 cm. Find its area.",
+        "answer": "104.5 cm^2",
+        "steps": [
+          "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
+          "= \\tfrac{1}{2} \\cdot 19 \\cdot 11",
+          "= 104.5\\ \\text{cm}^2"
+        ],
+        "unit": "cm^2",
+        "diagram": {
+          "kind": "triangle",
+          "a": 19.0,
+          "b": 11.0,
+          "c": null,
+          "right_angle": true,
+          "labels": {
+            "a": "b = 19 cm",
+            "b": "h = 11 cm",
+            "c": ""
+          }
+        }
+      }
+    ],
+    "concept_review": [
+      "Area of a triangle: \\(A = \\frac{1}{2} b h\\).",
+      "The height is perpendicular to the chosen base.",
+      "Perimeter is the sum of all side lengths."
+    ],
+    "asked_solution": {
+      "id": "b4836b92efa3",
+      "prompt": "Area of a triangle with base 10 and height 7",
+      "answer": "35",
+      "steps": [
+        "Write formula: A = (b × h)/2",
+        "Substitute values: A = (10 × 7)/2",
+        "Multiply: 10 × 7 = 70",
+        "Divide by 2: 70/2 = 35",
+        "Answer: 35"
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  },
+  "prove 1 + 2 + ... + n = n(n+1)/2 by induction": {
+    "source": "llm",
+    "topic": "analysis",
+    "original": {
+      "id": "c72df2633927",
+      "prompt": "Prove $ 1 + 2 + \\dots + n = \\frac{n(n+1)}{2} $ by induction",
+      "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ S_{k+1} = \\frac{(k+1)(k+2)}{2} $",
+      "steps": [
+        "Base case: For $ n=1 $, left side is 1, right side is $ \\frac{1(1+1)}{2} = 1 $",
+        "Assume true for $ n=k $: $ 1+2+\\dots+k = \\frac{k(k+1)}{2} $",
+        "Prove for $ n=k+1 $: Add $ k+1 $ to both sides: $ \\frac{k(k+1)}{2} + (k+1) $",
+        "Simplify: $ \\frac{k(k+1) + 2(k+1)}{2} = \\frac{(k+1)(k+2)}{2} $",
+        "Conclusion: Formula holds for all $ n \\geq 1 $"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "7f212e2221d6",
+        "prompt": "Prove $ 1 + 3 + 5 + \\dots + (2n-1) = n^2 $ by induction",
+        "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ (k+1)^2 $",
+        "steps": [
+          "Base case: For $ n=1 $, left side is 1, right side is $ 1^2 = 1 $",
+          "Assume true for $ n=k $: $ 1+3+\\dots+(2k-1) = k^2 $",
+          "Prove for $ n=k+1 $: Add $ 2(k+1)-1 = 2k+1 $ to both sides",
+          "Simplify: $ k^2 + 2k + 1 = (k+1)^2 $",
+          "Conclusion: Formula holds for all $ n \\geq 1 $"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "26ec7a406ed4",
+        "prompt": "Prove $ 1^2 + 2^2 + \\dots + n^2 = \\frac{n(n+1)(2n+1)}{6} $ by induction",
+        "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ \\frac{(k+1)(k+2)(2k+3)}{6} $",
+        "steps": [
+          "Base case: For $ n=1 $, left side is 1, right side is $ \\frac{1(2)(3)}{6} = 1 $",
+          "Assume true for $ n=k $: $ 1^2+\\dots+k^2 = \\frac{k(k+1)(2k+1)}{6} $",
+          "Prove for $ n=k+1 $: Add $ (k+1)^2 $ to both sides",
+          "Simplify: $ \\frac{k(k+1)(2k+1)}{6} + (k+1)^2 = \\frac{(k+1)(k+2)(2k+3)}{6} $",
+          "Conclusion: Formula holds for all $ n \\geq 1 $"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d32915bcfd5e",
+        "prompt": "Prove $ 1 + 2 + 4 + \\dots + 2^{n-1} = 2^n - 1 $ by induction",
+        "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ 2^{k+1} - 1 $",
+        "steps": [
+          "Base case: For $ n=1 $, left side is 1, right side is $ 2^1 - 1 = 1 $",
+          "Assume true for $ n=k $: $ 1+2+\\dots+2^{k-1} = 2^k - 1 $",
+          "Prove for $ n=k+1 $: Add $ 2^k $ to both sides",
+          "Simplify: $ 2^k - 1 + 2^k = 2 \\cdot 2^k - 1 = 2^{k+1} - 1 $",
+          "Conclusion: Formula holds for all $ n \\geq 1 $"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "da6544d2ca15",
+        "prompt": "Prove $ 1^3 + 2^3 + \\dots + n^3 = \\left(\\frac{n(n+1)}{2}\\right)^2 $ by induction",
+        "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ \\left(\\frac{(k+1)(k+2)}{2}\\right)^2 $",
+        "steps": [
+          "Base case: For $ n=1 $, left side is 1, right side is $ \\left(\\frac{1(2)}{2}\\right)^2 = 1 $",
+          "Assume true for $ n=k $: $ 1^3+\\dots+k^3 = \\left(\\frac{k(k+1)}{2}\\right)^2 $",
+          "Prove for $ n=k+1 $: Add $ (k+1)^3 $ to both sides",
+          "Simplify: $ \\left(\\frac{k(k+1)}{2}\\right)^2 + (k+1)^3 = \\left(\\frac{(k+1)(k+2)}{2}\\right)^2 $",
+          "Conclusion: Formula holds for all $ n \\geq 1 $"
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Mathematical induction proves a formula for all positive integers by verifying base case and inductive step.",
+      "Base case: Verify formula holds for n=1.",
+      "Inductive step: Assume true for n=k, then prove for n=k+1 using algebraic manipulation.",
+      "Formula for sum of first n integers: $ S_n = \\frac{n(n+1)}{2} $"
+    ],
+    "asked_solution": {
+      "id": "c72df2633927",
+      "prompt": "Prove $ 1 + 2 + \\dots + n = \\frac{n(n+1)}{2} $ by induction",
+      "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ S_{k+1} = \\frac{(k+1)(k+2)}{2} $",
+      "steps": [
+        "Base case: For $ n=1 $, left side is 1, right side is $ \\frac{1(1+1)}{2} = 1 $",
+        "Assume true for $ n=k $: $ 1+2+\\dots+k = \\frac{k(k+1)}{2} $",
+        "Prove for $ n=k+1 $: Add $ k+1 $ to both sides: $ \\frac{k(k+1)}{2} + (k+1) $",
+        "Simplify: $ \\frac{k(k+1) + 2(k+1)}{2} = \\frac{(k+1)(k+2)}{2} $",
+        "Conclusion: Formula holds for all $ n \\geq 1 $"
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  },
+  "prove a fibonacci identity by induction": {
+    "source": "llm",
+    "topic": "analysis",
+    "original": {
+      "id": "8c6e861956da",
+      "prompt": "Prove $ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $ for all $ n /ge 1 $ by induction.",
+      "answer": "$ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $",
+      "steps": [
+        "Base case $ n = 1 $: $ F_2 F_0 - F_1^2 = 1\\cdot 0 - 1^2 = -1 = (-1)^1 $.",
+        "Assume true for $ n = k $: $ F_{k+1}F_{k-1} - F_k^2 = (-1)^k $.",
+        "For $ n = k+1 $, expand $ F_{k+2}F_k - F_{k+1}^2 $ using $ F_{k+2} = F_{k+1} + F_k $: $ (F_{k+1} + F_k)F_k - F_{k+1}^2 = F_{k+1}F_k + F_k^2 - F_{k+1}^2 $.",
+        "Factor $ F_{k+1}F_k - F_{k+1}^2 = -F_{k+1}(F_{k+1} - F_k) = -F_{k+1}F_{k-1} $, so total becomes $ -F_{k+1}F_{k-1} + F_k^2 = - (F_{k+1}F_{k-1} - F_k^2) = -(-1)^k = (-1)^{k+1} $."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "0c69b16fc3f5",
+        "prompt": "Prove $ \\sum_{k=1}^n F_k = F_{n+2} - 1 $ by induction.",
+        "answer": "$ \\sum_{k=1}^n F_k = F_{n+2} - 1 $",
+        "steps": [
+          "Base case $ n = 1 $: $ F_1 = 1 = F_3 - 1 = 2 - 1 $.",
+          "Assume true for $ n = k $: $ \\sum_{k=1}^k F_k = F_{k+2} - 1 $.",
+          "For $ n = k+1 $, add $ F_{k+1} $: $ F_{k+2} - 1 + F_{k+1} = F_{k+3} - 1 $."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "b8982c156efa",
+        "prompt": "Prove $ F_{m+n} = F_{m+1}F_n + F_m F_{n-1} $ by induction on $ n $.",
+        "answer": "$ F_{m+n} = F_{m+1}F_n + F_m F_{n-1} $",
+        "steps": [
+          "Base case $ n = 1 $: $ F_{m+1} = F_{m+1}F_1 + F_m F_0 = F_{m+1}\\cdot 1 + F_m\\cdot 0 $.",
+          "Assume true for $ n = k $: $ F_{m+k} = F_{m+1}F_k + F_m F_{k-1} $.",
+          "For $ n = k+1 $, use $ F_{m+k+1} = F_{m+k} + F_{m+k-1} $, substitute inductive hypothesis: $ [F_{m+1}F_k + F_m F_{k-1}] + [F_{m+1}F_{k-1} + F_m F_{k-2}] $.",
+          "Factor: $ F_{m+1}(F_k + F_{k-1}) + F_m(F_{k-1} + F_{k-2}) = F_{m+1}F_{k+1} + F_m F_k $."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1e00491d7373",
+        "prompt": "Prove $ F_{2n} = F_n (2F_{n+1} - F_n) $ by induction.",
+        "answer": "$ F_{2n} = F_n (2F_{n+1} - F_n) $",
+        "steps": [
+          "Base case $ n = 1 $: $ F_2 = 1 = 1\\cdot (2F_2 - F_1) = 1\\cdot (2\\cdot 1 - 1) $.",
+          "Assume true for $ n = k $: $ F_{2k} = F_k (2F_{k+1} - F_k) $.",
+          "For $ n = k+1 $, use $ F_{2k+2} = F_{2k+1} + F_{2k} $. Expand $ F_{2k+1} = F_{2k} + F_{2k-1} $, then substitute recursively."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "7612dea8cfba",
+        "prompt": "Prove $ F_n^2 + F_{n+1}^2 = F_{2n+1} $ by induction.",
+        "answer": "$ F_n^2 + F_{n+1}^2 = F_{2n+1} $",
+        "steps": [
+          "Base case $ n = 1 $: $ 1^2 + 1^2 = 2 = F_3 $.",
+          "Assume true for $ n = k $: $ F_k^2 + F_{k+1}^2 = F_{2k+1} $.",
+          "For $ n = k+1 $, expand $ F_{k+1}^2 + F_{k+2}^2 $. Use $ F_{k+2} = F_{k+1} + F_k $: $ F_{k+1}^2 + (F_{k+1} + F_k)^2 = F_{k+1}^2 + F_{k+1}^2 + 2F_{k+1}F_k + F_k^2 $.",
+          "Simplify: $ 2F_{k+1}^2 + 2F_{k+1}F_k + F_k^2 $. Factor and relate to $ F_{2k+3} = F_{2k+2} + F_{2k+1} $, using inductive hypothesis."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Understand mathematical induction: base case, inductive hypothesis, and inductive step.",
+      "Recall Fibonacci sequence definition: $ F_n = F_{n-1} + F_{n-2} $ with $ F_0 = 0, F_1 = 1 $.",
+      "Master algebraic manipulation of recursive relations and identities."
+    ],
+    "asked_solution": {
+      "id": "8c6e861956da",
+      "prompt": "Prove $ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $ for all $ n /ge 1 $ by induction.",
+      "answer": "$ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $",
+      "steps": [
+        "Base case $ n = 1 $: $ F_2 F_0 - F_1^2 = 1\\cdot 0 - 1^2 = -1 = (-1)^1 $.",
+        "Assume true for $ n = k $: $ F_{k+1}F_{k-1} - F_k^2 = (-1)^k $.",
+        "For $ n = k+1 $, expand $ F_{k+2}F_k - F_{k+1}^2 $ using $ F_{k+2} = F_{k+1} + F_k $: $ (F_{k+1} + F_k)F_k - F_{k+1}^2 = F_{k+1}F_k + F_k^2 - F_{k+1}^2 $.",
+        "Factor $ F_{k+1}F_k - F_{k+1}^2 = -F_{k+1}(F_{k+1} - F_k) = -F_{k+1}F_{k-1} $, so total becomes $ -F_{k+1}F_{k-1} + F_k^2 = - (F_{k+1}F_{k-1} - F_k^2) = -(-1)^k = (-1)^{k+1} $."
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  },
+  "does the series sum of 1/n^2 converge?": {
+    "source": "llm",
+    "topic": "analysis",
+    "original": {
+      "id": "c5d0d955af30",
+      "prompt": "Does the series $\\sum \\frac{1}{n^2}$ converge?",
+      "answer": "Yes, the series converges.",
+      "steps": [
+        "Identify the series as a p-series with $p = 2$",
+        "Recall the p-series convergence rule: converges if $p > 1$",
+        "Since $2 > 1$, the series $\\sum \\frac{1}{n^2}$ converges"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "5de6adb3df83",
+        "prompt": "Does the series $\\sum \\frac{1}{n^3}$ converge?",
+        "answer": "Yes, the series converges.",
+        "steps": [
+          "Identify the series as a p-series with $p = 3$",
+          "Recall the p-series convergence rule: converges if $p > 1$",
+          "Since $3 > 1$, the series $\\sum \\frac{1}{n^3}$ converges"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "48bedb88bb0b",
+        "prompt": "Does the series $\\sum \\frac{1}{n^{1.5}}$ converge?",
+        "answer": "Yes, the series converges.",
+        "steps": [
+          "Identify the series as a p-series with $p = 1.5$",
+          "Recall the p-series convergence rule: converges if $p > 1$",
+          "Since $1.5 > 1$, the series $\\sum \\frac{1}{n^{1.5}}$ converges"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "6c06555d2707",
+        "prompt": "Does the series $\\sum \\frac{1}{n^{\\sqrt{2}}}$ converge?",
+        "answer": "Yes, the series converges.",
+        "steps": [
+          "Identify the series as a p-series with $p = \\sqrt{2}$",
+          "Recall the p-series convergence rule: converges if $p > 1$",
+          "Since $\\sqrt{2} > 1$, the series $\\sum \\frac{1}{n^{\\sqrt{2}}}$ converges"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "8ccdb2eac3a9",
+        "prompt": "Does the series $\\sum \\frac{1}{n^{\\pi}}$ converge?",
+        "answer": "Yes, the series converges.",
+        "steps": [
+          "Identify the series as a p-series with $p = \\pi$",
+          "Recall the p-series convergence rule: converges if $p > 1$",
+          "Since $\\pi > 1$, the series $\\sum \\frac{1}{n^{\\pi}}$ converges"
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Recognize the series as a p-series of the form $\\sum \\frac{1}{n^p}$",
+      "Recall that a p-series converges if $p > 1$ and diverges if $p \\leq 1$",
+      "Apply the p-series test directly to determine convergence"
+    ],
+    "asked_solution": {
+      "id": "c5d0d955af30",
+      "prompt": "Does the series $\\sum \\frac{1}{n^2}$ converge?",
+      "answer": "Yes, the series converges.",
+      "steps": [
+        "Identify the series as a p-series with $p = 2$",
+        "Recall the p-series convergence rule: converges if $p > 1$",
+        "Since $2 > 1$, the series $\\sum \\frac{1}{n^2}$ converges"
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  },
+  "find the derivative of x^3 using the limit definition": {
+    "source": "llm",
+    "topic": "analysis",
+    "original": {
+      "id": "7c71c4b67d33",
+      "prompt": "Find the derivative of $ x^3 $ using the limit definition",
+      "answer": "The derivative is $ 3x^2 $",
+      "steps": [
+        "Start with $ f'(x) = rac{(x+h)^3 - x^3}{h} $",
+        "Expand $ (x+h)^3 = x^3 + 3x^2h + 3xh^2 + h^3 $",
+        "Subtract $ x^3 $: $ 3x^2h + 3xh^2 + h^3 $",
+        "Divide by $ h $: $ 3x^2 + 3xh + h^2 $",
+        "Take limit as $ h o 0 $: $ 3x^2 $"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "3945dc11f0a6",
+        "prompt": "Find the derivative of $ x^2 $ using the limit definition",
+        "answer": "The derivative is $ 2x $",
+        "steps": [
+          "Start with $ f'(x) = rac{(x+h)^2 - x^2}{h} $",
+          "Expand $ (x+h)^2 = x^2 + 2xh + h^2 $",
+          "Subtract $ x^2 $: $ 2xh + h^2 $",
+          "Divide by $ h $: $ 2x + h $",
+          "Take limit as $ h o 0 $: $ 2x $"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "b4afb4c4023d",
+        "prompt": "Find the derivative of $ x^4 $ using the limit definition",
+        "answer": "The derivative is $ 4x^3 $",
+        "steps": [
+          "Start with $ f'(x) = rac{(x+h)^4 - x^4}{h} $",
+          "Expand $ (x+h)^4 = x^4 + 4x^3h + 6x^2h^2 + 4xh^3 + h^4 $",
+          "Subtract $ x^4 $: $ 4x^3h + 6x^2h^2 + 4xh^3 + h^4 $",
+          "Divide by $ h $: $ 4x^3 + 6x^2h + 4xh^2 + h^3 $",
+          "Take limit as $ h o 0 $: $ 4x^3 $"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "382de0550368",
+        "prompt": "Find the derivative of $ rac{1}{ ext{sqrt}(x)} $ using the limit definition",
+        "answer": "The derivative is $ -\\frac{1}{2}x^{-3/2} $",
+        "steps": [
+          "Start with $ f'(x) = rac{\\frac{1}{\\sqrt{x+h}} - \\frac{1}{\\sqrt{x}}}{h} $",
+          "Combine fractions: $ rac{\\sqrt{x} - \\sqrt{x+h}}{h\\sqrt{x}\\sqrt{x+h}} $",
+          "Multiply numerator/denominator by $ \\sqrt{x} + \\sqrt{x+h} $",
+          "Simplify to $ rac{-1}{\\sqrt{x} \\cdot (\\sqrt{x} + \\sqrt{x+h})} $",
+          "Take limit as $ h o 0 $: $ -\\frac{1}{2x^{3/2}} $"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "b08660314f21",
+        "prompt": "Find the derivative of $ 5x^3 - 2x $ using the limit definition",
+        "answer": "The derivative is $ 15x^2 - 2 $",
+        "steps": [
+          "Start with $ f'(x) = rac{5(x+h)^3 - 2(x+h) - 5x^3 + 2x}{h} $",
+          "Expand $ 5(x^3 + 3x^2h + 3xh^2 + h^3) - 2x - 2h $",
+          "Simplify to $ 5x^3 + 15x^2h + 15xh^2 + 5h^3 - 2x - 2h - 5x^3 + 2x $",
+          "Combine like terms: $ 15x^2h + 15xh^2 + 5h^3 - 2h $",
+          "Divide by $ h $: $ 15x^2 + 15xh + 5h^2 - 2 $",
+          "Take limit as $ h o 0 $: $ 15x^2 - 2 $"
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "The limit definition of a derivative is $ f'(x) = rac{f(x+h) - f(x)}{h} $ as $ h o 0 $",
+      "Expand $ (x+h)^n $ using binomial theorem for polynomial functions",
+      "Simplify algebraic expressions by canceling $ h $ terms before taking the limit",
+      "Evaluate limits by substituting $ h = 0 $ after simplification"
+    ],
+    "asked_solution": {
+      "id": "7c71c4b67d33",
+      "prompt": "Find the derivative of $ x^3 $ using the limit definition",
+      "answer": "The derivative is $ 3x^2 $",
+      "steps": [
+        "Start with $ f'(x) = rac{(x+h)^3 - x^3}{h} $",
+        "Expand $ (x+h)^3 = x^3 + 3x^2h + 3xh^2 + h^3 $",
+        "Subtract $ x^3 $: $ 3x^2h + 3xh^2 + h^3 $",
+        "Divide by $ h $: $ 3x^2 + 3xh + h^2 $",
+        "Take limit as $ h o 0 $: $ 3x^2 $"
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  },
+  "find the cross product of <1,2,3> and <4,5,6>": {
+    "source": "llm",
+    "topic": "analysis",
+    "original": {
+      "id": "ab8d1eba92e9",
+      "prompt": "Find the cross product of $\\langle 1,2,3 \\rangle$ and $\\langle 4,5,6 \\rangle$",
+      "answer": "$\\langle -3, 6, -3 \\rangle$",
+      "steps": [
+        "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 1 & 2 & 3 \\ 4 & 5 & 6 \\end{vmatrix}$",
+        "Calculate $\\mathbf{i}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
+        "Calculate $\\mathbf{j}$ component: $-(1 \\cdot 6 - 3 \\cdot 4) = -(6 - 12) = 6$",
+        "Calculate $\\mathbf{k}$ component: $1 \\cdot 5 - 2 \\cdot 4 = 5 - 8 = -3$",
+        "Combine components: $\\langle -3, 6, -3 \\rangle$"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "0d299f33563e",
+        "prompt": "Find the cross product of $\\langle 2,3,4 \\rangle$ and $\\langle 5,6,7 \\rangle$",
+        "answer": "$\\langle -1, 2, -1 \\rangle$",
+        "steps": [
+          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 2 & 3 & 4 \\ 5 & 6 & 7 \\end{vmatrix}$",
+          "Calculate $\\mathbf{i}$ component: $3 \\cdot 7 - 4 \\cdot 6 = 21 - 24 = -3$",
+          "Calculate $\\mathbf{j}$ component: $-(2 \\cdot 7 - 4 \\cdot 5) = -(14 - 20) = 6$",
+          "Calculate $\\mathbf{k}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
+          "Combine components: $\\langle -3, 6, -3 \\rangle$"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "025ba286c197",
+        "prompt": "Find the cross product of $\\langle -1,0,2 \\rangle$ and $\\langle 3,-4,5 \\rangle$",
+        "answer": "$\\langle 8, -1, -4 \\rangle$",
+        "steps": [
+          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ -1 & 0 & 2 \\ 3 & -4 & 5 \\end{vmatrix}$",
+          "Calculate $\\mathbf{i}$ component: $0 \\cdot 5 - 2 \\cdot (-4) = 0 + 8 = 8$",
+          "Calculate $\\mathbf{j}$ component: $-(-1 \\cdot 5 - 2 \\cdot 3) = -(-5 - 6) = 11$",
+          "Calculate $\\mathbf{k}$ component: $-1 \\cdot (-4) - 0 \\cdot 3 = 4 - 0 = 4$",
+          "Combine components: $\\langle 8, 11, 4 \\rangle$"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "eacc361ff716",
+        "prompt": "Find the cross product of $\\langle 0,1,-1 \\rangle$ and $\\langle 2,0,3 \\rangle$",
+        "answer": "$\\langle 3, -1, -2 \\rangle$",
+        "steps": [
+          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 0 & 1 & -1 \\ 2 & 0 & 3 \\end{vmatrix}$",
+          "Calculate $\\mathbf{i}$ component: $1 \\cdot 3 - (-1) \\cdot 0 = 3 - 0 = 3$",
+          "Calculate $\\mathbf{j}$ component: $-(0 \\cdot 3 - (-1) \\cdot 2) = -(0 + 2) = -2$",
+          "Calculate $\\mathbf{k}$ component: $0 \\cdot 0 - 1 \\cdot 2 = 0 - 2 = -2$",
+          "Combine components: $\\langle 3, -2, -2 \\rangle$"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d087b9f559a3",
+        "prompt": "Find the cross product of $\\langle 1, -2, 3 \\rangle$ and $\\langle -3, 4, 5 \\rangle$",
+        "answer": "$\\langle -22, -14, 2 \\rangle$",
+        "steps": [
+          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 1 & -2 & 3 \\ -3 & 4 & 5 \\end{vmatrix}$",
+          "Calculate $\\mathbf{i}$ component: $-2 \\cdot 5 - 3 \\cdot 4 = -10 - 12 = -22$",
+          "Calculate $\\mathbf{j}$ component: $-(1 \\cdot 5 - 3 \\cdot (-3)) = -(5 + 9) = -14$",
+          "Calculate $\\mathbf{k}$ component: $1 \\cdot 4 - (-2) \\cdot (-3) = 4 - 6 = -2$",
+          "Combine components: $\\langle -22, -14, -2 \\rangle$"
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "The cross product of two vectors in $\\mathbb{R}^3$ results in a vector perpendicular to both original vectors.",
+      "Use the determinant formula: $\\mathbf{a} \\times \\mathbf{b} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\end{vmatrix}$",
+      "Compute each component by expanding the determinant: $\\mathbf{i}(a_2b_3 - a_3b_2) - \\mathbf{j}(a_1b_3 - a_3b_1) + \\mathbf{k}(a_1b_2 - a_2b_1)$"
+    ],
+    "asked_solution": {
+      "id": "ab8d1eba92e9",
+      "prompt": "Find the cross product of $\\langle 1,2,3 \\rangle$ and $\\langle 4,5,6 \\rangle$",
+      "answer": "$\\langle -3, 6, -3 \\rangle$",
+      "steps": [
+        "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 1 & 2 & 3 \\ 4 & 5 & 6 \\end{vmatrix}$",
+        "Calculate $\\mathbf{i}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
+        "Calculate $\\mathbf{j}$ component: $-(1 \\cdot 6 - 3 \\cdot 4) = -(6 - 12) = 6$",
+        "Calculate $\\mathbf{k}$ component: $1 \\cdot 5 - 2 \\cdot 4 = 5 - 8 = -3$",
+        "Combine components: $\\langle -3, 6, -3 \\rangle$"
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  },
+  "evaluate the limit of (sin x)/x as x approaches 0": {
+    "source": "llm",
+    "topic": "analysis",
+    "original": {
+      "id": "ef1d0738e136",
+      "prompt": "Evaluate $ orall o 0 o rac{ ext{sin} x}{x} $.",
+      "answer": "1",
+      "steps": [
+        "Recognize the indeterminate form $ rac{0}{0} $ when directly substituting $ x = 0 $.",
+        "Use the inequality $ ext{cos} x < rac{ ext{sin} x}{x} < 1 $ for $ 0 < x < rac{ ext{\\pi}}{2} $.",
+        "Take the limit as $ x o 0 $, noting $ ext{cos} x o 1 $, so by the Squeeze Theorem, the limit is 1."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "c48074d02cef",
+        "prompt": "Evaluate $ orall o 0 o rac{ ext{sin} 2x}{x} $.",
+        "answer": "2",
+        "steps": [
+          "Substitute $ t = 2x $, so $ x = t/2 $ and $ t o 0 $ as $ x o 0 $.",
+          "Rewrite as $ rac{ ext{sin} t}{t/2} = 2 imes rac{ ext{sin} t}{t} $.",
+          "Apply the known limit $ orall o 0 o rac{ ext{sin} t}{t} = 1 $, so the result is $ 2 imes 1 = 2 $."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "5ceaac6e8015",
+        "prompt": "Evaluate $ orall o 0 o rac{ ext{sin} x}{x^2} $.",
+        "answer": "\\infty",
+        "steps": [
+          "Note $ rac{ ext{sin} x}{x^2} = \\frac{1}{x} \\times \\frac{ ext{sin} x}{x} $.",
+          "As $ x o 0 $, $ \\frac{ ext{sin} x}{x} o 1 $ but $ \\frac{1}{x} $ diverges to $ \\infty $.",
+          "Thus, the product diverges to $ \\infty $."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1b47e4846058",
+        "prompt": "Evaluate $ orall o 0 o rac{ ext{tan} x}{x} $.",
+        "answer": "1",
+        "steps": [
+          "Express $ ext{tan} x = \\frac{ ext{sin} x}{ ext{cos} x} $, so $ \\frac{ ext{tan} x}{x} = \\frac{\\text{sin} x}{x ext{cos} x} $.",
+          "Split into $ \\frac{ ext{sin} x}{x} \\times \\frac{1}{ ext{cos} x} $, both limits exist.",
+          "Since $ \\forall o 0 o \\frac{ ext{sin} x}{x} = 1 $ and $ \\text{cos} x o 1 $, the product is $ 1 imes 1 = 1 $."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "a1ba4c1f5288",
+        "prompt": "Evaluate $ orall o 0 o rac{ ext{sin} 3x}{x} $.",
+        "answer": "3",
+        "steps": [
+          "Substitute $ t = 3x $, so $ x = t/3 $ and $ t o 0 $ as $ x o 0 $.",
+          "Rewrite as $ \\frac{ ext{sin} t}{t/3} = 3 imes \\frac{ ext{sin} t}{t} $.",
+          "Apply the known limit $ \\forall o 0 o \\frac{ ext{sin} t}{t} = 1 $, so the result is $ 3 imes 1 = 3 $."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "The Squeeze Theorem for limits: If $ f(x) \between g(x) \between h(x) $ near $ a $ and $ orall o a o f(x) = h(x) = L $, then $ orall o a o g(x) = L $.",
+      "The behavior of $ rac{ ext{sin} x}{x} $ as $ x o 0 $: Approaches 1 due to geometric bounds on the unit circle.",
+      "Geometric interpretation: Area relationships in sectors, triangles, and trigonometric functions bound $ rac{ ext{sin} x}{x} $."
+    ],
+    "asked_solution": {
+      "id": "ef1d0738e136",
+      "prompt": "Evaluate $ orall o 0 o rac{ ext{sin} x}{x} $.",
+      "answer": "1",
+      "steps": [
+        "Recognize the indeterminate form $ rac{0}{0} $ when directly substituting $ x = 0 $.",
+        "Use the inequality $ ext{cos} x < rac{ ext{sin} x}{x} < 1 $ for $ 0 < x < rac{ ext{\\pi}}{2} $.",
+        "Take the limit as $ x o 0 $, noting $ ext{cos} x o 1 $, so by the Squeeze Theorem, the limit is 1."
+      ],
+      "unit": null,
+      "diagram": null
+    }
+  }
+}
