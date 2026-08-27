@@ -61,7 +61,19 @@ function renderMath(value: string, display: boolean): string {
   try {
     return katex.renderToString(value, { displayMode: display, throwOnError: false });
   } catch {
-    return value;
+    // Graceful fallback: never surface raw LaTeX markup to the student. Strip
+    // the most common command noise so it reads as plain text instead.
+    const escaped = value
+      .replace(/\\begin\{[^}]*\}|\\end\{[^}]*\}/g, " ")
+      .replace(/\\left|\\right/g, "")
+      .replace(/\\[a-zA-Z]+/g, "")
+      .replace(/[{}]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+    return escaped
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
   }
 }
 

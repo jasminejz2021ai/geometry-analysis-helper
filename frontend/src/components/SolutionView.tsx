@@ -28,6 +28,8 @@ export default function SolutionView({
   // Progressive reveal: steps start grayed/hidden; clicking a step reveals it
   // (and any earlier ones), so students can work through them one at a time.
   const [revealed, setRevealed] = useState(0);
+  // The final answer starts hidden; the student reveals it on click.
+  const [showAnswer, setShowAnswer] = useState(false);
 
   const containerClass = embedded
     ? ""
@@ -126,10 +128,22 @@ export default function SolutionView({
         })}
       </ol>
 
-      <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3">
-        <span className="text-sm font-medium text-emerald-800">
-          Answer: <MathText text={problem.answer} />
-        </span>
+      <div className="mt-4">
+        {showAnswer ? (
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3">
+            <span className="text-sm font-medium text-emerald-800">
+              Answer: <MathText text={problem.answer} />
+            </span>
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setShowAnswer(true)}
+            className="w-full rounded-xl border border-dashed border-emerald-300 bg-emerald-50/40 px-4 py-3 text-sm font-medium text-emerald-700 transition hover:bg-emerald-50"
+          >
+            Show answer
+          </button>
+        )}
       </div>
     </div>
   );

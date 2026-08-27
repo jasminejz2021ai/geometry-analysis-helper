@@ -6386,7 +6386,7 @@
       "answer": "a) \\(\\vec{PQ} = \\langle 2, -2, 2 \\rangle\\), \\(\\vec{PR} = \\langle -1, 2, 1 \\rangle\\) b) \\(3x + 2y - z = 5\\) c) \\(\\sqrt{14}\\)",
       "steps": [
         "a) Calculate vector components by subtracting initial coordinates from final coordinates: \\[\\vec{PQ} = \\langle 4-2, -1-1, 5-3 \\rangle = \\langle 2, -2, 2 \\rangle\\] \\[\\vec{PR} = \\langle 1-2, 3-1, 4-3 \\rangle = \\langle -1, 2, 1 \\rangle\\]",
-        "b) Find a normal vector to the plane using the cross product \\(\\vec{n} = \\vec{PQ} \\times \\vec{PR}\\): \\[\\vec{n} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k}  2 & -2 & 2  -1 & 2 & 1 \\end{vmatrix} = \\hat{i}(-2 - 4) - \\hat{j}(2 - (-2)) + \\hat{k}(4 - 2) = \\langle -6, -4, 2 \\rangle\\]\\nDivide by \\(-2\\) to simplify the normal vector to \\(\\vec{n} = \\langle 3, 2, -1 \\rangle\\).\\nUse point \\(P(2, 1, 3)\\) to solve for \\(D\\): \\[3(x) + 2(y) - 1(z) = 3(2) + 2(1) - 1(3) \\implies 3x + 2y - z = 5\\]",
+        "b) Find a normal vector to the plane using the cross product \\(\\vec{n} = \\vec{PQ} \\times \\vec{PR}\\): \\[\\vec{n} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & -2 & 2 \\\\ -1 & 2 & 1 \\end{vmatrix} = \\hat{i}(-2 - 4) - \\hat{j}(2 - (-2)) + \\hat{k}(4 - 2) = \\langle -6, -4, 2 \\rangle\\]\\nDivide by \\(-2\\) to simplify the normal vector to \\(\\vec{n} = \\langle 3, 2, -1 \\rangle\\).\\nUse point \\(P(2, 1, 3)\\) to solve for \\(D\\): \\[3(x) + 2(y) - 1(z) = 3(2) + 2(1) - 1(3) \\implies 3x + 2y - z = 5\\]",
         "c) The area of \\(\\triangle PQR\\) is \\(\\frac{1}{2}\\|\\vec{PQ} \\times \\vec{PR}\\|\\): \\[ext{Area} = \\frac{1}{2}\\sqrt{(-6)^2 + (-4)^2 + 2^2} = \\frac{1}{2}\\sqrt{36 + 16 + 4} = \\frac{1}{2}\\sqrt{56} = \\frac{1}{2}(2\\sqrt{14}) = \\sqrt{14}\\]"
       ],
       "unit": null,
@@ -6461,7 +6461,7 @@
         "prompt": "The vector equation of plane \\(R\\) is given as \\(\\langle x, y, z \\rangle = \\langle 2, -1, 4 \\rangle + s\\langle 1, 0, 2 \\rangle + t\\langle 0, 3, -1 \\rangle\\). Write the equation of plane \\(R\\) in standard form (\\(Ax + By + Cz = D\\)).",
         "answer": "\\(-6x + y + 3z = -1\\) (or \\(6x - y - 3z = 1\\))",
         "steps": [
-          "Find the normal vector by taking the cross product of the two direction vectors: \\[\\vec{n} = \\langle 1, 0, 2 \\rangle \\times \\langle 0, 3, -1 \\rangle = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k}  1 & 0 & 2  0 & 3 & -1 \\end{vmatrix}\\] \\[\\vec{n} = \\hat{i}(0 - 6) - \\hat{j}(-1 - 0) + \\hat{k}(3 - 0) = \\langle -6, 1, 3 \\rangle\\]",
+          "Find the normal vector by taking the cross product of the two direction vectors: \\[\\vec{n} = \\langle 1, 0, 2 \\rangle \\times \\langle 0, 3, -1 \\rangle = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 1 & 0 & 2 \\\\ 0 & 3 & -1 \\end{vmatrix}\\] \\[\\vec{n} = \\hat{i}(0 - 6) - \\hat{j}(-1 - 0) + \\hat{k}(3 - 0) = \\langle -6, 1, 3 \\rangle\\]",
           "Use point \\((2, -1, 4)\\) from the vector equation to find \\(D\\): \\[-6(x) + 1(y) + 3(z) = -6(2) + 1(-1) + 3(4)\\] \\[-6x + y + 3z = -12 - 1 + 12 = -1\\]"
         ],
         "unit": null,
@@ -6486,7 +6486,7 @@
         "prompt": "Given \\(\\langle 2, y, z \\rangle \\times \\langle 3, 1, 4 \\rangle = \\langle 11, -5, -7 \\rangle\\), solve for \\(y\\) and \\(z\\).",
         "answer": "\\(y = 3, z = 1\\)",
         "steps": [
-          "Compute the cross product algebraically: \\[\\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k}  2 & y & z  3 & 1 & 4 \\end{vmatrix} = \\hat{i}(4y - z) - \\hat{j}(8 - 3z) + \\hat{k}(2 - 3y)\\]",
+          "Compute the cross product algebraically: \\[\\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & y & z \\\\ 3 & 1 & 4 \\end{vmatrix} = \\hat{i}(4y - z) - \\hat{j}(8 - 3z) + \\hat{k}(2 - 3y)\\]",
           "Set components equal to \\(\\langle 11, -5, -7 \\rangle\\): 1) \\(4y - z = 11\\) 2) \\(-(8 - 3z) = -5 \\implies 3z - 8 = -5\\) 3) \\(2 - 3y = -7\\)",
           "Solve equation (3) for \\(y\\): \\[2 - 3y = -7 \\implies -3y = -9 \\implies y = 3\\]",
           "Solve equation (2) for \\(z\\): \\[3z - 8 = -5 \\implies 3z = 3 \\implies z = 1\\]",
@@ -6509,14 +6509,14 @@
     "topic": "analysis",
     "original": {
       "id": "820c37b06ba2",
-      "prompt": "Matrix \\(T\\) has eigenvectors \\(\\mathbf{v}_1 = \\begin{bmatrix} 1  2 \\end{bmatrix}\\) with eigenvalue \\(\\lambda_1 = 4\\) and \\(\\mathbf{v}_2 = \\begin{bmatrix} 3  -1 \\end{bmatrix}\\) with eigenvalue \\(\\lambda_2 = -1\\). Find \\(T \\begin{bmatrix} 11  1 \\end{bmatrix}\\).",
-      "answer": "\\(\\begin{bmatrix} -1  19 \\end{bmatrix}\\)",
+      "prompt": "Matrix \\(T\\) has eigenvectors \\(\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}\\) with eigenvalue \\(\\lambda_1 = 4\\) and \\(\\mathbf{v}_2 = \\begin{bmatrix} 3 \\\\ -1 \\end{bmatrix}\\) with eigenvalue \\(\\lambda_2 = -1\\). Find \\(T \\begin{bmatrix} 11 \\\\ 1 \\end{bmatrix}\\).",
+      "answer": "\\(\\begin{bmatrix} -1 \\\\ 19 \\end{bmatrix}\\)",
       "steps": [
-        "Express the vector \\(\\begin{bmatrix} 11  1 \\end{bmatrix}\\) as a linear combination of the eigenvectors \\(\\mathbf{v}_1\\) and \\(\\mathbf{v}_2\\): \\(\\begin{bmatrix} 11  1 \\end{bmatrix} = c_1 \\begin{bmatrix} 1  2 \\end{bmatrix} + c_2 \\begin{bmatrix} 3  -1 \\end{bmatrix}\\).",
+        "Express the vector \\(\\begin{bmatrix} 11 \\\\ 1 \\end{bmatrix}\\) as a linear combination of the eigenvectors \\(\\mathbf{v}_1\\) and \\(\\mathbf{v}_2\\): \\(\\begin{bmatrix} 11 \\\\ 1 \\end{bmatrix} = c_1 \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix} + c_2 \\begin{bmatrix} 3 \\\\ -1 \\end{bmatrix}\\).",
         "Set up the system of linear equations for coefficients \\(c_1\\) and \\(c_2\\): \\[c_1 + 3c_2 = 11\\] \\[2c_1 - c_2 = 1\\]",
         "From the second equation, \\(c_2 = 2c_1 - 1\\). Substitute into the first equation: \\[c_1 + 3(2c_1 - 1) = 11 \\implies 7c_1 - 3 = 11 \\implies 7c_1 = 14 \\implies c_1 = 2\\]",
         "Calculate \\(c_2\\): \\[c_2 = 2(2) - 1 = 3\\]",
-        "Apply the matrix transformation \\(T\\) using eigenvector properties \\(T \\mathbf{v}_k = \\lambda_k \\mathbf{v}_k\\): \\[T \\begin{bmatrix} 11  1 \\end{bmatrix} = T(2\\mathbf{v}_1 + 3\\mathbf{v}_2) = 2(\\lambda_1 \\mathbf{v}_1) + 3(\\lambda_2 \\mathbf{v}_2)\\] \\[= 2 \\cdot 4 \\begin{bmatrix} 1  2 \\end{bmatrix} + 3 \\cdot (-1) \\begin{bmatrix} 3  -1 \\end{bmatrix} = 8 \\begin{bmatrix} 1  2 \\end{bmatrix} - 3 \\begin{bmatrix} 3  -1 \\end{bmatrix}\\] \\[= \\begin{bmatrix} 8  16 \\end{bmatrix} + \\begin{bmatrix} -9  3 \\end{bmatrix} = \\begin{bmatrix} -1  19 \\end{bmatrix}\\]"
+        "Apply the matrix transformation \\(T\\) using eigenvector properties \\(T \\mathbf{v}_k = \\lambda_k \\mathbf{v}_k\\): \\[T \\begin{bmatrix} 11 \\\\ 1 \\end{bmatrix} = T(2\\mathbf{v}_1 + 3\\mathbf{v}_2) = 2(\\lambda_1 \\mathbf{v}_1) + 3(\\lambda_2 \\mathbf{v}_2)\\] \\[= 2 \\cdot 4 \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix} + 3 \\cdot (-1) \\begin{bmatrix} 3 \\\\ -1 \\end{bmatrix} = 8 \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix} - 3 \\begin{bmatrix} 3 \\\\ -1 \\end{bmatrix}\\] \\[= \\begin{bmatrix} 8 \\\\ 16 \\end{bmatrix} + \\begin{bmatrix} -9 \\\\ 3 \\end{bmatrix} = \\begin{bmatrix} -1 \\\\ 19 \\end{bmatrix}\\]"
       ],
       "unit": null,
       "diagram": null
@@ -6550,12 +6550,12 @@
       },
       {
         "id": "a17ba178e4c9",
-        "prompt": "Let \\(A = \\begin{bmatrix} 2 & 1  5 & 3 \\end{bmatrix}\\) and \\(B = \\begin{bmatrix} 3 & -1  x & 2 \\end{bmatrix}\\). If \\(B\\) is the inverse of \\(A\\), find the value of \\(x\\).",
+        "prompt": "Let \\(A = \\begin{bmatrix} 2 & 1 \\\\ 5 & 3 \\end{bmatrix}\\) and \\(B = \\begin{bmatrix} 3 & -1 \\\\ x & 2 \\end{bmatrix}\\). If \\(B\\) is the inverse of \\(A\\), find the value of \\(x\\).",
         "answer": "\\(x = -5\\)",
         "steps": [
-          "Use the determinant inverse formula for a \\(2 \\times 2\\) matrix \\(A = \\begin{bmatrix} a & b  c & d \\end{bmatrix}\\): \\(A^{-1} = \\frac{1}{ad - bc}\\begin{bmatrix} d & -b  -c & a \\end{bmatrix}\\).",
+          "Use the determinant inverse formula for a \\(2 \\times 2\\) matrix \\(A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}\\): \\(A^{-1} = \\frac{1}{ad - bc}\\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}\\).",
           "Compute \\(\\det(A) = (2)(3) - (1)(5) = 6 - 5 = 1\\).",
-          "Write \\(A^{-1}\\): \\(A^{-1} = \\frac{1}{1}\\begin{bmatrix} 3 & -1  -5 & 2 \\end{bmatrix} = \\begin{bmatrix} 3 & -1  -5 & 2 \\end{bmatrix}\\).",
+          "Write \\(A^{-1}\\): \\(A^{-1} = \\frac{1}{1}\\begin{bmatrix} 3 & -1 \\\\ -5 & 2 \\end{bmatrix} = \\begin{bmatrix} 3 & -1 \\\\ -5 & 2 \\end{bmatrix}\\).",
           "Equate corresponding entries of \\(B\\) and \\(A^{-1}\\) to get \\(x = -5\\)."
         ],
         "unit": null,
@@ -6563,11 +6563,11 @@
       },
       {
         "id": "a6d46a11e516",
-        "prompt": "If \\(A = \\begin{bmatrix} \\sin b & 0  0 & \\sin b \\end{bmatrix}\\) and \\(\\det\\left(A^2 - \\frac{1}{4}I\\right) = 0\\), find all possible values of \\(b\\) on the interval \\([0, 2\\pi)\\).",
+        "prompt": "If \\(A = \\begin{bmatrix} \\sin b & 0 \\\\ 0 & \\sin b \\end{bmatrix}\\) and \\(\\det\\left(A^2 - \\frac{1}{4}I\\right) = 0\\), find all possible values of \\(b\\) on the interval \\([0, 2\\pi)\\).",
         "answer": "\\(b = \\frac{\\pi}{6}, \\frac{5\\pi}{6}, \\frac{7\\pi}{6}, \\frac{11\\pi}{6}\\)",
         "steps": [
-          "Compute \\(A^2\\): \\(A^2 = \\begin{bmatrix} \\sin^2 b & 0  0 & \\sin^2 b \\end{bmatrix}\\).",
-          "Subtract \\(\\frac{1}{4}I\\): \\(A^2 - \\frac{1}{4}I = \\begin{bmatrix} \\sin^2 b - \\frac{1}{4} & 0  0 & \\sin^2 b - \\frac{1}{4} \\end{bmatrix}\\).",
+          "Compute \\(A^2\\): \\(A^2 = \\begin{bmatrix} \\sin^2 b & 0 \\\\ 0 & \\sin^2 b \\end{bmatrix}\\).",
+          "Subtract \\(\\frac{1}{4}I\\): \\(A^2 - \\frac{1}{4}I = \\begin{bmatrix} \\sin^2 b - \\frac{1}{4} & 0 \\\\ 0 & \\sin^2 b - \\frac{1}{4} \\end{bmatrix}\\).",
           "Calculate determinant: \\(\\det\\left(A^2 - \\frac{1}{4}I\\right) = \\left(\\sin^2 b - \\frac{1}{4}\\right)^2 = 0\\).",
           "Solve for \\(\\sin b\\): \\(\\sin^2 b - \\frac{1}{4} = 0 \\implies \\sin^2 b = \\frac{1}{4} \\implies \\sin b = \\pm \\frac{1}{2}\\).",
           "Find values of \\(b \\in [0, 2\\pi)\\): \\(b = \\frac{\\pi}{6}, \\frac{5\\pi}{6}, \\frac{7\\pi}{6}, \\frac{11\\pi}{6}\\)."
@@ -6577,10 +6577,10 @@
       },
       {
         "id": "6ba8b68299bb",
-        "prompt": "Find both eigenvalues for the matrix \\(M = \\begin{bmatrix} 5 & 2  3 & 4 \\end{bmatrix}\\).",
+        "prompt": "Find both eigenvalues for the matrix \\(M = \\begin{bmatrix} 5 & 2 \\\\ 3 & 4 \\end{bmatrix}\\).",
         "answer": "\\(\\lambda_1 = 7, \\lambda_2 = 2\\)",
         "steps": [
-          "Set up the characteristic equation \\(\\det(M - \\lambda I) = 0\\): \\(\\det\\begin{bmatrix} 5 - \\lambda & 2  3 & 4 - \\lambda \\end{bmatrix} = 0\\).",
+          "Set up the characteristic equation \\(\\det(M - \\lambda I) = 0\\): \\(\\det\\begin{bmatrix} 5 - \\lambda & 2 \\\\ 3 & 4 - \\lambda \\end{bmatrix} = 0\\).",
           "Expand the determinant: \\((5 - \\lambda)(4 - \\lambda) - (2)(3) = 0\\).",
           "Simplify the quadratic equation: \\(\\lambda^2 - 9\\lambda + 20 - 6 = 0 \\implies \\lambda^2 - 9\\lambda + 14 = 0\\).",
           "Factor: \\((\\lambda - 7)(\\lambda - 2) = 0\\).",
@@ -6591,12 +6591,12 @@
       },
       {
         "id": "2e076f13acef",
-        "prompt": "Write the system as a \\(3 \\times 4\\) augmented matrix, then use Gauss-Jordan elimination to solve the linear system: \\[\\begin{aligned}\\nx + 2y + z &= 8  2x + 5y + 4z &= 23  3x + 6y + 4z &= 27 \\end{aligned}\\]",
+        "prompt": "Write the system as a \\(3 \\times 4\\) augmented matrix, then use Gauss-Jordan elimination to solve the linear system: \\[\\begin{aligned}\\nx + 2y + z &= 8 \\\\ 2x + 5y + 4z &= 23 \\\\ 3x + 6y + 4z &= 27 \\end{aligned}\\]",
         "answer": "\\(x = 3, y = 1, z = 3\\)",
         "steps": [
-          "Write the augmented matrix: \\[\\begin{bmatrix} 1 & 2 & 1 & | & 8  2 & 5 & 4 & | & 23  3 & 6 & 4 & | & 27 \\end{bmatrix}\\]",
+          "Write the augmented matrix: \\[\\begin{bmatrix} 1 & 2 & 1 & | & 8 \\\\ 2 & 5 & 4 & | & 23 \\\\ 3 & 6 & 4 & | & 27 \\end{bmatrix}\\]",
           "Perform row operations to create zeros below the first pivot: \\(R_2 \\to R_2 - 2R_1\\) gives \\([0, 1, 2 | 7]\\). \\(R_3 \\to R_3 - 3R_1\\) gives \\([0, 0, 1 | 3]\\).",
-          "The matrix is now in upper triangular form: \\[\\begin{bmatrix} 1 & 2 & 1 & | & 8  0 & 1 & 2 & | & 7  0 & 0 & 1 & | & 3 \\end{bmatrix}\\]",
+          "The matrix is now in upper triangular form: \\[\\begin{bmatrix} 1 & 2 & 1 & | & 8 \\\\ 0 & 1 & 2 & | & 7 \\\\ 0 & 0 & 1 & | & 3 \\end{bmatrix}\\]",
           "Perform back-substitution/row operations to reach RREF: \\(R_2 \\to R_2 - 2R_3 \\implies [0, 1, 0 | 1]\\). \\(R_1 \\to R_1 - R_3 \\implies [1, 2, 0 | 5]\\). \\(R_1 \\to R_1 - 2R_2 \\implies [1, 0, 0 | 3]\\).",
           "Read off the solution: \\(x = 3, y = 1, z = 3\\)."
         ],
@@ -6605,12 +6605,12 @@
       },
       {
         "id": "4b4d8f47b557",
-        "prompt": "An absorbing Markov chain has transient states submatrix \\(Q = \\begin{bmatrix} 0.25 & 0.75  0 & 0.75 \\end{bmatrix}\\). Compute the Fundamental Matrix \\(N = (I - Q)^{-1}\\).",
-        "answer": "\\(N = \\begin{bmatrix} 4/3 & 4  0 & 4 \\end{bmatrix}\\)",
+        "prompt": "An absorbing Markov chain has transient states submatrix \\(Q = \\begin{bmatrix} 0.25 & 0.75 \\\\ 0 & 0.75 \\end{bmatrix}\\). Compute the Fundamental Matrix \\(N = (I - Q)^{-1}\\).",
+        "answer": "\\(N = \\begin{bmatrix} 4/3 & 4 \\\\ 0 & 4 \\end{bmatrix}\\)",
         "steps": [
-          "Form the matrix \\(I - Q\\): \\[I - Q = \\begin{bmatrix} 1 & 0  0 & 1 \\end{bmatrix} - \\begin{bmatrix} 0.25 & 0.75  0 & 0.75 \\end{bmatrix} = \\begin{bmatrix} 0.75 & -0.75  0 & 0.25 \\end{bmatrix} = \\begin{bmatrix} 3/4 & -3/4  0 & 1/4 \\end{bmatrix}\\]",
+          "Form the matrix \\(I - Q\\): \\[I - Q = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} - \\begin{bmatrix} 0.25 & 0.75 \\\\ 0 & 0.75 \\end{bmatrix} = \\begin{bmatrix} 0.75 & -0.75 \\\\ 0 & 0.25 \\end{bmatrix} = \\begin{bmatrix} 3/4 & -3/4 \\\\ 0 & 1/4 \\end{bmatrix}\\]",
           "Calculate determinant \\(\\det(I - Q) = (3/4)(1/4) - (0)(-3/4) = 3/16\\).",
-          "Compute inverse \\(N = (I - Q)^{-1}\\): \\[N = \\frac{1}{3/16} \\begin{bmatrix} 1/4 & 3/4  0 & 3/4 \\end{bmatrix} = \\frac{16}{3} \\begin{bmatrix} 1/4 & 3/4  0 & 3/4 \\end{bmatrix} = \\begin{bmatrix} 4/3 & 4  0 & 4 \\end{bmatrix}\\]"
+          "Compute inverse \\(N = (I - Q)^{-1}\\): \\[N = \\frac{1}{3/16} \\begin{bmatrix} 1/4 & 3/4 \\\\ 0 & 3/4 \\end{bmatrix} = \\frac{16}{3} \\begin{bmatrix} 1/4 & 3/4 \\\\ 0 & 3/4 \\end{bmatrix} = \\begin{bmatrix} 4/3 & 4 \\\\ 0 & 4 \\end{bmatrix}\\]"
         ],
         "unit": null,
         "diagram": null
@@ -6618,7 +6618,7 @@
       {
         "id": "d36204577d5c",
         "prompt": "A market study models consumer movement between Brand A, Brand B, and Brand C. Each month, 80% of Brand A users stay with A, 10% switch to B, and 10% switch to C. For Brand B, 20% switch to A, 70% stay with B, and 10% switch to C. For Brand C, 30% switch to A, 30% switch to B, and 40% stay with C. Write a system of 3 linear equations and 3 unknowns (\\(x, y, z\\)) that could be used to solve for the equilibrium distribution of a population of 10,000 customers. (Do not solve the system).",
-        "answer": "\\(\\begin{aligned} -0.20x + 0.20y + 0.30z &= 0  0.10x - 0.30y + 0.30z &= 0  x + y + z &= 10000 \\end{aligned}\\)",
+        "answer": "\\(\\begin{aligned} -0.20x + 0.20y + 0.30z &= 0 \\\\ 0.10x - 0.30y + 0.30z &= 0 \\\\ x + y + z &= 10000 \\end{aligned}\\)",
         "steps": [
           "Identify the transition probabilities entering each state at equilibrium:\\nState A (\\(x\\)): receives \\(0.80x\\) from A, \\(0.20y\\) from B, and \\(0.30z\\) from C.\\nState B (\\(y\\)): receives \\(0.10x\\) from A, \\(0.70y\\) from B, and \\(0.30z\\) from C.",
           "Set up the equilibrium state equations \\(X P = X\\): \\[x = 0.80x + 0.20y + 0.30z \\implies -0.20x + 0.20y + 0.30z = 0\\] \\[y = 0.10x + 0.70y + 0.30z \\implies 0.10x - 0.30y + 0.30z = 0\\]",
