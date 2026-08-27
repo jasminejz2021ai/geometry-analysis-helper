@@ -29,8 +29,6 @@ from pydantic import ValidationError
 # (https://www.gunnmaths.org/analysis). Most units are a single browsable
 # topic; AtPS is split into subsections so its large problem set is grouped.
 # Each topic id maps to cached content built from real past quizzes/tests.
-# NOTE: Growth, GAtM, and Limits and Calculus are pending a cache build
-# (Gemini free-tier daily quota); add them back here once cached.
 _ANALYSIS_UNITS: list[tuple[str, list[str]]] = [
     (
         "Algebra Through Problem Solving (AtPS)",
@@ -46,7 +44,10 @@ _ANALYSIS_UNITS: list[tuple[str, list[str]]] = [
             "Probability",
             "Polar and 3D",
             "Vectors and Parametrics",
+            "Growth",
             "Matrices",
+            "A Geometric Approach to Matrices (GAtM)",
+            "Limits and Calculus",
         ],
     ),
 ]
