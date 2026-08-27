@@ -46,29 +46,39 @@ export default function PracticeCard({ problem, index }: Props) {
         </div>
       )}
 
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        <input
+      <div className="mt-3 flex flex-col gap-2">
+        <textarea
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === "Enter") submit();
+            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit();
           }}
-          placeholder={problem.unit ? `Answer (${problem.unit})` : "Your answer"}
-          className="w-48 rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+          rows={4}
+          placeholder={
+            problem.unit
+              ? `Write your answer and work (${problem.unit})`
+              : "Write your answer and work here…"
+          }
+          className="w-full min-h-[7rem] resize-y rounded-lg border border-slate-300 px-3 py-2 font-mono text-sm leading-relaxed outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
         />
-        <button
-          onClick={submit}
-          disabled={checking || !answer.trim()}
-          className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-700 disabled:opacity-50"
-        >
-          {checking ? "Checking..." : "Check"}
-        </button>
-        <button
-          onClick={() => setShowSteps((s) => !s)}
-          className="rounded-lg border border-slate-200 px-4 py-2 text-sm text-slate-600 transition hover:bg-slate-50"
-        >
-          {showSteps ? "Hide steps" : "Show steps"}
-        </button>
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={submit}
+            disabled={checking || !answer.trim()}
+            className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-700 disabled:opacity-50"
+          >
+            {checking ? "Checking..." : "Check"}
+          </button>
+          <button
+            onClick={() => setShowSteps((s) => !s)}
+            className="rounded-lg border border-slate-200 px-4 py-2 text-sm text-slate-600 transition hover:bg-slate-50"
+          >
+            {showSteps ? "Hide steps" : "Show steps"}
+          </button>
+          <span className="text-xs text-slate-400">
+            Tip: press ⌘/Ctrl + Enter to check
+          </span>
+        </div>
       </div>
 
       {result && (
@@ -79,7 +89,7 @@ export default function PracticeCard({ problem, index }: Props) {
               : "bg-rose-50 text-rose-800"
           }`}
         >
-          {result.feedback}
+          <MathText text={result.feedback} />
         </div>
       )}
 

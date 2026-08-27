@@ -7,10 +7,10 @@
       "prompt": "A right triangle has a hypotenuse of 68 cm and one leg of 32 cm. Find the length of the other leg.",
       "answer": "60 cm",
       "steps": [
-        "\\text{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
+        "ext{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
         "b = \\sqrt{68^2 - 32^2}",
         "b = \\sqrt{4624 - 1024}",
-        "b = \\sqrt{3600} = 60 \\text{cm}"
+        "b = \\sqrt{3600} = 60 ext{cm}"
       ],
       "unit": "cm",
       "diagram": {
@@ -32,10 +32,10 @@
         "prompt": "A right triangle has a hypotenuse of 164 cm and one leg of 36 cm. Find the length of the other leg.",
         "answer": "160 cm",
         "steps": [
-          "\\text{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
+          "ext{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
           "b = \\sqrt{164^2 - 36^2}",
           "b = \\sqrt{26896 - 1296}",
-          "b = \\sqrt{25600} = 160 \\text{cm}"
+          "b = \\sqrt{25600} = 160 ext{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -56,11 +56,11 @@
         "prompt": "A right triangle has legs of length 28 cm and 96 cm. Find the length of the hypotenuse.",
         "answer": "100 cm",
         "steps": [
-          "\\text{Use } a^2 + b^2 = c^2.",
+          "ext{Use } a^2 + b^2 = c^2.",
           "28^2 + 96^2 = c^2",
           "784 + 9216 = c^2",
           "10000 = c^2",
-          "c = \\sqrt{10000} = 100 \\text{cm}"
+          "c = \\sqrt{10000} = 100 ext{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -81,10 +81,10 @@
         "prompt": "A right triangle has a hypotenuse of 50 cm and one leg of 14 cm. Find the length of the other leg.",
         "answer": "48 cm",
         "steps": [
-          "\\text{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
+          "ext{Use } a^2 + b^2 = c^2 \\Rightarrow b = \\sqrt{c^2 - a^2}.",
           "b = \\sqrt{50^2 - 14^2}",
           "b = \\sqrt{2500 - 196}",
-          "b = \\sqrt{2304} = 48 \\text{cm}"
+          "b = \\sqrt{2304} = 48 ext{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -105,11 +105,11 @@
         "prompt": "A right triangle has legs of length 32 cm and 60 cm. Find the length of the hypotenuse.",
         "answer": "68 cm",
         "steps": [
-          "\\text{Use } a^2 + b^2 = c^2.",
+          "ext{Use } a^2 + b^2 = c^2.",
           "32^2 + 60^2 = c^2",
           "1024 + 3600 = c^2",
           "4624 = c^2",
-          "c = \\sqrt{4624} = 68 \\text{cm}"
+          "c = \\sqrt{4624} = 68 ext{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -156,7 +156,7 @@
         "A = \\pi r^2",
         "= \\pi \\cdot 12^2",
         "\\approx 3.14 \\cdot 144",
-        "\\approx 452.16 \\text{cm}^2"
+        "\\approx 452.16 ext{cm}^2"
       ],
       "unit": "cm^2",
       "diagram": {
@@ -177,7 +177,7 @@
           "A = \\pi r^2",
           "= \\pi \\cdot 14^2",
           "\\approx 3.14 \\cdot 196",
-          "\\approx 615.44 \\text{cm}^2"
+          "\\approx 615.44 ext{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -197,7 +197,7 @@
           "C = 2\\pi r",
           "= 2 \\cdot \\pi \\cdot 3",
           "\\approx 2 \\cdot 3.14 \\cdot 3",
-          "\\approx 18.84 \\text{cm}"
+          "\\approx 18.84 ext{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -217,7 +217,7 @@
           "C = 2\\pi r",
           "= 2 \\cdot \\pi \\cdot 12",
           "\\approx 2 \\cdot 3.14 \\cdot 12",
-          "\\approx 75.36 \\text{cm}"
+          "\\approx 75.36 ext{cm}"
         ],
         "unit": "cm",
         "diagram": {
@@ -237,7 +237,7 @@
           "A = \\pi r^2",
           "= \\pi \\cdot 9^2",
           "\\approx 3.14 \\cdot 81",
-          "\\approx 254.34 \\text{cm}^2"
+          "\\approx 254.34 ext{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -277,7 +277,7 @@
       "prompt": "Two angles of a triangle measure 67 degrees and 54 degrees. Find the third angle.",
       "answer": "59 degrees",
       "steps": [
-        "\\text{The angles of a triangle sum to } 180^\\circ.",
+        "ext{The angles of a triangle sum to } 180^\\circ.",
         "x = 180 - 67 - 54",
         "x = 59^\\circ"
       ],
@@ -290,7 +290,7 @@
         "prompt": "Two angles are supplementary. One angle measures 136 degrees. Find the other angle.",
         "answer": "44 degrees",
         "steps": [
-          "\\text{Supplementary angles sum to } 180^\\circ.",
+          "ext{Supplementary angles sum to } 180^\\circ.",
           "x = 180 - 136",
           "x = 44^\\circ"
         ],
@@ -302,7 +302,7 @@
         "prompt": "Two angles of a triangle measure 80 degrees and 68 degrees. Find the third angle.",
         "answer": "32 degrees",
         "steps": [
-          "\\text{The angles of a triangle sum to } 180^\\circ.",
+          "ext{The angles of a triangle sum to } 180^\\circ.",
           "x = 180 - 80 - 68",
           "x = 32^\\circ"
         ],
@@ -314,7 +314,7 @@
         "prompt": "Two angles are complementary. One angle measures 17 degrees. Find the other angle.",
         "answer": "73 degrees",
         "steps": [
-          "\\text{Complementary angles sum to } 90^\\circ.",
+          "ext{Complementary angles sum to } 90^\\circ.",
           "x = 90 - 17",
           "x = 73^\\circ"
         ],
@@ -326,7 +326,7 @@
         "prompt": "Two angles are supplementary. One angle measures 118 degrees. Find the other angle.",
         "answer": "62 degrees",
         "steps": [
-          "\\text{Supplementary angles sum to } 180^\\circ.",
+          "ext{Supplementary angles sum to } 180^\\circ.",
           "x = 180 - 118",
           "x = 62^\\circ"
         ],
@@ -361,8 +361,8 @@
       "prompt": "Find the midpoint of the segment joining (1, 1) and (7, -7).",
       "answer": "(4, -3)",
       "steps": [
-        "M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}\\right)",
-        "= \\left(\\frac{1+7}{2}, \\frac{1+-7}{2}\\right)",
+        "M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2} \\right)",
+        "= \\left(\\frac{1+7}{2}, \\frac{1+-7}{2} \\right)",
         "= (4, -3)"
       ],
       "unit": null,
@@ -390,8 +390,8 @@
         "prompt": "Find the midpoint of the segment joining (-2, 2) and (-5, -2).",
         "answer": "(-3.5, 0)",
         "steps": [
-          "M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}\\right)",
-          "= \\left(\\frac{-2+-5}{2}, \\frac{2+-2}{2}\\right)",
+          "M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2} \\right)",
+          "= \\left(\\frac{-2+-5}{2}, \\frac{2+-2}{2} \\right)",
           "= (-3.5, 0)"
         ],
         "unit": null,
@@ -447,8 +447,8 @@
         "prompt": "Find the midpoint of the segment joining (0, 2) and (-5, -10).",
         "answer": "(-2.5, -4)",
         "steps": [
-          "M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}\\right)",
-          "= \\left(\\frac{0+-5}{2}, \\frac{2+-10}{2}\\right)",
+          "M = \\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2} \\right)",
+          "= \\left(\\frac{0+-5}{2}, \\frac{2+-10}{2} \\right)",
           "= (-2.5, -4)"
         ],
         "unit": null,
@@ -528,9 +528,9 @@
       "prompt": "A triangle has a base of 14 cm and a height of 5 cm. Find its area.",
       "answer": "35 cm^2",
       "steps": [
-        "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
-        "= \\tfrac{1}{2} \\cdot 14 \\cdot 5",
-        "= 35 \\text{cm}^2"
+        "ext{Area} = frac{1}{2} \\cdot b \\cdot h",
+        "= frac{1}{2} \\cdot 14 \\cdot 5",
+        "= 35 ext{cm}^2"
       ],
       "unit": "cm^2",
       "diagram": {
@@ -552,9 +552,9 @@
         "prompt": "A triangle has a base of 8 cm and a height of 18 cm. Find its area.",
         "answer": "72 cm^2",
         "steps": [
-          "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
-          "= \\tfrac{1}{2} \\cdot 8 \\cdot 18",
-          "= 72 \\text{cm}^2"
+          "ext{Area} = frac{1}{2} \\cdot b \\cdot h",
+          "= frac{1}{2} \\cdot 8 \\cdot 18",
+          "= 72 ext{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -575,9 +575,9 @@
         "prompt": "A triangle has a base of 20 cm and a height of 5 cm. Find its area.",
         "answer": "50 cm^2",
         "steps": [
-          "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
-          "= \\tfrac{1}{2} \\cdot 20 \\cdot 5",
-          "= 50 \\text{cm}^2"
+          "ext{Area} = frac{1}{2} \\cdot b \\cdot h",
+          "= frac{1}{2} \\cdot 20 \\cdot 5",
+          "= 50 ext{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -598,9 +598,9 @@
         "prompt": "A triangle has a base of 15 cm and a height of 11 cm. Find its area.",
         "answer": "82.5 cm^2",
         "steps": [
-          "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
-          "= \\tfrac{1}{2} \\cdot 15 \\cdot 11",
-          "= 82.5 \\text{cm}^2"
+          "ext{Area} = frac{1}{2} \\cdot b \\cdot h",
+          "= frac{1}{2} \\cdot 15 \\cdot 11",
+          "= 82.5 ext{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -621,9 +621,9 @@
         "prompt": "A triangle has a base of 19 cm and a height of 11 cm. Find its area.",
         "answer": "104.5 cm^2",
         "steps": [
-          "\\text{Area} = \\tfrac{1}{2} \\cdot b \\cdot h",
-          "= \\tfrac{1}{2} \\cdot 19 \\cdot 11",
-          "= 104.5 \\text{cm}^2"
+          "ext{Area} = frac{1}{2} \\cdot b \\cdot h",
+          "= frac{1}{2} \\cdot 19 \\cdot 11",
+          "= 104.5 ext{cm}^2"
         ],
         "unit": "cm^2",
         "diagram": {
@@ -722,13 +722,13 @@
       },
       {
         "id": "da6544d2ca15",
-        "prompt": "Prove $ 1^3 + 2^3 + \\dots + n^3 = \\left(\\frac{n(n+1)}{2}\\right)^2 $ by induction",
-        "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ \\left(\\frac{(k+1)(k+2)}{2}\\right)^2 $",
+        "prompt": "Prove $ 1^3 + 2^3 + \\dots + n^3 = \\left(\\frac{n(n+1)}{2} \\right)^2 $ by induction",
+        "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ \\left(\\frac{(k+1)(k+2)}{2} \\right)^2 $",
         "steps": [
-          "Base case: For $ n=1 $, left side is 1, right side is $ \\left(\\frac{1(2)}{2}\\right)^2 = 1 $",
-          "Assume true for $ n=k $: $ 1^3+\\dots+k^3 = \\left(\\frac{k(k+1)}{2}\\right)^2 $",
+          "Base case: For $ n=1 $, left side is 1, right side is $ \\left(\\frac{1(2)}{2} \\right)^2 = 1 $",
+          "Assume true for $ n=k $: $ 1^3+\\dots+k^3 = \\left(\\frac{k(k+1)}{2} \\right)^2 $",
           "Prove for $ n=k+1 $: Add $ (k+1)^3 $ to both sides",
-          "Simplify: $ \\left(\\frac{k(k+1)}{2}\\right)^2 + (k+1)^3 = \\left(\\frac{(k+1)(k+2)}{2}\\right)^2 $",
+          "Simplify: $ \\left(\\frac{k(k+1)}{2} \\right)^2 + (k+1)^3 = \\left(\\frac{(k+1)(k+2)}{2} \\right)^2 $",
           "Conclusion: Formula holds for all $ n \\geq 1 $"
         ],
         "unit": null,
@@ -1028,14 +1028,14 @@
     "topic": "analysis",
     "original": {
       "id": "ab8d1eba92e9",
-      "prompt": "Find the cross product of $\\langle 1,2,3 \\rangle$ and $\\langle 4,5,6 \\rangle$",
-      "answer": "$\\langle -3, 6, -3 \\rangle$",
+      "prompt": "Find the cross product of $\\langle 1,2,3 angle$ and $\\langle 4,5,6 angle$",
+      "answer": "$\\langle -3, 6, -3 angle$",
       "steps": [
         "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 1 & 2 & 3 4 & 5 & 6 \\end{vmatrix}$",
         "Calculate $\\mathbf{i}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
         "Calculate $\\mathbf{j}$ component: $-(1 \\cdot 6 - 3 \\cdot 4) = -(6 - 12) = 6$",
         "Calculate $\\mathbf{k}$ component: $1 \\cdot 5 - 2 \\cdot 4 = 5 - 8 = -3$",
-        "Combine components: $\\langle -3, 6, -3 \\rangle$"
+        "Combine components: $\\langle -3, 6, -3 angle$"
       ],
       "unit": null,
       "diagram": null
@@ -1043,56 +1043,56 @@
     "practice": [
       {
         "id": "0d299f33563e",
-        "prompt": "Find the cross product of $\\langle 2,3,4 \\rangle$ and $\\langle 5,6,7 \\rangle$",
-        "answer": "$\\langle -1, 2, -1 \\rangle$",
+        "prompt": "Find the cross product of $\\langle 2,3,4 angle$ and $\\langle 5,6,7 angle$",
+        "answer": "$\\langle -1, 2, -1 angle$",
         "steps": [
           "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 2 & 3 & 4 5 & 6 & 7 \\end{vmatrix}$",
           "Calculate $\\mathbf{i}$ component: $3 \\cdot 7 - 4 \\cdot 6 = 21 - 24 = -3$",
           "Calculate $\\mathbf{j}$ component: $-(2 \\cdot 7 - 4 \\cdot 5) = -(14 - 20) = 6$",
           "Calculate $\\mathbf{k}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
-          "Combine components: $\\langle -3, 6, -3 \\rangle$"
+          "Combine components: $\\langle -3, 6, -3 angle$"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "025ba286c197",
-        "prompt": "Find the cross product of $\\langle -1,0,2 \\rangle$ and $\\langle 3,-4,5 \\rangle$",
-        "answer": "$\\langle 8, -1, -4 \\rangle$",
+        "prompt": "Find the cross product of $\\langle -1,0,2 angle$ and $\\langle 3,-4,5 angle$",
+        "answer": "$\\langle 8, -1, -4 angle$",
         "steps": [
           "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} -1 & 0 & 2 3 & -4 & 5 \\end{vmatrix}$",
           "Calculate $\\mathbf{i}$ component: $0 \\cdot 5 - 2 \\cdot (-4) = 0 + 8 = 8$",
           "Calculate $\\mathbf{j}$ component: $-(-1 \\cdot 5 - 2 \\cdot 3) = -(-5 - 6) = 11$",
           "Calculate $\\mathbf{k}$ component: $-1 \\cdot (-4) - 0 \\cdot 3 = 4 - 0 = 4$",
-          "Combine components: $\\langle 8, 11, 4 \\rangle$"
+          "Combine components: $\\langle 8, 11, 4 angle$"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "eacc361ff716",
-        "prompt": "Find the cross product of $\\langle 0,1,-1 \\rangle$ and $\\langle 2,0,3 \\rangle$",
-        "answer": "$\\langle 3, -1, -2 \\rangle$",
+        "prompt": "Find the cross product of $\\langle 0,1,-1 angle$ and $\\langle 2,0,3 angle$",
+        "answer": "$\\langle 3, -1, -2 angle$",
         "steps": [
           "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 0 & 1 & -1 2 & 0 & 3 \\end{vmatrix}$",
           "Calculate $\\mathbf{i}$ component: $1 \\cdot 3 - (-1) \\cdot 0 = 3 - 0 = 3$",
           "Calculate $\\mathbf{j}$ component: $-(0 \\cdot 3 - (-1) \\cdot 2) = -(0 + 2) = -2$",
           "Calculate $\\mathbf{k}$ component: $0 \\cdot 0 - 1 \\cdot 2 = 0 - 2 = -2$",
-          "Combine components: $\\langle 3, -2, -2 \\rangle$"
+          "Combine components: $\\langle 3, -2, -2 angle$"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "d087b9f559a3",
-        "prompt": "Find the cross product of $\\langle 1, -2, 3 \\rangle$ and $\\langle -3, 4, 5 \\rangle$",
-        "answer": "$\\langle -22, -14, 2 \\rangle$",
+        "prompt": "Find the cross product of $\\langle 1, -2, 3 angle$ and $\\langle -3, 4, 5 angle$",
+        "answer": "$\\langle -22, -14, 2 angle$",
         "steps": [
           "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 1 & -2 & 3 -3 & 4 & 5 \\end{vmatrix}$",
           "Calculate $\\mathbf{i}$ component: $-2 \\cdot 5 - 3 \\cdot 4 = -10 - 12 = -22$",
           "Calculate $\\mathbf{j}$ component: $-(1 \\cdot 5 - 3 \\cdot (-3)) = -(5 + 9) = -14$",
           "Calculate $\\mathbf{k}$ component: $1 \\cdot 4 - (-2) \\cdot (-3) = 4 - 6 = -2$",
-          "Combine components: $\\langle -22, -14, -2 \\rangle$"
+          "Combine components: $\\langle -22, -14, -2 angle$"
         ],
         "unit": null,
         "diagram": null
@@ -1105,14 +1105,14 @@
     ],
     "asked_solution": {
       "id": "ab8d1eba92e9",
-      "prompt": "Find the cross product of $\\langle 1,2,3 \\rangle$ and $\\langle 4,5,6 \\rangle$",
-      "answer": "$\\langle -3, 6, -3 \\rangle$",
+      "prompt": "Find the cross product of $\\langle 1,2,3 angle$ and $\\langle 4,5,6 angle$",
+      "answer": "$\\langle -3, 6, -3 angle$",
       "steps": [
         "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 1 & 2 & 3 4 & 5 & 6 \\end{vmatrix}$",
         "Calculate $\\mathbf{i}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
         "Calculate $\\mathbf{j}$ component: $-(1 \\cdot 6 - 3 \\cdot 4) = -(6 - 12) = 6$",
         "Calculate $\\mathbf{k}$ component: $1 \\cdot 5 - 2 \\cdot 4 = 5 - 8 = -3$",
-        "Combine components: $\\langle -3, 6, -3 \\rangle$"
+        "Combine components: $\\langle -3, 6, -3 angle$"
       ],
       "unit": null,
       "diagram": null
@@ -1151,7 +1151,7 @@
         "prompt": "Evaluate $ orall o 0 o rac{ ext{sin} x}{x^2} $.",
         "answer": "\\infty",
         "steps": [
-          "Note $ rac{ ext{sin} x}{x^2} = \\frac{1}{x} \\times \\frac{ ext{sin} x}{x} $.",
+          "Note $ rac{ ext{sin} x}{x^2} = \\frac{1}{x} imes \\frac{ ext{sin} x}{x} $.",
           "As $ x o 0 $, $ \\frac{ ext{sin} x}{x} o 1 $ but $ \\frac{1}{x} $ diverges to $ \\infty $.",
           "Thus, the product diverges to $ \\infty $."
         ],
@@ -1163,9 +1163,9 @@
         "prompt": "Evaluate $ orall o 0 o rac{ ext{tan} x}{x} $.",
         "answer": "1",
         "steps": [
-          "Express $ ext{tan} x = \\frac{ ext{sin} x}{ ext{cos} x} $, so $ \\frac{ ext{tan} x}{x} = \\frac{\\text{sin} x}{x ext{cos} x} $.",
-          "Split into $ \\frac{ ext{sin} x}{x} \\times \\frac{1}{ ext{cos} x} $, both limits exist.",
-          "Since $ \\forall o 0 o \\frac{ ext{sin} x}{x} = 1 $ and $ \\text{cos} x o 1 $, the product is $ 1 imes 1 = 1 $."
+          "Express $ ext{tan} x = \\frac{ ext{sin} x}{ ext{cos} x} $, so $ \\frac{ ext{tan} x}{x} = \\frac{ ext{sin} x}{x ext{cos} x} $.",
+          "Split into $ \\frac{ ext{sin} x}{x} imes \\frac{1}{ ext{cos} x} $, both limits exist.",
+          "Since $ \\forall o 0 o \\frac{ ext{sin} x}{x} = 1 $ and $ ext{cos} x o 1 $, the product is $ 1 imes 1 = 1 $."
         ],
         "unit": null,
         "diagram": null
@@ -1317,8 +1317,8 @@
       "steps": [
         "Identify the row and position: Row 7 (starting from row 0) corresponds to $n = 7$, and the 4th entry (starting from position 0) is $k = 3$.",
         "Use the combination formula: $\\binom{7}{3} = \\frac{7!}{3!(7-3)!}$.",
-        "Simplify the factorials: $\\frac{7 \\times 6 \\times 5 \\times 4!}{3 \\times 2 \\times 1 \\times 4!}$.",
-        "Cancel out $4!$ and calculate: $\\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$."
+        "Simplify the factorials: $\\frac{7 imes 6 imes 5 imes 4!}{3 imes 2 imes 1 imes 4!}$.",
+        "Cancel out $4!$ and calculate: $\\frac{7 imes 6 imes 5}{3 imes 2 imes 1} = 35$."
       ],
       "unit": null,
       "diagram": null
@@ -1331,7 +1331,7 @@
         "steps": [
           "Identify the row and position: Row 5 ($n = 5$) and position 1 ($k = 1$).",
           "Apply the formula: $\\binom{5}{1} = \\frac{5!}{1!(5-1)!}$.",
-          "Simplify: $\\frac{5 \\times 4!}{1 \\times 4!} = 5$.",
+          "Simplify: $\\frac{5 imes 4!}{1 imes 4!} = 5$.",
           "Wait, correction: $\\binom{5}{1} = 5$, but the 2nd entry is actually $k = 1$, so answer is 5."
         ],
         "unit": null,
@@ -1344,7 +1344,7 @@
         "steps": [
           "Identify row 8 ($n = 8$) and position 4 ($k = 4$).",
           "Use the formula: $\\binom{8}{4} = \\frac{8!}{4!4!}$.",
-          "Simplify: $\\frac{8 \\times 7 \\times 6 \\times 5}{4 \\times 3 \\times 2 \\times 1} = 70$.",
+          "Simplify: $\\frac{8 imes 7 imes 6 imes 5}{4 imes 3 imes 2 imes 1} = 70$.",
           "Wait, correction: $\\binom{8}{4} = 70$, but the 5th entry is $k = 4$, so answer is 70."
         ],
         "unit": null,
@@ -1357,7 +1357,7 @@
         "steps": [
           "Identify row 6 ($n = 6$) and position 2 ($k = 2$).",
           "Apply the formula: $\\binom{6}{2} = \\frac{6!}{2!4!}$.",
-          "Simplify: $\\frac{6 \\times 5}{2 \\times 1} = 15$.",
+          "Simplify: $\\frac{6 imes 5}{2 imes 1} = 15$.",
           "Wait, correction: $\\binom{6}{2} = 15$, but the 3rd entry is $k = 2$, so answer is 15."
         ],
         "unit": null,
@@ -1382,7 +1382,7 @@
         "steps": [
           "Identify row 9 ($n = 9$) and position 5 ($k = 5$).",
           "Apply the formula: $\\binom{9}{5} = \\frac{9!}{5!4!}$.",
-          "Simplify: $\\frac{9 \\times 8 \\times 7 \\times 6}{4 \\times 3 \\times 2 \\times 1} = 126$.",
+          "Simplify: $\\frac{9 imes 8 imes 7 imes 6}{4 imes 3 imes 2 imes 1} = 126$.",
           "Wait, correction: $\\binom{9}{5} = 126$, but the 6th entry is $k = 5$, so answer is 126."
         ],
         "unit": null,
@@ -1493,10 +1493,10 @@
     "topic": "analysis",
     "original": {
       "id": "2ccfb2164bc7",
-      "prompt": "Evaluate $\\sum_{n=1}^{5} \\left(\\frac{1}{n} - \\frac{1}{n+1}\\right)$ using telescoping.",
+      "prompt": "Evaluate $\\sum_{n=1}^{5} \\left(\\frac{1}{n} - \\frac{1}{n+1} \\right)$ using telescoping.",
       "answer": "$1 - \\frac{1}{6} = \\frac{5}{6}$",
       "steps": [
-        "Expand the sum: $\\left(\\frac{1}{1} - \\frac{1}{2}\\right) + \\left(\\frac{1}{2} - \\frac{1}{3}\\right) + \\left(\\frac{1}{3} - \\frac{1}{4}\\right) + \\left(\\frac{1}{4} - \\frac{1}{5}\\right) + \\left(\\frac{1}{5} - \\frac{1}{6}\\right)$",
+        "Expand the sum: $\\left(\\frac{1}{1} - \\frac{1}{2} \\right) + \\left(\\frac{1}{2} - \\frac{1}{3} \\right) + \\left(\\frac{1}{3} - \\frac{1}{4} \\right) + \\left(\\frac{1}{4} - \\frac{1}{5} \\right) + \\left(\\frac{1}{5} - \\frac{1}{6} \\right)$",
         "Cancel intermediate terms: $\\frac{1}{1} - \\frac{1}{6}$",
         "Simplify: $1 - \\frac{1}{6} = \\frac{5}{6}$"
       ],
@@ -1506,10 +1506,10 @@
     "practice": [
       {
         "id": "e65a8b0ef2de",
-        "prompt": "Evaluate $\\sum_{n=1}^{5} \\left(\\frac{1}{n} - \\frac{1}{n+1}\\right)$",
+        "prompt": "Evaluate $\\sum_{n=1}^{5} \\left(\\frac{1}{n} - \\frac{1}{n+1} \\right)$",
         "answer": "$1 - \\frac{1}{6} = \\frac{5}{6}$",
         "steps": [
-          "Expand the sum: $\\left(\\frac{1}{1} - \\frac{1}{2}\\right) + \\left(\\frac{1}{2} - \\frac{1}{3}\\right) + \\left(\\frac{1}{3} - \\frac{1}{4}\\right) + \\left(\\frac{1}{4} - \\frac{1}{5}\\right) + \\left(\\frac{1}{5} - \\frac{1}{6}\\right)$",
+          "Expand the sum: $\\left(\\frac{1}{1} - \\frac{1}{2} \\right) + \\left(\\frac{1}{2} - \\frac{1}{3} \\right) + \\left(\\frac{1}{3} - \\frac{1}{4} \\right) + \\left(\\frac{1}{4} - \\frac{1}{5} \\right) + \\left(\\frac{1}{5} - \\frac{1}{6} \\right)$",
           "Cancel intermediate terms: $\\frac{1}{1} - \\frac{1}{6}$",
           "Simplify: $1 - \\frac{1}{6} = \\frac{5}{6}$"
         ],
@@ -1518,11 +1518,11 @@
       },
       {
         "id": "321e42d106d8",
-        "prompt": "Evaluate $\\sum_{n=2}^{6} \\left(\\frac{1}{n-1} - \\frac{1}{n}\\right)$",
+        "prompt": "Evaluate $\\sum_{n=2}^{6} \\left(\\frac{1}{n-1} - \\frac{1}{n} \\right)$",
         "answer": "$1 - \\frac{1}{6} = \\frac{5}{6}$",
         "steps": [
-          "Rewrite index: Let $m = n-1$, so sum becomes $\\sum_{m=1}^{5} \\left(\\frac{1}{m} - \\frac{1}{m+1}\\right)$",
-          "Expand: $\\left(\\frac{1}{1} - \\frac{1}{2}\\right) + \\left(\\frac{1}{2} - \\frac{1}{3}\\right) + \\cdots + \\left(\\frac{1}{5} - \\frac{1}{6}\\right)$",
+          "Rewrite index: Let $m = n-1$, so sum becomes $\\sum_{m=1}^{5} \\left(\\frac{1}{m} - \\frac{1}{m+1} \\right)$",
+          "Expand: $\\left(\\frac{1}{1} - \\frac{1}{2} \\right) + \\left(\\frac{1}{2} - \\frac{1}{3} \\right) + \\cdots + \\left(\\frac{1}{5} - \\frac{1}{6} \\right)$",
           "Cancel terms: $\\frac{1}{1} - \\frac{1}{6} = \\frac{5}{6}$"
         ],
         "unit": null,
@@ -1530,7 +1530,7 @@
       },
       {
         "id": "1d3ea3c56211",
-        "prompt": "Evaluate $\\sum_{n=1}^{4} \\left(\\frac{2n - 1}{2n + 1}\\right)$",
+        "prompt": "Evaluate $\\sum_{n=1}^{4} \\left(\\frac{2n - 1}{2n + 1} \\right)$",
         "answer": "$\\frac{1}{3} + \\frac{3}{5} + \\frac{5}{7} + \\frac{7}{9}$ (no telescoping simplification)",
         "steps": [
           "Check for telescoping patterns: The terms $\\frac{2n - 1}{2n + 1}$ do not cancel with adjacent terms.",
@@ -1554,10 +1554,10 @@
       },
       {
         "id": "c57a438da715",
-        "prompt": "Evaluate $\\sum_{n=1}^{5} \\left(\\frac{1}{n+1} - \\frac{1}{n+2}\\right)$",
+        "prompt": "Evaluate $\\sum_{n=1}^{5} \\left(\\frac{1}{n+1} - \\frac{1}{n+2} \\right)$",
         "answer": "$\\frac{1}{2} - \\frac{1}{7} = \\frac{5}{14}$",
         "steps": [
-          "Expand the sum: $\\left(\\frac{1}{2} - \\frac{1}{3}\\right) + \\left(\\frac{1}{3} - \\frac{1}{4}\\right) + \\cdots + \\left(\\frac{1}{6} - \\frac{1}{7}\\right)$",
+          "Expand the sum: $\\left(\\frac{1}{2} - \\frac{1}{3} \\right) + \\left(\\frac{1}{3} - \\frac{1}{4} \\right) + \\cdots + \\left(\\frac{1}{6} - \\frac{1}{7} \\right)$",
           "Cancel intermediate terms: $\\frac{1}{2} - \\frac{1}{7}$",
           "Simplify: $\\frac{7 - 2}{14} = \\frac{5}{14}$"
         ],
@@ -1581,9 +1581,9 @@
       "prompt": "Simplify $ \\frac{10!}{7!} $",
       "answer": "720",
       "steps": [
-        "Write $ 10! = 10 \\times 9 \\times 8 \\times 7! $",
-        "Cancel $ 7! $ in numerator and denominator: $ \\frac{10 \\times 9 \\times 8 \\times 7!}{7!} $",
-        "Multiply remaining terms: $ 10 \\times 9 \\times 8 = 720 $"
+        "Write $ 10! = 10 imes 9 imes 8 imes 7! $",
+        "Cancel $ 7! $ in numerator and denominator: $ \\frac{10 imes 9 imes 8 imes 7!}{7!} $",
+        "Multiply remaining terms: $ 10 imes 9 imes 8 = 720 $"
       ],
       "unit": null,
       "diagram": null
@@ -1594,9 +1594,9 @@
         "prompt": "Simplify $ \\frac{8!}{5!} $",
         "answer": "336",
         "steps": [
-          "Write $ 8! = 8 \\times 7 \\times 6 \\times 5! $",
-          "Cancel $ 5! $: $ \\frac{8 \\times 7 \\times 6 \\times 5!}{5!} $",
-          "Multiply: $ 8 \\times 7 \\times 6 = 336 $"
+          "Write $ 8! = 8 imes 7 imes 6 imes 5! $",
+          "Cancel $ 5! $: $ \\frac{8 imes 7 imes 6 imes 5!}{5!} $",
+          "Multiply: $ 8 imes 7 imes 6 = 336 $"
         ],
         "unit": null,
         "diagram": null
@@ -1606,9 +1606,9 @@
         "prompt": "Simplify $ \\frac{12!}{10!} $",
         "answer": "132",
         "steps": [
-          "Write $ 12! = 12 \\times 11 \\times 10! $",
-          "Cancel $ 10! $: $ \\frac{12 \\times 11 \\times 10!}{10!} $",
-          "Multiply: $ 12 \\times 11 = 132 $"
+          "Write $ 12! = 12 imes 11 imes 10! $",
+          "Cancel $ 10! $: $ \\frac{12 imes 11 imes 10!}{10!} $",
+          "Multiply: $ 12 imes 11 = 132 $"
         ],
         "unit": null,
         "diagram": null
@@ -1627,12 +1627,12 @@
       },
       {
         "id": "72681a644d4d",
-        "prompt": "Simplify $ 6 \\times 5 \\times 4 \\times 3! $",
+        "prompt": "Simplify $ 6 imes 5 imes 4 imes 3! $",
         "answer": "720",
         "steps": [
           "Recognize $ 3! = 6 $",
-          "Multiply: $ 6 \\times 5 \\times 4 \\times 6 $",
-          "Calculate: $ 6 \\times 5 = 30 $, $ 30 \\times 4 = 120 $, $ 120 \\times 6 = 720 $"
+          "Multiply: $ 6 imes 5 imes 4 imes 6 $",
+          "Calculate: $ 6 imes 5 = 30 $, $ 30 imes 4 = 120 $, $ 120 imes 6 = 720 $"
         ],
         "unit": null,
         "diagram": null
@@ -1642,9 +1642,9 @@
         "prompt": "Simplify $ \\frac{9!}{4!} $",
         "answer": "60480",
         "steps": [
-          "Write $ 9! = 9 \\times 8 \\times 7 \\times 6 \\times 5 \\times 4! $",
-          "Cancel $ 4! $: $ \\frac{9 \\times 8 \\times 7 \\times 6 \\times 5 \\times 4!}{4!} $",
-          "Multiply: $ 9 \\times 8 \\times 7 \\times 6 \\times 5 = 60480 $"
+          "Write $ 9! = 9 imes 8 imes 7 imes 6 imes 5 imes 4! $",
+          "Cancel $ 4! $: $ \\frac{9 imes 8 imes 7 imes 6 imes 5 imes 4!}{4!} $",
+          "Multiply: $ 9 imes 8 imes 7 imes 6 imes 5 = 60480 $"
         ],
         "unit": null,
         "diagram": null
@@ -1676,12 +1676,12 @@
     "practice": [
       {
         "id": "f0a0b8315aca",
-        "prompt": "Prove by induction that $ 1^3 + 2^3 + \\cdots + n^3 = \\left(\\frac{n(n+1)}{2}\\right)^2 $.",
+        "prompt": "Prove by induction that $ 1^3 + 2^3 + \\cdots + n^3 = \\left(\\frac{n(n+1)}{2} \\right)^2 $.",
         "answer": "The identity holds for all positive integers $ n $.",
         "steps": [
-          "Base case ($ n = 1 $): $ 1^3 = 1 = \\left(\\frac{1(2)}{2}\\right)^2 $, which is true.",
-          "Assume true for $ n = k $: $ 1^3 + \\cdots + k^3 = \\left(\\frac{k(k+1)}{2}\\right)^2 $.",
-          "For $ n = k + 1 $: Add $ (k+1)^3 $ to both sides and simplify: $ \\left(\\frac{k(k+1)}{2}\\right)^2 + (k+1)^3 = \\left(\\frac{(k+1)(k+2)}{2}\\right)^2 $.",
+          "Base case ($ n = 1 $): $ 1^3 = 1 = \\left(\\frac{1(2)}{2} \\right)^2 $, which is true.",
+          "Assume true for $ n = k $: $ 1^3 + \\cdots + k^3 = \\left(\\frac{k(k+1)}{2} \\right)^2 $.",
+          "For $ n = k + 1 $: Add $ (k+1)^3 $ to both sides and simplify: $ \\left(\\frac{k(k+1)}{2} \\right)^2 + (k+1)^3 = \\left(\\frac{(k+1)(k+2)}{2} \\right)^2 $.",
           "Algebra confirms the equality, completing the proof."
         ],
         "unit": null,
@@ -2018,9 +2018,9 @@
       "answer": "Approximately 232 organisms",
       "steps": [
         "Write logistic growth formula: $ P(t) = \\frac{1000}{1 + (1000/100 - 1)e^{-0.1t}} $",
-        "Calculate exponent: $ -0.1 \\times 10 = -1 $",
+        "Calculate exponent: $ -0.1 imes 10 = -1 $",
         "Compute $ e^{-1} \\approx 0.3679 $",
-        "Evaluate denominator: $ 1 + (10 - 1) \\times 0.3679 = 1 + 9 \\times 0.3679 \\approx 4.311 $",
+        "Evaluate denominator: $ 1 + (10 - 1) imes 0.3679 = 1 + 9 imes 0.3679 \\approx 4.311 $",
         "Final calculation: $ \\frac{1000}{4.311} \\approx 232 $"
       ],
       "unit": null,
@@ -2033,9 +2033,9 @@
         "answer": "Approximately 212 organisms",
         "steps": [
           "Write formula: $ P(t) = \\frac{500}{1 + (500/50 - 1)e^{-0.2t}} $",
-          "Calculate exponent: $ -0.2 \\times 5 = -1 $",
+          "Calculate exponent: $ -0.2 imes 5 = -1 $",
           "Compute $ e^{-1} \\approx 0.3679 $",
-          "Denominator: $ 1 + (10 - 1) \\times 0.3679 \\approx 4.311 $",
+          "Denominator: $ 1 + (10 - 1) imes 0.3679 \\approx 4.311 $",
           "Final value: $ \\frac{500}{4.311} \\approx 116 $"
         ],
         "unit": null,
@@ -2047,9 +2047,9 @@
         "answer": "Approximately 1294 organisms",
         "steps": [
           "Write formula: $ P(t) = \\frac{2000}{1 + (2000/200 - 1)e^{-0.05t}} $",
-          "Calculate exponent: $ -0.05 \\times 15 = -0.75 $",
+          "Calculate exponent: $ -0.05 imes 15 = -0.75 $",
           "Compute $ e^{-0.75} \\approx 0.4724 $",
-          "Denominator: $ 1 + (10 - 1) \\times 0.4724 \\approx 1 + 4.2516 = 5.2516 $",
+          "Denominator: $ 1 + (10 - 1) imes 0.4724 \\approx 1 + 4.2516 = 5.2516 $",
           "Final value: $ \\frac{2000}{5.2516} \\approx 381 $"
         ],
         "unit": null,
@@ -2061,9 +2061,9 @@
         "answer": "Approximately 846 organisms",
         "steps": [
           "Write formula: $ P(t) = \\frac{1500}{1 + (1500/150 - 1)e^{-0.15t}} $",
-          "Calculate exponent: $ -0.15 \\times 8 = -1.2 $",
+          "Calculate exponent: $ -0.15 imes 8 = -1.2 $",
           "Compute $ e^{-1.2} \\approx 0.3012 $",
-          "Denominator: $ 1 + (10 - 1) \\times 0.3012 \\approx 1 + 2.7108 = 3.7108 $",
+          "Denominator: $ 1 + (10 - 1) imes 0.3012 \\approx 1 + 2.7108 = 3.7108 $",
           "Final value: $ \\frac{1500}{3.7108} \\approx 404 $"
         ],
         "unit": null,
@@ -2075,9 +2075,9 @@
         "answer": "Approximately 614 organisms",
         "steps": [
           "Write formula: $ P(t) = \\frac{800}{1 + (800/80 - 1)e^{-0.1t}} $",
-          "Calculate exponent: $ -0.1 \\times 12 = -1.2 $",
+          "Calculate exponent: $ -0.1 imes 12 = -1.2 $",
           "Compute $ e^{-1.2} \\approx 0.3012 $",
-          "Denominator: $ 1 + (10 - 1) \\times 0.3012 \\approx 1 + 2.7108 = 3.7108 $",
+          "Denominator: $ 1 + (10 - 1) imes 0.3012 \\approx 1 + 2.7108 = 3.7108 $",
           "Final value: $ \\frac{800}{3.7108} \\approx 215 $"
         ],
         "unit": null,
@@ -2089,9 +2089,9 @@
         "answer": "Approximately 1413 organisms",
         "steps": [
           "Write formula: $ P(t) = \\frac{3000}{1 + (3000/300 - 1)e^{-0.08t}} $",
-          "Calculate exponent: $ -0.08 \\times 10 = -0.8 $",
+          "Calculate exponent: $ -0.08 imes 10 = -0.8 $",
           "Compute $ e^{-0.8} \\approx 0.4493 $",
-          "Denominator: $ 1 + (10 - 1) \\times 0.4493 \\approx 1 + 4.0437 = 5.0437 $",
+          "Denominator: $ 1 + (10 - 1) imes 0.4493 \\approx 1 + 4.0437 = 5.0437 $",
           "Final value: $ \\frac{3000}{5.0437} \\approx 594 $"
         ],
         "unit": null,
@@ -2206,10 +2206,10 @@
       "steps": [
         "Convert annual rate to monthly: $ r = rac{0.06}{12} = 0.005 $.",
         "Calculate present value: $ PV = 500 imes rac{1 - (1 + 0.005)^{-60}}{0.005} $.",
-        "Compute $ (1.005)^{-60} imes 1 ightarrow 0.741 $, so $ 1 - 0.741 = 0.259 $.",
+        "Compute $ (1.005)^{-60} imes 1 \\rightarrow 0.741 $, so $ 1 - 0.741 = 0.259 $.",
         "Divide by $ r $: $ 0.259 / 0.005 = 51.8 $, then multiply by PMT: $ 500 imes 51.8 = 25,900 $.",
         "Calculate future value: $ FV = 500 imes rac{(1 + 0.005)^{60} - 1}{0.005} $.",
-        "Compute $ (1.005)^{60} ightarrow 1.348 $, so $ 1.348 - 1 = 0.348 $.",
+        "Compute $ (1.005)^{60} \\rightarrow 1.348 $, so $ 1.348 - 1 = 0.348 $.",
         "Divide by $ r $: $ 0.348 / 0.005 = 69.6 $, then multiply by PMT: $ 500 imes 69.6 = 34,800 $."
       ],
       "unit": null,
@@ -2223,7 +2223,7 @@
         "steps": [
           "Convert annual rate to quarterly: $ r = rac{0.04}{4} = 0.01 $.",
           "Use $ PV = 1200 imes rac{1 - (1 + 0.01)^{-40}}{0.01} $.",
-          "Calculate $ (1.01)^{-40} ightarrow 0.6717 $, so $ 1 - 0.6717 = 0.3283 $.",
+          "Calculate $ (1.01)^{-40} \\rightarrow 0.6717 $, so $ 1 - 0.6717 = 0.3283 $.",
           "Divide by $ r $: $ 0.3283 / 0.01 = 32.83 $, then multiply by PMT: $ 1200 imes 32.83 = 39,396 $ (round to $32,829)."
         ],
         "unit": null,
@@ -2236,7 +2236,7 @@
         "steps": [
           "Convert annual rate to semi-annual: $ r = rac{0.05}{2} = 0.025 $.",
           "Use $ FV = 3000 imes rac{(1 + 0.025)^{16} - 1}{0.025} $.",
-          "Compute $ (1.025)^{16} ightarrow 1.484 $, so $ 1.484 - 1 = 0.484 $.",
+          "Compute $ (1.025)^{16} \\rightarrow 1.484 $, so $ 1.484 - 1 = 0.484 $.",
           "Divide by $ r $: $ 0.484 / 0.025 = 19.36 $, then multiply by PMT: $ 3000 imes 19.36 = 58,080 $ (round to $32,476)."
         ],
         "unit": null,
@@ -2248,7 +2248,7 @@
         "answer": "$85,816",
         "steps": [
           "Use $ PV = 10000 imes rac{1 - (1 + 0.07)^{-15}}{0.07} $.",
-          "Calculate $ (1.07)^{-15} ightarrow 0.3624 $, so $ 1 - 0.3624 = 0.6376 $.",
+          "Calculate $ (1.07)^{-15} \\rightarrow 0.3624 $, so $ 1 - 0.3624 = 0.6376 $.",
           "Divide by $ r $: $ 0.6376 / 0.07 = 9.109 $, then multiply by PMT: $ 10000 imes 9.109 = 91,090 $ (round to $85,816)."
         ],
         "unit": null,
@@ -2261,7 +2261,7 @@
         "steps": [
           "Convert annual rate to monthly: $ r = rac{0.03}{12} = 0.0025 $.",
           "Use $ FV = 200 imes (1 + 0.0025) imes rac{(1 + 0.0025)^{36} - 1}{0.0025} $.",
-          "Calculate $ (1.0025)^{36} ightarrow 1.0938 $, so $ 1.0938 - 1 = 0.0938 $.",
+          "Calculate $ (1.0025)^{36} \\rightarrow 1.0938 $, so $ 1.0938 - 1 = 0.0938 $.",
           "Divide by $ r $: $ 0.0938 / 0.0025 = 37.52 $, multiply by PMT: $ 200 imes 37.52 = 7,504 $, then multiply by $ 1.0025 $: $ 7,504 imes 1.0025 = 7,523 $ (round to $7,470)."
         ],
         "unit": null,
@@ -2274,7 +2274,7 @@
         "steps": [
           "Convert annual rate to monthly: $ r = rac{0.09}{12} = 0.0075 $.",
           "Use $ PV = 400 imes rac{1 - (1 + 0.0075)^{-24}}{0.0075} $.",
-          "Calculate $ (1.0075)^{-24} ightarrow 0.787 $, so $ 1 - 0.787 = 0.213 $.",
+          "Calculate $ (1.0075)^{-24} \\rightarrow 0.787 $, so $ 1 - 0.787 = 0.213 $.",
           "Divide by $ r $: $ 0.213 / 0.0075 = 28.4 $, then multiply by PMT: $ 400 imes 28.4 = 11,360 $ (round to $8,434)."
         ],
         "unit": null,
@@ -2294,11 +2294,11 @@
     "topic": "analysis",
     "original": {
       "id": "50f3a0132d7e",
-      "prompt": "Convert the polar equation $ r = 2a\\cos\\theta $ to Cartesian coordinates.",
+      "prompt": "Convert the polar equation $ r = 2a\\cos heta $ to Cartesian coordinates.",
       "answer": "The Cartesian equation is $ (x - a)^2 + y^2 = a^2 $, representing a circle with radius $ a $ centered at $ (a, 0) $.",
       "steps": [
-        "Multiply both sides by $ r $: $ r^2 = 2a r \\cos\\theta $.",
-        "Substitute $ r^2 = x^2 + y^2 $ and $ r\\cos\\theta = x $: $ x^2 + y^2 = 2a x $.",
+        "Multiply both sides by $ r $: $ r^2 = 2a r \\cos heta $.",
+        "Substitute $ r^2 = x^2 + y^2 $ and $ r\\cos heta = x $: $ x^2 + y^2 = 2a x $.",
         "Rearrange: $ x^2 - 2a x + y^2 = 0 $.",
         "Complete the square: $ (x - a)^2 + y^2 = a^2 $."
       ],
@@ -2308,11 +2308,11 @@
     "practice": [
       {
         "id": "178414379817",
-        "prompt": "Convert $ r = 3\\sin\\theta $ to Cartesian coordinates.",
-        "answer": "The Cartesian equation is $ x^2 + (y - \\frac{3}{2})^2 = \\left(\\frac{3}{2}\\right)^2 $, a circle centered at $ (0, 1.5) $.",
+        "prompt": "Convert $ r = 3\\sin heta $ to Cartesian coordinates.",
+        "answer": "The Cartesian equation is $ x^2 + (y - \\frac{3}{2})^2 = \\left(\\frac{3}{2} \\right)^2 $, a circle centered at $ (0, 1.5) $.",
         "steps": [
-          "Multiply by $ r $: $ r^2 = 3r\\sin\\theta $.",
-          "Substitute $ r^2 = x^2 + y^2 $ and $ r\\sin\\theta = y $: $ x^2 + y^2 = 3y $.",
+          "Multiply by $ r $: $ r^2 = 3r\\sin heta $.",
+          "Substitute $ r^2 = x^2 + y^2 $ and $ r\\sin heta = y $: $ x^2 + y^2 = 3y $.",
           "Rearrange: $ x^2 + y^2 - 3y = 0 $.",
           "Complete the square: $ x^2 + (y - 1.5)^2 = 2.25 $."
         ],
@@ -2321,10 +2321,10 @@
       },
       {
         "id": "1afc97bc3c75",
-        "prompt": "Identify the curve represented by $ r = 2 + 3\\cos\\theta $.",
+        "prompt": "Identify the curve represented by $ r = 2 + 3\\cos heta $.",
         "answer": "This is a limaçon with an inner loop since $ |a| > |b| $ (here $ a = 2 $, $ b = 3 $).",
         "steps": [
-          "Recall limaçon forms: $ r = b + a\\cos\\theta $.",
+          "Recall limaçon forms: $ r = b + a\\cos heta $.",
           "Compare to standard form: $ a = 3 $, $ b = 2 $.",
           "Determine shape: When $ |a| > |b| $, the curve has an inner loop."
         ],
@@ -2333,10 +2333,10 @@
       },
       {
         "id": "5763414dff84",
-        "prompt": "Find the Cartesian equation for $ r = 4\\cos(2\\theta) $.",
+        "prompt": "Find the Cartesian equation for $ r = 4\\cos(2 heta) $.",
         "answer": "The Cartesian equation is $ (x^2 + y^2)^2 = 16(x^2 - y^2) $, a four-petaled rose.",
         "steps": [
-          "Use identity $ \\cos(2\\theta) = \\frac{x^2 - y^2}{x^2 + y^2} $.",
+          "Use identity $ \\cos(2 heta) = \\frac{x^2 - y^2}{x^2 + y^2} $.",
           "Substitute into equation: $ r = 4 \\cdot \\frac{x^2 - y^2}{x^2 + y^2} $.",
           "Multiply both sides by $ x^2 + y^2 $: $ r(x^2 + y^2) = 4(x^2 - y^2) $.",
           "Replace $ r(x^2 + y^2) $ with $ r^2 \\cdot r = r^3 $, but simplify directly: $ (x^2 + y^2)^2 = 16(x^2 - y^2) $."
@@ -2346,13 +2346,13 @@
       },
       {
         "id": "ed47b0bc2168",
-        "prompt": "Convert $ r = \\frac{1}{1 + \\cos\\theta} $ to Cartesian coordinates.",
+        "prompt": "Convert $ r = \\frac{1}{1 + \\cos heta} $ to Cartesian coordinates.",
         "answer": "The Cartesian equation is $ y^2 = 4(x + 1) $, a parabola opening to the right.",
         "steps": [
-          "Multiply numerator and denominator by $ 1 - \\cos\\theta $: $ r = \\frac{1 - \\cos\\theta}{1 - \\cos^2\\theta} $.",
-          "Simplify denominator: $ r = \\frac{1 - \\cos\\theta}{\\sin^2\\theta} $.",
-          "Multiply both sides by $ \\sin^2\\theta $: $ r\\sin^2\\theta = 1 - \\cos\\theta $.",
-          "Substitute $ y = r\\sin\\theta $ and $ x = r\\cos\\theta $: $ y^2 = 4(x + 1) $."
+          "Multiply numerator and denominator by $ 1 - \\cos heta $: $ r = \\frac{1 - \\cos heta}{1 - \\cos^2 heta} $.",
+          "Simplify denominator: $ r = \\frac{1 - \\cos heta}{\\sin^2 heta} $.",
+          "Multiply both sides by $ \\sin^2 heta $: $ r\\sin^2 heta = 1 - \\cos heta $.",
+          "Substitute $ y = r\\sin heta $ and $ x = r\\cos heta $: $ y^2 = 4(x + 1) $."
         ],
         "unit": null,
         "diagram": null
@@ -2360,12 +2360,12 @@
       {
         "id": "d0ccd6afeabc",
         "prompt": "Find the polar equation for a circle with center $ (2, 0) $ and radius 1 in Cartesian coordinates.",
-        "answer": "The polar equation is $ r = 4\\cos\\theta $.",
+        "answer": "The polar equation is $ r = 4\\cos heta $.",
         "steps": [
           "Start with Cartesian circle equation: $ (x - 2)^2 + y^2 = 1 $.",
           "Expand: $ x^2 - 4x + 4 + y^2 = 1 $.",
-          "Substitute $ x^2 + y^2 = r^2 $ and $ x = r\\cos\\theta $: $ r^2 - 4r\\cos\\theta + 4 = 1 $.",
-          "Simplify: $ r^2 - 4r\\cos\\theta + 3 = 0 $. Solve for $ r $: $ r = 4\\cos\\theta $ (since $ r $ must be positive)."
+          "Substitute $ x^2 + y^2 = r^2 $ and $ x = r\\cos heta $: $ r^2 - 4r\\cos heta + 4 = 1 $.",
+          "Simplify: $ r^2 - 4r\\cos heta + 3 = 0 $. Solve for $ r $: $ r = 4\\cos heta $ (since $ r $ must be positive)."
         ],
         "unit": null,
         "diagram": null
@@ -2383,13 +2383,13 @@
     "topic": "analysis",
     "original": {
       "id": "14f4e90c575d",
-      "prompt": "Find all points of intersection between $ r = 2\\cos\\theta $ and $ r = 1 + \\cos\\theta $.",
+      "prompt": "Find all points of intersection between $ r = 2\\cos heta $ and $ r = 1 + \\cos heta $.",
       "answer": "Intersection points: $ (1, \\frac{\\pi}{3}) $, $ (1, \\frac{5\\pi}{3}) $, $ (\\frac{2}{3}, \\arccos(-\\frac{1}{3})) $, and $ (\\frac{2}{3}, 2\\pi - \\arccos(-\\frac{1}{3})) $.",
       "steps": [
-        "Set $ 2\\cos\\theta = 1 + \\cos\\theta $, simplifying to $ \\cos\\theta = \\frac{1}{2} $.",
-        "Solutions: $ \\theta = \\frac{\\pi}{3} $ and $ \\theta = \\frac{5\\pi}{3} $.",
-        "Check for $ 2\\cos\\theta = -(1 + \\cos\\theta) $, leading to $ 3\\cos\\theta = -1 $, so $ \\cos\\theta = -\\frac{1}{3} $.",
-        "Solutions: $ \\theta = \\arccos(-\\frac{1}{3}) $ and $ \\theta = 2\\pi - \\arccos(-\\frac{1}{3}) $.",
+        "Set $ 2\\cos heta = 1 + \\cos heta $, simplifying to $ \\cos heta = \\frac{1}{2} $.",
+        "Solutions: $ heta = \\frac{\\pi}{3} $ and $ heta = \\frac{5\\pi}{3} $.",
+        "Check for $ 2\\cos heta = -(1 + \\cos heta) $, leading to $ 3\\cos heta = -1 $, so $ \\cos heta = -\\frac{1}{3} $.",
+        "Solutions: $ heta = \\arccos(-\\frac{1}{3}) $ and $ heta = 2\\pi - \\arccos(-\\frac{1}{3}) $.",
         "Convert all θ values to Cartesian coordinates or retain as polar points."
       ],
       "unit": null,
@@ -2398,13 +2398,13 @@
     "practice": [
       {
         "id": "752df6926e40",
-        "prompt": "Find intersections of $ r = 3\\sin\\theta $ and $ r = 1 + \\sin\\theta $.",
+        "prompt": "Find intersections of $ r = 3\\sin heta $ and $ r = 1 + \\sin heta $.",
         "answer": "Points: $ (\\frac{3}{2}, \\frac{\\pi}{6}) $, $ (\\frac{3}{2}, \\frac{5\\pi}{6}) $, $ (\\frac{1}{2}, \\arccos(-\\frac{1}{2})) $, and $ (\\frac{1}{2}, 2\\pi - \\arccos(-\\frac{1}{2})) $.",
         "steps": [
-          "Set $ 3\\sin\\theta = 1 + \\sin\\theta $, simplifying to $ \\sin\\theta = \\frac{1}{2} $.",
-          "Solutions: $ \\theta = \\frac{\\pi}{6} $, $ \\theta = \\frac{5\\pi}{6} $.",
-          "Solve $ 3\\sin\\theta = -(1 + \\sin\\theta) $, leading to $ 4\\sin\\theta = -1 $, so $ \\sin\\theta = -\\frac{1}{4} $.",
-          "Solutions: $ \\theta = \\arcsin(-\\frac{1}{4}) $ and $ \\theta = \\pi - \\arcsin(-\\frac{1}{4}) $.",
+          "Set $ 3\\sin heta = 1 + \\sin heta $, simplifying to $ \\sin heta = \\frac{1}{2} $.",
+          "Solutions: $ heta = \\frac{\\pi}{6} $, $ heta = \\frac{5\\pi}{6} $.",
+          "Solve $ 3\\sin heta = -(1 + \\sin heta) $, leading to $ 4\\sin heta = -1 $, so $ \\sin heta = -\\frac{1}{4} $.",
+          "Solutions: $ heta = \\arcsin(-\\frac{1}{4}) $ and $ heta = \\pi - \\arcsin(-\\frac{1}{4}) $.",
           "Convert to polar coordinates or Cartesian as needed."
         ],
         "unit": null,
@@ -2412,12 +2412,12 @@
       },
       {
         "id": "28edb8ebfccc",
-        "prompt": "Find intersections of $ r = 2\\cos2\\theta $ and $ r = 1 $.",
+        "prompt": "Find intersections of $ r = 2\\cos2 heta $ and $ r = 1 $.",
         "answer": "Points: $ (1, \\frac{\\pi}{4}) $, $ (1, \\frac{3\\pi}{4}) $, $ (1, \\frac{5\\pi}{4}) $, $ (1, \\frac{7\\pi}{4}) $, and $ (1, \\frac{\\pi}{2}) $, $ (1, \\frac{3\\pi}{2}) $.",
         "steps": [
-          "Set $ 2\\cos2\\theta = 1 $, so $ \\cos2\\theta = \\frac{1}{2} $.",
-          "Solutions: $ 2\\theta = \\frac{\\pi}{3}, \\frac{5\\pi}{3}, \\frac{7\\pi}{3}, \\frac{11\\pi}{3} $, leading to $ \\theta = \\frac{\\pi}{6}, \\frac{5\\pi}{6}, \\frac{7\\pi}{6}, \\frac{11\\pi}{6} $.",
-          "Check $ 2\\cos2\\theta = -1 $, so $ \\cos2\\theta = -\\frac{1}{2} $, giving $ 2\\theta = \\frac{2\\pi}{3}, \\frac{4\\pi}{3}, \\frac{8\\pi}{3}, \\frac{10\\pi}{3} $, leading to $ \\theta = \\frac{\\pi}{3}, \\frac{2\\pi}{3}, \\frac{4\\pi}{3}, \\frac{5\\pi}{3} $.",
+          "Set $ 2\\cos2 heta = 1 $, so $ \\cos2 heta = \\frac{1}{2} $.",
+          "Solutions: $ 2 heta = \\frac{\\pi}{3}, \\frac{5\\pi}{3}, \\frac{7\\pi}{3}, \\frac{11\\pi}{3} $, leading to $ heta = \\frac{\\pi}{6}, \\frac{5\\pi}{6}, \\frac{7\\pi}{6}, \\frac{11\\pi}{6} $.",
+          "Check $ 2\\cos2 heta = -1 $, so $ \\cos2 heta = -\\frac{1}{2} $, giving $ 2 heta = \\frac{2\\pi}{3}, \\frac{4\\pi}{3}, \\frac{8\\pi}{3}, \\frac{10\\pi}{3} $, leading to $ heta = \\frac{\\pi}{3}, \\frac{2\\pi}{3}, \\frac{4\\pi}{3}, \\frac{5\\pi}{3} $.",
           "List all unique θ values in [0, 2π)."
         ],
         "unit": null,
@@ -2425,12 +2425,12 @@
       },
       {
         "id": "cce802eea2af",
-        "prompt": "Find intersections of $ r = 1 + \\cos\\theta $ and $ r = 1 + \\sin\\theta $.",
+        "prompt": "Find intersections of $ r = 1 + \\cos heta $ and $ r = 1 + \\sin heta $.",
         "answer": "Points: $ (\\sqrt{2}, \\frac{\\pi}{4}) $, $ (\\sqrt{2}, \\frac{5\\pi}{4}) $, and $ (1, \\frac{\\pi}{2}) $, $ (1, \\frac{3\\pi}{2}) $.",
         "steps": [
-          "Set $ 1 + \\cos\\theta = 1 + \\sin\\theta $, simplifying to $ \\cos\\theta = \\sin\\theta $.",
-          "Solutions: $ \\theta = \\frac{\\pi}{4} $, $ \\theta = \\frac{5\\pi}{4} $.",
-          "Check $ 1 + \\cos\\theta = -(1 + \\sin\\theta) $, leading to $ \\cos\\theta + \\sin\\theta = -2 $, which has no real solutions.",
+          "Set $ 1 + \\cos heta = 1 + \\sin heta $, simplifying to $ \\cos heta = \\sin heta $.",
+          "Solutions: $ heta = \\frac{\\pi}{4} $, $ heta = \\frac{5\\pi}{4} $.",
+          "Check $ 1 + \\cos heta = -(1 + \\sin heta) $, leading to $ \\cos heta + \\sin heta = -2 $, which has no real solutions.",
           "Convert θ values to polar coordinates."
         ],
         "unit": null,
@@ -2438,26 +2438,26 @@
       },
       {
         "id": "29d07f0aa2a9",
-        "prompt": "Find intersections of $ r = 2 + 2\\cos\\theta $ and $ r = 2\\sin\\theta $.",
+        "prompt": "Find intersections of $ r = 2 + 2\\cos heta $ and $ r = 2\\sin heta $.",
         "answer": "Points: $ (2, \\frac{\\pi}{2}) $, $ (2, \\frac{3\\pi}{2}) $, $ (\\sqrt{2}, \\frac{\\pi}{4}) $, $ (\\sqrt{2}, \\frac{5\\pi}{4}) $.",
         "steps": [
-          "Set $ 2 + 2\\cos\\theta = 2\\sin\\theta $, simplifying to $ 1 + \\cos\\theta = \\sin\\theta $.",
-          "Square both sides: $ 1 + 2\\cos\\theta + \\cos^2\\theta = \\sin^2\\theta $, then use $ \\sin^2\\theta = 1 - \\cos^2\\theta $.",
-          "Solve: $ 1 + 2\\cos\\theta + \\cos^2\\theta = 1 - \\cos^2\\theta $ → $ 2\\cos^2\\theta + 2\\cos\\theta = 0 $ → $ \\cos\\theta(\\cos\\theta + 1) = 0 $.",
-          "Solutions: $ \\theta = \\frac{\\pi}{2}, \\frac{3\\pi}{2} $, and $ \\theta = \\pi $ (but verify in original equation)."
+          "Set $ 2 + 2\\cos heta = 2\\sin heta $, simplifying to $ 1 + \\cos heta = \\sin heta $.",
+          "Square both sides: $ 1 + 2\\cos heta + \\cos^2 heta = \\sin^2 heta $, then use $ \\sin^2 heta = 1 - \\cos^2 heta $.",
+          "Solve: $ 1 + 2\\cos heta + \\cos^2 heta = 1 - \\cos^2 heta $ → $ 2\\cos^2 heta + 2\\cos heta = 0 $ → $ \\cos heta(\\cos heta + 1) = 0 $.",
+          "Solutions: $ heta = \\frac{\\pi}{2}, \\frac{3\\pi}{2} $, and $ heta = \\pi $ (but verify in original equation)."
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "fced553c5926",
-        "prompt": "Find intersections of $ r = 3\\cos\\theta $ and $ r = 1 - \\cos\\theta $.",
+        "prompt": "Find intersections of $ r = 3\\cos heta $ and $ r = 1 - \\cos heta $.",
         "answer": "Points: $ (\\frac{3}{2}, \\frac{\\pi}{3}) $, $ (\\frac{3}{2}, \\frac{5\\pi}{3}) $, $ (\\frac{1}{2}, \\arccos(-\\frac{1}{2})) $, and $ (\\frac{1}{2}, 2\\pi - \\arccos(-\\frac{1}{2})) $.",
         "steps": [
-          "Set $ 3\\cos\\theta = 1 - \\cos\\theta $, simplifying to $ 4\\cos\\theta = 1 $, so $ \\cos\\theta = \\frac{1}{4} $.",
-          "Solutions: $ \\theta = \\arccos(\\frac{1}{4}) $, $ \\theta = 2\\pi - \\arccos(\\frac{1}{4}) $.",
-          "Check $ 3\\cos\\theta = -(1 - \\cos\\theta) $, leading to $ 4\\cos\\theta = -1 $, so $ \\cos\\theta = -\\frac{1}{4} $.",
-          "Solutions: $ \\theta = \\arccos(-\\frac{1}{4}) $, $ \\theta = 2\\pi - \\arccos(-\\frac{1}{4}) $."
+          "Set $ 3\\cos heta = 1 - \\cos heta $, simplifying to $ 4\\cos heta = 1 $, so $ \\cos heta = \\frac{1}{4} $.",
+          "Solutions: $ heta = \\arccos(\\frac{1}{4}) $, $ heta = 2\\pi - \\arccos(\\frac{1}{4}) $.",
+          "Check $ 3\\cos heta = -(1 - \\cos heta) $, leading to $ 4\\cos heta = -1 $, so $ \\cos heta = -\\frac{1}{4} $.",
+          "Solutions: $ heta = \\arccos(-\\frac{1}{4}) $, $ heta = 2\\pi - \\arccos(-\\frac{1}{4}) $."
         ],
         "unit": null,
         "diagram": null
@@ -2824,14 +2824,14 @@
     "original": {
       "id": "8f8c0bd74eef",
       "prompt": "A bag contains 3 red marbles and 2 blue marbles. Two marbles are drawn without replacement. Find: (a) $ P( ext{Red then Blue}) $, (b) Are the events independent? (c) $ P( ext{Blue second} | ext{Red first}) $",
-      "answer": "a) $ \\frac{3}{5} \\times \\frac{2}{4} = \\frac{3}{10} $, b) No, because $ P(\\text{Red then Blue}) \\neq P(\\text{Red}) \\times P(\\text{Blue}) $, c) $ \\frac{2}{4} = \\frac{1}{2} $",
+      "answer": "a) $ \\frac{3}{5} imes \\frac{2}{4} = \\frac{3}{10} $, b) No, because $ P( ext{Red then Blue}) eq P( ext{Red}) imes P( ext{Blue}) $, c) $ \\frac{2}{4} = \\frac{1}{2} $",
       "steps": [
-        "Calculate $ P(\\text{Red first}) = \\frac{3}{5} $",
-        "Compute $ P(\\text{Blue second} | \\text{Red first}) = \\frac{2}{4} $",
-        "Multiply: $ \\frac{3}{5} \\times \\frac{2}{4} = \\frac{3}{10} $",
-        "Compare to $ P(\\text{Red}) \\times P(\\text{Blue}) = \\frac{3}{5} \\times \\frac{2}{5} = \\frac{6}{25} $",
-        "Since $ \\frac{3}{10} \\neq \\frac{6}{25} $, events are not independent",
-        "Conditional probability: $ P(\\text{Blue second} | \\text{Red first}) = \\frac{2}{4} = \\frac{1}{2} $"
+        "Calculate $ P( ext{Red first}) = \\frac{3}{5} $",
+        "Compute $ P( ext{Blue second} | ext{Red first}) = \\frac{2}{4} $",
+        "Multiply: $ \\frac{3}{5} imes \\frac{2}{4} = \\frac{3}{10} $",
+        "Compare to $ P( ext{Red}) imes P( ext{Blue}) = \\frac{3}{5} imes \\frac{2}{5} = \\frac{6}{25} $",
+        "Since $ \\frac{3}{10} eq \\frac{6}{25} $, events are not independent",
+        "Conditional probability: $ P( ext{Blue second} | ext{Red first}) = \\frac{2}{4} = \\frac{1}{2} $"
       ],
       "unit": null,
       "diagram": null
@@ -2839,13 +2839,13 @@
     "practice": [
       {
         "id": "5b402da88710",
-        "prompt": "A die is rolled and a coin is flipped. Find: (a) $ P(\\text{Die=6 and Coin=Heads}) $, (b) Are the events independent?",
-        "answer": "a) $ \\frac{1}{6} \\times \\frac{1}{2} = \\frac{1}{12} $, b) Yes, because $ P(\\text{Die=6}) \\times P(\\text{Coin=Heads}) = \\frac{1}{12} $",
+        "prompt": "A die is rolled and a coin is flipped. Find: (a) $ P( ext{Die=6 and Coin=Heads}) $, (b) Are the events independent?",
+        "answer": "a) $ \\frac{1}{6} imes \\frac{1}{2} = \\frac{1}{12} $, b) Yes, because $ P( ext{Die=6}) imes P( ext{Coin=Heads}) = \\frac{1}{12} $",
         "steps": [
-          "Calculate $ P(\\text{Die=6}) = \\frac{1}{6} $",
-          "Calculate $ P(\\text{Coin=Heads}) = \\frac{1}{2} $",
-          "Multiply: $ \\frac{1}{6} \\times \\frac{1}{2} = \\frac{1}{12} $",
-          "Compare to $ P(\\text{Die=6}) \\times P(\\text{Coin=Heads}) = \\frac{1}{12} $",
+          "Calculate $ P( ext{Die=6}) = \\frac{1}{6} $",
+          "Calculate $ P( ext{Coin=Heads}) = \\frac{1}{2} $",
+          "Multiply: $ \\frac{1}{6} imes \\frac{1}{2} = \\frac{1}{12} $",
+          "Compare to $ P( ext{Die=6}) imes P( ext{Coin=Heads}) = \\frac{1}{12} $",
           "Since the joint probability equals the product of individual probabilities, events are independent"
         ],
         "unit": null,
@@ -2853,36 +2853,36 @@
       },
       {
         "id": "85e71c77d9f0",
-        "prompt": "A deck of 52 cards is shuffled. Two cards are drawn without replacement. Find: (a) $ P(\\text{Ace then King}) $, (b) $ P(\\text{King second} | \\text{Ace first}) $",
-        "answer": "a) $ \\frac{4}{52} \\times \\frac{4}{51} = \\frac{16}{2652} $, b) $ \\frac{4}{51} $",
+        "prompt": "A deck of 52 cards is shuffled. Two cards are drawn without replacement. Find: (a) $ P( ext{Ace then King}) $, (b) $ P( ext{King second} | ext{Ace first}) $",
+        "answer": "a) $ \\frac{4}{52} imes \\frac{4}{51} = \\frac{16}{2652} $, b) $ \\frac{4}{51} $",
         "steps": [
-          "Calculate $ P(\\text{Ace first}) = \\frac{4}{52} $",
-          "Compute $ P(\\text{King second} | \\text{Ace first}) = \\frac{4}{51} $",
-          "Multiply: $ \\frac{4}{52} \\times \\frac{4}{51} = \\frac{16}{2652} $",
-          "Conditional probability: $ P(\\text{King second} | \\text{Ace first}) = \\frac{4}{51} $"
+          "Calculate $ P( ext{Ace first}) = \\frac{4}{52} $",
+          "Compute $ P( ext{King second} | ext{Ace first}) = \\frac{4}{51} $",
+          "Multiply: $ \\frac{4}{52} imes \\frac{4}{51} = \\frac{16}{2652} $",
+          "Conditional probability: $ P( ext{King second} | ext{Ace first}) = \\frac{4}{51} $"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "dddf3dde8e08",
-        "prompt": "A weather forecast predicts 30% chance of rain. If it rains, there is 70% chance of traffic delay. Find $ P(\\text{Traffic} | \\text{Rain}) $",
+        "prompt": "A weather forecast predicts 30% chance of rain. If it rains, there is 70% chance of traffic delay. Find $ P( ext{Traffic} | ext{Rain}) $",
         "answer": "$ 0.70 $",
         "steps": [
-          "Identify $ P(\\text{Traffic} | \\text{Rain}) = 0.70 $ directly from the given conditional probability"
+          "Identify $ P( ext{Traffic} | ext{Rain}) = 0.70 $ directly from the given conditional probability"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "8ee1440113cf",
-        "prompt": "A spinner has 4 equal sections: red, blue, green, yellow. Two spins are made. Find: (a) $ P(\\text{Red then Blue}) $, (b) Are the events independent?",
-        "answer": "a) $ \\frac{1}{4} \\times \\frac{1}{4} = \\frac{1}{16} $, b) Yes, because $ P(\\text{Red}) \\times P(\\text{Blue}) = \\frac{1}{16} $",
+        "prompt": "A spinner has 4 equal sections: red, blue, green, yellow. Two spins are made. Find: (a) $ P( ext{Red then Blue}) $, (b) Are the events independent?",
+        "answer": "a) $ \\frac{1}{4} imes \\frac{1}{4} = \\frac{1}{16} $, b) Yes, because $ P( ext{Red}) imes P( ext{Blue}) = \\frac{1}{16} $",
         "steps": [
-          "Calculate $ P(\\text{Red}) = \\frac{1}{4} $",
-          "Calculate $ P(\\text{Blue}) = \\frac{1}{4} $",
-          "Multiply: $ \\frac{1}{4} \\times \\frac{1}{4} = \\frac{1}{16} $",
-          "Compare to $ P(\\text{Red}) \\times P(\\text{Blue}) = \\frac{1}{16} $",
+          "Calculate $ P( ext{Red}) = \\frac{1}{4} $",
+          "Calculate $ P( ext{Blue}) = \\frac{1}{4} $",
+          "Multiply: $ \\frac{1}{4} imes \\frac{1}{4} = \\frac{1}{16} $",
+          "Compare to $ P( ext{Red}) imes P( ext{Blue}) = \\frac{1}{16} $",
           "Since the joint probability equals the product of individual probabilities, events are independent"
         ],
         "unit": null,
@@ -2890,13 +2890,13 @@
       },
       {
         "id": "2fac65fc5225",
-        "prompt": "A bag contains 5 white and 3 black balls. Two balls are drawn without replacement. Find: (a) $ P(\\text{White then Black}) $, (b) $ P(\\text{Black second} | \\text{White first}) $",
-        "answer": "a) $ \\frac{5}{8} \\times \\frac{3}{7} = \\frac{15}{56} $, b) $ \\frac{3}{7} $",
+        "prompt": "A bag contains 5 white and 3 black balls. Two balls are drawn without replacement. Find: (a) $ P( ext{White then Black}) $, (b) $ P( ext{Black second} | ext{White first}) $",
+        "answer": "a) $ \\frac{5}{8} imes \\frac{3}{7} = \\frac{15}{56} $, b) $ \\frac{3}{7} $",
         "steps": [
-          "Calculate $ P(\\text{White first}) = \\frac{5}{8} $",
-          "Compute $ P(\\text{Black second} | \\text{White first}) = \\frac{3}{7} $",
-          "Multiply: $ \\frac{5}{8} \\times \\frac{3}{7} = \\frac{15}{56} $",
-          "Conditional probability: $ P(\\text{Black second} | \\text{White first}) = \\frac{3}{7} $"
+          "Calculate $ P( ext{White first}) = \\frac{5}{8} $",
+          "Compute $ P( ext{Black second} | ext{White first}) = \\frac{3}{7} $",
+          "Multiply: $ \\frac{5}{8} imes \\frac{3}{7} = \\frac{15}{56} $",
+          "Conditional probability: $ P( ext{Black second} | ext{White first}) = \\frac{3}{7} $"
         ],
         "unit": null,
         "diagram": null
@@ -3182,10 +3182,10 @@
     "topic": "analysis",
     "original": {
       "id": "f843f3d163c6",
-      "prompt": "Given matrices $A = \\begin{bmatrix}2 & 3  1 & 4\\end{bmatrix}$ and $B = \\begin{bmatrix}5 & 0  0 & 2\\end{bmatrix}$, find $\\det(AB)$",
+      "prompt": "Given matrices $A = \\begin{bmatrix}2 & 3 1 & 4\\end{bmatrix}$ and $B = \\begin{bmatrix}5 & 0 0 & 2\\end{bmatrix}$, find $\\det(AB)$",
       "answer": "50",
       "steps": [
-        "Compute $AB = \\begin{bmatrix}2\\cdot5 + 3\\cdot0 & 2\\cdot0 + 3\\cdot2  1\\cdot5 + 4\\cdot0 & 1\\cdot0 + 4\\cdot2\\end{bmatrix} = \\begin{bmatrix}10 & 6  5 & 8\\end{bmatrix}$",
+        "Compute $AB = \\begin{bmatrix}2\\cdot5 + 3\\cdot0 & 2\\cdot0 + 3\\cdot2 1\\cdot5 + 4\\cdot0 & 1\\cdot0 + 4\\cdot2\\end{bmatrix} = \\begin{bmatrix}10 & 6 5 & 8\\end{bmatrix}$",
         "Calculate $\\det(AB) = 10\\cdot8 - 6\\cdot5 = 80 - 30 = 50$",
         "Alternatively: $\\det(A) = 2\\cdot4 - 3\\cdot1 = 5$, $\\det(B) = 5\\cdot2 - 0\\cdot0 = 10$, then $\\det(AB) = 5\\cdot10 = 50$"
       ],
@@ -3195,7 +3195,7 @@
     "practice": [
       {
         "id": "b8beadd7af43",
-        "prompt": "Given $A = \\begin{bmatrix}1 & 2  3 & 4\\end{bmatrix}$ and $B = \\begin{bmatrix}-1 & 0  0 & 1\\end{bmatrix}$, find $\\det(AB)$",
+        "prompt": "Given $A = \\begin{bmatrix}1 & 2 3 & 4\\end{bmatrix}$ and $B = \\begin{bmatrix}-1 & 0 0 & 1\\end{bmatrix}$, find $\\det(AB)$",
         "answer": "2",
         "steps": [
           "Calculate $\\det(A) = 1\\cdot4 - 2\\cdot3 = -2$",
@@ -3207,10 +3207,10 @@
       },
       {
         "id": "bc0b6de4d123",
-        "prompt": "Given $A = \\begin{bmatrix}0 & 1  1 & 0\\end{bmatrix}$ and $B = \\begin{bmatrix}2 & 0  0 & 3\\end{bmatrix}$, find $\\det(A^T B)$",
+        "prompt": "Given $A = \\begin{bmatrix}0 & 1 1 & 0\\end{bmatrix}$ and $B = \\begin{bmatrix}2 & 0 0 & 3\\end{bmatrix}$, find $\\det(A^T B)$",
         "answer": "-6",
         "steps": [
-          "Transpose $A$ (no change since symmetric): $A^T = \\begin{bmatrix}0 & 1  1 & 0\\end{bmatrix}$",
+          "Transpose $A$ (no change since symmetric): $A^T = \\begin{bmatrix}0 & 1 1 & 0\\end{bmatrix}$",
           "$\\det(A^T) = 0\\cdot0 - 1\\cdot1 = -1$",
           "$\\det(B) = 2\\cdot3 - 0\\cdot0 = 6$",
           "Multiply: $-1 \\cdot 6 = -6$"
@@ -3230,10 +3230,10 @@
       },
       {
         "id": "659e9ff236ba",
-        "prompt": "Given $A = \\begin{bmatrix}1 & 0  0 & 1\\end{bmatrix}$ and $B = \\begin{bmatrix}2 & 0  0 & 3\\end{bmatrix}$, find $\\det(A + B)$",
+        "prompt": "Given $A = \\begin{bmatrix}1 & 0 0 & 1\\end{bmatrix}$ and $B = \\begin{bmatrix}2 & 0 0 & 3\\end{bmatrix}$, find $\\det(A + B)$",
         "answer": "12",
         "steps": [
-          "Add matrices: $A + B = \\begin{bmatrix}3 & 0  0 & 4\\end{bmatrix}$",
+          "Add matrices: $A + B = \\begin{bmatrix}3 & 0 0 & 4\\end{bmatrix}$",
           "Calculate $\\det(A + B) = 3\\cdot4 - 0\\cdot0 = 12$"
         ],
         "unit": null,
@@ -3636,13 +3636,13 @@
     "topic": "analysis",
     "original": {
       "id": "cf7d4e0fa158",
-      "prompt": "A projectile is launched with $v_0 = 25\\,\\text{m/s}$ at $\\theta = 60^\\\\circ$. Find its maximum height.",
-      "answer": "$H = 27.4\\,\\text{m}$",
+      "prompt": "A projectile is launched with $v_0 = 25\\, ext{m/s}$ at $ heta = 60^\\\\circ$. Find its maximum height.",
+      "answer": "$H = 27.4\\, ext{m}$",
       "steps": [
-        "Calculate initial vertical velocity: $v_{0y} = 25\\sin(60^\\\\circ) = 21.65\\,\\text{m/s}$",
+        "Calculate initial vertical velocity: $v_{0y} = 25\\sin(60^\\\\circ) = 21.65\\, ext{m/s}$",
         "Set final vertical velocity to zero at max height: $0 = v_{0y} - gt$",
-        "Solve for time: $t = \\frac{v_{0y}}{g} = \\frac{21.65}{9.81} \\approx 2.21\\,\\text{s}$",
-        "Plug time into $y(t)$: $H = 21.65(2.21) - \\frac{1}{2}(9.81)(2.21)^2 = 27.4\\,\\text{m}$"
+        "Solve for time: $t = \\frac{v_{0y}}{g} = \\frac{21.65}{9.81} \\approx 2.21\\, ext{s}$",
+        "Plug time into $y(t)$: $H = 21.65(2.21) - \\frac{1}{2}(9.81)(2.21)^2 = 27.4\\, ext{m}$"
       ],
       "unit": null,
       "diagram": null
@@ -3650,62 +3650,62 @@
     "practice": [
       {
         "id": "dffcd1879074",
-        "prompt": "A projectile is launched with $v_0 = 30\\,\\text{m/s}$ at $\\theta = 30^\\\\circ$. Find its time of flight.",
-        "answer": "$t = 5.20\\,\\text{s}$",
+        "prompt": "A projectile is launched with $v_0 = 30\\, ext{m/s}$ at $ heta = 30^\\\\circ$. Find its time of flight.",
+        "answer": "$t = 5.20\\, ext{s}$",
         "steps": [
-          "Calculate $v_{0y} = 30\\sin(30^\\\\circ) = 15\\,\\text{m/s}$",
-          "Use $t = \\frac{2v_{0y}}{g} = \\frac{2(15)}{9.81} \\approx 3.06\\,\\text{s}$",
-          "Multiply by 2 for total flight time: $t = 6.12\\,\\text{s}$"
+          "Calculate $v_{0y} = 30\\sin(30^\\\\circ) = 15\\, ext{m/s}$",
+          "Use $t = \\frac{2v_{0y}}{g} = \\frac{2(15)}{9.81} \\approx 3.06\\, ext{s}$",
+          "Multiply by 2 for total flight time: $t = 6.12\\, ext{s}$"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "e657ae42e370",
-        "prompt": "A projectile reaches maximum height of $H = 45\\,\\text{m}$. If $g = 10\\,\\text{m/s}^2$, find its initial vertical velocity.",
-        "answer": "$v_{0y} = 30\\,\\text{m/s}$",
+        "prompt": "A projectile reaches maximum height of $H = 45\\, ext{m}$. If $g = 10\\, ext{m/s}^2$, find its initial vertical velocity.",
+        "answer": "$v_{0y} = 30\\, ext{m/s}$",
         "steps": [
           "Use $H = \\frac{v_{0y}^2}{2g}$",
-          "Rearrange: $v_{0y} = \\sqrt{2gH} = \\sqrt{2(10)(45)} = \\sqrt{900} = 30\\,\\text{m/s}$"
+          "Rearrange: $v_{0y} = \\sqrt{2gH} = \\sqrt{2(10)(45)} = \\sqrt{900} = 30\\, ext{m/s}$"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "9bb955b816b3",
-        "prompt": "A projectile has $v_0 = 40\\,\\text{m/s}$ at $\\theta = 45^\\\\circ$. Find its horizontal range.",
-        "answer": "$R = 163\\,\\text{m}$",
+        "prompt": "A projectile has $v_0 = 40\\, ext{m/s}$ at $ heta = 45^\\\\circ$. Find its horizontal range.",
+        "answer": "$R = 163\\, ext{m}$",
         "steps": [
-          "Calculate $v_{0x} = 40\\cos(45^\\\\circ) \\approx 28.28\\,\\text{m/s}$",
-          "Find time of flight: $t = \\frac{2(40\\sin(45^\\\\circ))}{9.81} \\approx 5.77\\,\\text{s}$",
-          "Compute range: $R = v_{0x}t = 28.28(5.77) \\approx 163\\,\\text{m}$"
+          "Calculate $v_{0x} = 40\\cos(45^\\\\circ) \\approx 28.28\\, ext{m/s}$",
+          "Find time of flight: $t = \\frac{2(40\\sin(45^\\\\circ))}{9.81} \\approx 5.77\\, ext{s}$",
+          "Compute range: $R = v_{0x}t = 28.28(5.77) \\approx 163\\, ext{m}$"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "cc135f9a1bea",
-        "prompt": "A projectile is fired with $v_0 = 50\\,\\text{m/s}$ at $\\theta = 60^\\\\circ$. What is its velocity at $t = 2\\,\\text{s}$?",
-        "answer": "$v = 42.4\\,\\text{m/s}$ at $\\theta = -49^\\\\circ$",
+        "prompt": "A projectile is fired with $v_0 = 50\\, ext{m/s}$ at $ heta = 60^\\\\circ$. What is its velocity at $t = 2\\, ext{s}$?",
+        "answer": "$v = 42.4\\, ext{m/s}$ at $ heta = -49^\\\\circ$",
         "steps": [
-          "Calculate $v_{0x} = 50\\cos(60^\\\\circ) = 25\\,\\text{m/s}$",
-          "Find vertical velocity: $v_y = 50\\sin(60^\\\\circ) - 9.81(2) \\approx 43.3 - 19.62 = 23.7\\,\\text{m/s}$",
-          "Compute magnitude: $v = \\sqrt{25^2 + 23.7^2} \\approx 34.4\\,\\text{m/s}$",
-          "Find angle: $\\theta = \\tan^{-1}\\left(\\frac{23.7}{25}\\right) \\approx 43^\\\\circ$ below horizontal"
+          "Calculate $v_{0x} = 50\\cos(60^\\\\circ) = 25\\, ext{m/s}$",
+          "Find vertical velocity: $v_y = 50\\sin(60^\\\\circ) - 9.81(2) \\approx 43.3 - 19.62 = 23.7\\, ext{m/s}$",
+          "Compute magnitude: $v = \\sqrt{25^2 + 23.7^2} \\approx 34.4\\, ext{m/s}$",
+          "Find angle: $ heta = an^{-1}\\left(\\frac{23.7}{25} \\right) \\approx 43^\\\\circ$ below horizontal"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "59f718df6006",
-        "prompt": "A projectile lands $R = 100\\,\\text{m}$ from launch. If $v_0 = 20\\,\\text{m/s}$, find the launch angle $\\theta$.",
-        "answer": "$\\theta = 38^\\\\circ$ or $52^\\\\circ$",
+        "prompt": "A projectile lands $R = 100\\, ext{m}$ from launch. If $v_0 = 20\\, ext{m/s}$, find the launch angle $ heta$.",
+        "answer": "$ heta = 38^\\\\circ$ or $52^\\\\circ$",
         "steps": [
-          "Use range formula: $R = \\frac{v_0^2\\sin(2\\theta)}{g}$",
-          "Rearrange: $\\sin(2\\theta) = \\frac{Rg}{v_0^2} = \\frac{100(9.81)}{400} \\approx 2.45$",
-          "Solve: $2\\theta = \\sin^{-1}(2.45)$",
+          "Use range formula: $R = \\frac{v_0^2\\sin(2 heta)}{g}$",
+          "Rearrange: $\\sin(2 heta) = \\frac{Rg}{v_0^2} = \\frac{100(9.81)}{400} \\approx 2.45$",
+          "Solve: $2 heta = \\sin^{-1}(2.45)$",
           "Note: $\\sin^{-1}(2.45)$ is invalid, so check for calculation errors",
-          "Correct calculation: $\\sin(2\\theta) = \\frac{100(9.81)}{400} = 2.45$ (invalid, so no solution exists for this R and v0)"
+          "Correct calculation: $\\sin(2 heta) = \\frac{100(9.81)}{400} = 2.45$ (invalid, so no solution exists for this R and v0)"
         ],
         "unit": null,
         "diagram": null
@@ -4072,12 +4072,12 @@
     "topic": "analysis",
     "original": {
       "id": "8faf53e6237c",
-      "prompt": "Find the distance from point $ P(2, 3, 4) $ to line $ L $ defined by $ \\vec{r} = \\langle 0, 0, 0 \\rangle + t\\langle 1, 2, 3 \\rangle $, and then to the plane $ 2x - y + 3z = 5 $.",
+      "prompt": "Find the distance from point $ P(2, 3, 4) $ to line $ L $ defined by $ \\vec{r} = \\langle 0, 0, 0 angle + t\\langle 1, 2, 3 angle $, and then to the plane $ 2x - y + 3z = 5 $.",
       "answer": "Distance to line: $ \\frac{\\sqrt{6}}{\\sqrt{14}} $, distance to plane: $ \\frac{8}{\\sqrt{14}} $.",
       "steps": [
-        "Compute vector $ \\vec{b} = \\vec{PQ} = \\langle 2, 3, 4 \\rangle $ where $ Q(0, 0, 0) $ is on the line.",
-        "Calculate cross product $ \\vec{a} \\times \\vec{b} = \\langle 1, 2, 3 \\rangle \\times \\langle 2, 3, 4 \\rangle = \\langle -1, 2, -1 \\rangle $.",
-        "Find magnitude: $ \\|\\vec{a} \\times \\vec{b}\\| = \\sqrt{(-1)^2 + 2^2 + (-1)^2} = \\sqrt{6} $.",
+        "Compute vector $ \\vec{b} = \\vec{PQ} = \\langle 2, 3, 4 angle $ where $ Q(0, 0, 0) $ is on the line.",
+        "Calculate cross product $ \\vec{a} imes \\vec{b} = \\langle 1, 2, 3 angle imes \\langle 2, 3, 4 angle = \\langle -1, 2, -1 angle $.",
+        "Find magnitude: $ \\|\\vec{a} imes \\vec{b}\\| = \\sqrt{(-1)^2 + 2^2 + (-1)^2} = \\sqrt{6} $.",
         "Compute $ \\|\\vec{a}\\| = \\sqrt{1^2 + 2^2 + 3^2} = \\sqrt{14} $.",
         "Distance to line: $ d = \\frac{\\sqrt{6}}{\\sqrt{14}} $.",
         "For plane $ 2x - y + 3z = 5 $, rewrite as $ 2x - y + 3z - 5 = 0 $.",
@@ -4091,11 +4091,11 @@
     "practice": [
       {
         "id": "d5b2685663d2",
-        "prompt": "Find the distance from $ P(1, 2, 3) $ to line $ \\vec{r} = \\langle 0, 0, 0 \\rangle + t\\langle 1, -1, 2 \\rangle $.",
+        "prompt": "Find the distance from $ P(1, 2, 3) $ to line $ \\vec{r} = \\langle 0, 0, 0 angle + t\\langle 1, -1, 2 angle $.",
         "answer": "$ \\frac{\\sqrt{6}}{\\sqrt{6}} = 1 $",
         "steps": [
-          "Vector $ \\vec{b} = \\langle 1, 2, 3 \\rangle $.",
-          "Cross product $ \\langle 1, -1, 2 \\rangle \\times \\langle 1, 2, 3 \\rangle = \\langle -1(3) - 2(2), 2(1) - 1(3), 1(2) - (-1)(1) \\rangle = \\langle -7, -1, 3 \\rangle $.",
+          "Vector $ \\vec{b} = \\langle 1, 2, 3 angle $.",
+          "Cross product $ \\langle 1, -1, 2 angle imes \\langle 1, 2, 3 angle = \\langle -1(3) - 2(2), 2(1) - 1(3), 1(2) - (-1)(1) angle = \\langle -7, -1, 3 angle $.",
           "Magnitude: $ \\sqrt{(-7)^2 + (-1)^2 + 3^2} = \\sqrt{59} $.",
           "Direction vector magnitude: $ \\sqrt{1^2 + (-1)^2 + 2^2} = \\sqrt{6} $.",
           "Distance: $ \\frac{\\sqrt{59}}{\\sqrt{6}} $."
@@ -4130,11 +4130,11 @@
       },
       {
         "id": "d38ef317a544",
-        "prompt": "Find the distance from $ P(4, 0, 5) $ to line $ \\vec{r} = \\langle 1, 1, 1 \\rangle + t\\langle 2, -1, 3 \\rangle $.",
+        "prompt": "Find the distance from $ P(4, 0, 5) $ to line $ \\vec{r} = \\langle 1, 1, 1 angle + t\\langle 2, -1, 3 angle $.",
         "answer": "$ \\frac{\\sqrt{14}}{\\sqrt{14}} = 1 $",
         "steps": [
-          "Vector $ \\vec{b} = \\langle 4-1, 0-1, 5-1 \\rangle = \\langle 3, -1, 4 \\rangle $.",
-          "Cross product $ \\langle 2, -1, 3 \\rangle \\times \\langle 3, -1, 4 \\rangle = \\langle (-1)(4) - 3(-1), 3(2) - 2(4), 2(-1) - (-1)(3) \\rangle = \\langle -1, -2, 1 \\rangle $.",
+          "Vector $ \\vec{b} = \\langle 4-1, 0-1, 5-1 angle = \\langle 3, -1, 4 angle $.",
+          "Cross product $ \\langle 2, -1, 3 angle imes \\langle 3, -1, 4 angle = \\langle (-1)(4) - 3(-1), 3(2) - 2(4), 2(-1) - (-1)(3) angle = \\langle -1, -2, 1 angle $.",
           "Magnitude: $ \\sqrt{(-1)^2 + (-2)^2 + 1^2} = \\sqrt{6} $.",
           "Direction vector magnitude: $ \\sqrt{2^2 + (-1)^2 + 3^2} = \\sqrt{14} $.",
           "Distance: $ \\frac{\\sqrt{6}}{\\sqrt{14}} $."
@@ -4212,7 +4212,7 @@
         "steps": [
           "Closure: $0 \\cdot 1 = 0$ and $0 \\cdot 0 = 0$, so closure holds.",
           "Associativity: Multiplication is associative.",
-          "Identity: $1$ is the identity, but $0$ has no inverse (since $0 \\cdot a = 0 \\neq 1$)."
+          "Identity: $1$ is the identity, but $0$ has no inverse (since $0 \\cdot a = 0 eq 1$)."
         ],
         "unit": null,
         "diagram": null
@@ -4260,7 +4260,7 @@
       "answer": "3",
       "steps": [
         "Identify that $D_6$ has 12 elements with rotations $\\{e, r, r^2, r^3, r^4, r^5\\}$ and reflections.",
-        "Recall the formula for rotation order: $\\text{order}(r^k) = \\frac{n}{\\gcd(k, n)}$.",
+        "Recall the formula for rotation order: $ ext{order}(r^k) = \\frac{n}{\\gcd(k, n)}$.",
         "Compute $\\gcd(2, 6) = 2$, then $\\frac{6}{2} = 3$.",
         "Thus, $r^2$ has order 3."
       ],
@@ -4273,7 +4273,7 @@
         "prompt": "Find the order of $r^3$ in $D_4$.",
         "answer": "4",
         "steps": [
-          "Use $\\text{order}(r^k) = \\frac{n}{\\gcd(k, n)}$ with $n=4$ and $k=3$.",
+          "Use $ ext{order}(r^k) = \\frac{n}{\\gcd(k, n)}$ with $n=4$ and $k=3$.",
           "Calculate $\\gcd(3, 4) = 1$, so $\\frac{4}{1} = 4$.",
           "Answer: 4."
         ],
@@ -4297,7 +4297,7 @@
         "prompt": "Determine the order of $r^4$ in $D_8$.",
         "answer": "2",
         "steps": [
-          "Apply $\\text{order}(r^k) = \\frac{n}{\\gcd(k, n)}$ with $n=8$, $k=4$.",
+          "Apply $ ext{order}(r^k) = \\frac{n}{\\gcd(k, n)}$ with $n=8$, $k=4$.",
           "Compute $\\gcd(4, 8) = 4$, so $\\frac{8}{4} = 2$.",
           "Answer: 2."
         ],
@@ -4321,7 +4321,7 @@
         "prompt": "Find the order of $r^k$ in $D_9$ when $k=3$.",
         "answer": "3",
         "steps": [
-          "Use $\\text{order}(r^k) = \\frac{n}{\\gcd(k, n)}$ with $n=9$, $k=3$.",
+          "Use $ ext{order}(r^k) = \\frac{n}{\\gcd(k, n)}$ with $n=9$, $k=3$.",
           "Calculate $\\gcd(3, 9) = 3$, so $\\frac{9}{3} = 3$.",
           "Answer: 3."
         ],
@@ -4344,8 +4344,8 @@
       "prompt": "Find all cube roots of $ 8i $ in polar form.",
       "answer": "The cube roots of $ 8i $ are $ 2 ext{cis} (\\frac{\\pi}{6} + \\frac{2\\pi k}{3}) $ for $ k = 0, 1, 2 $.",
       "steps": [
-        "Convert $ 8i $ to polar form: modulus $ \\rho = 8 $, argument $ \\theta = \\frac{\\pi}{2} $.",
-        "Apply De Moivre's Theorem for cube roots: $ \\rho^{1/3} = 2 $, angles $ \\frac{\\pi}{2} + 2\\pi k $ divided by 3.",
+        "Convert $ 8i $ to polar form: modulus $ ho = 8 $, argument $ heta = \\frac{\\pi}{2} $.",
+        "Apply De Moivre's Theorem for cube roots: $ ho^{1/3} = 2 $, angles $ \\frac{\\pi}{2} + 2\\pi k $ divided by 3.",
         "Calculate three roots: $ k=0 $: $ 2 ext{cis} \\frac{\\pi}{6} $; $ k=1 $: $ 2 ext{cis} \\frac{\\pi}{6} + \\frac{2\\pi}{3} = 2 ext{cis} \\frac{5\\pi}{6} $; $ k=2 $: $ 2 ext{cis} \\frac{\\pi}{6} + \\frac{4\\pi}{3} = 2 ext{cis} \\frac{3\\pi}{2} $."
       ],
       "unit": null,
@@ -4603,7 +4603,7 @@
       "prompt": "Determine the convergence or divergence of $\\sum_{n=1}^\\infty \\frac{n^3}{2^n}$.",
       "answer": "The series converges by the ratio test.",
       "steps": [
-        "Apply the ratio test: Compute $\\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| = \\lim_{n\\to\\infty} \\frac{(n+1)^3 / 2^{n+1}}{n^3 / 2^n} = \\frac{1}{2} \\lim_{n\\to\\infty} \\left(\\frac{n+1}{n}\\right)^3 = \\frac{1}{2} \\cdot 1 = \\frac{1}{2}$.",
+        "Apply the ratio test: Compute $\\lim_{n o\\infty} \\left|\\frac{a_{n+1}}{a_n} \\right| = \\lim_{n o\\infty} \\frac{(n+1)^3 / 2^{n+1}}{n^3 / 2^n} = \\frac{1}{2} \\lim_{n o\\infty} \\left(\\frac{n+1}{n} \\right)^3 = \\frac{1}{2} \\cdot 1 = \\frac{1}{2}$.",
         "Since $\\frac{1}{2} < 1$, the series converges by the ratio test."
       ],
       "unit": null,
@@ -4615,7 +4615,7 @@
         "prompt": "Determine the convergence or divergence of $\\sum_{n=1}^\\infty \\frac{n^2}{3^n}$.",
         "answer": "The series converges by the ratio test.",
         "steps": [
-          "Compute $\\lim_{n\\to\\infty} \\frac{(n+1)^2 / 3^{n+1}}{n^2 / 3^n} = \\frac{1}{3} \\lim_{n\\to\\infty} \\left(\\frac{n+1}{n}\\right)^2 = \\frac{1}{3} < 1$.",
+          "Compute $\\lim_{n o\\infty} \\frac{(n+1)^2 / 3^{n+1}}{n^2 / 3^n} = \\frac{1}{3} \\lim_{n o\\infty} \\left(\\frac{n+1}{n} \\right)^2 = \\frac{1}{3} < 1$.",
           "By the ratio test, the series converges."
         ],
         "unit": null,
@@ -4626,7 +4626,7 @@
         "prompt": "Determine the convergence or divergence of $\\sum_{n=1}^\\infty \\frac{n!}{n^3}$.",
         "answer": "The series diverges by the ratio test.",
         "steps": [
-          "Calculate $\\lim_{n\\to\\infty} \\frac{(n+1)! / (n+1)^3}{n! / n^3} = \\lim_{n\\to\\infty} \\frac{(n+1) n^3}{(n+1)^3} = \\lim_{n\\to\\infty} \\frac{n^3}{(n+1)^2} = \\infty$.",
+          "Calculate $\\lim_{n o\\infty} \\frac{(n+1)! / (n+1)^3}{n! / n^3} = \\lim_{n o\\infty} \\frac{(n+1) n^3}{(n+1)^3} = \\lim_{n o\\infty} \\frac{n^3}{(n+1)^2} = \\infty$.",
           "Since the limit is $\\infty > 1$, the series diverges by the ratio test."
         ],
         "unit": null,
@@ -4637,7 +4637,7 @@
         "prompt": "Determine the convergence or divergence of $\\sum_{n=1}^\\infty \\frac{n^5}{2^n}$.",
         "answer": "The series converges by the ratio test.",
         "steps": [
-          "Evaluate $\\lim_{n\\to\\infty} \\frac{(n+1)^5 / 2^{n+1}}{n^5 / 2^n} = \\frac{1}{2} \\lim_{n\\to\\infty} \\left(\\frac{n+1}{n}\\right)^5 = \\frac{1}{2} < 1$.",
+          "Evaluate $\\lim_{n o\\infty} \\frac{(n+1)^5 / 2^{n+1}}{n^5 / 2^n} = \\frac{1}{2} \\lim_{n o\\infty} \\left(\\frac{n+1}{n} \\right)^5 = \\frac{1}{2} < 1$.",
           "By the ratio test, the series converges."
         ],
         "unit": null,
@@ -4648,7 +4648,7 @@
         "prompt": "Determine the convergence or divergence of $\\sum_{n=1}^\\infty \\frac{n^k}{a^n}$ for $a > 1$ and integer $k$.",
         "answer": "The series converges by the ratio test.",
         "steps": [
-          "Compute $\\lim_{n\\to\\infty} \\frac{(n+1)^k / a^{n+1}}{n^k / a^n} = \\frac{1}{a} \\lim_{n\\to\\infty} \\left(\\frac{n+1}{n}\\right)^k = \\frac{1}{a} < 1$.",
+          "Compute $\\lim_{n o\\infty} \\frac{(n+1)^k / a^{n+1}}{n^k / a^n} = \\frac{1}{a} \\lim_{n o\\infty} \\left(\\frac{n+1}{n} \\right)^k = \\frac{1}{a} < 1$.",
           "Since $a > 1$, the limit is less than 1, so the series converges by the ratio test."
         ],
         "unit": null,
@@ -4659,7 +4659,7 @@
         "prompt": "Determine the convergence or divergence of $\\sum_{n=1}^\\infty \\frac{n^2}{n!}$.",
         "answer": "The series converges by the ratio test.",
         "steps": [
-          "Apply the ratio test: $\\lim_{n\\to\\infty} \\frac{(n+1)^2 / (n+1)!}{n^2 / n!} = \\lim_{n\\to\\infty} \\frac{(n+1)^2}{(n+1) n^2} = \\lim_{n\\to\\infty} \\frac{n+1}{n^2} = 0$.",
+          "Apply the ratio test: $\\lim_{n o\\infty} \\frac{(n+1)^2 / (n+1)!}{n^2 / n!} = \\lim_{n o\\infty} \\frac{(n+1)^2}{(n+1) n^2} = \\lim_{n o\\infty} \\frac{n+1}{n^2} = 0$.",
           "Since $0 < 1$, the series converges by the ratio test."
         ],
         "unit": null,
@@ -4682,7 +4682,7 @@
       "prompt": "Determine convergence of $\\sum_{n=1}^\\infty \\frac{(-1)^n}{n^2}$ using appropriate tests.",
       "answer": "Converges absolutely via Ratio Test.",
       "steps": [
-        "Apply Ratio Test: $\\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| = \\lim \\frac{(n^2)}{((n+1)^2)} = 1$",
+        "Apply Ratio Test: $\\lim_{n o\\infty} \\left|\\frac{a_{n+1}}{a_n} \\right| = \\lim \\frac{(n^2)}{((n+1)^2)} = 1$",
         "Since limit = 1, Ratio Test is inconclusive.",
         "Try Comparison Test with $\\sum \\frac{1}{n^2}$: $\\frac{1}{n^2} \\leq \\frac{1}{n^2}$, and $\\sum \\frac{1}{n^2}$ converges (p-series, p=2>1).",
         "Thus, original series converges absolutely by Comparison Test."
@@ -5058,13 +5058,13 @@
     "topic": "analysis",
     "original": {
       "id": "78a6a1788eff",
-      "prompt": "Prove $\\lim_{x \\to 3} 2x = 6$ using the $\\epsilon$-$\\delta$ definition.",
+      "prompt": "Prove $\\lim_{x o 3} 2x = 6$ using the $\\epsilon$-$\\delta$ definition.",
       "answer": "For any $\\epsilon > 0$, choose $\\delta = \\epsilon/2$. Then $|2x - 6| = 2|x - 3| < 2(\\delta) = \\epsilon$.",
       "steps": [
         "Start with the definition: For all $\\epsilon > 0$, find $\\delta > 0$ such that $0 < |x - 3| < \\delta$ implies $|2x - 6| < \\epsilon$.",
         "Simplify $|2x - 6| = 2|x - 3|$. Let $\\delta = \\epsilon/2$ to ensure $2|x - 3| < 2(\\delta) = \\epsilon$.",
         "Verify $\\delta = \\epsilon/2$ satisfies the condition: If $|x - 3| < \\delta$, then $|2x - 6| = 2|x - 3| < 2(\\epsilon/2) = \\epsilon$.",
-        "Thus, $\\lim_{x \\to 3} 2x = 6$ is proven."
+        "Thus, $\\lim_{x o 3} 2x = 6$ is proven."
       ],
       "unit": null,
       "diagram": null
@@ -5072,65 +5072,65 @@
     "practice": [
       {
         "id": "3fdc07932ca1",
-        "prompt": "Prove $\\lim_{x \\to 1} 3x + 2 = 5$ using the $\\epsilon$-$\\delta$ definition.",
+        "prompt": "Prove $\\lim_{x o 1} 3x + 2 = 5$ using the $\\epsilon$-$\\delta$ definition.",
         "answer": "For any $\\epsilon > 0$, choose $\\delta = \\epsilon/3$. Then $|3x + 2 - 5| = 3|x - 1| < 3(\\delta) = \\epsilon$.",
         "steps": [
           "Start with the definition: For all $\\epsilon > 0$, find $\\delta > 0$ such that $0 < |x - 1| < \\delta$ implies $|3x + 2 - 5| < \\epsilon$.",
           "Simplify $|3x + 2 - 5| = 3|x - 1|$. Let $\\delta = \\epsilon/3$ to ensure $3|x - 1| < 3(\\delta) = \\epsilon$.",
           "Verify $\\delta = \\epsilon/3$ satisfies the condition: If $|x - 1| < \\delta$, then $|3x + 2 - 5| = 3|x - 1| < 3(\\epsilon/3) = \\epsilon$.",
-          "Thus, $\\lim_{x \\to 1} 3x + 2 = 5$ is proven."
+          "Thus, $\\lim_{x o 1} 3x + 2 = 5$ is proven."
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "1b9299402e94",
-        "prompt": "Prove $\\lim_{x \\to 2} x^2 = 4$ using the $\\epsilon$-$\\delta$ definition.",
+        "prompt": "Prove $\\lim_{x o 2} x^2 = 4$ using the $\\epsilon$-$\\delta$ definition.",
         "answer": "For any $\\epsilon > 0$, choose $\\delta = \\min(1, \\epsilon/5)$. Then $|x^2 - 4| = |x - 2||x + 2| < 5\\delta = \\epsilon$.",
         "steps": [
           "Start with the definition: For all $\\epsilon > 0$, find $\\delta > 0$ such that $0 < |x - 2| < \\delta$ implies $|x^2 - 4| < \\epsilon$.",
           "Factor $|x^2 - 4| = |x - 2||x + 2|$. Restrict $\\delta \\leq 1$ to ensure $|x + 2| < 5$.",
           "Set $\\delta = \\min(1, \\epsilon/5)$. Then $|x^2 - 4| < 5\\delta = \\epsilon$.",
-          "Thus, $\\lim_{x \\to 2} x^2 = 4$ is proven."
+          "Thus, $\\lim_{x o 2} x^2 = 4$ is proven."
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "237d9c16d5f4",
-        "prompt": "Prove $\\lim_{x \\to 0} \\sqrt{x^2} = 0$ using the $\\epsilon$-$\\delta$ definition.",
+        "prompt": "Prove $\\lim_{x o 0} \\sqrt{x^2} = 0$ using the $\\epsilon$-$\\delta$ definition.",
         "answer": "For any $\\epsilon > 0$, choose $\\delta = \\epsilon$. Then $|\\sqrt{x^2} - 0| = |x| < \\delta = \\epsilon$.",
         "steps": [
           "Start with the definition: For all $\\epsilon > 0$, find $\\delta > 0$ such that $0 < |x - 0| < \\delta$ implies $|\\sqrt{x^2}| < \\epsilon$.",
           "Simplify $|\\sqrt{x^2}| = |x|$. Let $\\delta = \\epsilon$ to ensure $|x| < \\delta = \\epsilon$.",
           "Verify $\\delta = \\epsilon$ satisfies the condition: If $|x| < \\delta$, then $|\\sqrt{x^2}| = |x| < \\epsilon$.",
-          "Thus, $\\lim_{x \\to 0} \\sqrt{x^2} = 0$ is proven."
+          "Thus, $\\lim_{x o 0} \\sqrt{x^2} = 0$ is proven."
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "7ec1ce73aacc",
-        "prompt": "Prove $\\lim_{x \\to 4} \\frac{1}{x} = \\frac{1}{4}$ using the $\\epsilon$-$\\delta$ definition.",
-        "answer": "For any $\\epsilon > 0$, choose $\\delta = \\min(1, \\epsilon/2)$. Then $\\left|\\frac{1}{x} - \\frac{1}{4}\\right| = \\frac{|x - 4|}{4|x|} < \\frac{\\delta}{4 \\cdot 3} = \\frac{\\epsilon}{12}$.",
+        "prompt": "Prove $\\lim_{x o 4} \\frac{1}{x} = \\frac{1}{4}$ using the $\\epsilon$-$\\delta$ definition.",
+        "answer": "For any $\\epsilon > 0$, choose $\\delta = \\min(1, \\epsilon/2)$. Then $\\left|\\frac{1}{x} - \\frac{1}{4} \\right| = \\frac{|x - 4|}{4|x|} < \\frac{\\delta}{4 \\cdot 3} = \\frac{\\epsilon}{12}$.",
         "steps": [
-          "Start with the definition: For all $\\epsilon > 0$, find $\\delta > 0$ such that $0 < |x - 4| < \\delta$ implies $\\left|\\frac{1}{x} - \\frac{1}{4}\\right| < \\epsilon$.",
-          "Simplify $\\left|\\frac{1}{x} - \\frac{1}{4}\\right| = \\frac{|x - 4|}{4|x|}$. Restrict $\\delta \\leq 1$ to ensure $|x| > 3$.",
+          "Start with the definition: For all $\\epsilon > 0$, find $\\delta > 0$ such that $0 < |x - 4| < \\delta$ implies $\\left|\\frac{1}{x} - \\frac{1}{4} \\right| < \\epsilon$.",
+          "Simplify $\\left|\\frac{1}{x} - \\frac{1}{4} \\right| = \\frac{|x - 4|}{4|x|}$. Restrict $\\delta \\leq 1$ to ensure $|x| > 3$.",
           "Set $\\delta = \\min(1, \\epsilon/2)$. Then $\\frac{|x - 4|}{4|x|} < \\frac{\\delta}{4 \\cdot 3} = \\frac{\\epsilon}{12}$.",
-          "Thus, $\\lim_{x \\to 4} \\frac{1}{x} = \\frac{1}{4}$ is proven."
+          "Thus, $\\lim_{x o 4} \\frac{1}{x} = \\frac{1}{4}$ is proven."
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "37c603448fb5",
-        "prompt": "Prove $\\lim_{x \\to -1} (2x + 3) = 1$ using the $\\epsilon$-$\\delta$ definition.",
+        "prompt": "Prove $\\lim_{x o -1} (2x + 3) = 1$ using the $\\epsilon$-$\\delta$ definition.",
         "answer": "For any $\\epsilon > 0$, choose $\\delta = \\epsilon/2$. Then $|2x + 3 - 1| = 2|x + 1| < 2\\delta = \\epsilon$.",
         "steps": [
           "Start with the definition: For all $\\epsilon > 0$, find $\\delta > 0$ such that $0 < |x + 1| < \\delta$ implies $|2x + 3 - 1| < \\epsilon$.",
           "Simplify $|2x + 3 - 1| = 2|x + 1|$. Let $\\delta = \\epsilon/2$ to ensure $2|x + 1| < 2(\\delta) = \\epsilon$.",
           "Verify $\\delta = \\epsilon/2$ satisfies the condition: If $|x + 1| < \\delta$, then $|2x + 3 - 1| = 2|x + 1| < \\epsilon$.",
-          "Thus, $\\lim_{x \\to -1} (2x + 3) = 1$ is proven."
+          "Thus, $\\lim_{x o -1} (2x + 3) = 1$ is proven."
         ],
         "unit": null,
         "diagram": null
@@ -5398,10 +5398,10 @@
       },
       {
         "id": "0e509f83e943",
-        "prompt": "Find $\\frac{d}{dx}[\\tan(3x - 1)^2]$",
+        "prompt": "Find $\\frac{d}{dx}[ an(3x - 1)^2]$",
         "answer": "$6(3x - 1)\\sec^2(3x - 1)^2$",
         "steps": [
-          "Let $u = (3x - 1)^2$, so the function becomes $\\tan(u)$",
+          "Let $u = (3x - 1)^2$, so the function becomes $ an(u)$",
           "Differentiate outer function: $\\sec^2(u)$",
           "Differentiate inner function: $\\frac{d}{dx}(3x - 1)^2 = 2(3x - 1)\\cdot 3$",
           "Multiply derivatives: $\\sec^2(u) \\cdot 6(3x - 1) = 6(3x - 1)\\sec^2(3x - 1)^2$"
@@ -5618,13 +5618,13 @@
     "topic": "analysis",
     "original": {
       "id": "99f0848b62ac",
-      "prompt": "Compute $\\mathbf{a} \\times \\mathbf{b}$ for $\\mathbf{a} = \\langle 1, 2, 3 \\rangle$ and $\\mathbf{b} = \\langle 4, 5, 6 \\rangle$. Then find its magnitude and direction.",
-      "answer": "$\\mathbf{a} \\times \\mathbf{b} = \\langle -3, 6, -3 \\rangle$, magnitude $3\\sqrt{6}$ units, direction perpendicular to both vectors per right-hand rule",
+      "prompt": "Compute $\\mathbf{a} imes \\mathbf{b}$ for $\\mathbf{a} = \\langle 1, 2, 3 angle$ and $\\mathbf{b} = \\langle 4, 5, 6 angle$. Then find its magnitude and direction.",
+      "answer": "$\\mathbf{a} imes \\mathbf{b} = \\langle -3, 6, -3 angle$, magnitude $3\\sqrt{6}$ units, direction perpendicular to both vectors per right-hand rule",
       "steps": [
-        "Write determinant: $\\mathbf{a} \\times \\mathbf{b} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 1 & 2 & 3 \\ 4 & 5 & 6 \\end{vmatrix}$",
+        "Write determinant: $\\mathbf{a} imes \\mathbf{b} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 1 & 2 & 3 4 & 5 & 6 \\end{vmatrix}$",
         "Calculate components: $\\mathbf{i}(2\\cdot6 - 3\\cdot5) - \\mathbf{j}(1\\cdot6 - 3\\cdot4) + \\mathbf{k}(1\\cdot5 - 2\\cdot4)$",
         "Simplify: $\\mathbf{i}(12 - 15) - \\mathbf{j}(6 - 12) + \\mathbf{k}(5 - 8) = -3\\mathbf{i} + 6\\mathbf{j} - 3\\mathbf{k}$",
-        "Resulting vector: $\\langle -3, 6, -3 \\rangle$",
+        "Resulting vector: $\\langle -3, 6, -3 angle$",
         "Magnitude: $\\sqrt{(-3)^2 + 6^2 + (-3)^2} = \\sqrt{9 + 36 + 9} = \\sqrt{54} = 3\\sqrt{6}$",
         "Direction: Perpendicular to both vectors via right-hand rule"
       ],
@@ -5634,13 +5634,13 @@
     "practice": [
       {
         "id": "b0fd79deaeaf",
-        "prompt": "Compute $\\mathbf{a} \\times \\mathbf{b}$ for $\\mathbf{a} = \\langle 2, 3, 4 \\rangle$ and $\\mathbf{b} = \\langle 1, 0, 0 \\rangle$. Then find its magnitude and direction.",
-        "answer": "$\\mathbf{a} \\times \\mathbf{b} = \\langle 0, 4, -3 \\rangle$, magnitude $5$ units, direction perpendicular to both vectors",
+        "prompt": "Compute $\\mathbf{a} imes \\mathbf{b}$ for $\\mathbf{a} = \\langle 2, 3, 4 angle$ and $\\mathbf{b} = \\langle 1, 0, 0 angle$. Then find its magnitude and direction.",
+        "answer": "$\\mathbf{a} imes \\mathbf{b} = \\langle 0, 4, -3 angle$, magnitude $5$ units, direction perpendicular to both vectors",
         "steps": [
-          "Write determinant: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 2 & 3 & 4 \\ 1 & 0 & 0 \\end{vmatrix}$",
+          "Write determinant: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 2 & 3 & 4 1 & 0 & 0 \\end{vmatrix}$",
           "Calculate components: $\\mathbf{i}(3\\cdot0 - 4\\cdot0) - \\mathbf{j}(2\\cdot0 - 4\\cdot1) + \\mathbf{k}(2\\cdot0 - 3\\cdot1)$",
           "Simplify: $\\mathbf{i}(0) - \\mathbf{j}(-4) + \\mathbf{k}(-3) = 0\\mathbf{i} + 4\\mathbf{j} - 3\\mathbf{k}$",
-          "Resulting vector: $\\langle 0, 4, -3 \\rangle$",
+          "Resulting vector: $\\langle 0, 4, -3 angle$",
           "Magnitude: $\\sqrt{0^2 + 4^2 + (-3)^2} = \\sqrt{0 + 16 + 9} = \\sqrt{25} = 5$",
           "Direction: Perpendicular to both vectors via right-hand rule"
         ],
@@ -5649,23 +5649,23 @@
       },
       {
         "id": "9514c238bae5",
-        "prompt": "Find the magnitude of the cross product of $\\mathbf{a} = \\langle -1, 2, 3 \\rangle$ and $\\mathbf{b} = \\langle 4, -2, 1 \\rangle$.",
+        "prompt": "Find the magnitude of the cross product of $\\mathbf{a} = \\langle -1, 2, 3 angle$ and $\\mathbf{b} = \\langle 4, -2, 1 angle$.",
         "answer": "$\\sqrt{(-1)(-2)(1) + (2)(4)(1) + (3)(-2)(-2)} = \\sqrt{11}$ units",
         "steps": [
-          "Calculate components: $\\mathbf{a} \\times \\mathbf{b} = \\langle (2\\cdot1 - 3\\cdot(-2)), (3\\cdot4 - (-1)\\cdot1), (-1)\\cdot(-2) - 2\\cdot4 \\rangle$",
-          "Simplify: $\\langle (2 + 6), (12 + 1), (2 - 8) \\rangle = \\langle 8, 13, -6 \\rangle$",
+          "Calculate components: $\\mathbf{a} imes \\mathbf{b} = \\langle (2\\cdot1 - 3\\cdot(-2)), (3\\cdot4 - (-1)\\cdot1), (-1)\\cdot(-2) - 2\\cdot4 angle$",
+          "Simplify: $\\langle (2 + 6), (12 + 1), (2 - 8) angle = \\langle 8, 13, -6 angle$",
           "Magnitude: $\\sqrt{8^2 + 13^2 + (-6)^2} = \\sqrt{64 + 169 + 36} = \\sqrt{269}$",
-          "Wait correction: Original calculation error, correct magnitude is $\\sqrt{(-1)^2 + 2^2 + 3^2} \\cdot \\sqrt{4^2 + (-2)^2 + 1^2} \\cdot \\sin\\theta = \\sqrt{14}\\cdot\\sqrt{21}\\cdot\\sin\\theta$ but direct computation shows $\\sqrt{269}$"
+          "Wait correction: Original calculation error, correct magnitude is $\\sqrt{(-1)^2 + 2^2 + 3^2} \\cdot \\sqrt{4^2 + (-2)^2 + 1^2} \\cdot \\sin heta = \\sqrt{14}\\cdot\\sqrt{21}\\cdot\\sin heta$ but direct computation shows $\\sqrt{269}$"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "e7e04c0dc58f",
-        "prompt": "Determine if $\\mathbf{a} = \\langle 1, 2, 3 \\rangle$ and $\\mathbf{b} = \\langle 2, 4, 6 \\rangle$ are parallel by checking if their cross product is zero.",
-        "answer": "$\\mathbf{a} \\times \\mathbf{b} = \\langle 0, 0, 0 \\rangle$ so vectors are parallel",
+        "prompt": "Determine if $\\mathbf{a} = \\langle 1, 2, 3 angle$ and $\\mathbf{b} = \\langle 2, 4, 6 angle$ are parallel by checking if their cross product is zero.",
+        "answer": "$\\mathbf{a} imes \\mathbf{b} = \\langle 0, 0, 0 angle$ so vectors are parallel",
         "steps": [
-          "Compute cross product: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 1 & 2 & 3 \\ 2 & 4 & 6 \\end{vmatrix}$",
+          "Compute cross product: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 1 & 2 & 3 2 & 4 & 6 \\end{vmatrix}$",
           "Calculate components: $\\mathbf{i}(2\\cdot6 - 3\\cdot4) - \\mathbf{j}(1\\cdot6 - 3\\cdot2) + \\mathbf{k}(1\\cdot4 - 2\\cdot2)$",
           "Simplify: $\\mathbf{i}(12 - 12) - \\mathbf{j}(6 - 6) + \\mathbf{k}(4 - 8) = 0\\mathbf{i} - 0\\mathbf{j} - 4\\mathbf{k}$",
           "Wait correction: All components are zero, confirming parallel vectors"
@@ -5675,12 +5675,12 @@
       },
       {
         "id": "97c8bea972bd",
-        "prompt": "Compute $\\mathbf{a} \\times \\mathbf{b}$ for $\\mathbf{a} = \\langle 0, 1, 0 \\rangle$ and $\\mathbf{b} = \\langle 0, 0, 1 \\rangle$. Then find its magnitude and direction.",
-        "answer": "$\\mathbf{a} \\times \\mathbf{b} = \\langle 1, 0, 0 \\rangle$, magnitude $1$ unit, direction along positive $x$-axis",
+        "prompt": "Compute $\\mathbf{a} imes \\mathbf{b}$ for $\\mathbf{a} = \\langle 0, 1, 0 angle$ and $\\mathbf{b} = \\langle 0, 0, 1 angle$. Then find its magnitude and direction.",
+        "answer": "$\\mathbf{a} imes \\mathbf{b} = \\langle 1, 0, 0 angle$, magnitude $1$ unit, direction along positive $x$-axis",
         "steps": [
-          "Write determinant: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ 0 & 1 & 0 \\ 0 & 0 & 1 \\end{vmatrix}$",
+          "Write determinant: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 0 & 1 & 0 0 & 0 & 1 \\end{vmatrix}$",
           "Calculate components: $\\mathbf{i}(1\\cdot1 - 0\\cdot0) - \\mathbf{j}(0\\cdot1 - 0\\cdot0) + \\mathbf{k}(0\\cdot0 - 1\\cdot0)$",
-          "Simplify: $\\mathbf{i}(1) - \\mathbf{j}(0) + \\mathbf{k}(0) = \\langle 1, 0, 0 \\rangle$",
+          "Simplify: $\\mathbf{i}(1) - \\mathbf{j}(0) + \\mathbf{k}(0) = \\langle 1, 0, 0 angle$",
           "Magnitude: $\\sqrt{1^2 + 0^2 + 0^2} = 1$",
           "Direction: Positive $x$-axis via right-hand rule"
         ],
@@ -5689,12 +5689,12 @@
       },
       {
         "id": "d930810e4d77",
-        "prompt": "If $\\mathbf{a} \\times \\mathbf{b} = \\langle -2, 4, -6 \\rangle$, find $\\mathbf{b} \\times \\mathbf{a}$ and verify anti-commutativity.",
-        "answer": "$\\mathbf{b} \\times \\mathbf{a} = \\langle 2, -4, 6 \\rangle$, which is $- (\\mathbf{a} \\times \\mathbf{b})$",
+        "prompt": "If $\\mathbf{a} imes \\mathbf{b} = \\langle -2, 4, -6 angle$, find $\\mathbf{b} imes \\mathbf{a}$ and verify anti-commutativity.",
+        "answer": "$\\mathbf{b} imes \\mathbf{a} = \\langle 2, -4, 6 angle$, which is $- (\\mathbf{a} imes \\mathbf{b})$",
         "steps": [
-          "Use anti-commutative property: $\\mathbf{b} \\times \\mathbf{a} = - (\\mathbf{a} \\times \\mathbf{b})$",
-          "Apply to given vector: $-\\langle -2, 4, -6 \\rangle = \\langle 2, -4, 6 \\rangle$",
-          "Verify: $\\mathbf{b} \\times \\mathbf{a} = -\\mathbf{a} \\times \\mathbf{b}$"
+          "Use anti-commutative property: $\\mathbf{b} imes \\mathbf{a} = - (\\mathbf{a} imes \\mathbf{b})$",
+          "Apply to given vector: $-\\langle -2, 4, -6 angle = \\langle 2, -4, 6 angle$",
+          "Verify: $\\mathbf{b} imes \\mathbf{a} = -\\mathbf{a} imes \\mathbf{b}$"
         ],
         "unit": null,
         "diagram": null
@@ -5705,6 +5705,935 @@
       "Magnitude is $|\\mathbf{a} \\times \\mathbf{b}| = |\\mathbf{a}||\\mathbf{b}|\\sin\\theta$ where $\\theta$ is the angle between vectors",
       "Direction follows the right-hand rule, with sign determined by orientation",
       "Anti-commutative property: $\\mathbf{a} \\times \\mathbf{b} = - (\\mathbf{b} \\times \\mathbf{a})$"
+    ],
+    "asked_solution": null
+  },
+  "topic::atps: triangles & pascal's triangle": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "1e897ca07c88",
+      "prompt": "Write the following expression as a single binomial coefficient: \\[\\binom{12}{3} + \\binom{12}{4} + \\binom{13}{5} + \\binom{14}{6}\\]",
+      "answer": "\\(\\binom{15}{6}\\)",
+      "steps": [
+        "Group the first two terms and apply Pascal's Identity \\(\\binom{n}{k} + \\binom{n}{k+1} = \\binom{n+1}{k+1}\\): \\(\\binom{12}{3} + \\binom{12}{4} = \\binom{13}{4}\\).",
+        "Substitute this back into the expression: \\(\\binom{13}{4} + \\binom{13}{5} + \\binom{14}{6}\\).",
+        "Apply Pascal's Identity to the first two remaining terms: \\(\\binom{13}{4} + \\binom{13}{5} = \\binom{14}{5}\\).",
+        "Substitute this back into the expression: \\(\\binom{14}{5} + \\binom{14}{6}\\).",
+        "Apply Pascal's Identity one final time: \\(\\binom{14}{5} + \\binom{14}{6} = \\binom{15}{6}\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "51c70fa8ca42",
+        "prompt": "In the Odd Number Triangle, row 1 is \\(1\\), row 2 is \\(3, 5\\), row 3 is \\(7, 9, 11\\), and so on. Find the first term, the median (middle term), and the sum of all terms in row \\(15\\).",
+        "answer": "First term: \\(211\\), Median: \\(225\\), Sum: \\(3375\\)",
+        "steps": [
+          "The sum of row \\(n\\) in the Odd Number Triangle is given by \\(n^3\\). For row 15, the sum is \\(15^3 = 3375\\).",
+          "The median (middle element) of row \\(n\\) is given by \\(n^2\\). For row 15, the median is \\(15^2 = 225\\).",
+          "The first element of row \\(n\\) is given by \\(n^2 - n + 1\\). For row 15, the first term is \\(15^2 - 15 + 1 = 225 - 15 + 1 = 211\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "376bf2e33976",
+        "prompt": "Write the sum as a single binomial coefficient: \\[\\binom{20}{0} + \\binom{21}{1} + \\binom{22}{2} + \\dots + \\binom{45}{25}\\]",
+        "answer": "\\(\\binom{46}{25}\\)",
+        "steps": [
+          "Rewrite the summation using sigma notation: \\(\\sum_{k=0}^{25} \\binom{20+k}{k}\\).",
+          "Recall the Hockey-Stick Identity: \\(\\sum_{k=0}^n \\binom{r+k}{k} = \\binom{r+n+1}{n}\\).",
+          "Identify \\(r = 20\\) and \\(n = 25\\).",
+          "Apply the formula: \\(\\binom{20 + 25 + 1}{25} = \\binom{46}{25}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "bfbc04f3ca8f",
+        "prompt": "Write the expression as a single binomial coefficient: \\[\\binom{500}{200} + \\binom{500}{201} + \\binom{501}{202}\\]",
+        "answer": "\\(\\binom{502}{202}\\)",
+        "steps": [
+          "Apply Pascal's Identity \\(\\binom{n}{k} + \\binom{n}{k+1} = \\binom{n+1}{k+1}\\) to the first two terms: \\(\\binom{500}{200} + \\binom{500}{201} = \\binom{501}{201}\\).",
+          "Substitute this result back into the expression: \\(\\binom{501}{201} + \\binom{501}{202}\\).",
+          "Apply Pascal's Identity a second time: \\(\\binom{501}{201} + \\binom{501}{202} = \\binom{502}{202}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "47b020a49374",
+        "prompt": "Find the sum of the first 20 triangular numbers, \\(\\sum_{k=1}^{20} T_k\\), and express the result as a single binomial coefficient.",
+        "answer": "\\(\\binom{22}{3}\\)",
+        "steps": [
+          "Express the \\(k\\)-th triangular number as a binomial coefficient: \\(T_k = \\binom{k+1}{2}\\).",
+          "Write out the sum: \\(\\sum_{k=1}^{20} \\binom{k+1}{2} = \\binom{2}{2} + \\binom{3}{2} + \\binom{4}{2} + \\dots + \\binom{21}{2}\\).",
+          "Apply the Hockey-Stick Identity \\(\\sum_{j=r}^m \\binom{j}{r} = \\binom{m+1}{r+1}\\) with \\(r=2\\) and \\(m=21\\).",
+          "The sum evaluates to \\(\\binom{21+1}{2+1} = \\binom{22}{3}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d2f1e898bd6c",
+        "prompt": "A portion of Pascal's Triangle contains three adjacent elements in row \\(n\\): \\(\\binom{n}{k-1} = 120\\), \\(\\binom{n}{k} = 210\\), and \\(\\binom{n}{k+1} = 252\\). Find the value of \\(\\binom{n+2}{k+1}\\).",
+        "answer": "\\(792\\)",
+        "steps": [
+          "Use Pascal's Identity to find the entries in row \\(n+1\\):",
+          "\\(\\binom{n+1}{k} = \\binom{n}{k-1} + \\binom{n}{k} = 120 + 210 = 330\\).",
+          "\\(\\binom{n+1}{k+1} = \\binom{n}{k} + \\binom{n}{k+1} = 210 + 252 = 462\\).",
+          "Use Pascal's Identity again to find the entry in row \\(n+2\\):",
+          "\\(\\binom{n+2}{k+1} = \\binom{n+1}{k} + \\binom{n+1}{k+1} = 330 + 462 = 792\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1542c9519a02",
+        "prompt": "Prove that the sum of all elements in row \\(n\\) of the Odd Number Triangle is equal to \\(n^3\\).",
+        "answer": "Proof: Row \\(n\\) contains \\(n\\) consecutive odd numbers starting after the first \\(\\frac{n(n-1)}{2}\\) odd numbers. The sum of the first \\(M\\) odd numbers is \\(M^2\\), so the sum of row \\(n\\) is \\(\\left(\\frac{n(n+1)}{2}\\right)^2 - \\left(\\frac{n(n-1)}{2}\\right)^2 = n^3\\).",
+        "steps": [
+          "The number of terms in the first \\(n-1\\) rows is \\(1 + 2 + \\dots + (n-1) = \\frac{n(n-1)}{2}\\).",
+          "Row \\(n\\) contains \\(n\\) consecutive odd numbers, so row \\(n\\) ends at the \\(\\left(\\frac{n(n+1)}{2}\\right)\\)-th odd number.",
+          "Recall that the sum of the first \\(M\\) odd numbers is \\(M^2\\).",
+          "The sum of terms in row \\(n\\) is the sum of the first \\(\\frac{n(n+1)}{2}\\) odd numbers minus the sum of the first \\(\\frac{n(n-1)}{2}\\) odd numbers:",
+          "\\[S_n = \\left(\\frac{n(n+1)}{2}\\right)^2 - \\left(\\frac{n(n-1)}{2}\\right)^2\\]",
+          "Factor using difference of squares or expand: \\(\\frac{n^2}{4}\\left[(n+1)^2 - (n-1)^2\\right] = \\frac{n^2}{4}\\left[4n\\right] = n^3\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "6ed1d7cc97b1",
+        "prompt": "Evaluate the expression in terms of \\(n\\) as a single binomial coefficient: \\[\\sum_{k=3}^{n} \\binom{k}{3}\\]",
+        "answer": "\\(\\binom{n+1}{4}\\)",
+        "steps": [
+          "Expand the summation: \\(\\binom{3}{3} + \\binom{4}{3} + \\binom{5}{3} + \\dots + \\binom{n}{3}\\).",
+          "Notice that this is a diagonal sum in Pascal's Triangle starting at \\(\\binom{3}{3} = 1\\).",
+          "Apply the Hockey-Stick Identity \\(\\sum_{k=r}^n \\binom{k}{r} = \\binom{n+1}{r+1}\\) with \\(r=3\\).",
+          "The result simplifies directly to \\(\\binom{n+1}{4}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "a27881e1efa0",
+        "prompt": "Express the sum of the first \\(n\\) triangular numbers, \\(S = 1 + 3 + 6 + 10 + 15 + \\dots + \\frac{n(n+1)}{2}\\), as a single binomial coefficient in terms of \\(n\\).",
+        "answer": "\\(\\binom{n+2}{3}\\)",
+        "steps": [
+          "Rewrite each term as a binomial coefficient: \\(1 = \\binom{2}{2}\\), \\(3 = \\binom{3}{2}\\), \\(6 = \\binom{4}{2}\\), \\dots, \\(\\frac{n(n+1)}{2} = \\binom{n+1}{2}\\).",
+          "The sum becomes \\(S = \\sum_{k=2}^{n+1} \\binom{k}{2}\\).",
+          "Apply the Hockey-Stick Identity \\(\\sum_{k=2}^{m} \\binom{k}{2} = \\binom{m+1}{3}\\) where \\(m = n+1\\).",
+          "Substitute \\(m = n+1\\) to get \\(S = \\binom{(n+1)+1}{3} = \\binom{n+2}{3}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "**Pascal's Identity**: For any integers \\(n \\ge k \\ge 0\\), \\([ \\binom{n}{k} + \\binom{n}{k+1} = \\binom{n+1}{k+1}\\])",
+      "**Hockey-Stick Identity**: Summing along a diagonal in Pascal's Triangle starting at a boundary 1 yields the entry diagonally down and in the opposite direction: \\([ \\sum_{k=r}^n \\binom{k}{r} = \\binom{n+1}{r+1} \\quad \\text{and} \\quad \\sum_{k=0}^n \\binom{r+k}{k} = \\binom{r+n+1}{n}\\])",
+      "**Triangular Numbers**: The \\(n\\)-th triangular number is defined as \\(T_n = 1 + 2 + 3 + \\dots + n = \\frac{n(n+1)}{2} = \\binom{n+1}{2}\\).",
+      "**Odd Number Triangle**: Row \\(n\\) contains \\(n\\) consecutive odd integers. The sum of the elements in row \\(n\\) is equal to \\(n^3\\), the median (middle term) is \\(n^2\\), and the first entry of row \\(n\\) is \\(n^2 - n + 1\\)."
+    ],
+    "asked_solution": null
+  },
+  "topic::atps: sequences, series & sigma notation": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "9fa3ad71c52c",
+      "prompt": "Evaluate the double summation: \\[\\sum_{y=4}^{15} \\left[ \\sum_{x=1}^{8} (3x + 2y) \\right]\\]",
+      "answer": "3120",
+      "steps": [
+        "Evaluate the inner sum with respect to $x$, treating $y$ as a constant: \\[\\sum_{x=1}^{8} (3x + 2y) = 3 \\sum_{x=1}^{8} x + 2y \\sum_{x=1}^{8} 1\\]",
+        "Using the standard sum formula $\\sum_{x=1}^n x = \\frac{n(n+1)}{2}$: \\[3 \\left(\\frac{8 \\cdot 9}{2}\\right) + 2y(8) = 3(36) + 16y = 108 + 16y\\]",
+        "Substitute this result back into the outer summation: \\[\\sum_{y=4}^{15} (108 + 16y)\\]",
+        "This is an arithmetic series in terms of $y$ with $N = 15 - 4 + 1 = 12$ terms.",
+        "Calculate the first term ($y=4$): $108 + 16(4) = 172$.",
+        "Calculate the last term ($y=15$): $108 + 16(15) = 348$.",
+        "Apply the arithmetic sum formula $S_N = \\frac{N}{2}(a_1 + a_N)$: \\[S = \\frac{12}{2} (172 + 348) = 6 (520) = 3120\\]"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "2eb39341771c",
+        "prompt": "An arithmetic sequence has a 4th term of $15$ and a 9th term of $-5$. Find the 50th term of the sequence.",
+        "answer": "-169",
+        "steps": [
+          "The general term is $a_n = a_1 + (n-1)d$.",
+          "Set up a system of linear equations: \\[a_4 = a_1 + 3d = 15\\] \\[a_9 = a_1 + 8d = -5\\]",
+          "Subtract the first equation from the second: \\[5d = -20 \\implies d = -4\\]",
+          "Substitute $d = -4$ into $a_1 + 3(-4) = 15 \\implies a_1 = 27$.",
+          "Calculate the 50th term: $a_{50} = 27 + 49(-4) = 27 - 196 = -169$."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "fb16488b5578",
+        "prompt": "Evaluate the expression in terms of $n$: \\[\\sum_{k=1}^n (8k - 5)\\]",
+        "answer": "4n^2 - n",
+        "steps": [
+          "Split the summation into two parts: \\[\\sum_{k=1}^n (8k - 5) = 8 \\sum_{k=1}^n k - \\sum_{k=1}^n 5\\]",
+          "Use the summation formula $\\sum_{k=1}^n k = \\frac{n(n+1)}{2}$: \\[8 \\left(\\frac{n(n+1)}{2}\\right) - 5n\\]",
+          "Simplify the algebraic expression: \\[4n(n+1) - 5n = 4n^2 + 4n - 5n = 4n^2 - n\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "dee404e8a870",
+        "prompt": "Evaluate the geometric series sum in terms of $n$: \\[\\sum_{k=1}^n 4\\left(\\frac{3}{4}\\right)^k\\]",
+        "answer": "12\\left(1 - \\left(\\frac{3}{4}\\right)^n\\right)",
+        "steps": [
+          "Identify the terms of the geometric series.",
+          "First term $a_1 = 4\\left(\\frac{3}{4}\\right)^1 = 3$.",
+          "Common ratio $r = \\frac{3}{4}$.",
+          "Use the finite geometric series formula $S_n = a_1 \\frac{1 - r^n}{1 - r}$: \\[S_n = 3 \\cdot \\frac{1 - \\left(\\frac{3}{4}\\right)^n}{1 - \\frac{3}{4}} = 3 \\cdot \\frac{1 - \\left(\\frac{3}{4}\\right)^n}{\\frac{1}{4}}\\]",
+          "Simplify by multiplying by $4$: \\[S_n = 12\\left(1 - \\left(\\frac{3}{4}\\right)^n\\right)\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "9596f10bf243",
+        "prompt": "Write the following sum as a single binomial coefficient: \\[\\binom{12}{0} + \\binom{13}{1} + \\binom{14}{2} + \\dots + \\binom{32}{20}\\]",
+        "answer": "\\binom{33}{20}",
+        "steps": [
+          "Recognize the Hockey-Stick Identity: $\\sum_{i=0}^r \\binom{n+i}{i} = \\binom{n+r+1}{r}$.",
+          "Here, $n = 12$ and $r = 20$.",
+          "The upper index of the result is $(n + r + 1) = 12 + 20 + 1 = 33$.",
+          "The lower index of the result is $r = 20$.",
+          "Thus, the sum simplifies to $\\binom{33}{20}$ (or equivalently $\\binom{33}{13}$)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "48571a2c9a3f",
+        "prompt": "Simplify the extended binomial coefficient into the form $(-1)^k \\binom{a}{b}$: \\[\\binom{-4}{25}\\]",
+        "answer": "-\\binom{28}{25}",
+        "steps": [
+          "Use the formula for extended binomial coefficients: $\\binom{-n}{k} = (-1)^k \\binom{n+k-1}{k}$.",
+          "Here, $n = 4$ and $k = 25$.",
+          "Substitute the values into the formula: \\[\\binom{-4}{25} = (-1)^{25} \\binom{4 + 25 - 1}{25}\\]",
+          "Since $(-1)^{25} = -1$ and $4 + 25 - 1 = 28$, we get: \\[-\\binom{28}{25}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "761e7ed43d08",
+        "prompt": "Find the coefficient of $x^4 y^3 z^6$ in the expansion of $(2x - y + 3z)^{13}$. Leave your answer in terms of powers and binomial/multinomial coefficients.",
+        "answer": "-\\frac{13!}{4!3!6!} \\cdot 2^4 \\cdot 3^6",
+        "steps": [
+          "Apply the Multinomial Theorem for $(a + b + c)^N$ where $N = 13$, $a = 2x$, $b = -y$, and $c = 3z$.",
+          "The term containing $x^4 y^3 z^6$ corresponds to powers $k_1 = 4$, $k_2 = 3$, $k_3 = 6$.",
+          "The general term is given by: \\[\\frac{13!}{4!3!6!} (2x)^4 (-y)^3 (3z)^6\\]",
+          "Extract the numerical coefficient: \\[\\frac{13!}{4!3!6!} \\cdot 2^4 \\cdot (-1)^3 \\cdot 3^6 = -\\frac{13!}{4!3!6!} \\cdot 2^4 \\cdot 3^6\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "e752d79437bf",
+        "prompt": "Evaluate the double summation: \\[\\sum_{y=6}^{20} \\left[ \\sum_{x=1}^{10} (2x + 4y) \\right]\\]",
+        "answer": "9450",
+        "steps": [
+          "Evaluate the inner sum with respect to $x$: \\[\\sum_{x=1}^{10} (2x + 4y) = 2 \\left(\\frac{10 \\cdot 11}{2}\\right) + 4y(10) = 110 + 40y\\]",
+          "Now evaluate the outer sum: \\[\\sum_{y=6}^{20} (110 + 40y)\\]",
+          "This is an arithmetic series with $N = 20 - 6 + 1 = 15$ terms.",
+          "First term ($y=6$): $110 + 40(6) = 350$.",
+          "Last term ($y=20$): $110 + 40(20) = 910$.",
+          "Sum = $\\frac{15}{2}(350 + 910) = \\frac{15}{2}(1260) = 15 \\cdot 630 = 9450$."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "a494bb811f76",
+        "prompt": "Let $F_n$ denote the $n$-th Fibonacci number ($F_1=1, F_2=1, F_3=2, \\dots$). Find a compact expression in terms of Fibonacci numbers for the telescoping sum: \\[\\sum_{k=1}^n \\left( \\frac{1}{F_k F_{k+1}} - \\frac{1}{F_{k+1} F_{k+2}} \\right)\\]",
+        "answer": "1 - \\frac{1}{F_{n+1} F_{n+2}}",
+        "steps": [
+          "Recognize the sum as a telescoping series of the form $\\sum_{k=1}^n (V_k - V_{k+1})$, where $V_k = \\frac{1}{F_k F_{k+1}}$.",
+          "Expand the first few terms: \\[\\left(V_1 - V_2\\right) + \\left(V_2 - V_3\\right) + \\dots + \\left(V_n - V_{n+1}\\right)\\]",
+          "All intermediate terms cancel out, leaving: \\[V_1 - V_{n+1} = \\frac{1}{F_1 F_2} - \\frac{1}{F_{n+1} F_{n+2}}\\]",
+          "Since $F_1 = 1$ and $F_2 = 1$, we have $V_1 = \\frac{1}{1 \\cdot 1} = 1$.",
+          "Thus, the sum simplifies to $1 - \\frac{1}{F_{n+1} F_{n+2}}$."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Arithmetic and Geometric Sequences: The $n$-th term of an arithmetic sequence is given by $a_n = a_1 + (n-1)d$ with sum $S_n = \\frac{n}{2}(a_1 + a_n)$. For a geometric sequence, $a_n = a_1 r^{n-1}$ with finite sum $S_n = a_1 \\frac{1-r^n}{1-r}$.",
+      "Pascal's Identity & Hockey-Stick Theorem: Pascal's Identity states $\\binom{n}{k} + \\binom{n}{k+1} = \\binom{n+1}{k+1}$. The Hockey-Stick Identity states $\\sum_{i=0}^r \\binom{n+i}{i} = \\binom{n+r+1}{r}$ or $\\sum_{i=k}^n \\binom{i}{k} = \\binom{n+1}{k+1}$.",
+      "Extended Binomial Coefficients & Multinomial Theorem: The binomial coefficient with a negative integer upper index is defined as $\\binom{-n}{k} = (-1)^k \\binom{n+k-1}{k}$. In expanding $(x_1 + x_2 + \\dots + x_m)^n$, the coefficient of $x_1^{k_1} x_2^{k_2} \\dots x_m^{k_m}$ is $\\frac{n!}{k_1! k_2! \\dots k_m!}$.",
+      "Double Summations & Telescoping Fibonacci Series: Evaluate double sums from the inside out: $\\sum_{y=a}^b \\left[ \\sum_{x=c}^d f(x,y) \\right]$. Sums involving Fibonacci numbers $F_n$ (where $F_n = F_{n-1} + F_{n-2}$) often simplify using linear combinations or telescoping differences."
+    ],
+    "asked_solution": null
+  },
+  "topic::atps: binomial theorem & fibonacci": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "200dcedc3f7a",
+      "prompt": "Write the sum as a single Fibonacci number: \\[F_{10} + 2(F_{11} + F_{14} + F_{17}) + F_{18}\\]",
+      "answer": "\\(F_{20}\\)",
+      "steps": [
+        "Expand the sum by breaking up the coefficients of \\(2\\): \\[F_{10} + F_{11} + F_{11} + 2F_{14} + 2F_{17} + F_{18}\\]",
+        "Use \\(F_{n-1} + F_n = F_{n+1}\\) on the first two terms: \\(F_{10} + F_{11} = F_{12}\\). The expression becomes: \\[F_{12} + F_{11} + 2F_{14} + 2F_{17} + F_{18}\\]",
+        "Combine \\(F_{12} + F_{11} = F_{13}\\), yielding: \\[F_{13} + 2F_{14} + 2F_{17} + F_{18}\\]",
+        "Repeat the process for the next group: \\(F_{13} + F_{14} + F_{14} = (F_{13} + F_{14}) + F_{14} = F_{15} + F_{14} = F_{16}\\).",
+        "Now combine the remaining terms: \\(F_{16} + 2F_{17} + F_{18} = (F_{16} + F_{17}) + F_{17} + F_{18} = F_{18} + F_{17} + F_{18} = F_{19} + F_{18} = F_{20}\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "083db883c8b2",
+        "prompt": "Write as a single binomial coefficient: \\[\\binom{4210}{3100} + \\binom{4210}{3101} + \\binom{4211}{3102}\\]",
+        "answer": "\\(\\binom{4212}{3102}\\)",
+        "steps": [
+          "Apply Pascal's Identity \\(\\binom{n}{k} + \\binom{n}{k+1} = \\binom{n+1}{k+1}\\) to the first two terms: \\(\\binom{4210}{3100} + \\binom{4210}{3101} = \\binom{4211}{3101}\\).",
+          "Add the third term to this result: \\(\\binom{4211}{3101} + \\binom{4211}{3102}\\).",
+          "Apply Pascal's Identity a second time: \\(\\binom{4211}{3101} + \\binom{4211}{3102} = \\binom{4212}{3102}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "b6abe86f5883",
+        "prompt": "Write as a single binomial coefficient: \\[\\binom{145}{145} + \\binom{146}{145} + \\binom{147}{145} + \\dots + \\binom{145+n}{145}\\]",
+        "answer": "\\(\\binom{146+n}{146}\\)",
+        "steps": [
+          "Identify the sum as an application of the Hockey Stick Identity: \\(\\sum_{i=r}^m \\binom{i}{r} = \\binom{m+1}{r+1}\\).",
+          "Here, the bottom index is fixed at \\(r = 145\\), and the top index ranges from \\(145\\) to \\(145+n\\).",
+          "By the identity, the sum equals \\(\\binom{(145+n)+1}{145+1} = \\binom{146+n}{146}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "e25d1db5d7d2",
+        "prompt": "Find the coefficient of \\(x^6 y^9\\) in the expansion of \\(\\left(2x - \\frac{3y}{5}\\right)^{15}\\). You may leave your answer in choose notation.",
+        "answer": "-\\binom{15}{6} \\frac{2^6 \\cdot 3^9}{5^9}",
+        "steps": [
+          "By the Binomial Theorem, the general term in \\((a+b)^{15}\\) is \\(\\binom{15}{k} a^{15-k} b^k\\).",
+          "To match \\(x^6 y^9\\), set \\(15-k = 6\\), which gives \\(k = 9\\).",
+          "Substitute \\(a = 2x\\) and \\(b = -\\frac{3y}{5}\\): \\(\\binom{15}{9} (2x)^6 \\left(-\\frac{3y}{5}\\right)^9\\).",
+          "Simplify the sign and factors: \\(\\binom{15}{6} \\cdot 2^6 \\cdot \\left(-\\frac{3}{5}\\right)^9 = -\\binom{15}{6} \\frac{2^6 \\cdot 3^9}{5^9}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "a4857d453e43",
+        "prompt": "Find the coefficient of \\(x^2 y^4 z^6\\) in the expansion of \\((x + y + 3z + w)^{12}\\).",
+        "answer": "10103940",
+        "steps": [
+          "By the Multinomial Theorem, the coefficient of \\(x^{k_1} y^{k_2} z^{k_3} w^{k_4}\\) in \\((x + y + 3z + w)^{12}\\) is \\(\\frac{12!}{k_1! k_2! k_3! k_4!} (1)^{k_1} (1)^{k_2} (3)^{k_3} (1)^{k_4}\\).",
+          "Set \\(k_1 = 2\\), \\(k_2 = 4\\), \\(k_3 = 6\\), and \\(k_4 = 0\\).",
+          "Calculate the multinomial coefficient: \\(\\frac{12!}{2! 4! 6! 0!} = \\frac{479001600}{2 \\cdot 24 \\cdot 720 \\cdot 1} = 13860\\).",
+          "Multiply by \\(3^6 = 729\\): \\(13860 \\times 729 = 10103940\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "da876eb86adf",
+        "prompt": "Simplify the generalized binomial coefficient: \\[\\binom{-4}{5}\\]",
+        "answer": "-56",
+        "steps": [
+          "Apply the definition of the generalized binomial coefficient: \\(\\binom{r}{k} = \\frac{r(r-1)(r-2)\\dots(r-k+1)}{k!}\\).",
+          "Substitute \\(r = -4\\) and \\(k = 5\\): \\(\\binom{-4}{5} = \\frac{(-4)(-5)(-6)(-7)(-8)}{5!}\\).",
+          "Calculate the numerator: \\((-4)(-5)(-6)(-7)(-8) = -6720\\).",
+          "Divide by \\(5! = 120\\): \\(\\frac{-6720}{120} = -56\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "b411631ff85b",
+        "prompt": "Given that \\(F_n\\) is the \\(n\\)-th Fibonacci number with \\(F_1 = 1\\) and \\(F_2 = 1\\), find a compact expression for: \\[\\sum_{k=1}^n \\left(\\frac{1}{F_{k+2}} - \\frac{1}{F_k}\\right)\\]",
+        "answer": "\\(\\frac{1}{F_{n+1}} + \\frac{1}{F_{n+2}} - 2\\)",
+        "steps": [
+          "Write out the first few terms of the summation to observe telescoping: \\[\\left(\\frac{1}{F_3} - \\frac{1}{F_1}\\right) + \\left(\\frac{1}{F_4} - \\frac{1}{F_2}\\right) + \\left(\\frac{1}{F_5} - \\frac{1}{F_3}\\right) + \\dots + \\left(\\frac{1}{F_{n+2}} - \\frac{1}{F_n}\\right)\\]",
+          "Notice that \\(\\frac{1}{F_3}, \\frac{1}{F_4}, \\dots, \\frac{1}{F_n}\\) all cancel out with corresponding positive terms.",
+          "The remaining uncancelled terms are \\(-\\frac{1}{F_1} - \\frac{1}{F_2} + \\frac{1}{F_{n+1}} + \\frac{1}{F_{n+2}}\\).",
+          "Since \\(F_1 = 1\\) and \\(F_2 = 1\\), this simplifies to \\(\\frac{1}{F_{n+1}} + \\frac{1}{F_{n+2}} - 2\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "3f0eebf91fe7",
+        "prompt": "Given that \\(F_n\\) is the \\(n\\)-th Fibonacci number with \\(F_1 = 1\\), find a compact expression for: \\[\\sum_{k=1}^n F_{2k}\\]",
+        "answer": "\\(F_{2n+1} - 1\\)",
+        "steps": [
+          "Rewrite each even-indexed Fibonacci term using the relation \\(F_{2k} = F_{2k+1} - F_{2k-1}\\).",
+          "Express the summation as: \\[\\sum_{k=1}^n (F_{2k+1} - F_{2k-1})\\]",
+          "Expand the telescoping sum: \\[(F_3 - F_1) + (F_5 - F_3) + (F_7 - F_5) + \\dots + (F_{2n+1} - F_{2n-1})\\]",
+          "Cancel intermediate terms to leave \\(F_{2n+1} - F_1\\).",
+          "Since \\(F_1 = 1\\), the final compact form is \\(F_{2n+1} - 1\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "646056c0b97d",
+        "prompt": "Which of the following expressions is NOT equivalent to \\(F_n\\)? a) \\(F_{n-1} + F_{n-3} + F_{n-4}\\) b) \\(3F_{n-3} + 2F_{n-4}\\) c) \\(F_{n-1} + 2F_{n-4} + F_{n-5} + F_{n-6}\\) d) \\(5F_{n-4} + 3F_{n-5}\\)",
+        "answer": "c",
+        "steps": [
+          "For a): \\(F_{n-3} + F_{n-4} = F_{n-2}\\), so \\(F_{n-1} + F_{n-2} = F_n\\). (Equivalent)",
+          "For b): \\(3F_{n-3} + 2F_{n-4} = 2(F_{n-3} + F_{n-4}) + F_{n-3} = 2F_{n-2} + F_{n-3} = F_{n-2} + F_{n-1} = F_n\\). (Equivalent)",
+          "For c): \\(F_{n-5} + F_{n-6} = F_{n-4}\\), so \\(F_{n-1} + 2F_{n-4} + F_{n-4} = F_{n-1} + 3F_{n-4}\\). However, \\(F_{n-2} = F_{n-3} + F_{n-4} = 2F_{n-4} + F_{n-5}\\), which does not equal \\(3F_{n-4}\\). Hence, this is NOT equivalent to \\(F_n\\).",
+          "For d): \\(5F_{n-4} + 3F_{n-5} = 3(F_{n-4} + F_{n-5}) + 2F_{n-4} = 3F_{n-3} + 2F_{n-4} = F_n\\). (Equivalent)"
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Pascal's Identity and Hockey Stick Identity: Pascal's Identity states that \\(\\binom{n}{k} + \\binom{n}{k+1} = \\binom{n+1}{k+1}\\). The Hockey Stick Identity states that \\(\\sum_{k=0}^n \\binom{r+k}{r} = \\binom{r+n+1}{r+1}\\).",
+      "Generalized Binomial Coefficients: For any real number \\(r\\) and non-negative integer \\(k\\), \\(\\binom{r}{k} = \\frac{r(r-1)(r-2)\\cdots(r-k+1)}{k!}\\). When \\(r\\) is a negative integer, \\(\\binom{-n}{k} = (-1)^k \\binom{n+k-1}{k}\\).",
+      "Multinomial Theorem: In the expansion of \\((x_1 + x_2 + \\dots + x_m)^n\\), the term containing \\(x_1^{k_1} x_2^{k_2} \\cdots x_m^{k_m}\\) (where \\(\\sum k_i = n\\)) has the coefficient \\(\\frac{n!}{k_1! k_2! \\cdots k_m!}\\).",
+      "Fibonacci Recurrences and Identities: Fibonacci numbers satisfy \\(F_n = F_{n-1} + F_{n-2}\\). Summation identities like \\(\\sum_{k=1}^n F_{2k} = F_{2n+1} - 1\\) and telescoping forms can be simplified by expressing terms as differences of adjacent Fibonacci numbers."
+    ],
+    "asked_solution": null
+  },
+  "topic::probability": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "0838f5b63286",
+      "prompt": "Jar A contains 5 blue marbles and 3 red marbles. Jar B contains 3 blue marbles and 2 red marbles. A marble is randomly chosen from Jar A and placed into Jar B. Then, a marble is randomly drawn from Jar B. a) Find $P(\\text{2nd marble is red})$. b) Find $P(\\text{1st marble is red} \\mid \\text{2nd marble is blue})$.",
+      "answer": "a) $\\frac{19}{48}$ b) $\\frac{9}{29}$",
+      "steps": [
+        "Let $R_1, B_1$ be the events that the first marble drawn (from Jar A) is Red or Blue, respectively. Then $P(R_1) = \\frac{3}{8}$ and $P(B_1) = \\frac{5}{8}$.",
+        "If $R_1$ occurs, Jar B now has $3$ blue and $3$ red marbles (total $6$). So $P(R_2 \\mid R_1) = \\frac{3}{6} = \\frac{1}{2}$ and $P(B_2 \\mid R_1) = \\frac{3}{6} = \\frac{1}{2}$.",
+        "If $B_1$ occurs, Jar B now has $4$ blue and $2$ red marbles (total $6$). So $P(R_2 \\mid B_1) = \\frac{2}{6} = \\frac{1}{3}$ and $P(B_2 \\mid B_1) = \\frac{4}{6} = \\frac{2}{3}$.",
+        "For part (a): $P(R_2) = P(R_2 \\mid R_1)P(R_1) + P(R_2 \\mid B_1)P(B_1) = \\left(\\frac{1}{2}\\right)\\left(\\frac{3}{8}\\right) + \\left(\\frac{1}{3}\\right)\\left(\\frac{5}{8}\\right) = \\frac{3}{16} + \\frac{5}{24} = \\frac{9}{48} + \\frac{10}{48} = \\frac{19}{48}$.",
+        "For part (b): We need $P(R_1 \\mid B_2) = \\frac{P(R_1 \\cap B_2)}{P(B_2)}$.",
+        "First, find $P(B_2) = 1 - P(R_2) = 1 - \\frac{19}{48} = \\frac{29}{48}$.",
+        "Next, find $P(R_1 \\cap B_2) = P(B_2 \\mid R_1)P(R_1) = \\left(\\frac{1}{2}\\right)\\left(\\frac{3}{8}\\right) = \\frac{3}{16} = \\frac{9}{48}$.",
+        "Thus, $P(R_1 \\mid B_2) = \\frac{9/48}{29/48} = \\frac{9}{29}$."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "47d771059ae5",
+        "prompt": "How many distinct ways can 8 different keys be arranged on a circular key ring?",
+        "answer": "2520",
+        "steps": [
+          "For a circular permutation where flip/reflection produces an indistinguishable arrangement (like a key ring), the formula is $\\frac{(n-1)!}{2}$.",
+          "Here, $n = 8$.",
+          "Calculation: $\\frac{(8-1)!}{2} = \\frac{7!}{2} = \\frac{5040}{2} = 2520$."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "ef7a62e4f19c",
+        "prompt": "In a survey of 100 students, 45 take Spanish ($S$), 30 take French ($F$), and 10 take both. If a student is selected at random, find $P(S' \\cup F')$.",
+        "answer": "\\frac{9}{10}",
+        "steps": [
+          "By De Morgan's Law, $(S' \\cup F') = (S \\cap F)'$.",
+          "We are given that $P(S \\cap F) = \\frac{10}{100} = \\frac{1}{10}$.",
+          "Therefore, $P(S' \\cup F') = 1 - P(S \\cap F) = 1 - \\frac{1}{10} = \\frac{9}{10}$."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "9ebad30553fa",
+        "prompt": "A fair coin is flipped $n$ times, where $n$ is a positive integer. The probability of getting exactly 7 heads is equal to the probability of getting exactly 11 heads. Find the value of $n$.",
+        "answer": "18",
+        "steps": [
+          "The probability of obtaining $k$ heads in $n$ flips of a fair coin is $\\binom{n}{k} \\left(\\frac{1}{2}\\right)^n$.",
+          "We are given $\\binom{n}{7}\\left(\\frac{1}{2}\\right)^n = \\binom{n}{11}\\left(\\frac{1}{2}\\right)^n$, which simplifies to $\\binom{n}{7} = \\binom{n}{11}$.",
+          "By the symmetry property of combinations, $\\binom{n}{k} = \\binom{n}{n-k}$.",
+          "Therefore, $n - 7 = 11 \\implies n = 18$."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "c8de3b90bbf3",
+        "prompt": "Carissa is dealt a 4-card hand from a standard 52-card deck. Find the probability that her hand contains 2 Kings and 2 Queens. Leave your answer as a simplified fraction.",
+        "answer": "\\frac{36}{270725}",
+        "steps": [
+          "The total number of ways to choose 4 cards from 52 is $\\binom{52}{4} = \\frac{52 \\times 51 \\times 50 \\times 49}{4 \\times 3 \\times 2 \\times 1} = 270,725$.",
+          "The number of ways to select 2 Kings from 4 is $\\binom{4}{2} = 6$.",
+          "The number of ways to select 2 Queens from 4 is $\\binom{4}{2} = 6$.",
+          "The probability is $\\frac{\\binom{4}{2} \\binom{4}{2}}{\\binom{52}{4}} = \\frac{6 \\times 6}{270725} = \\frac{36}{270725}$."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1a476f6b62e0",
+        "prompt": "Ash Ketchum has 3 Pokéballs in his bag. 1 Pokéball contains Squirtle and 2 contain fierce dragon Pokémon. Squirtle has a $30\\%$ chance of winning a duel, while each dragon has an $80\\%$ chance of winning. Ash randomly picks one Pokéball and sends out that Pokémon, who wins the duel. What is the probability that Squirtle was chosen?",
+        "answer": "\\frac{3}{19}",
+        "steps": [
+          "Let $S$ be the event that Squirtle is chosen, and $D$ be the event that a dragon is chosen.",
+          "$P(S) = \\frac{1}{3}$ and $P(D) = \\frac{2}{3}$.",
+          "Let $W$ be the event that Ash wins. $P(W \\mid S) = 0.30 = \\frac{3}{10}$ and $P(W \\mid D) = 0.80 = \\frac{8}{10}$.",
+          "By the Law of Total Probability: $P(W) = P(W \\mid S)P(S) + P(W \\mid D)P(D) = \\left(\\frac{3}{10}\\right)\\left(\\frac{1}{3}\\right) + \\left(\\frac{8}{10}\\right)\\left(\\frac{2}{3}\\right) = \\frac{3}{30} + \\frac{16}{30} = \\frac{19}{30}$.",
+          "Using Bayes' Theorem: $P(S \\mid W) = \\frac{P(W \\mid S)P(S)}{P(W)} = \\frac{3/30}{19/30} = \\frac{3}{19}$."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "52670490ec83",
+        "prompt": "A casino game costs $\\$2.00$ to play. Two fair 6-sided dice are rolled and their numbers are multiplied. If the product is even, the player wins $\\$3.00$. If the product is 1, the player wins $\\$10.00$. Otherwise, the player wins nothing. Find the expected value of playing this game.",
+        "answer": "-\\$0.0278 \\text{ (or } -\\frac{1}{36} \\text{ dollars)}",
+        "steps": [
+          "There are $36$ equally likely outcomes when rolling two 6-sided dice.",
+          "Product is even: An even product occurs whenever at least one die is even. $P(\\text{even}) = 1 - P(\\text{both odd}) = 1 - \\left(\\frac{3}{6}\\right)\\left(\\frac{3}{6}\\right) = 1 - \\frac{9}{36} = \\frac{27}{36}$.",
+          "Product is 1: This occurs only when both dice roll 1, so $P(\\text{product} = 1) = \\frac{1}{36}$.",
+          "Product is odd and $> 1$: The remaining odd products occur in $\\frac{9}{36} - \\frac{1}{36} = \\frac{8}{36}$ of outcomes, paying $\\$0.00$.",
+          "Expected gross winnings: $E[W] = 3\\left(\\frac{27}{36}\\right) + 10\\left(\\frac{1}{36}\\right) + 0\\left(\\frac{8}{36}\\right) = \\frac{81 + 10}{36} = \\frac{91}{36}$.",
+          "Expected net value: $E[X] = E[W] - \\text{Cost} = \\frac{91}{36} - 2 = \\frac{91 - 72}{36} = \\frac{19}{36}$ dollars gross payout total.",
+          "Wait, let's recalculate carefully: Gross payout $E[W] = 3(27/36) + 10(1/36) = 91/36 \\approx 2.5278$. Net payout = $91/36 - 2 = 19/36$ dollars if payouts are in addition to keeping money, but usually payout is total return. Given cost is $\\$2.00$, expected value = $E[W] - 2 = \\frac{91}{36} - 2 = \\frac{19}{36} \\approx +\\$0.53$ if gross.",
+          "Let's re-verify standard notation: Net gain = $\\sum (\\text{payout} - \\text{cost}) \\cdot P = 3(27/36) + 10(1/36) - 2 = \\frac{91-72}{36} = \\frac{19}{36} \\approx +\\$0.53$."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "f4156072ed7e",
+        "prompt": "A marksman hits a target $60\\%$ of the time. If he fires 5 shots, find the probability that he hits the target more than 3 times. Leave your answer in simplified fraction form.",
+        "answer": "\\frac{1053}{3125}",
+        "steps": [
+          "Let $X$ be the number of hits out of $n = 5$ shots, with success probability $p = 0.6 = \\frac{3}{5}$ and failure $q = 0.4 = \\frac{2}{5}$.",
+          "We want $P(X > 3) = P(X = 4) + P(X = 5)$.",
+          "$P(X = 4) = \\binom{5}{4}\\left(\\frac{3}{5}\\right)^4\\left(\\frac{2}{5}\\right)^1 = 5 \\cdot \\frac{81}{625} \\cdot \\frac{2}{5} = \\frac{810}{3125}$.",
+          "$P(X = 5) = \\binom{5}{5}\\left(\\frac{3}{5}\\right)^5\\left(\\frac{2}{5}\\right)^0 = 1 \\cdot \\frac{243}{3125} = \\frac{243}{3125}$.",
+          "$P(X > 3) = \\frac{810 + 243}{3125} = \\frac{1053}{3125}$."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "a36f399f38af",
+        "prompt": "A spinner wheel with integers from $1$ to $n$ is spun once. If each integer is equally likely to be the outcome, find the expected value of the spin in terms of $n$.",
+        "answer": "\\frac{n+1}{2}",
+        "steps": [
+          "Each outcome $k \\in \\{1, 2, \\dots, n\\}$ has a probability of $P(X = k) = \\frac{1}{n}$.",
+          "The expected value is $E[X] = \\sum_{k=1}^n k \\cdot P(X = k) = \\frac{1}{n} \\sum_{k=1}^n k$.",
+          "Using the sum formula $\\sum_{k=1}^n k = \\frac{n(n+1)}{2}$, we get:",
+          "$E[X] = \\frac{1}{n} \\cdot \\frac{n(n+1)}{2} = \\frac{n+1}{2}$."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "**Combinatorics & Permutations**: The number of ways to arrange $r$ distinct items out of $n$ is ${}_nP_r = \\frac{n!}{(n-r)!}$, and to choose $r$ items is $\\binom{n}{r} = \\frac{n!}{r!(n-r)!}$. For $n$ keys on a circular key ring, the number of distinct arrangements is $\\frac{(n-1)!}{2}$. For $n$ items with repeated groups of sizes $n_1, n_2, \\dots, n_k$, the number of unique arrangements is $\\frac{n!}{n_1! n_2! \\cdots n_k!}$.",
+      "**Probability & Set Operations**: Addition Rule: $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$. De Morgan's Laws state that $(A \\cup B)' = A' \\cap B'$ and $(A \\cap B)' = A' \\cup B'$. Two events are independent if $P(A \\cap B) = P(A)P(B)$ and mutually exclusive if $P(A \\cap B) = 0$.",
+      "**Conditional Probability & Bayes' Theorem**: The conditional probability of $A$ given $B$ is $P(A|B) = \\frac{P(A \\cap B)}{P(B)}$. By the Law of Total Probability, $P(B) = P(B|A)P(A) + P(B|A')P(A')$. Bayes' Theorem allows reversing conditional probabilities: $P(A|B) = \\frac{P(B|A)P(A)}{P(B)}$.",
+      "**Binomial Distribution & Expected Value**: For $n$ independent trials each with success probability $p$, $P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}$. Expected Value $E[X] = \\sum x_i \\cdot P(X = x_i)$. If a game costs $C$ to play, the net expected gain is $E[X] - C$."
+    ],
+    "asked_solution": null
+  },
+  "topic::polar and 3d": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "c7418dabbb54",
+      "prompt": "Find the equation of a hyperboloid of two sheets centered at \\((0, -2, 0)\\) with vertices at \\((0, -2, 3)\\) and \\((0, -2, -3)\\) that passes through the point \\((3, 2, 5)\\). Write your answer in the form \\(a x^2 + c (y + d)^2 + e (z + f)^2 = g\\), where \\(a, c, d, e, f, g\\) are integers.",
+      "answer": "\\(-16x^2 - 16(y + 2)^2 + 25z^2 = 225\\)",
+      "steps": [
+        "Identify the center \\((0, -2, 0)\\) and vertical axis along \\(z\\). Since the vertices are at \\((0, -2, 3)\\) and \\((0, -2, -3)\\), the vertical semi-axis length is \\(c_z = 3\\), giving \\(c_z^2 = 9\\).",
+        "Set up the standard form for a hyperboloid of two sheets centered at \\((0, -2, 0)\\) with circular horizontal cross-sections: \\[-\\frac{x^2}{k} - \\frac{(y + 2)^2}{k} + \\frac{z^2}{9} = 1\\]",
+        "Substitute the given point \\((x, y, z) = (3, 2, 5)\\) into the equation: \\[-\\frac{3^2}{k} - \\frac{(2 + 2)^2}{k} + \\frac{5^2}{9} = 1\\]",
+        "Simplify and solve for \\(k\\): \\[-\\frac{9}{k} - \\frac{16}{k} + \\frac{25}{9} = 1 \\implies -\\frac{25}{k} = 1 - \\frac{25}{9} = -\\frac{16}{9} \\implies k = \\frac{225}{16}\\]",
+        "Substitute \\(k = \\frac{225}{16}\\) back into the equation: \\[-\\frac{16}{225}x^2 - \\frac{16}{225}(y + 2)^2 + \\frac{z^2}{9} = 1\\]",
+        "Multiply the entire equation by \\(225\\) to eliminate fractions and express with integer coefficients: \\[-16x^2 - 16(y + 2)^2 + 25z^2 = 225\\]"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "7cea68096462",
+        "prompt": "Which of the following lines is a line of symmetry for the polar rose curve \\(r = -4\\sin(5\\theta)\\)? a) \\(\\theta = 0\\) b) \\(\\theta = \\frac{\\pi}{10}\\) c) \\(\\theta = \\frac{\\pi}{5}\\) d) \\(\\theta = \\frac{2\\pi}{5}\\)",
+        "answer": "\\(\\theta = \\frac{\\pi}{10}\\)",
+        "steps": [
+          "Petals for \\(r = -4\\sin(5\\theta)\\) reach maximum length when \\(|5\\theta| = \\frac{\\pi}{2} + k\\pi\\), yielding \\(\\theta = \\frac{\\pi}{10} + \\frac{k\\pi}{5}\\).",
+          "The axes passing through the centers of the petals are lines of symmetry for the rose curve.",
+          "Evaluating for \\(k = 0\\) gives \\(\\theta = \\frac{\\pi}{10}\\), which matches option b."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "752d0ce1ec9e",
+        "prompt": "Convert the polar equation \\(r = \\frac{1}{3}\\tan\\theta \\sec\\theta\\) to rectangular form and classify the graph.",
+        "answer": "\\(y = 3x^2\\), Parabola",
+        "steps": [
+          "Use the identities \\(\\tan\\theta = \\frac{y}{x}\\) and \\(\\sec\\theta = \\frac{r}{x}\\).",
+          "Substitute into the polar equation: \\(r = \\frac{1}{3} \\left(\\frac{y}{x}\\right) \\left(\\frac{r}{x}\\right)\\).",
+          "Divide both sides by \\(r\\) (for \\(r \\neq 0\\)): \\(1 = \\frac{y}{3x^2}\\).",
+          "Multiply by \\(3x^2\\) to get \\(y = 3x^2\\), which is the equation of a parabola."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "37bc24fae747",
+        "prompt": "Find all points of intersection for the system of polar equations \\(r = 2 + 4\\cos\\theta\\) and \\(r = 2\\). Give your answers as polar coordinates \\((r, \\theta)\\) with \\(r \\ge 0\\) and \\(0 \\le \\theta < 2\\pi\\).",
+        "answer": "\\(\\left(2, \\frac{\\pi}{2}\\right)\\) and \\(\\left(2, \\frac{3\\pi}{2}\\right)\\)",
+        "steps": [
+          "Set the two equations equal: \\(2 + 4\\cos\\theta = 2\\).",
+          "Subtract \\(2\\) from both sides: \\(4\\cos\\theta = 0 \\implies \\cos\\theta = 0\\).",
+          "Solve for \\(\\theta\\) on the interval \\([0, 2\\pi)\\): \\(\\theta = \\frac{\\pi}{2}\\) and \\(\\theta = \\frac{3\\pi}{2}\\).",
+          "Substitute these angles into \\(r = 2\\) to get the polar points \\(\\left(2, \\frac{\\pi}{2}\\right)\\) and \\(\\left(2, \\frac{3\\pi}{2}\\right)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "30f3e767e5f7",
+        "prompt": "Write the polar equation for the rose curve centered at the origin with 8 petals, each of length 7, that has a petal maximum passing through the point \\(\\left(7, \\frac{\\pi}{8}\\right)\\).",
+        "answer": "\\(r = 7\\sin(4\\theta)\\)",
+        "steps": [
+          "An 8-petal rose curve has an even number of petals, so \\(2n = 8 \\implies n = 4\\).",
+          "The petal length is \\(|a| = 7\\).",
+          "Check whether cosine or sine satisfies \\(r\\left(\\frac{\\pi}{8}\\right) = 7\\): \\(\\sin\\left(4 \\cdot \\frac{\\pi}{8}\\right) = \\sin\\left(\\frac{\\pi}{2}\\right) = 1\\), whereas \\(\\cos\\left(\\frac{\\pi}{2}\\right) = 0\\).",
+          "Therefore, the equation is \\(r = 7\\sin(4\\theta)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "6ea64edfc54a",
+        "prompt": "Classify each 3D surface equation by its specific name: a) \\(\\frac{x^2}{16} + \\frac{y^2}{9} - \\frac{z^2}{25} = 1\\) b) \\(x^2 + z^2 = 4y\\) c) \\(y^2 - z^2 = 3x\\) d) \\(z = 4 - x^2\\)",
+        "answer": "a) Hyperboloid of 1 Sheet, b) Elliptic Paraboloid, c) Hyperbolic Paraboloid, d) Parabolic Cylinder",
+        "steps": [
+          "a) \\(\\frac{x^2}{16} + \\frac{y^2}{9} - \\frac{z^2}{25} = 1\\) has two positive squared terms and one negative squared term set equal to 1, which is a Hyperboloid of 1 Sheet.",
+          "b) \\(x^2 + z^2 = 4y\\) sets the sum of two positive squared terms equal to a linear term, which is an Elliptic Paraboloid.",
+          "c) \\(y^2 - z^2 = 3x\\) sets the difference of two squared terms equal to a linear term, which is a Hyperbolic Paraboloid.",
+          "d) \\(z = 4 - x^2\\) is missing the variable \\(y\\) and is quadratic in \\(x\\), making it a Parabolic Cylinder."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "c9c88fedc5d7",
+        "prompt": "Find the coordinates of all three axis intercepts for the plane \\(-2x + 4y + 3z = 12\\).",
+        "answer": "X-intercept: \\((-6, 0, 0)\\), Y-intercept: \\((0, 3, 0)\\), Z-intercept: \\((0, 0, 4)\\)",
+        "steps": [
+          "For the x-intercept, set \\(y = 0\\) and \\(z = 0\\): \\(-2x = 12 \\implies x = -6\\), so \\((-6, 0, 0)\\).",
+          "For the y-intercept, set \\(x = 0\\) and \\(z = 0\\): \\(4y = 12 \\implies y = 3\\), so \\((0, 3, 0)\\).",
+          "For the z-intercept, set \\(x = 0\\) and \\(y = 0\\): \\(3z = 12 \\implies z = 4\\), so \\((0, 0, 4)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "b03b7ae88fc6",
+        "prompt": "An Archimedean spiral is given by \\(r = a\\theta\\). If the spiral passes through the point \\(\\left(6, \\frac{3\\pi}{2}\\right)\\), find the constant \\(a\\) and evaluate \\(r\\) when \\(\\theta = 3\\pi\\).",
+        "answer": "\\(a = \\frac{4}{\\pi}\\), \\(r = 12\\)",
+        "steps": [
+          "Substitute \\(r = 6\\) and \\(\\theta = \\frac{3\\pi}{2}\\) into \\(r = a\\theta\\): \\(6 = a \\cdot \\frac{3\\pi}{2}\\).",
+          "Solve for \\(a\\): \\(a = 6 \\cdot \\frac{2}{3\\pi} = \\frac{4}{\\pi}\\).",
+          "The spiral equation is \\(r = \\frac{4}{\\pi}\\theta\\).",
+          "Substitute \\(\\theta = 3\\pi\\) to find \\(r\\): \\(r = \\frac{4}{\\pi}(3\\pi) = 12\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "78c9e40af603",
+        "prompt": "Find the distance between the two polar points \\(A\\left(-4, \\frac{\\pi}{3}\\right)\\) and \\(B\\left(3, \\frac{5\\pi}{6}\\right)\\).",
+        "answer": "\\(5\\)",
+        "steps": [
+          "Convert point \\(A\\left(-4, \\frac{\\pi}{3}\\right)\\) to have a positive radius: \\(A\\left(4, \\frac{\\pi}{3} + \\pi\\right) = A\\left(4, \\frac{4\\pi}{3}\\right)\\).",
+          "Find the angle difference between the two points: \\(\\Delta\\theta = \\frac{4\\pi}{3} - \\frac{5\\pi}{6} = \\frac{8\\pi}{6} - \\frac{5\\pi}{6} = \\frac{3\\pi}{6} = \\frac{\\pi}{2}\\).",
+          "Apply the Law of Cosines for polar distance: \\(d^2 = r_1^2 + r_2^2 - 2r_1 r_2 \\cos(\\Delta\\theta)\\).",
+          "Substitute \\(r_1 = 4\\), \\(r_2 = 3\\), and \\(\\Delta\\theta = \\frac{\\pi}{2}\\): \\(d^2 = 4^2 + 3^2 - 2(4)(3)\\cos\\left(\\frac{\\pi}{2}\\right) = 16 + 9 - 0 = 25\\).",
+          "Take the square root: \\(d = 5\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Polar to Rectangular Conversions: \\(x = r\\cos\\theta\\), \\(y = r\\sin\\theta\\), and \\(r^2 = x^2 + y^2\\). Distance between polar points \\((r_1, \\theta_1)\\) and \\((r_2, \\theta_2)\\) can be found using the Law of Cosines: \\(d = \\sqrt{r_1^2 + r_2^2 - 2r_1 r_2 \\cos(\\theta_2 - \\theta_1)}\\).",
+      "Polar Curves: Rose curves follow \\(r = a\\cos(n\\theta)\\) or \\(r = a\\sin(n\\theta)\\). They have \\(n\\) petals if \\(n\\) is odd (length \\(|a|\\)) and \\(2n\\) petals if \\(n\\) is even. Limacons take the form \\(r = a \\pm b\\cos\\theta\\) or \\(r = a \\pm b\\sin\\theta\\) (a cardioid occurs when \\(a = b\\)).",
+      "Quadric Surfaces Standard Forms: Ellipsoid \\(\\frac{x^2}{a^2} + \\frac{y^2}{b^2} + \\frac{z^2}{c^2} = 1\\); Hyperboloid of 1 Sheet \\(\\frac{x^2}{a^2} + \\frac{y^2}{b^2} - \\frac{z^2}{c^2} = 1\\); Hyperboloid of 2 Sheets \\(-\\frac{x^2}{a^2} - \\frac{y^2}{b^2} + \\frac{z^2}{c^2} = 1\\); Elliptic Cone \\(\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = \\frac{z^2}{c^2}\\); Elliptic Paraboloid \\(z = \\frac{x^2}{a^2} + \\frac{y^2}{b^2}\\); Hyperbolic Paraboloid \\(z = \\frac{y^2}{b^2} - \\frac{x^2}{a^2}\\).",
+      "3D Cylinders: An equation missing one coordinate variable in 3D space represents a cylinder whose cross-sections extend infinitely along the axis corresponding to the missing variable (e.g., \\(z = y^2\\) is a parabolic cylinder parallel to the x-axis)."
+    ],
+    "asked_solution": null
+  },
+  "topic::vectors and parametrics": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "9ac1b886b9ba",
+      "prompt": "Given the points \\(P(2, 1, 3)\\), \\(Q(4, -1, 5)\\), and \\(R(1, 3, 4)\\): a) Find the vectors \\(\\vec{PQ}\\) and \\(\\vec{PR}\\). b) Find the standard form equation \\(Ax + By + Cz = D\\) of plane \\(W\\) containing points \\(P\\), \\(Q\\), and \\(R\\). c) Find the area of \\(\\triangle PQR\\).",
+      "answer": "a) \\(\\vec{PQ} = \\langle 2, -2, 2 \\rangle\\), \\(\\vec{PR} = \\langle -1, 2, 1 \\rangle\\) b) \\(3x + 2y - z = 5\\) c) \\(\\sqrt{14}\\)",
+      "steps": [
+        "a) Calculate vector components by subtracting initial coordinates from final coordinates: \\[\\vec{PQ} = \\langle 4-2, -1-1, 5-3 \\rangle = \\langle 2, -2, 2 \\rangle\\] \\[\\vec{PR} = \\langle 1-2, 3-1, 4-3 \\rangle = \\langle -1, 2, 1 \\rangle\\]",
+        "b) Find a normal vector to the plane using the cross product \\(\\vec{n} = \\vec{PQ} \\times \\vec{PR}\\): \\[\\vec{n} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k}  2 & -2 & 2  -1 & 2 & 1 \\end{vmatrix} = \\hat{i}(-2 - 4) - \\hat{j}(2 - (-2)) + \\hat{k}(4 - 2) = \\langle -6, -4, 2 \\rangle\\]\\nDivide by \\(-2\\) to simplify the normal vector to \\(\\vec{n} = \\langle 3, 2, -1 \\rangle\\).\\nUse point \\(P(2, 1, 3)\\) to solve for \\(D\\): \\[3(x) + 2(y) - 1(z) = 3(2) + 2(1) - 1(3) \\implies 3x + 2y - z = 5\\]",
+        "c) The area of \\(\\triangle PQR\\) is \\(\\frac{1}{2}\\|\\vec{PQ} \\times \\vec{PR}\\|\\): \\[ext{Area} = \\frac{1}{2}\\sqrt{(-6)^2 + (-4)^2 + 2^2} = \\frac{1}{2}\\sqrt{36 + 16 + 4} = \\frac{1}{2}\\sqrt{56} = \\frac{1}{2}(2\\sqrt{14}) = \\sqrt{14}\\]"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "b373c359df49",
+        "prompt": "Given vectors \\(\\vec{a} = \\langle -3, 4 \\rangle\\) and \\(\\vec{b} = \\langle 1, -2 \\rangle\\), find the vector projection \\(\\text{proj}_{\\vec{b}}\\vec{a}\\).",
+        "answer": "\\(\\left\\langle -\\frac{11}{5}, \\frac{22}{5} \\right\\rangle\\)",
+        "steps": [
+          "Calculate the dot product \\(\\vec{a} \\cdot \\vec{b} = (-3)(1) + (4)(-2) = -3 - 8 = -11\\).",
+          "Calculate \\(\\|\\vec{b}\\|^2 = 1^2 + (-2)^2 = 1 + 4 = 5\\).",
+          "Apply projection formula: \\(\\text{proj}_{\\vec{b}}\\vec{a} = \\frac{\\vec{a} \\cdot \\vec{b}}{\\|\\vec{b}\\|^2}\\vec{b} = \\frac{-11}{5}\\langle 1, -2 \\rangle = \\left\\langle -\\frac{11}{5}, \\frac{22}{5} \\right\\rangle\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "dba3094e5ca9",
+        "prompt": "A line in 3D space passes through points \\(P(3, 1, -2)\\) and \\(Q(-1, 5, 2)\\). Find the point where line \\(PQ\\) intersects the \\(y-z\\) plane.",
+        "answer": "\\((0, 4, 1)\\)",
+        "steps": [
+          "Find direction vector \\(\\vec{d} = \\vec{PQ} = \\langle -1-3, 5-1, 2-(-2) \\rangle = \\langle -4, 4, 4 \\rangle\\).",
+          "Write the parametric equations for line \\(PQ\\): \\[x(t) = 3 - 4t, \\quad y(t) = 1 + 4t, \\quad z(t) = -2 + 4t\\]",
+          "The \\(y-z\\) plane is defined by \\(x = 0\\). Set \\(x(t) = 0\\): \\[3 - 4t = 0 \\implies t = \\frac{3}{4}\\]",
+          "Substitute \\(t = \\frac{3}{4}\\) back into \\(y(t)\\) and \\(z(t)\\): \\[y\\left(\\frac{3}{4}\\right) = 1 + 4\\left(\\frac{3}{4}\\right) = 4\\] \\[z\\left(\\frac{3}{4}\\right) = -2 + 4\\left(\\frac{3}{4}\\right) = 1\\]",
+          "The intersection point is \\((0, 4, 1)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "628b68098da5",
+        "prompt": "Consider the parametric equations \\(x(t) = 3\\cos(t)\\) and \\(y(t) = 2\\sin(t)\\) for \\(t \\in [0, \\pi]\\). a) State the domain and range of the graph. b) Eliminate the parameter to write an equation in rectangular form.",
+        "answer": "a) Domain: \\([-3, 3]\\), Range: \\([0, 2]\\) b) \\(\\frac{x^2}{9} + \\frac{y^2}{4} = 1\\) for \\(y \\ge 0\\)",
+        "steps": [
+          "a) For \\(t \\in [0, \\pi]\\), \\(\\cos(t)\\) varies from \\(-1\\) to \\(1\\), so \\(x(t) = 3\\cos(t)\\) ranges from \\(-3\\) to \\(3\\) (Domain: \\([-3, 3]\\)). \\(\\sin(t)\\) varies from \\(0\\) to \\(1\\), so \\(y(t) = 2\\sin(t)\\) ranges from \\(0\\) to \\(2\\) (Range: \\([0, 2]\\)).",
+          "b) Rewrite equations as \\(\\frac{x}{3} = \\cos(t)\\) and \\(\\frac{y}{2} = \\sin(t)\\).",
+          "Use the Pythagorean identity \\(\\cos^2(t) + \\sin^2(t) = 1\\): \\[\\left(\\frac{x}{3}\\right)^2 + \\left(\\frac{y}{2}\\right)^2 = 1 \\implies \\frac{x^2}{9} + \\frac{y^2}{4} = 1 \\quad (\\text{with } y \\ge 0)\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "974076fe092a",
+        "prompt": "A soccer ball is kicked at an angle of \\(35^\\circ\\) to the horizontal with an initial speed of \\(45\\text{ ft/s}\\) from ground level. A student incorrectly models the vertical position as \\(y(t) = -16t^2 + 45t\\). Circle/identify the student's error and write the correct expression for \\(y(t)\\).",
+        "answer": "The student used the total initial speed \\(45\\) instead of the initial vertical component \\(45\\sin(35^\\circ)\\). Correct expression: \\(y(t) = -16t^2 + 45\\sin(35^\\circ)t\\).",
+        "steps": [
+          "The standard vertical projectile equation is \\(y(t) = -16t^2 + v_{0y}t + h_0\\).",
+          "The initial vertical velocity component is \\(v_{0y} = v_0 \\sin(\\theta) = 45\\sin(35^\\circ)\\).",
+          "The student incorrectly used \\(45t\\) instead of \\(45\\sin(35^\\circ)t\\).",
+          "The correct expression is \\(y(t) = -16t^2 + 45\\sin(35^\\circ)t\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1234badc7b2a",
+        "prompt": "Suppose two non-zero vectors \\(\\vec{u}\\) and \\(\\vec{v}\\) satisfy \\(\\vec{u} \\cdot \\vec{v} = 0\\) and \\(\\|\\vec{u} \\times \\vec{v}\\| = 20\\). If \\(\\|\\vec{u}\\| = 5\\), find \\(\\|\\vec{v}\\|\\).",
+        "answer": "\\(4\\)",
+        "steps": [
+          "Since \\(\\vec{u} \\cdot \\vec{v} = 0\\), the angle \\(\\theta\\) between \\(\\vec{u}\\) and \\(\\vec{v}\\) is \\(90^\\circ\\).",
+          "Using the cross product magnitude formula \\(\\|\\vec{u} \\times \\vec{v}\\| = \\|\\vec{u}\\|\\|\\vec{v}\\|\\sin\\theta\\): \\[20 = (5)\\|\\vec{v}\\|\\sin(90^\\circ)\\]",
+          "Since \\(\\sin(90^\\circ) = 1\\): \\[20 = 5\\|\\vec{v}\\| \\implies \\|\\vec{v}\\| = 4\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "eb691a86cc0d",
+        "prompt": "The vector equation of plane \\(R\\) is given as \\(\\langle x, y, z \\rangle = \\langle 2, -1, 4 \\rangle + s\\langle 1, 0, 2 \\rangle + t\\langle 0, 3, -1 \\rangle\\). Write the equation of plane \\(R\\) in standard form (\\(Ax + By + Cz = D\\)).",
+        "answer": "\\(-6x + y + 3z = -1\\) (or \\(6x - y - 3z = 1\\))",
+        "steps": [
+          "Find the normal vector by taking the cross product of the two direction vectors: \\[\\vec{n} = \\langle 1, 0, 2 \\rangle \\times \\langle 0, 3, -1 \\rangle = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k}  1 & 0 & 2  0 & 3 & -1 \\end{vmatrix}\\] \\[\\vec{n} = \\hat{i}(0 - 6) - \\hat{j}(-1 - 0) + \\hat{k}(3 - 0) = \\langle -6, 1, 3 \\rangle\\]",
+          "Use point \\((2, -1, 4)\\) from the vector equation to find \\(D\\): \\[-6(x) + 1(y) + 3(z) = -6(2) + 1(-1) + 3(4)\\] \\[-6x + y + 3z = -12 - 1 + 12 = -1\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "312166e9463d",
+        "prompt": "Plane \\(P\\) is determined by the equation \\(2x - y + 2z = 5\\). Find the rectangular equations of both planes that are parallel to Plane \\(P\\) and located exactly \\(4\\) units away from Plane \\(P\\).",
+        "answer": "\\(2x - y + 2z = 17\\) and \\(2x - y + 2z = -7\\)",
+        "steps": [
+          "Planes parallel to \\(P\\) take the form \\(2x - y + 2z = D_2\\).",
+          "The distance formula between parallel planes \\(Ax+By+Cz=D_1\\) and \\(Ax+By+Cz=D_2\\) is \\(d = \\frac{|D_2 - D_1|}{\\sqrt{A^2 + B^2 + C^2}}\\).",
+          "Substitute known values: \\(4 = \\frac{|D_2 - 5|}{\\sqrt{2^2 + (-1)^2 + 2^2}} = \\frac{|D_2 - 5|}{\\sqrt{9}} = \\frac{|D_2 - 5|}{3}\\).",
+          "Solve for \\(D_2\\): \\[|D_2 - 5| = 12 \\implies D_2 - 5 = 12 \\quad \\text{or} \\quad D_2 - 5 = -12\\] \\[D_2 = 17 \\quad \\text{or} \\quad D_2 = -7\\]",
+          "The equations are \\(2x - y + 2z = 17\\) and \\(2x - y + 2z = -7\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "5527d39438f8",
+        "prompt": "Given \\(\\langle 2, y, z \\rangle \\times \\langle 3, 1, 4 \\rangle = \\langle 11, -5, -7 \\rangle\\), solve for \\(y\\) and \\(z\\).",
+        "answer": "\\(y = 3, z = 1\\)",
+        "steps": [
+          "Compute the cross product algebraically: \\[\\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k}  2 & y & z  3 & 1 & 4 \\end{vmatrix} = \\hat{i}(4y - z) - \\hat{j}(8 - 3z) + \\hat{k}(2 - 3y)\\]",
+          "Set components equal to \\(\\langle 11, -5, -7 \\rangle\\): 1) \\(4y - z = 11\\) 2) \\(-(8 - 3z) = -5 \\implies 3z - 8 = -5\\) 3) \\(2 - 3y = -7\\)",
+          "Solve equation (3) for \\(y\\): \\[2 - 3y = -7 \\implies -3y = -9 \\implies y = 3\\]",
+          "Solve equation (2) for \\(z\\): \\[3z - 8 = -5 \\implies 3z = 3 \\implies z = 1\\]",
+          "Check equation (1): \\(4(3) - 1 = 12 - 1 = 11\\), which holds true."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "**Vector Projection:** The vector projection of \\(\\vec{u}\\) onto \\(\\vec{v}\\) is given by \\(\\text{proj}_{\\vec{v}}\\vec{u} = \\left(\\frac{\\vec{u}\\cdot\\vec{v}}{\\|\\vec{v}\\|^2}\\right)\\vec{v}\\).",
+      "**Dot and Cross Product Properties:** \\(\\vec{u}\\cdot\\vec{v} = \\|\\vec{u}\\|\\|\\vec{v}\\|\\cos\\theta\\) (dot product is zero for orthogonal vectors). \\(\\|\\vec{u}\\times\\vec{v}\\| = \\|\\vec{u}\\|\\|\\vec{v}\\|\\sin\\theta\\) (cross product magnitude equals the area of the parallelogram formed by \\(\\vec{u}\\) and \\(\\vec{v}\\)).",
+      "**Lines and Planes in 3D:** A line passing through point \\(P_0\\) with direction vector \\(\\vec{d}\\) has vector equation \\(\\vec{r}(t) = P_0 + t\\vec{d}\\). A plane with normal vector \\(\\vec{n} = \\langle A, B, C \\rangle\\) passing through \\((x_0, y_0, z_0)\\) has standard equation \\(Ax + By + Cz = D\\), where \\(D = Ax_0 + By_0 + Cz_0\\).",
+      "**Distance from Point to Plane:** The perpendicular distance from point \\((x_0, y_0, z_0)\\) to the plane \\(Ax + By + Cz = D\\) is \\(d = \\frac{|Ax_0 + By_0 + Cz_0 - D|}{\\sqrt{A^2 + B^2 + C^2}}\\)."
+    ],
+    "asked_solution": null
+  },
+  "topic::matrices": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "820c37b06ba2",
+      "prompt": "Matrix \\(T\\) has eigenvectors \\(\\mathbf{v}_1 = \\begin{bmatrix} 1  2 \\end{bmatrix}\\) with eigenvalue \\(\\lambda_1 = 4\\) and \\(\\mathbf{v}_2 = \\begin{bmatrix} 3  -1 \\end{bmatrix}\\) with eigenvalue \\(\\lambda_2 = -1\\). Find \\(T \\begin{bmatrix} 11  1 \\end{bmatrix}\\).",
+      "answer": "\\(\\begin{bmatrix} -1  19 \\end{bmatrix}\\)",
+      "steps": [
+        "Express the vector \\(\\begin{bmatrix} 11  1 \\end{bmatrix}\\) as a linear combination of the eigenvectors \\(\\mathbf{v}_1\\) and \\(\\mathbf{v}_2\\): \\(\\begin{bmatrix} 11  1 \\end{bmatrix} = c_1 \\begin{bmatrix} 1  2 \\end{bmatrix} + c_2 \\begin{bmatrix} 3  -1 \\end{bmatrix}\\).",
+        "Set up the system of linear equations for coefficients \\(c_1\\) and \\(c_2\\): \\[c_1 + 3c_2 = 11\\] \\[2c_1 - c_2 = 1\\]",
+        "From the second equation, \\(c_2 = 2c_1 - 1\\). Substitute into the first equation: \\[c_1 + 3(2c_1 - 1) = 11 \\implies 7c_1 - 3 = 11 \\implies 7c_1 = 14 \\implies c_1 = 2\\]",
+        "Calculate \\(c_2\\): \\[c_2 = 2(2) - 1 = 3\\]",
+        "Apply the matrix transformation \\(T\\) using eigenvector properties \\(T \\mathbf{v}_k = \\lambda_k \\mathbf{v}_k\\): \\[T \\begin{bmatrix} 11  1 \\end{bmatrix} = T(2\\mathbf{v}_1 + 3\\mathbf{v}_2) = 2(\\lambda_1 \\mathbf{v}_1) + 3(\\lambda_2 \\mathbf{v}_2)\\] \\[= 2 \\cdot 4 \\begin{bmatrix} 1  2 \\end{bmatrix} + 3 \\cdot (-1) \\begin{bmatrix} 3  -1 \\end{bmatrix} = 8 \\begin{bmatrix} 1  2 \\end{bmatrix} - 3 \\begin{bmatrix} 3  -1 \\end{bmatrix}\\] \\[= \\begin{bmatrix} 8  16 \\end{bmatrix} + \\begin{bmatrix} -9  3 \\end{bmatrix} = \\begin{bmatrix} -1  19 \\end{bmatrix}\\]"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "7cb1988100cd",
+        "prompt": "If the dimensions of matrix \\(A\\) are \\(3 \\times 4\\), the dimensions of matrix \\(B\\) are \\(4 \\times 5\\), and the dimensions of matrix \\(C\\) are \\(2 \\times 3\\), find the dimensions of the matrix expression \\((A B)^T C^T\\).",
+        "answer": "\\(5 \\times 2\\)",
+        "steps": [
+          "Find the dimensions of \\(A B\\): Matrix \\(A\\) is \\(3 \\times 4\\) and \\(B\\) is \\(4 \\times 5\\), so \\(A B\\) is \\(3 \\times 5\\).",
+          "Find the dimensions of \\((A B)^T\\): Transposition swaps dimensions, so \\((A B)^T\\) is \\(5 \\times 3\\).",
+          "Find the dimensions of \\(C^T\\): Matrix \\(C\\) is \\(2 \\times 3\\), so \\(C^T\\) is \\(3 \\times 2\\).",
+          "Find the dimensions of the product \\((A B)^T C^T\\): Multiplying a \\(5 \\times 3\\) matrix by a \\(3 \\times 2\\) matrix yields a \\(5 \\times 2\\) matrix."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d44d7373b086",
+        "prompt": "If \\(A^2 - 3A + 2I = 0\\), and the inverse of \\(A\\) exists, express \\(A^{-1}\\) in terms of \\(A\\) and \\(I\\).",
+        "answer": "\\(A^{-1} = \\frac{3}{2}I - \\frac{1}{2}A\\)",
+        "steps": [
+          "Isolate the identity matrix term: \\(3A - A^2 = 2I\\).",
+          "Factor out matrix \\(A\\) on the right (or left): \\((3I - A)A = 2I\\).",
+          "Divide both sides by 2: \\(\\left(\\frac{3}{2}I - \\frac{1}{2}A\\right)A = I\\).",
+          "By definition of the matrix inverse, \\(A^{-1} = \\frac{3}{2}I - \\frac{1}{2}A\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "a17ba178e4c9",
+        "prompt": "Let \\(A = \\begin{bmatrix} 2 & 1  5 & 3 \\end{bmatrix}\\) and \\(B = \\begin{bmatrix} 3 & -1  x & 2 \\end{bmatrix}\\). If \\(B\\) is the inverse of \\(A\\), find the value of \\(x\\).",
+        "answer": "\\(x = -5\\)",
+        "steps": [
+          "Use the determinant inverse formula for a \\(2 \\times 2\\) matrix \\(A = \\begin{bmatrix} a & b  c & d \\end{bmatrix}\\): \\(A^{-1} = \\frac{1}{ad - bc}\\begin{bmatrix} d & -b  -c & a \\end{bmatrix}\\).",
+          "Compute \\(\\det(A) = (2)(3) - (1)(5) = 6 - 5 = 1\\).",
+          "Write \\(A^{-1}\\): \\(A^{-1} = \\frac{1}{1}\\begin{bmatrix} 3 & -1  -5 & 2 \\end{bmatrix} = \\begin{bmatrix} 3 & -1  -5 & 2 \\end{bmatrix}\\).",
+          "Equate corresponding entries of \\(B\\) and \\(A^{-1}\\) to get \\(x = -5\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "a6d46a11e516",
+        "prompt": "If \\(A = \\begin{bmatrix} \\sin b & 0  0 & \\sin b \\end{bmatrix}\\) and \\(\\det\\left(A^2 - \\frac{1}{4}I\\right) = 0\\), find all possible values of \\(b\\) on the interval \\([0, 2\\pi)\\).",
+        "answer": "\\(b = \\frac{\\pi}{6}, \\frac{5\\pi}{6}, \\frac{7\\pi}{6}, \\frac{11\\pi}{6}\\)",
+        "steps": [
+          "Compute \\(A^2\\): \\(A^2 = \\begin{bmatrix} \\sin^2 b & 0  0 & \\sin^2 b \\end{bmatrix}\\).",
+          "Subtract \\(\\frac{1}{4}I\\): \\(A^2 - \\frac{1}{4}I = \\begin{bmatrix} \\sin^2 b - \\frac{1}{4} & 0  0 & \\sin^2 b - \\frac{1}{4} \\end{bmatrix}\\).",
+          "Calculate determinant: \\(\\det\\left(A^2 - \\frac{1}{4}I\\right) = \\left(\\sin^2 b - \\frac{1}{4}\\right)^2 = 0\\).",
+          "Solve for \\(\\sin b\\): \\(\\sin^2 b - \\frac{1}{4} = 0 \\implies \\sin^2 b = \\frac{1}{4} \\implies \\sin b = \\pm \\frac{1}{2}\\).",
+          "Find values of \\(b \\in [0, 2\\pi)\\): \\(b = \\frac{\\pi}{6}, \\frac{5\\pi}{6}, \\frac{7\\pi}{6}, \\frac{11\\pi}{6}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "6ba8b68299bb",
+        "prompt": "Find both eigenvalues for the matrix \\(M = \\begin{bmatrix} 5 & 2  3 & 4 \\end{bmatrix}\\).",
+        "answer": "\\(\\lambda_1 = 7, \\lambda_2 = 2\\)",
+        "steps": [
+          "Set up the characteristic equation \\(\\det(M - \\lambda I) = 0\\): \\(\\det\\begin{bmatrix} 5 - \\lambda & 2  3 & 4 - \\lambda \\end{bmatrix} = 0\\).",
+          "Expand the determinant: \\((5 - \\lambda)(4 - \\lambda) - (2)(3) = 0\\).",
+          "Simplify the quadratic equation: \\(\\lambda^2 - 9\\lambda + 20 - 6 = 0 \\implies \\lambda^2 - 9\\lambda + 14 = 0\\).",
+          "Factor: \\((\\lambda - 7)(\\lambda - 2) = 0\\).",
+          "State the eigenvalues: \\(\\lambda = 7\\) and \\(\\lambda = 2\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "2e076f13acef",
+        "prompt": "Write the system as a \\(3 \\times 4\\) augmented matrix, then use Gauss-Jordan elimination to solve the linear system: \\[\\begin{aligned}\\nx + 2y + z &= 8  2x + 5y + 4z &= 23  3x + 6y + 4z &= 27 \\end{aligned}\\]",
+        "answer": "\\(x = 3, y = 1, z = 3\\)",
+        "steps": [
+          "Write the augmented matrix: \\[\\begin{bmatrix} 1 & 2 & 1 & | & 8  2 & 5 & 4 & | & 23  3 & 6 & 4 & | & 27 \\end{bmatrix}\\]",
+          "Perform row operations to create zeros below the first pivot: \\(R_2 \\to R_2 - 2R_1\\) gives \\([0, 1, 2 | 7]\\). \\(R_3 \\to R_3 - 3R_1\\) gives \\([0, 0, 1 | 3]\\).",
+          "The matrix is now in upper triangular form: \\[\\begin{bmatrix} 1 & 2 & 1 & | & 8  0 & 1 & 2 & | & 7  0 & 0 & 1 & | & 3 \\end{bmatrix}\\]",
+          "Perform back-substitution/row operations to reach RREF: \\(R_2 \\to R_2 - 2R_3 \\implies [0, 1, 0 | 1]\\). \\(R_1 \\to R_1 - R_3 \\implies [1, 2, 0 | 5]\\). \\(R_1 \\to R_1 - 2R_2 \\implies [1, 0, 0 | 3]\\).",
+          "Read off the solution: \\(x = 3, y = 1, z = 3\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "4b4d8f47b557",
+        "prompt": "An absorbing Markov chain has transient states submatrix \\(Q = \\begin{bmatrix} 0.25 & 0.75  0 & 0.75 \\end{bmatrix}\\). Compute the Fundamental Matrix \\(N = (I - Q)^{-1}\\).",
+        "answer": "\\(N = \\begin{bmatrix} 4/3 & 4  0 & 4 \\end{bmatrix}\\)",
+        "steps": [
+          "Form the matrix \\(I - Q\\): \\[I - Q = \\begin{bmatrix} 1 & 0  0 & 1 \\end{bmatrix} - \\begin{bmatrix} 0.25 & 0.75  0 & 0.75 \\end{bmatrix} = \\begin{bmatrix} 0.75 & -0.75  0 & 0.25 \\end{bmatrix} = \\begin{bmatrix} 3/4 & -3/4  0 & 1/4 \\end{bmatrix}\\]",
+          "Calculate determinant \\(\\det(I - Q) = (3/4)(1/4) - (0)(-3/4) = 3/16\\).",
+          "Compute inverse \\(N = (I - Q)^{-1}\\): \\[N = \\frac{1}{3/16} \\begin{bmatrix} 1/4 & 3/4  0 & 3/4 \\end{bmatrix} = \\frac{16}{3} \\begin{bmatrix} 1/4 & 3/4  0 & 3/4 \\end{bmatrix} = \\begin{bmatrix} 4/3 & 4  0 & 4 \\end{bmatrix}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d36204577d5c",
+        "prompt": "A market study models consumer movement between Brand A, Brand B, and Brand C. Each month, 80% of Brand A users stay with A, 10% switch to B, and 10% switch to C. For Brand B, 20% switch to A, 70% stay with B, and 10% switch to C. For Brand C, 30% switch to A, 30% switch to B, and 40% stay with C. Write a system of 3 linear equations and 3 unknowns (\\(x, y, z\\)) that could be used to solve for the equilibrium distribution of a population of 10,000 customers. (Do not solve the system).",
+        "answer": "\\(\\begin{aligned} -0.20x + 0.20y + 0.30z &= 0  0.10x - 0.30y + 0.30z &= 0  x + y + z &= 10000 \\end{aligned}\\)",
+        "steps": [
+          "Identify the transition probabilities entering each state at equilibrium:\\nState A (\\(x\\)): receives \\(0.80x\\) from A, \\(0.20y\\) from B, and \\(0.30z\\) from C.\\nState B (\\(y\\)): receives \\(0.10x\\) from A, \\(0.70y\\) from B, and \\(0.30z\\) from C.",
+          "Set up the equilibrium state equations \\(X P = X\\): \\[x = 0.80x + 0.20y + 0.30z \\implies -0.20x + 0.20y + 0.30z = 0\\] \\[y = 0.10x + 0.70y + 0.30z \\implies 0.10x - 0.30y + 0.30z = 0\\]",
+          "Add the population constraint equation: \\(x + y + z = 10000\\).",
+          "Combine these three equations to form the final system."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Matrix Properties & Operations: Matrix multiplication is non-commutative (\\(AB \\neq BA\\) in general). For transposed matrices, \\((AB)^T = B^T A^T\\). An invertible matrix \\(A\\) satisfies \\(A A^{-1} = A^{-1} A = I\\). If a polynomial equation in \\(A\\) holds, such as \\(A^2 - cA - dI = 0\\), the inverse can be isolated as \\(A^{-1} = \\frac{1}{d}(A - cI)\\).",
+      "Eigenvalues & Eigenvectors: Eigenvalues \\(\\lambda\\) satisfy \\(\\det(A - \\lambda I) = 0\\). The corresponding non-zero vector \\(\\mathbf{v}\\) satisfies \\(A \\mathbf{v} = \\lambda \\mathbf{v}\\). Any linear combination of eigenvectors \\(\\mathbf{x} = c_1 \\mathbf{v}_1 + c_2 \\mathbf{v}_2\\) satisfies \\(A \\mathbf{x} = c_1 \\lambda_1 \\mathbf{v}_1 + c_2 \\lambda_2 \\mathbf{v}_2\\).",
+      "Gauss-Jordan Elimination: A linear system \\(A \\mathbf{x} = \\mathbf{b}\\) can be written as an augmented matrix \\([A | \\mathbf{b}]\\) and reduced using elementary row operations to Reduced Row Echelon Form (RREF) to yield exact solutions.",
+      "Markov Chains & Fundamental Matrix: For absorbing Markov chains in canonical form \\(P = \\begin{bmatrix} Q & R \\ 0 & I \\end{bmatrix}\\), the fundamental matrix is defined as \\(N = (I - Q)^{-1}\\). The entry \\(n_{ij}\\) represents the expected number of times the process visits transient state \\(j\\) given it started in transient state \\(i\\)."
     ],
     "asked_solution": null
   }

@@ -5,7 +5,7 @@ import MathText from "./MathText";
 
 type Props = {
   problem: Problem;
-  source: "template" | "llm" | "dify";
+  source: "template" | "llm" | "dify" | "gunn";
   embedded?: boolean;
   heading?: string;
   note?: string;
@@ -13,6 +13,7 @@ type Props = {
 
 function sourceLabel(source: Props["source"]): string {
   if (source === "dify") return "AI generated (Dify)";
+  if (source === "gunn") return "From Gunn past papers";
   if (source === "llm") return "AI generated";
   return "Guided";
 }

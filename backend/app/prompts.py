@@ -162,6 +162,10 @@ def _clean(text: str) -> str:
     Turns runs of whitespace (including real newlines) into single spaces and
     tidies spacing just inside \\[ \\] / \\( \\) math delimiters, so display
     math like "\\[\n F_1+... \n\\]" renders cleanly instead of with gaps.
+
+    Intentional line breaks written as a literal backslash-n between prose
+    (e.g. multiple-choice options "...?\\na) ...\\nb) ...") are preserved as
+    real newlines so the frontend can render them on separate lines.
     """
     import re
 
@@ -172,7 +176,19 @@ def _clean(text: str) -> str:
     # are not valid LaTeX, so drop a \n/\t/\r that sits adjacent to \[ or \].
     text = re.sub(r"(\\\[)\s*\\[ntr]\s*", r"\1", text)
     text = re.sub(r"\s*\\[ntr]\s*(\\\])", r"\1", text)
+    # A literal backslash-n/-r elsewhere is a real line break the model intended
+    # (commonly separating multiple-choice options). Convert it to an actual
+    # newline BEFORE collapsing whitespace so we can keep it; literal \t becomes
+    # a space. To avoid mangling LaTeX commands that start with n/r (\right,
+    # \rho, \nabla, \ne, \times...), only treat \n/\r as a break when it is
+    # followed by an option marker like "a)" / "3." or by a non-letter.
+    text = re.sub(r"\\[nr](?=[A-Za-z0-9][.)])", "\x00", text)  # \na)  \n3.
+    text = re.sub(r"\\[nr](?![A-Za-z])", "\x00", text)          # \n(   \n$
+    text = re.sub(r"\\t(?![A-Za-z])", " ", text)
+    # Collapse remaining runs of real whitespace to single spaces, then restore
+    # the intended line breaks (also collapsing any duplicates/space around them).
     text = re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"\s*\x00\s*", "\n", text).strip()
     # Reasoning models occasionally emit a forward slash instead of a backslash
     # for LaTeX commands, e.g. "n /ge 1" or "/frac{a}{b}". Repair the common
     # ones so KaTeX can render them. We only touch a known command list to

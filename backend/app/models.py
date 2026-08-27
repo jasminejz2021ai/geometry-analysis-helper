@@ -65,7 +65,7 @@ class SolveRequest(BaseModel):
 
 
 class SolveResponse(BaseModel):
-    source: Literal["template", "llm", "dify"]
+    source: Literal["template", "llm", "dify", "gunn"]
     topic: str
     original: Problem
     practice: list[Problem]

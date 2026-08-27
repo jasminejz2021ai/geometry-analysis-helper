@@ -66,20 +66,36 @@ function renderMath(value: string, display: boolean): string {
 }
 
 export default function MathText({ text, className }: Props) {
-  const segments = useMemo(() => splitSegments(text ?? ""), [text]);
+  // Split into lines first (real newlines mark intended breaks, e.g. multiple-
+  // choice options), then render each line's inline math/text segments. Lines
+  // get a little vertical spacing so they're easy to read.
+  const lines = useMemo(() => (text ?? "").split("\n"), [text]);
+  const perLine = useMemo(
+    () => lines.map((line) => splitSegments(line)),
+    [lines],
+  );
+  const multiline = lines.length > 1;
 
   return (
     <span className={className}>
-      {segments.map((seg, i) =>
-        seg.type === "text" ? (
-          <span key={i}>{seg.value}</span>
-        ) : (
-          <span
-            key={i}
-            dangerouslySetInnerHTML={{ __html: renderMath(seg.value, seg.display) }}
-          />
-        ),
-      )}
+      {perLine.map((segments, li) => {
+        const inner = segments.map((seg, i) =>
+          seg.type === "text" ? (
+            <span key={i}>{seg.value}</span>
+          ) : (
+            <span
+              key={i}
+              dangerouslySetInnerHTML={{ __html: renderMath(seg.value, seg.display) }}
+            />
+          ),
+        );
+        if (!multiline) return <span key={li}>{inner}</span>;
+        return (
+          <span key={li} className={li > 0 ? "block mt-1.5" : "block"}>
+            {inner}
+          </span>
+        );
+      })}
     </span>
   );
 }

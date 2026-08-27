@@ -25,96 +25,28 @@ import json
 import httpx
 from pydantic import ValidationError
 
-# Analysis Honors units and their topics (from the course calendar).
+# Analysis Honors units, mirroring the Gunn Maths course
+# (https://www.gunnmaths.org/analysis). Most units are a single browsable
+# topic; AtPS is split into subsections so its large problem set is grouped.
+# Each topic id maps to cached content built from real past quizzes/tests.
+# NOTE: Growth, GAtM, and Limits and Calculus are pending a cache build
+# (Gemini free-tier daily quota); add them back here once cached.
 _ANALYSIS_UNITS: list[tuple[str, list[str]]] = [
     (
-        "Algebra Through Problem Solving",
+        "Algebra Through Problem Solving (AtPS)",
         [
-            "Finite Differences",
-            "Pascal's Triangle",
-            "Fibonacci Numbers",
-            "Sigma Notation & Telescoping",
-            "Factorials",
-            "Proof by Induction",
-            "Binomial Theorem",
+            "AtPS: Triangles & Pascal's Triangle",
+            "AtPS: Sequences, Series & Sigma Notation",
+            "AtPS: Binomial Theorem & Fibonacci",
         ],
     ),
     (
-        "Growth and Finance",
+        "Other Analysis Units",
         [
-            "Logs & Exponential Equations",
-            "Power Functions",
-            "Logistic Growth",
-            "Geometric Series",
-            "Annuities (Present & Future Value)",
-        ],
-    ),
-    (
-        "Polar & 3-D Graphing",
-        [
-            "Polar Coordinates & Curves",
-            "Intersections of Polar Curves",
-            "3-D Points & Axes",
-            "Quadric Surfaces",
-        ],
-    ),
-    (
-        "Counting & Probability",
-        [
-            "Counting & Circular Counting",
-            "Probability & Venn Diagrams",
-            "Independent & Conditional Probability",
-            "Tree Diagrams",
-            "Binomial Probability",
-            "Expected Value",
-        ],
-    ),
-    (
-        "Matrices",
-        [
-            "Matrix Operations & Determinants",
-            "Inverse Matrices (2x2 & 3x3)",
-            "Solving Systems with Matrices",
-            "Gauss-Jordan Elimination",
-            "Markov Chains",
-        ],
-    ),
-    (
-        "Vectors",
-        [
-            "Parametrics & Projectile Motion",
-            "Dot Product & Angle Between Vectors",
-            "Vector Projections",
-            "Vector Equations of Lines",
-            "Cross Product",
-            "Planes & Intersections",
-            "Distances Between Points, Lines & Planes",
-        ],
-    ),
-    (
-        "A Geometric Approach to Matrices",
-        [
-            "Groups",
-            "Reflection & Rotation Groups",
-            "Complex Numbers",
-            "Matrix Transformations",
-            "Eigenvectors",
-        ],
-    ),
-    (
-        "Sequences, Series & Calculus",
-        [
-            "Convergence & Divergence of Series",
-            "Convergence Tests (AST, Ratio, Comparison)",
-            "The Derivative",
-            "Approximating Definite Integrals",
-            "Limits & Limit Laws",
-            "Delta-Epsilon Proofs",
-            "Intermediate Value Theorem",
-            "Formal Definition of the Derivative",
-            "Power & Chain Rules",
-            "Derivatives of Sinusoids",
-            "Antiderivatives",
+            "Probability",
+            "Polar and 3D",
+            "Vectors and Parametrics",
+            "Matrices",
         ],
     ),
 ]

@@ -43,7 +43,7 @@ export type Problem = {
 };
 
 export type SolveResponse = {
-  source: "template" | "llm" | "dify";
+  source: "template" | "llm" | "dify" | "gunn";
   topic: string;
   original: Problem;
   practice: Problem[];
@@ -52,7 +52,7 @@ export type SolveResponse = {
 };
 
 export type GenerateMoreResponse = {
-  source: "template" | "llm" | "dify";
+  source: "template" | "llm" | "dify" | "gunn";
   topic: string;
   practice: Problem[];
   concept_review?: string[];
