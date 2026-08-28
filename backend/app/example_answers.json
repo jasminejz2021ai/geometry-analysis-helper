@@ -664,34 +664,20 @@
     "source": "llm",
     "topic": "analysis",
     "original": {
-      "id": "c72df2633927",
-      "prompt": "Prove $ 1 + 2 + \\dots + n = \\frac{n(n+1)}{2} $ by induction",
-      "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ S_{k+1} = \\frac{(k+1)(k+2)}{2} $",
+      "id": "7f212e2221d6",
+      "prompt": "Prove $ 1 + 3 + 5 + \\dots + (2n-1) = n^2 $ by induction",
+      "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ (k+1)^2 $",
       "steps": [
-        "Base case: For $ n=1 $, left side is 1, right side is $ \\frac{1(1+1)}{2} = 1 $",
-        "Assume true for $ n=k $: $ 1+2+\\dots+k = \\frac{k(k+1)}{2} $",
-        "Prove for $ n=k+1 $: Add $ k+1 $ to both sides: $ \\frac{k(k+1)}{2} + (k+1) $",
-        "Simplify: $ \\frac{k(k+1) + 2(k+1)}{2} = \\frac{(k+1)(k+2)}{2} $",
+        "Base case: For $ n=1 $, left side is 1, right side is $ 1^2 = 1 $",
+        "Assume true for $ n=k $: $ 1+3+\\dots+(2k-1) = k^2 $",
+        "Prove for $ n=k+1 $: Add $ 2(k+1)-1 = 2k+1 $ to both sides",
+        "Simplify: $ k^2 + 2k + 1 = (k+1)^2 $",
         "Conclusion: Formula holds for all $ n \\geq 1 $"
       ],
       "unit": null,
       "diagram": null
     },
     "practice": [
-      {
-        "id": "7f212e2221d6",
-        "prompt": "Prove $ 1 + 3 + 5 + \\dots + (2n-1) = n^2 $ by induction",
-        "answer": "Proved via induction with base case $ n=1 $ and inductive step showing $ (k+1)^2 $",
-        "steps": [
-          "Base case: For $ n=1 $, left side is 1, right side is $ 1^2 = 1 $",
-          "Assume true for $ n=k $: $ 1+3+\\dots+(2k-1) = k^2 $",
-          "Prove for $ n=k+1 $: Add $ 2(k+1)-1 = 2k+1 $ to both sides",
-          "Simplify: $ k^2 + 2k + 1 = (k+1)^2 $",
-          "Conclusion: Formula holds for all $ n \\geq 1 $"
-        ],
-        "unit": null,
-        "diagram": null
-      },
       {
         "id": "26ec7a406ed4",
         "prompt": "Prove $ 1^2 + 2^2 + \\dots + n^2 = \\frac{n(n+1)(2n+1)}{6} $ by induction",
@@ -760,31 +746,18 @@
     "source": "llm",
     "topic": "analysis",
     "original": {
-      "id": "8c6e861956da",
-      "prompt": "Prove $ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $ for all $ n \\ge 1 $ by induction.",
-      "answer": "$ F_{n+1}F_{n-1} - F_n^2 = (-1)^n $",
+      "id": "0c69b16fc3f5",
+      "prompt": "Prove $ \\sum_{k=1}^n F_k = F_{n+2} - 1 $ by induction.",
+      "answer": "$ \\sum_{k=1}^n F_k = F_{n+2} - 1 $",
       "steps": [
-        "Base case $ n = 1 $: $ F_2 F_0 - F_1^2 = 1\\cdot 0 - 1^2 = -1 = (-1)^1 $.",
-        "Assume true for $ n = k $: $ F_{k+1}F_{k-1} - F_k^2 = (-1)^k $.",
-        "For $ n = k+1 $, expand $ F_{k+2}F_k - F_{k+1}^2 $ using $ F_{k+2} = F_{k+1} + F_k $: $ (F_{k+1} + F_k)F_k - F_{k+1}^2 = F_{k+1}F_k + F_k^2 - F_{k+1}^2 $.",
-        "Factor $ F_{k+1}F_k - F_{k+1}^2 = -F_{k+1}(F_{k+1} - F_k) = -F_{k+1}F_{k-1} $, so total becomes $ -F_{k+1}F_{k-1} + F_k^2 = - (F_{k+1}F_{k-1} - F_k^2) = -(-1)^k = (-1)^{k+1} $."
+        "Base case $ n = 1 $: $ F_1 = 1 = F_3 - 1 = 2 - 1 $.",
+        "Assume true for $ n = k $: $ \\sum_{k=1}^k F_k = F_{k+2} - 1 $.",
+        "For $ n = k+1 $, add $ F_{k+1} $: $ F_{k+2} - 1 + F_{k+1} = F_{k+3} - 1 $."
       ],
       "unit": null,
       "diagram": null
     },
     "practice": [
-      {
-        "id": "0c69b16fc3f5",
-        "prompt": "Prove $ \\sum_{k=1}^n F_k = F_{n+2} - 1 $ by induction.",
-        "answer": "$ \\sum_{k=1}^n F_k = F_{n+2} - 1 $",
-        "steps": [
-          "Base case $ n = 1 $: $ F_1 = 1 = F_3 - 1 = 2 - 1 $.",
-          "Assume true for $ n = k $: $ \\sum_{k=1}^k F_k = F_{k+2} - 1 $.",
-          "For $ n = k+1 $, add $ F_{k+1} $: $ F_{k+2} - 1 + F_{k+1} = F_{k+3} - 1 $."
-        ],
-        "unit": null,
-        "diagram": null
-      },
       {
         "id": "b8982c156efa",
         "prompt": "Prove $ F_{m+n} = F_{m+1}F_n + F_m F_{n-1} $ by induction on $ n $.",
@@ -847,30 +820,18 @@
     "source": "llm",
     "topic": "analysis",
     "original": {
-      "id": "c5d0d955af30",
-      "prompt": "Does the series $\\sum \\frac{1}{n^2}$ converge?",
+      "id": "5de6adb3df83",
+      "prompt": "Does the series $\\sum \\frac{1}{n^3}$ converge?",
       "answer": "Yes, the series converges.",
       "steps": [
-        "Identify the series as a p-series with $p = 2$",
+        "Identify the series as a p-series with $p = 3$",
         "Recall the p-series convergence rule: converges if $p > 1$",
-        "Since $2 > 1$, the series $\\sum \\frac{1}{n^2}$ converges"
+        "Since $3 > 1$, the series $\\sum \\frac{1}{n^3}$ converges"
       ],
       "unit": null,
       "diagram": null
     },
     "practice": [
-      {
-        "id": "5de6adb3df83",
-        "prompt": "Does the series $\\sum \\frac{1}{n^3}$ converge?",
-        "answer": "Yes, the series converges.",
-        "steps": [
-          "Identify the series as a p-series with $p = 3$",
-          "Recall the p-series convergence rule: converges if $p > 1$",
-          "Since $3 > 1$, the series $\\sum \\frac{1}{n^3}$ converges"
-        ],
-        "unit": null,
-        "diagram": null
-      },
       {
         "id": "48bedb88bb0b",
         "prompt": "Does the series $\\sum \\frac{1}{n^{1.5}}$ converge?",
@@ -930,34 +891,20 @@
     "source": "llm",
     "topic": "analysis",
     "original": {
-      "id": "7c71c4b67d33",
-      "prompt": "Find the derivative of $ x^3 $ using the limit definition",
-      "answer": "The derivative is $ 3x^2 $",
+      "id": "3945dc11f0a6",
+      "prompt": "Find the derivative of $ x^2 $ using the limit definition",
+      "answer": "The derivative is $ 2x $",
       "steps": [
-        "Start with $ f'(x) = \\frac{(x+h)^3 - x^3}{h} $",
-        "Expand $ (x+h)^3 = x^3 + 3x^2h + 3xh^2 + h^3 $",
-        "Subtract $ x^3 $: $ 3x^2h + 3xh^2 + h^3 $",
-        "Divide by $ h $: $ 3x^2 + 3xh + h^2 $",
-        "Take limit as $ h o 0 $: $ 3x^2 $"
+        "Start with $ f'(x) = \\frac{(x+h)^2 - x^2}{h} $",
+        "Expand $ (x+h)^2 = x^2 + 2xh + h^2 $",
+        "Subtract $ x^2 $: $ 2xh + h^2 $",
+        "Divide by $ h $: $ 2x + h $",
+        "Take limit as $ h \\to 0 $: $ 2x $"
       ],
       "unit": null,
       "diagram": null
     },
     "practice": [
-      {
-        "id": "3945dc11f0a6",
-        "prompt": "Find the derivative of $ x^2 $ using the limit definition",
-        "answer": "The derivative is $ 2x $",
-        "steps": [
-          "Start with $ f'(x) = \\frac{(x+h)^2 - x^2}{h} $",
-          "Expand $ (x+h)^2 = x^2 + 2xh + h^2 $",
-          "Subtract $ x^2 $: $ 2xh + h^2 $",
-          "Divide by $ h $: $ 2x + h $",
-          "Take limit as $ h o 0 $: $ 2x $"
-        ],
-        "unit": null,
-        "diagram": null
-      },
       {
         "id": "b4afb4c4023d",
         "prompt": "Find the derivative of $ x^4 $ using the limit definition",
@@ -967,21 +914,21 @@
           "Expand $ (x+h)^4 = x^4 + 4x^3h + 6x^2h^2 + 4xh^3 + h^4 $",
           "Subtract $ x^4 $: $ 4x^3h + 6x^2h^2 + 4xh^3 + h^4 $",
           "Divide by $ h $: $ 4x^3 + 6x^2h + 4xh^2 + h^3 $",
-          "Take limit as $ h o 0 $: $ 4x^3 $"
+          "Take limit as $ h \\to 0 $: $ 4x^3 $"
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "382de0550368",
-        "prompt": "Find the derivative of $ \\frac{1}{ \\text{sqrt}(x)} $ using the limit definition",
+        "prompt": "Find the derivative of $ \\frac{1}{ \\sqrt{x}} $ using the limit definition",
         "answer": "The derivative is $ -\\frac{1}{2}x^{-3/2} $",
         "steps": [
           "Start with $ f'(x) = \\frac{\\frac{1}{\\sqrt{x+h}} - \\frac{1}{\\sqrt{x}}}{h} $",
           "Combine fractions: $ \\frac{\\sqrt{x} - \\sqrt{x+h}}{h\\sqrt{x}\\sqrt{x+h}} $",
           "Multiply numerator/denominator by $ \\sqrt{x} + \\sqrt{x+h} $",
           "Simplify to $ \\frac{-1}{\\sqrt{x} \\cdot (\\sqrt{x} + \\sqrt{x+h})} $",
-          "Take limit as $ h o 0 $: $ -\\frac{1}{2x^{3/2}} $"
+          "Take limit as $ h \\to 0 $: $ -\\frac{1}{2x^{3/2}} $"
         ],
         "unit": null,
         "diagram": null
@@ -996,14 +943,14 @@
           "Simplify to $ 5x^3 + 15x^2h + 15xh^2 + 5h^3 - 2x - 2h - 5x^3 + 2x $",
           "Combine like terms: $ 15x^2h + 15xh^2 + 5h^3 - 2h $",
           "Divide by $ h $: $ 15x^2 + 15xh + 5h^2 - 2 $",
-          "Take limit as $ h o 0 $: $ 15x^2 - 2 $"
+          "Take limit as $ h \\to 0 $: $ 15x^2 - 2 $"
         ],
         "unit": null,
         "diagram": null
       }
     ],
     "concept_review": [
-      "The limit definition of a derivative is $ f'(x) = \\frac{f(x+h) - f(x)}{h} $ as $ h o 0 $",
+      "The limit definition of a derivative is $ f'(x) = \\frac{f(x+h) - f(x)}{h} $ as $ h \\to 0 $",
       "Expand $ (x+h)^n $ using binomial theorem for polynomial functions",
       "Simplify algebraic expressions by canceling $ h $ terms before taking the limit",
       "Evaluate limits by substituting $ h = 0 $ after simplification"
@@ -1017,7 +964,7 @@
         "Expand $ (x+h)^3 = x^3 + 3x^2h + 3xh^2 + h^3 $",
         "Subtract $ x^3 $: $ 3x^2h + 3xh^2 + h^3 $",
         "Divide by $ h $: $ 3x^2 + 3xh + h^2 $",
-        "Take limit as $ h o 0 $: $ 3x^2 $"
+        "Take limit as $ h \\to 0 $: $ 3x^2 $"
       ],
       "unit": null,
       "diagram": null
@@ -1027,34 +974,20 @@
     "source": "llm",
     "topic": "analysis",
     "original": {
-      "id": "ab8d1eba92e9",
-      "prompt": "Find the cross product of $\\langle 1,2,3 \\rangle$ and $\\langle 4,5,6 \\rangle$",
-      "answer": "$\\langle -3, 6, -3 \\rangle$",
+      "id": "0d299f33563e",
+      "prompt": "Find the cross product of $\\langle 2,3,4 \\rangle$ and $\\langle 5,6,7 \\rangle$",
+      "answer": "$\\langle -1, 2, -1 \\rangle$",
       "steps": [
-        "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 1 & 2 & 3 4 & 5 & 6 \\end{vmatrix}$",
-        "Calculate $\\mathbf{i}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
-        "Calculate $\\mathbf{j}$ component: $-(1 \\cdot 6 - 3 \\cdot 4) = -(6 - 12) = 6$",
-        "Calculate $\\mathbf{k}$ component: $1 \\cdot 5 - 2 \\cdot 4 = 5 - 8 = -3$",
+        "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 2 & 3 & 4 5 & 6 & 7 \\end{vmatrix}$",
+        "Calculate $\\mathbf{i}$ component: $3 \\cdot 7 - 4 \\cdot 6 = 21 - 24 = -3$",
+        "Calculate $\\mathbf{j}$ component: $-(2 \\cdot 7 - 4 \\cdot 5) = -(14 - 20) = 6$",
+        "Calculate $\\mathbf{k}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
         "Combine components: $\\langle -3, 6, -3 \\rangle$"
       ],
       "unit": null,
       "diagram": null
     },
     "practice": [
-      {
-        "id": "0d299f33563e",
-        "prompt": "Find the cross product of $\\langle 2,3,4 \\rangle$ and $\\langle 5,6,7 \\rangle$",
-        "answer": "$\\langle -1, 2, -1 \\rangle$",
-        "steps": [
-          "Set up the determinant matrix: $\\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} 2 & 3 & 4 5 & 6 & 7 \\end{vmatrix}$",
-          "Calculate $\\mathbf{i}$ component: $3 \\cdot 7 - 4 \\cdot 6 = 21 - 24 = -3$",
-          "Calculate $\\mathbf{j}$ component: $-(2 \\cdot 7 - 4 \\cdot 5) = -(14 - 20) = 6$",
-          "Calculate $\\mathbf{k}$ component: $2 \\cdot 6 - 3 \\cdot 5 = 12 - 15 = -3$",
-          "Combine components: $\\langle -3, 6, -3 \\rangle$"
-        ],
-        "unit": null,
-        "diagram": null
-      },
       {
         "id": "025ba286c197",
         "prompt": "Find the cross product of $\\langle -1,0,2 \\rangle$ and $\\langle 3,-4,5 \\rangle$",
@@ -1122,37 +1055,25 @@
     "source": "llm",
     "topic": "analysis",
     "original": {
-      "id": "ef1d0738e136",
-      "prompt": "Evaluate $ \\forall o 0 o \\frac{ \\text{sin} x}{x} $.",
-      "answer": "1",
+      "id": "c48074d02cef",
+      "prompt": "Evaluate $ \\lim_{x \\to 0} \\frac{ \\sin 2x}{x} $.",
+      "answer": "2",
       "steps": [
-        "Recognize the indeterminate form $ \\frac{0}{0} $ when directly substituting $ x = 0 $.",
-        "Use the inequality $ \\text{cos} x < \\frac{ \\text{sin} x}{x} < 1 $ for $ 0 < x < \\frac{ \\text{\\pi}}{2} $.",
-        "Take the limit as $ x o 0 $, noting $ \\text{cos} x o 1 $, so by the Squeeze Theorem, the limit is 1."
+        "Substitute $ t = 2x $, so $ x = t/2 $ and $ t \\to 0 $ as $ x \\to 0 $.",
+        "Rewrite as $ \\frac{ \\sin t}{t/2} = 2 \\times \\frac{ \\sin t}{t} $.",
+        "Apply the known limit $ \\lim_{x \\to 0} \\frac{ \\sin t}{t} = 1 $, so the result is $ 2 \\times 1 = 2 $."
       ],
       "unit": null,
       "diagram": null
     },
     "practice": [
       {
-        "id": "c48074d02cef",
-        "prompt": "Evaluate $ \\forall o 0 o \\frac{ \\text{sin} 2x}{x} $.",
-        "answer": "2",
-        "steps": [
-          "Substitute $ t = 2x $, so $ x = t/2 $ and $ t o 0 $ as $ x o 0 $.",
-          "Rewrite as $ \\frac{ \\text{sin} t}{t/2} = 2 \\times \\frac{ \\text{sin} t}{t} $.",
-          "Apply the known limit $ \\forall o 0 o \\frac{ \\text{sin} t}{t} = 1 $, so the result is $ 2 \\times 1 = 2 $."
-        ],
-        "unit": null,
-        "diagram": null
-      },
-      {
         "id": "5ceaac6e8015",
-        "prompt": "Evaluate $ \\forall o 0 o \\frac{ \\text{sin} x}{x^2} $.",
+        "prompt": "Evaluate $ \\lim_{x \\to 0} \\frac{ \\sin x}{x^2} $.",
         "answer": "\\infty",
         "steps": [
-          "Note $ \\frac{ \\text{sin} x}{x^2} = \\frac{1}{x} \\times \\frac{ \\text{sin} x}{x} $.",
-          "As $ x o 0 $, $ \\frac{ \\text{sin} x}{x} o 1 $ but $ \\frac{1}{x} $ diverges to $ \\infty $.",
+          "Note $ \\frac{ \\sin x}{x^2} = \\frac{1}{x} \\times \\frac{ \\sin x}{x} $.",
+          "As $ x \\to 0 $, $ \\frac{ \\sin x}{x} \\to 1 $ but $ \\frac{1}{x} $ diverges to $ \\infty $.",
           "Thus, the product diverges to $ \\infty $."
         ],
         "unit": null,
@@ -1160,42 +1081,42 @@
       },
       {
         "id": "1b47e4846058",
-        "prompt": "Evaluate $ \\forall o 0 o \\frac{ \\text{tan} x}{x} $.",
+        "prompt": "Evaluate $ \\lim_{x \\to 0} \\frac{ \\tan x}{x} $.",
         "answer": "1",
         "steps": [
-          "Express $ \\text{tan} x = \\frac{ \\text{sin} x}{ \\text{cos} x} $, so $ \\frac{ \\text{tan} x}{x} = \\frac{ \\text{sin} x}{x \\text{cos} x} $.",
-          "Split into $ \\frac{ \\text{sin} x}{x} \\times \\frac{1}{ \\text{cos} x} $, both limits exist.",
-          "Since $ \\forall o 0 o \\frac{ \\text{sin} x}{x} = 1 $ and $ \\text{cos} x o 1 $, the product is $ 1 \\times 1 = 1 $."
+          "Express $ \\tan x = \\frac{ \\sin x}{ \\cos x} $, so $ \\frac{ \\tan x}{x} = \\frac{ \\sin x}{x \\cos x} $.",
+          "Split into $ \\frac{ \\sin x}{x} \\times \\frac{1}{ \\cos x} $, both limits exist.",
+          "Since $ \\lim_{x \\to 0} \\frac{ \\sin x}{x} = 1 $ and $ \\cos x \\to 1 $, the product is $ 1 \\times 1 = 1 $."
         ],
         "unit": null,
         "diagram": null
       },
       {
         "id": "a1ba4c1f5288",
-        "prompt": "Evaluate $ \\forall o 0 o \\frac{ \\text{sin} 3x}{x} $.",
+        "prompt": "Evaluate $ \\lim_{x \\to 0} \\frac{ \\sin 3x}{x} $.",
         "answer": "3",
         "steps": [
-          "Substitute $ t = 3x $, so $ x = t/3 $ and $ t o 0 $ as $ x o 0 $.",
-          "Rewrite as $ \\frac{ \\text{sin} t}{t/3} = 3 \\times \\frac{ \\text{sin} t}{t} $.",
-          "Apply the known limit $ \\forall o 0 o \\frac{ \\text{sin} t}{t} = 1 $, so the result is $ 3 \\times 1 = 3 $."
+          "Substitute $ t = 3x $, so $ x = t/3 $ and $ t \\to 0 $ as $ x \\to 0 $.",
+          "Rewrite as $ \\frac{ \\sin t}{t/3} = 3 \\times \\frac{ \\sin t}{t} $.",
+          "Apply the known limit $ \\lim_{x \\to 0} \\frac{ \\sin t}{t} = 1 $, so the result is $ 3 \\times 1 = 3 $."
         ],
         "unit": null,
         "diagram": null
       }
     ],
     "concept_review": [
-      "The Squeeze Theorem for limits: If $ f(x) \\etween g(x) \\etween h(x) $ near $ a $ and $ \\forall o a o f(x) = h(x) = L $, then $ \\forall o a o g(x) = L $.",
-      "The behavior of $ \\frac{ \\text{sin} x}{x} $ as $ x o 0 $: Approaches 1 due to geometric bounds on the unit circle.",
-      "Geometric interpretation: Area relationships in sectors, triangles, and trigonometric functions bound $ \\frac{ \\text{sin} x}{x} $."
+      "The Squeeze Theorem for limits: If $ f(x) \\le g(x) \\le h(x) $ near $ a $ and $ \\lim_{x \\to a} f(x) = h(x) = L $, then $ \\lim_{x \\to a} g(x) = L $.",
+      "The behavior of $ \\frac{ \\sin x}{x} $ as $ x \\to 0 $: Approaches 1 due to geometric bounds on the unit circle.",
+      "Geometric interpretation: Area relationships in sectors, triangles, and trigonometric functions bound $ \\frac{ \\sin x}{x} $."
     ],
     "asked_solution": {
       "id": "ef1d0738e136",
-      "prompt": "Evaluate $ \\forall o 0 o \\frac{ \\text{sin} x}{x} $.",
+      "prompt": "Evaluate $ \\lim_{x \\to 0} \\frac{ \\sin x}{x} $.",
       "answer": "1",
       "steps": [
         "Recognize the indeterminate form $ \\frac{0}{0} $ when directly substituting $ x = 0 $.",
-        "Use the inequality $ \\text{cos} x < \\frac{ \\text{sin} x}{x} < 1 $ for $ 0 < x < \\frac{ \\text{\\pi}}{2} $.",
-        "Take the limit as $ x o 0 $, noting $ \\text{cos} x o 1 $, so by the Squeeze Theorem, the limit is 1."
+        "Use the inequality $ \\cos x < \\frac{ \\sin x}{x} < 1 $ for $ 0 < x < \\frac{ \\pi}{2} $.",
+        "Take the limit as $ x \\to 0 $, noting $ \\cos x \\to 1 $, so by the Squeeze Theorem, the limit is 1."
       ],
       "unit": null,
       "diagram": null
