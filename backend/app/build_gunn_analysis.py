@@ -53,10 +53,10 @@ _UNIT_DIR: dict[str, str] = {
     "Limits and Calculus": "8|Limits_and_Calculus",
 }
 
-# AtPS subsection topics: same source PDFs, but the model focuses on a slice of
-# the unit's subject matter so each subsection has distinct problems.
+# Subsection topics: same source PDFs as the parent unit, but the model focuses
+# on a slice of the unit's subject matter so each subsection has distinct
+# problems. Keyed by topic id -> (unit dir, focus description).
 _SUBSECTIONS: dict[str, tuple[str, str]] = {
-    # topic id -> (unit dir, focus description)
     "AtPS: Triangles & Pascal's Triangle": (
         "1|AtPS",
         "the Odd Number Triangle, Pascal's Triangle, triangular numbers, and "
@@ -72,6 +72,93 @@ _SUBSECTIONS: dict[str, tuple[str, str]] = {
         "1|AtPS",
         "the Binomial Theorem, binomial coefficients (including generalized and "
         "multinomial coefficients), and Fibonacci numbers and their identities",
+    ),
+    # --- Probability ---
+    "Probability: Counting & Combinatorics": (
+        "2|Probability",
+        "counting techniques: the multiplication principle, permutations, "
+        "combinations, and arrangements with restrictions",
+    ),
+    "Probability: Probability & Expected Value": (
+        "2|Probability",
+        "computing probabilities of events, conditional probability and "
+        "independence, and expected value of random variables",
+    ),
+    # --- Polar and 3D ---
+    "Polar and 3D: Polar Coordinates & Curves": (
+        "3|Polar_and_3D",
+        "polar coordinates, converting between polar and rectangular form, and "
+        "graphing and analyzing polar curves (circles, roses, limacons)",
+    ),
+    "Polar and 3D: Complex Numbers & 3D Coordinates": (
+        "3|Polar_and_3D",
+        "complex numbers in polar/trigonometric form, De Moivre's theorem, and "
+        "points and distances in three-dimensional coordinate space",
+    ),
+    # --- Vectors and Parametrics ---
+    "Vectors and Parametrics: Vectors & Dot/Cross Products": (
+        "4|Vectors_and_Parametrics",
+        "vector operations, magnitude and direction, the dot product and angle "
+        "between vectors, and the cross product in three dimensions",
+    ),
+    "Vectors and Parametrics: Parametric & Vector Equations": (
+        "4|Vectors_and_Parametrics",
+        "parametric equations of curves, and vector/parametric equations of "
+        "lines and planes in two and three dimensions",
+    ),
+    # --- Growth ---
+    "Growth: Exponentials & Logarithms": (
+        "5|Growth",
+        "exponential and logarithmic functions, their properties and laws, and "
+        "solving exponential and logarithmic equations",
+    ),
+    "Growth: Power Functions & Modeling": (
+        "5|Growth",
+        "power functions, rates of growth and decay, and modeling real-world "
+        "growth with exponential and power models",
+    ),
+    # --- Matrices ---
+    "Matrices: Operations & Determinants": (
+        "6|Matrices",
+        "matrix addition, scalar multiplication, matrix multiplication, and "
+        "computing determinants of 2x2 and 3x3 matrices",
+    ),
+    "Matrices: Systems & Inverses": (
+        "6|Matrices",
+        "matrix inverses, solving linear systems with matrices, and Gaussian "
+        "elimination / row reduction",
+    ),
+    "Matrices: Eigenvalues & Transformations": (
+        "6|Matrices",
+        "linear transformations represented by matrices, and finding "
+        "eigenvalues and eigenvectors",
+    ),
+    # --- A Geometric Approach to Matrices (GAtM) ---
+    "GAtM: Complex Numbers Geometrically": (
+        "7|GAtM",
+        "the geometry of complex numbers in the plane: modulus and argument, "
+        "the Argand diagram, and complex arithmetic viewed as transformations",
+    ),
+    "GAtM: Countability & Cardinality": (
+        "7|GAtM",
+        "set cardinality, countable versus uncountable sets, and arguments "
+        "about the sizes of infinite sets",
+    ),
+    # --- Limits and Calculus ---
+    "Limits and Calculus: Sequences & Limits": (
+        "8|Limits_and_Calculus",
+        "limits of sequences and functions, recursive sequences and their "
+        "convergence, and evaluating limits",
+    ),
+    "Limits and Calculus: Continuity & Derivatives": (
+        "8|Limits_and_Calculus",
+        "continuity, the definition of the derivative as a limit, and computing "
+        "and interpreting derivatives",
+    ),
+    "Limits and Calculus: Areas & Integrals": (
+        "8|Limits_and_Calculus",
+        "approximating areas under curves with Riemann sums and the idea of the "
+        "definite integral as area",
     ),
 }
 

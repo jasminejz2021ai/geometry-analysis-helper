@@ -21,7 +21,7 @@ import type { Problem, SolveResponse } from "./types";
 type Subject = "geometry" | "analysis";
 
 export default function App() {
-  const [subject, setSubject] = useState<Subject>("geometry");
+  const [subject, setSubject] = useState<Subject>("analysis");
   const [loading, setLoading] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);

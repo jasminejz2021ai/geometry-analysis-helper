@@ -7052,5 +7052,2145 @@
       "Definite Area via Limits of Riemann Sums: The area of a region bounded by \\(y = f(x)\\) on \\([a, b]\\) using right endpoints is \\(\\text{Area} = \\lim_{n\\to\\infty} A_n = \\lim_{n\\to\\infty} \\sum_{k=1}^n f(x_k) \\Delta x\\), where \\(\\Delta x = \\frac{b-a}{n}\\) and \\(x_k = a + k\\Delta x\\). Key summation formulas: \\(\\sum_{k=1}^n k = \\frac{n(n+1)}{2}\\), \\(\\sum_{k=1}^n k^2 = \\frac{n(n+1)(2n+1)}{6}\\), and \\(\\sum_{k=1}^n k^3 = \\left[\\frac{n(n+1)}{2}\\right]^2\\)."
     ],
     "asked_solution": null
+  },
+  "topic::probability: counting & combinatorics": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "6f7c3456f21d",
+      "prompt": "A student council consists of 7 seniors and 5 juniors. (a) How many unique 5-member committees can be formed that contain at least 3 seniors? (b) Once a 5-member committee is chosen, in how many ways can they sit in a single row of 5 chairs if the committee chairperson (a senior) must sit in the middle seat?",
+      "answer": "(a) 546 committees; (b) 24 seating arrangements",
+      "steps": [
+        "For part (a), split into mutually exclusive cases based on the number of seniors:",
+        "Case 1 (3 seniors, 2 juniors): \\(\\binom{7}{3} \\times \\binom{5}{2} = 35 \\times 10 = 350\\)",
+        "Case 2 (4 seniors, 1 junior): \\(\\binom{7}{4} \\times \\binom{5}{1} = 35 \\times 5 = 175\\)",
+        "Case 3 (5 seniors, 0 juniors): \\(\\binom{7}{5} \\times \\binom{5}{0} = 21 \\times 1 = 21\\)",
+        "Sum the cases: \\[350 + 175 + 21 = 546\\]",
+        "For part (b), fixing the chairperson in the middle seat leaves 1 choice for seat 3.",
+        "The remaining 4 committee members can be arranged in the remaining 4 seats in \\(4!\\) ways:",
+        "\\[4! = 24\\]"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "b8a9ac77b8b4",
+        "prompt": "8 points are placed randomly on the circumference of a circle. How many unique triangles can be formed using these points as vertices?",
+        "answer": "56 triangles",
+        "steps": [
+          "A triangle is uniquely determined by selecting any 3 points from the 8 available points on the circle.",
+          "Since the order of choosing vertices does not matter, use combinations:",
+          "\\[\\binom{8}{3} = \\frac{8 \\times 7 \\times 6}{3 \\times 2 \\times 1} = 56\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "0beab932eb89",
+        "prompt": "A lecture hall has 30 empty seats. In how many different ways can a group of 18 students select seats and sit down?",
+        "answer": "\\(_{30}P_{18}\\) (or \\(\\frac{30!}{12!}\\))",
+        "steps": [
+          "Each student must choose a distinct seat, and the assignment of specific students to specific seats matters.",
+          "This is a permutation of 30 items taken 18 at a time:",
+          "\\[_{30}P_{18} = \\frac{30!}{(30-18)!} = \\frac{30!}{12!}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d154062427ca",
+        "prompt": "A bag contains a mix of candies: 5 strawberry, 4 blueberry, and 3 lemon. If someone eats all 12 candies one by one, how many distinct flavor sequences can be experienced?",
+        "answer": "27,720 sequences",
+        "steps": [
+          "This is an arrangement of 12 items with identical groups (5 strawberry, 4 blueberry, 3 lemon).",
+          "Use the formula for distinguishable permutations:",
+          "\\[\\frac{12!}{5! \\, 4! \\, 3!} = \\frac{479,001,600}{(120)(24)(6)} = 27,720\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "fc11c2e1ab67",
+        "prompt": "In how many distinguishable ways can 10 distinct keys be arranged on a circular key ring?",
+        "answer": "181,440 ways",
+        "steps": [
+          "Arranging \\(n\\) distinct items on a circular ring where reflection (flipping over) is symmetrical gives \\(\\frac{(n-1)!}{2}\\).",
+          "Substitute \\(n = 10\\):",
+          "\\[\\frac{(10-1)!}{2} = \\frac{9!}{2} = \\frac{362,880}{2} = 181,440\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "39e26db3e29e",
+        "prompt": "A 4-digit PIN code is created using the digits 0 through 9 without repetition. How many such PINs can be formed that are odd numbers and do not start with 0?",
+        "answer": "2,240 PINs",
+        "steps": [
+          "Step 1: Choose the last digit. It must be odd (1, 3, 5, 7, 9). There are 5 choices.",
+          "Step 2: Choose the first digit. It cannot be 0 and cannot be the digit chosen for the last position. Out of 10 digits, 2 are excluded, leaving \\(10 - 2 = 8\\) choices.",
+          "Step 3: Choose the second digit. It can be any remaining digit (including 0), so there are \\(10 - 2 = 8\\) choices.",
+          "Step 4: Choose the third digit. There are \\(10 - 3 = 7\\) choices left.",
+          "Multiply options: \\[5 \\times 8 \\times 8 \\times 7 = 2,240\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "feb5b1e297a5",
+        "prompt": "A fair coin is flipped \\(n\\) times, where \\(n\\) is a positive integer. The number of ways to obtain exactly 7 heads is equal to the number of ways to obtain exactly 11 heads. Find the value of \\(n\\).",
+        "answer": "\\(n = 18\\)",
+        "steps": [
+          "The number of ways to get \\(k\\) heads in \\(n\\) flips is given by \\(\\binom{n}{k}\\).",
+          "We are given that \\(\\binom{n}{7} = \\binom{n}{11}\\).",
+          "By the identity \\(\\binom{n}{k} = \\binom{n}{n-k}\\), we know \\(7 + 11 = n\\).",
+          "Thus, \\(n = 18\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "f67953f62df5",
+        "prompt": "A 5-card hand is dealt from a standard 52-card deck. How many different hands contain exactly 3 Kings and 2 Queens?",
+        "answer": "24 hands",
+        "steps": [
+          "There are 4 Kings in a deck; we choose 3: \\(\\binom{4}{3} = 4\\).",
+          "There are 4 Queens in a deck; we choose 2: \\(\\binom{4}{2} = 6\\).",
+          "By the Multiplication Principle, multiply the two selections:",
+          "\\[4 \\times 6 = 24\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1773156cbde2",
+        "prompt": "How many distinct 9-letter arrangements of the word \\(\\text{COLLEAGUE}\\) exist if all 5 vowels (\\(\\text{O, E, A, U, E}\\)) must stay together in a single block?",
+        "answer": "3,600 arrangements",
+        "steps": [
+          "The word \\(\\text{COLLEAGUE}\\) contains 9 letters: \\(\\text{C, L, L, G}\\) (consonants) and \\(\\text{O, E, A, U, E}\\) (vowels).",
+          "Treat the 5 vowels as 1 single block unit. This leaves 5 units to arrange: \\(\\text{[Vowel Block], C, L, L, G}\\).",
+          "Since 'L' repeats twice, the number of ways to arrange these 5 units is \\(\\frac{5!}{2!} = 60\\).",
+          "Inside the vowel block, there are 5 vowels with 'E' repeating twice. The number of ways to arrange the vowels within the block is \\(\\frac{5!}{2!} = 60\\).",
+          "Multiply the total possibilities: \\[60 \\times 60 = 3,600\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Fundamental Counting Principle: If task 1 can be done in \\(m\\) ways and task 2 can be done in \\(n\\) ways, both tasks together can be done in \\(m \\times n\\) ways.",
+      "Permutations vs. Combinations: Order matters for permutations: \\(_nP_r = \\frac{n!}{(n-r)!}\\). Order does not matter for combinations: \\(_nC_r = \\binom{n}{r} = \\frac{n!}{r!(n-r)!}\\).",
+      "Distinguishable Permutations: The number of unique arrangements of \\(n\\) items containing \\(n_1\\) identical items of type 1, \\(n_2\\) of type 2, etc., is \\(\\frac{n!}{n_1! n_2! \\cdots n_k!}\\).",
+      "Circular & Key Ring Arrangements: Arranging \\(n\\) distinct items in a circle gives \\((n-1)!\\) unique ways. If the arrangement can be flipped over (like a key ring), the total is \\(\\frac{(n-1)!}{2}\\)."
+    ],
+    "asked_solution": null
+  },
+  "topic::probability: probability & expected value": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "0730bbc97306",
+      "prompt": "Jar A contains 4 white marbles and 6 green marbles. Jar B contains 7 white marbles and 3 green marbles. A fair 6-sided die is rolled. If the die lands on 1 or 2, a marble is randomly drawn from Jar A. If it lands on 3, 4, 5, or 6, a marble is randomly drawn from Jar B.\\a) Find the probability that the drawn marble is white.\\b) Given that the drawn marble is white, find the probability that it came from Jar A.\\c) If the game costs $3 to play and pays $10 if a white marble is drawn (and $0 otherwise), find the expected net profit.",
+      "answer": "a) \\(P(\\text{White}) = \\frac{3}{5}\\), b) \\(P(\\text{Jar A} \\mid \\text{White}) = \\frac{2}{9}\\), c) Expected Net Profit = \\(\\$3.00\\)",
+      "steps": [
+        "Step 1: Calculate the probabilities of selecting each jar based on the die roll. \\(P(\\text{Jar A}) = \\frac{2}{6} = \\frac{1}{3}\\) and \\(P(\\text{Jar B}) = \\frac{4}{6} = \\frac{2}{3}\\).",
+        "Step 2: Determine the conditional probabilities of drawing a white marble from each jar. \\(P(\\text{White} \\mid \\text{Jar A}) = \\frac{4}{10} = \\frac{2}{5}\\) and \\(P(\\text{White} \\mid \\text{Jar B}) = \\frac{7}{10}\\).",
+        "Step 3: Use the Law of Total Probability for part (a): \\[P(\\text{White}) = P(\\text{White} \\mid \\text{Jar A})P(\\text{Jar A}) + P(\\text{White} \\mid \\text{Jar B})P(\\text{Jar B})\\] \\[P(\\text{White}) = \\left(\\frac{2}{5}\\right)\\left(\\frac{1}{3}\\right) + \\left(\\frac{7}{10}\\right)\\left(\\frac{2}{3}\\right) = \\frac{4}{30} + \\frac{14}{30} = \\frac{18}{30} = \\frac{3}{5}\\]",
+        "Step 4: Use Bayes' Theorem for part (b): \\[P(\\text{Jar A} \\mid \\text{White}) = \\frac{P(\\text{White} \\mid \\text{Jar A})P(\\text{Jar A})}{P(\\text{White})} = \\frac{\\frac{4}{30}}{\\frac{18}{30}} = \\frac{4}{18} = \\frac{2}{9}\\]",
+        "Step 5: Compute the expected net profit for part (c): \\[E[X] = \\text{Gross Expected Payout} - \\text{Cost} = 10 \\cdot P(\\text{White}) - 3 = 10\\left(\\frac{3}{5}\\right) - 3 = 6 - 3 = \\$3.00\\]"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "5a7f9f24f7b3",
+        "prompt": "A survey of 120 high school seniors found that 75 take AP Physics (\\(P\\)), 60 take AP Calculus (\\(C\\)), and 15 take neither course.\\a) Find the number of students taking both AP Physics and AP Calculus.\\b) Find \\(P(P \\mid C)\\).\\c) Are the events 'taking AP Physics' and 'taking AP Calculus' independent? Justify your answer using probabilities.",
+        "answer": "a) 30 students, b) \\(P(P \\mid C) = \\frac{1}{2}\\), c) No, because \\(P(P \\cap C) = \\frac{1}{4} \\neq P(P) \\cdot P(C) = \\frac{5}{16}\\)",
+        "steps": [
+          "Step 1: The total taking at least one course is \\(120 - 15 = 105\\). Using the inclusion-exclusion principle: \\(|P \\cup C| = |P| + |C| - |P \\cap C| \\implies 105 = 75 + 60 - |P \\cap C|\\), so \\(|P \\cap C| = 30\\).",
+          "Step 2: Calculate \\(P(P \\mid C) = \\frac{|P \\cap C|}{|C|} = \\frac{30}{60} = \\frac{1}{2}\\).",
+          "Step 3: Check independence: \\(P(P \\cap C) = \\frac{30}{120} = \\frac{1}{4}\\). Calculate \\(P(P) \\cdot P(C) = \\left(\\frac{75}{120}\\right)\\left(\\frac{60}{120}\\right) = \\left(\\frac{5}{8}\\right)\\left(\\frac{1}{2}\\right) = \\frac{5}{16}\\). Since \\(\\frac{1}{4} \\neq \\frac{5}{16}\\), the events are not independent."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "06af3070fcc6",
+        "prompt": "In a 5-card poker hand dealt from a standard 52-card deck, find the probability of being dealt exactly two pairs (for example, two 8s, two Kings, and one card of a different rank). Leave your answer in combination notation and as a decimal rounded to four decimal places.",
+        "answer": "\\(\\frac{\\binom{13}{2} \\binom{4}{2} \\binom{4}{2} \\binom{11}{1} \\binom{4}{1}}{\\binom{52}{5}} = \\frac{123,552}{2,598,960} \\approx 0.0475\\)",
+        "steps": [
+          "Step 1: Select 2 ranks out of 13 for the pairs: \\(\\binom{13}{2}\\).",
+          "Step 2: Choose 2 cards from 4 for each of those 2 ranks: \\(\\binom{4}{2} \\binom{4}{2}\\).",
+          "Step 3: Choose 1 rank out of the remaining 11 ranks for the kicker card: \\(\\binom{11}{1}\\), and select 1 card from 4 for that rank: \\(\\binom{4}{1}\\).",
+          "Step 4: Divide the total favorable hands by total possible 5-card hands \\(\\binom{52}{5}\\): \\[P(\\text{Two Pairs}) = \\frac{\\binom{13}{2} \\binom{4}{2}^2 \\binom{11}{1} \\binom{4}{1}}{\\binom{52}{5}} = \\frac{78 \\times 36 \\times 11 \\times 4}{2,598,960} = \\frac{123,552}{2,598,960} \\approx 0.0475\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "ac6916ec2528",
+        "prompt": "A fair coin is tossed \\(n\\) times, where \\(n\\) is a positive integer. The probability of obtaining exactly 7 heads is equal to the probability of obtaining exactly 11 heads. Find the value of \\(n\\).",
+        "answer": "\\(n = 18\\)",
+        "steps": [
+          "Step 1: Write the binomial probability expressions for 7 heads and 11 heads: \\(P(X = 7) = \\binom{n}{7} \\left(\\frac{1}{2}\\right)^n\\) and \\(P(X = 11) = \\binom{n}{11} \\left(\\frac{1}{2}\\right)^n\\).",
+          "Step 2: Set the probabilities equal: \\(\\binom{n}{7} \\left(\\frac{1}{2}\\right)^n = \\binom{n}{11} \\left(\\frac{1}{2}\\right)^n \\implies \\binom{n}{7} = \\binom{n}{11}\\).",
+          "Step 3: By symmetry of combinations, \\(\\binom{n}{k} = \\binom{n}{n-k}\\), so \\(n - 7 = 11 \\implies n = 18\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "34019b21ae11",
+        "prompt": "Box 1 contains 3 red and 5 blue balls. Box 2 contains 6 red and 2 blue balls. A ball is chosen at random from Box 1 and transferred into Box 2. Then a ball is chosen at random from Box 2.\\a) Find the probability that the second ball drawn is red.\\b) Given that the second ball drawn is red, find the probability that the transferred ball was blue.",
+        "answer": "a) \\(P(\\text{2nd Red}) = \\frac{17}{24}\\), b) \\(P(\\text{Transferred Blue} \\mid \\text{2nd Red}) = \\frac{10}{17}\\)",
+        "steps": [
+          "Step 1: Analyze the transferred ball options from Box 1 (total 8 balls): - Transferred Red (probability \\(\\frac{3}{8}\\)): Box 2 now has 7 red, 2 blue (total 9). - Transferred Blue (probability \\(\\frac{5}{8}\\)): Box 2 now has 6 red, 3 blue (total 9).",
+          "Step 2: Compute \\(P(\\text{2nd Red})\\) using total probability: \\[P(\\text{2nd Red}) = \\left(\\frac{7}{9}\\right)\\left(\\frac{3}{8}\\right) + \\left(\\frac{6}{9}\\right)\\left(\\frac{5}{8}\\right) = \\frac{21}{72} + \\frac{30}{72} = \\frac{51}{72} = \\frac{17}{24}\\]",
+          "Step 3: Apply Bayes' Theorem for part (b): \\[P(\\text{Transferred Blue} \\mid \\text{2nd Red}) = \\frac{\\frac{30}{72}}{\\frac{51}{72}} = \\frac{30}{51} = \\frac{10}{17}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "230986ad45b8",
+        "prompt": "A casino game involves rolling two fair 6-sided dice. If the sum of the numbers shown is 7 or 11, the player wins $12. If the sum is 2, 3, or 12, the player wins $24. For any other sum, the player wins nothing. If it costs $5 to play each game, find the expected net payout for the player.",
+        "answer": "Expected Net Profit = \\(-\\$0.33\\) (or \\(-\\frac{1}{3}\\) dollar)",
+        "steps": [
+          "Step 1: Count outcomes out of 36 for each payout sum: - Sum 7 or 11: 6 outcomes for 7, 2 outcomes for 11 \\(\\implies 8\\) outcomes. \\(P(\\text{Win } \\$12) = \\frac{8}{36}\\). - Sum 2, 3, or 12: 1 outcome for 2, 2 outcomes for 3, 1 outcome for 12 \\(\\implies 4\\) outcomes. \\(P(\\text{Win } \\$24) = \\frac{4}{36}\\). - Other sums: \\(36 - 8 - 4 = 24\\) outcomes. \\(P(\\text{Win } \\$0) = \\frac{24}{36}\\).",
+          "Step 2: Calculate the gross expected value: \\[E[X] = 12\\left(\\frac{8}{36}\\right) + 24\\left(\\frac{4}{36}\\right) + 0\\left(\\frac{24}{36}\\right) = \\frac{96 + 96}{36} = \\frac{192}{36} = \\frac{16}{3} \\approx \\$5.333\\]",
+          "Step 3: Subtract the $5 entry fee: \\[E[\\text{Net}] = \\frac{16}{3} - 5 = \\frac{1}{3} \\approx +\\$0.33 \\text{ gross profit} \\implies E[\\text{Net}] = -\\$5 + \\frac{16}{3} = +\\frac{1}{3} \\text{ (wait, gross is } \\frac{16}{3} > 5 \\text{, so net is } +\\frac{1}{3} \\text{ dollar)}\\]",
+          "Step 4: Re-evaluate \\(E[\\text{Net}] = \\frac{16}{3} - 5 = \\frac{1}{3} \\approx +\\$0.33\\). So the player gains \\(+\\$0.33\\) net."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "bcaecbfd7006",
+        "prompt": "A fair spinner is divided into \\(n\\) equal sectors numbered \\(1, 2, 3, \\dots, n\\). A player spins the wheel once and receives a payout equal to the square of the number landed on (i.e., \\(X = k^2\\)). Find the expected payout \\(E[X]\\) in terms of \\(n\\). Simplify your answer completely. (Hint: \\(\\sum_{k=1}^n k^2 = \\frac{n(n+1)(2n+1)}{6}\\)).",
+        "answer": "\\(E[X] = \\frac{(n+1)(2n+1)}{6}\\)",
+        "steps": [
+          "Step 1: Each number \\(k \\in \\{1, 2, \\dots, n\\}\\) has probability \\(P(X = k^2) = \\frac{1}{n}\\).",
+          "Step 2: Apply the definition of expected value: \\[E[X] = \\sum_{k=1}^n k^2 \\cdot P(X = k^2) = \\sum_{k=1}^n k^2 \\cdot \\frac{1}{n} = \\frac{1}{n} \\sum_{k=1}^n k^2\\]",
+          "Step 3: Substitute the sum formula: \\[E[X] = \\frac{1}{n} \\cdot \\frac{n(n+1)(2n+1)}{6} = \\frac{(n+1)(2n+1)}{6}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "65df265b7bc7",
+        "prompt": "From a standard 52-card deck, a 4-card hand is dealt at random. Find the probability that the hand contains at least 3 Queens, given that it contains at least 2 Queens. Express your answer as a simplified fraction.",
+        "answer": "\\(\\frac{193}{6961}\\)",
+        "steps": [
+          "Step 1: Let event \\(A\\) = hand has at least 3 Queens, and event \\(B\\) = hand has at least 2 Queens. Since \\(A \\subset B\\), \\(P(A \\cap B) = P(A)\\), so \\(P(A \\mid B) = \\frac{|A|}{|B|}\\).",
+          "Step 2: Count hands in set \\(A\\) (3 or 4 Queens): \\[|A| = \\binom{4}{3}\\binom{48}{1} + \\binom{4}{4}\\binom{48}{0} = 4(48) + 1(1) = 192 + 1 = 193\\]",
+          "Step 3: Count hands in set \\(B\\) (2, 3, or 4 Queens): \\[|B| = \\binom{4}{2}\\binom{48}{2} + 193 = 6 \\left(\\frac{48 \\times 47}{2}\\right) + 193 = 6(1128) + 193 = 6768 + 193 = 6961\\]",
+          "Step 4: Compute conditional probability: \\[P(A \\mid B) = \\frac{193}{6961}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "421dcad274c5",
+        "prompt": "a) How many distinct arrangements of 8 distinct keys can be placed on a circular key ring, given that flipping the key ring over produces an indistinguishable arrangement?\\b) A 4-digit PIN code is created using digits from \\(\\{0, 1, 2, \\dots, 9\\}\\). If a user knows that the PIN consists only of digits from the set \\(\\{2, 4, 7, 9\\}\\) (with repetition allowed), what is the probability of correctly guessing the PIN on one try?",
+        "answer": "a) \\(2520\\) ways, b) \\(\\frac{1}{256}\\)",
+        "steps": [
+          "Step 1: For circular permutations with reflective symmetry (key ring), the number of distinct arrangements of \\(n\\) items is \\(\\frac{(n-1)!}{2}\\). For \\(n = 8\\): \\[\\frac{(8-1)!}{2} = \\frac{7!}{2} = \\frac{5040}{2} = 2520\\]",
+          "Step 2: For part (b), each of the 4 positions in the PIN has 4 possible choices \\(\\{2, 4, 7, 9\\}\\).",
+          "Step 3: Total possible PINs = \\(4^4 = 256\\).",
+          "Step 4: The probability of guessing the single correct PIN in one try is \\(\\frac{1}{256}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Conditional Probability & Independence: The conditional probability of event \\(A\\) given event \\(B\\) is defined as \\(P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\) for \\(P(B) > 0\\). Two events \\(A\\) and \\(B\\) are independent if and only if \\(P(A \\cap B) = P(A)P(B)\\), or equivalently \\(P(A|B) = P(A)\\).",
+      "Law of Total Probability & Bayes' Theorem: If events \\(A_1, A_2, \\dots, A_k\\) partition the sample space, then \\(P(B) = \\sum_{i=1}^k P(B|A_i)P(A_i)\\). Bayes' Theorem allows reversing conditional probabilities: \\(P(A_j|B) = \\frac{P(B|A_j)P(A_j)}{P(B)}\\).",
+      "Binomial Probability Model: For \\(n\\) independent trials each with success probability \\(p\\), the probability of obtaining exactly \\(k\\) successes is \\(P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\).",
+      "Expected Value: The expected value (mean payout) of a discrete random variable \\(X\\) is \\(E[X] = \\sum x_i \\cdot P(X = x_i)\\). For a game costing \\(C\\) dollars to play, the net expected value is \\(E[\\text{Net}] = E[X] - C\\)."
+    ],
+    "asked_solution": null
+  },
+  "topic::polar and 3d: polar coordinates & curves": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "31239015c6f3",
+      "prompt": "Find all points of intersection between the polar curves \\(r = 2\\sin(2\\theta)\\) and \\(r = 2\\sin\\theta\\) for \\(0 \\le \\theta < 2\\pi\\). Give your answers as polar points \\((r, \\theta)\\).",
+      "answer": "\\((0, 0)\\), \\(\\left(\\sqrt{3}, \\frac{\\pi}{3}\\right)\\), and \\(\\left(-\\sqrt{3}, \\frac{5\\pi}{3}\\right)\\)",
+      "steps": [
+        "Set the two equations equal to solve for \\(\\theta\\): \\[2\\sin(2\\theta) = 2\\sin\\theta\\]",
+        "Use the double-\\rangle identity \\(\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta\\): \\[4\\sin\\theta\\cos\\theta - 2\\sin\\theta = 0\\]",
+        "Factor out \\(2\\sin\\theta\\): \\[2\\sin\\theta(2\\cos\\theta - 1) = 0\\]",
+        "Solve the first factor: \\(2\\sin\\theta = 0 \\implies \\theta = 0, \\pi\\).\\nFor \\(\\theta = 0\\), \\(r = 2\\sin(0) = 0\\), giving the point \\((0, 0)\\).\\nFor \\(\\theta = \\pi\\), \\(r = 2\\sin(\\pi) = 0\\), which represents the same point at the pole, \\((0, 0)\\).",
+        "Solve the second factor: \\(2\\cos\\theta - 1 = 0 \\implies \\cos\\theta = \\frac{1}{2}\\), so \\(\\theta = \\frac{\\pi}{3}, \\frac{5\\pi}{3}\\).",
+        "For \\(\\theta = \\frac{\\pi}{3}\\): \\(r = 2\\sin\\left(\\frac{\\pi}{3}\\right) = 2\\left(\\frac{\\sqrt{3}}{2}\\right) = \\sqrt{3}\\). Point: \\(\\left(\\sqrt{3}, \\frac{\\pi}{3}\\right)\\).",
+        "For \\(\\theta = \\frac{5\\pi}{3}\\): \\(r = 2\\sin\\left(\\frac{5\\pi}{3}\\right) = 2\\left(-\\frac{\\sqrt{3}}{2}\\right) = -\\sqrt{3}\\). Point: \\(\\left(-\\sqrt{3}, \\frac{5\\pi}{3}\\right)\\).",
+        "Check the pole \\(r = 0\\): setting \\(r = 0\\) in \\(r = 2\\sin(2\\theta)\\) yields solutions (e.g., \\(\\theta = 0\\)), and \\(r = 2\\sin\\theta = 0\\) yields \\(\\theta = 0\\). Both curves pass through the pole.",
+        "Combine all unique points of intersection: \\((0, 0)\\), \\(\\left(\\sqrt{3}, \\frac{\\pi}{3}\\right)\\), and \\(\\left(-\\sqrt{3}, \\frac{5\\pi}{3}\\right)\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "7fec8f6b3bce",
+        "prompt": "Determine all lines of symmetry for the polar curve \\(r = -5\\sin(7\\theta)\\). Which of the following is a line of symmetry?\\a) \\(\\theta = 0\\)\\b) \\(\\theta = \\frac{\\pi}{7}\\)\\c) \\(\\theta = \\frac{15\\pi}{14}\\)\\d) \\(\\theta = \\frac{2\\pi}{7}\\)",
+        "answer": "c) \\(\\theta = \\frac{15\\pi}{14}\\)",
+        "steps": [
+          "A sine rose curve \\(r = a\\sin(n\\theta)\\) with \\(n = 7\\) (odd) has 7 petals and lines of symmetry given by \\(\\theta = \\frac{\\pi}{2n} + \\frac{k\\pi}{n} = \\frac{\\pi}{14} + \\frac{k\\pi}{7}\\) for integer \\(k\\).",
+          "Express \\(\\frac{k\\pi}{7}\\) with a common denominator of 14: \\(\\frac{2k\\pi}{14}\\).",
+          "The lines of symmetry are \\(\\theta = \\frac{(2k + 1)\\pi}{14}\\) for integer \\(k\\).",
+          "Test choice (c): For \\(k = 7\\), \\(\\theta = \\frac{(2(7) + 1)\\pi}{14} = \\frac{15\\pi}{14}\\). Thus, choice (c) is a valid line of symmetry."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "f0cf598b05df",
+        "prompt": "Convert the polar equation \\(r = \\frac{1}{2}\\tan\\theta\\sec\\theta\\) to rectangular form and identify the graph.",
+        "answer": "\\(y = 2x^2\\) (a parabola)",
+        "steps": [
+          "Rewrite trigonometric functions in terms of \\(x\\), \\(y\\), and \\(r\\): \\(\\tan\\theta = \\frac{y}{x}\\) and \\(\\sec\\theta = \\frac{r}{x}\\).",
+          "Substitute these into the equation: \\[r = \\frac{1}{2} \\left(\\frac{y}{x}\\right) \\left(\\frac{r}{x}\\right)\\]",
+          "Simplify by dividing both sides by \\(r\\) (assuming \\(r \\neq 0\\)): \\[1 = \\frac{y}{2x^2}\\]",
+          "Solve for \\(y\\): \\[y = 2x^2\\]",
+          "This is the equation of a parabola."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "43c19b5e10d4",
+        "prompt": "Consider the polar points \\(A\\left(-4, \\frac{\\pi}{6}\\right)\\) and \\(B\\left(3, \\frac{\\pi}{2}\\right)\\). Find the exact length of the line segment \\(AB\\).",
+        "answer": "\\(\\sqrt{37}\\)",
+        "steps": [
+          "Convert point \\(A\\left(-4, \\frac{\\pi}{6}\\right)\\) to standard polar form with a positive radius: \\(A\\left(4, \\frac{\\pi}{6} + \\pi\\right) = A\\left(4, \\frac{7\\pi}{6}\\right)\\).",
+          "Use the polar distance formula \\(d = \\sqrt{r_1^2 + r_2^2 - 2r_1r_2\\cos(\\theta_2 - \\theta_1)}\\):",
+          "Substitute \\(r_1 = 4\\), \\(\\theta_1 = \\frac{7\\pi}{6}\\), \\(r_2 = 3\\), \\(\\theta_2 = \\frac{\\pi}{2}\\): \\[d = \\sqrt{4^2 + 3^2 - 2(4)(3)\\cos\\left(\\frac{7\\pi}{6} - \\frac{\\pi}{2}\\right)}\\]",
+          "Simplify the \\rangle subtraction: \\[\\frac{7\\pi}{6} - \\frac{3\\pi}{6} = \\frac{4\\pi}{6} = \\frac{2\\pi}{3}\\]",
+          "Evaluate \\(\\cos\\left(\\frac{2\\pi}{3}\\right) = -\\frac{1}{2}\\):",
+          "\\[d = \\sqrt{16 + 9 - 24\\left(-\\frac{1}{2}\\right)} = \\sqrt{25 + 12} = \\sqrt{37}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "89f78f4da3b2",
+        "prompt": "Write the polar equation for the rose curve centered at the origin with eight petals, maximum petal length of 5, that passes through the point \\(\\left(5, \\frac{\\pi}{8}\\right)\\).",
+        "answer": "\\(r = 5\\sin(4\\theta)\\)",
+        "steps": [
+          "Since the rose curve has 8 petals, \\(2n = 8 \\implies n = 4\\).",
+          "The maximum petal length is 5, so \\(a = 5\\).",
+          "The equation is of the form \\(r = 5\\cos(4\\theta)\\) or \\(r = 5\\sin(4\\theta)\\).",
+          "Test the point \\(\\left(5, \\frac{\\pi}{8}\\right)\\):\\nFor \\(r = 5\\sin(4\\theta)\\): \\(r\\left(\\frac{\\pi}{8}\\right) = 5\\sin\\left(4 \\cdot \\frac{\\pi}{8}\\right) = 5\\sin\\left(\\frac{\\pi}{2}\\right) = 5(1) = 5\\).",
+          "Therefore, the equation is \\(r = 5\\sin(4\\theta)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "8edf3eaf126c",
+        "prompt": "Classify each function according to its most specific polar curve name:\\a) \\(r = 7\\sec\\theta\\)\\b) \\(r = 5 - 5\\sin\\theta\\)\\c) \\(r = 3 - 6\\cos\\theta\\)",
+        "answer": "a) Vertical line (or Line), b) Cardioid (or Limaçon with cardioid shape), c) Limaçon with an inner loop",
+        "steps": [
+          "a) \\(r = 7\\sec\\theta \\implies r\\cos\\theta = 7 \\implies x = 7\\), which is a vertical line.",
+          "b) \\(r = 5 - 5\\sin\\theta\\) has \\(\\frac{a}{b} = \\frac{5}{5} = 1\\), which is a cardioid.",
+          "c) \\(r = 3 - 6\\cos\\theta\\) has \\(\\frac{a}{b} = \\frac{3}{6} = \\frac{1}{2} < 1\\), which is a limaçon with an inner loop."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "87c68f4e1066",
+        "prompt": "Find all points of intersection for the system of equations \\(r = 3 + 6\\cos\\theta\\) and \\(r = 3\\). Give your answers as polar points.",
+        "answer": "\\(\\left(3, \\frac{\\pi}{2}\\right)\\) and \\(\\left(3, \\frac{3\\pi}{2}\\right)\\)",
+        "steps": [
+          "Set the two equations equal to solve for \\(\\theta\\): \\[3 + 6\\cos\\theta = 3\\]",
+          "Subtract 3 from both sides: \\[6\\cos\\theta = 0 \\implies \\cos\\theta = 0\\]",
+          "For \\(0 \\le \\theta < 2\\pi\\), \\(\\cos\\theta = 0\\) when \\(\\theta = \\frac{\\pi}{2}\\) and \\(\\theta = \\frac{3\\pi}{2}\\).",
+          "Substitute \\(\\theta\\) back into \\(r = 3\\) to get the polar points: \\(\\left(3, \\frac{\\pi}{2}\\right)\\) and \\(\\left(3, \\frac{3\\pi}{2}\\right)\\).",
+          "Check for pole intersection: \\(r = 3\\) never reaches the pole (\\(r = 0\\)), so the pole is not an intersection point."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "05b9528398d5",
+        "prompt": "Convert the rectangular equation \\(x^2 + y^2 - 8y = 0\\) to a polar equation and simplify completely.",
+        "answer": "\\(r = 8\\sin\\theta\\)",
+        "steps": [
+          "Substitute \\(x^2 + y^2 = r^2\\) and \\(y = r\\sin\\theta\\) into the equation: \\[r^2 - 8r\\sin\\theta = 0\\]",
+          "Factor out \\(r\\): \\[r(r - 8\\sin\\theta) = 0\\]",
+          "Since \\(r = 0\\) is included in \\(r = 8\\sin\\theta\\) (at \\(\\theta = 0\\)), divide by \\(r\\) to get the simplified equation: \\[r = 8\\sin\\theta\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1d75088f2e15",
+        "prompt": "Find all points of intersection between \\(r = 4\\cos\\theta\\) and \\(r = 2\\) for \\(0 \\le \\theta < 2\\pi\\). Express your answers as polar points.",
+        "answer": "\\(\\left(2, \\frac{\\pi}{3}\\right)\\) and \\(\\left(2, \\frac{5\\pi}{3}\\right)\\)",
+        "steps": [
+          "Set the equations equal to each other: \\[4\\cos\\theta = 2\\]",
+          "Solve for \\(\\cos\\theta\\): \\[\\cos\\theta = \\frac{1}{2}\\]",
+          "In the interval \\(0 \\le \\theta < 2\\pi\\), \\(\\theta = \\frac{\\pi}{3}\\) and \\(\\theta = \\frac{5\\pi}{3}\\).",
+          "Since \\(r = 2\\), the points of intersection are \\(\\left(2, \\frac{\\pi}{3}\\right)\\) and \\(\\left(2, \\frac{5\\pi}{3}\\right)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Polar to Rectangular Conversions: \\(x = r\\cos\\theta\\), \\(y = r\\sin\\theta\\), \\(r^2 = x^2 + y^2\\), and \\(\\tan\\theta = \\frac{y}{x}\\).",
+      "Polar Distance Formula: The distance between two polar points \\((r_1, \\theta_1)\\) and \\((r_2, \\theta_2)\\) is given by \\(d = \\sqrt{r_1^2 + r_2^2 - 2r_1r_2\\cos(\\theta_2 - \\theta_1)}\\).",
+      "Special Polar Curves: Rose Curves: \\(r = a\\cos(n\\theta)\\) or \\(r = a\\sin(n\\theta)\\) (has \\(n\\) petals if \\(n\\) is odd, \\(2n\\) petals if \\(n\\) is even); Limaçons: \\(r = a \\pm b\\cos\\theta\\) or \\(r = a \\pm b\\sin\\theta\\) (Inner loop if \\(\\frac{a}{b} < 1\\), Cardioid if \\(\\frac{a}{b} = 1\\), Dimpled if \\(1 < \\frac{a}{b} < 2\\), Convex if \\(\\frac{a}{b} \\ge 2\\)); Circles: \\(r = a\\cos\\theta\\), \\(r = a\\sin\\theta\\), or \\(r = k\\); Lines: \\(r = a\\sec\\theta\\) (vertical line \\(x = a\\)) and \\(r = a\\csc\\theta\\) (horizontal line \\(y = a\\)).",
+      "Intersection of Polar Curves: Set equations equal to solve for \\(\\theta\\) algebraically. Always check for the origin (pole) separately by setting \\(r = 0\\) for both curves, as polar representations of the pole are not unique."
+    ],
+    "asked_solution": null
+  },
+  "topic::polar and 3d: complex numbers & 3d coordinates": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "014572c6cb93",
+      "prompt": "Solve the equation \\(z^3 + 8i = 0\\) for all complex values of \\(z\\). Express all roots in standard rectangular form \\(a + bi\\).",
+      "answer": "\\(z_0 = 2i\\), \\(z_1 = -\\sqrt{3} - i\\), \\(z_2 = \\sqrt{3} - i\\)",
+      "steps": [
+        "Isolate \\(z^3\\): \\(z^3 = -8i\\).",
+        "Convert \\(-8i\\) to polar form: Modulus \\(r = |-8i| = 8\\). Argument \\(\\theta = \\frac{3\\pi}{2}\\). Thus, \\(-8i = 8\\text{cis}\\left(\\frac{3\\pi}{2}\\right)\\).",
+        "Apply De Moivre's Theorem for roots: \\(z_k = \\sqrt[3]{8}\\text{cis}\\left(\\frac{\\frac{3\\pi}{2} + 2k\\pi}{3}\\right) = 2\\text{cis}\\left(\\frac{\\pi}{2} + \\frac{2k\\pi}{3}\\right)\\) for \\(k = 0, 1, 2\\).",
+        "Calculate root for \\(k = 0\\): \\(z_0 = 2\\text{cis}\\left(\\frac{\\pi}{2}\\right) = 2(0 + i) = 2i\\).",
+        "Calculate root for \\(k = 1\\): \\(z_1 = 2\\text{cis}\\left(\\frac{7\\pi}{6}\\right) = 2\\left(-\\frac{\\sqrt{3}}{2} - \\frac{1}{2}i\\right) = -\\sqrt{3} - i\\).",
+        "Calculate root for \\(k = 2\\): \\(z_2 = 2\\text{cis}\\left(\\frac{11\\pi}{6}\\right) = 2\\left(\\frac{\\sqrt{3}}{2} - \\frac{1}{2}i\\right) = \\sqrt{3} - i\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "c08f5c34bf73",
+        "prompt": "Convert the complex number \\(z = -2\\sqrt{3} + 2i\\) into polar form \\(r\\text{cis}\\theta\\), where \\(0 \\le \\theta < 2\\pi\\).",
+        "answer": "\\(4\\text{cis}\\left(\\frac{5\\pi}{6}\\right)\\)",
+        "steps": [
+          "Find modulus \\(r = \\sqrt{(-2\\sqrt{3})^2 + (2)^2} = \\sqrt{12 + 4} = \\sqrt{16} = 4\\).",
+          "Find argument \\(\\theta\\): \\(\\tan\\theta = \\frac{2}{-2\\sqrt{3}} = -\\frac{1}{\\sqrt{3}}\\).",
+          "Since \\(a < 0\\) and \\(b > 0\\), \\(z\\) lies in Quadrant II. Therefore, \\(\\theta = \\frac{5\\pi}{6}\\).",
+          "Write in polar form: \\(z = 4\\text{cis}\\left(\\frac{5\\pi}{6}\\right)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1095c1210989",
+        "prompt": "Given \\(z_1 = 6\\text{cis}\\left(\\frac{5\\pi}{3}\\right)\\) and \\(z_2 = 2\\text{cis}\\left(\\frac{7\\pi}{6}\\right)\\), evaluate the quotient \\(\\frac{z_1}{z_2}\\) and express the answer in standard rectangular form \\(a + bi\\).",
+        "answer": "\\(3i\\)",
+        "steps": [
+          "Apply the quotient rule in polar form: \\(\\frac{z_1}{z_2} = \\frac{6}{2}\\text{cis}\\left(\\frac{5\\pi}{3} - \\frac{7\\pi}{6}\\right)\\).",
+          "Simplify the \\rangle: \\(\\frac{5\\pi}{3} - \\frac{7\\pi}{6} = \\frac{10\\pi}{6} - \\frac{7\\pi}{6} = \\frac{3\\pi}{6} = \\frac{\\pi}{2}\\).",
+          "Thus, \\(\\frac{z_1}{z_2} = 3\\text{cis}\\left(\\frac{\\pi}{2}\\right) = 3\\left(\\cos\\frac{\\pi}{2} + i\\sin\\frac{\\pi}{2}\\right) = 3(0 + 1i) = 3i\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "8f96869251ab",
+        "prompt": "Use De Moivre's Theorem to evaluate \\((1 - i)^{10}\\). Express your answer in standard rectangular form \\(a + bi\\).",
+        "answer": "\\(-32i\\)",
+        "steps": [
+          "Convert \\(z = 1 - i\\) to polar form: \\(r = \\sqrt{1^2 + (-1)^2} = \\sqrt{2}\\).",
+          "Argument \\(\\theta = \\frac{7\\pi}{4}\\) (Quadrant IV). So \\(1 - i = \\sqrt{2}\\text{cis}\\left(\\frac{7\\pi}{4}\\right)\\).",
+          "Apply De Moivre's Theorem: \\((1 - i)^{10} = (\\sqrt{2})^{10}\\text{cis}\\left(10 \\cdot \\frac{7\\pi}{4}\\right) = 32\\text{cis}\\left(\\frac{35\\pi}{2}\\right)\\).",
+          "Simplify \\rangle \\(\\frac{35\\pi}{2}\\) coterminal to \\(\\frac{35\\pi}{2} - 16\\pi = \\frac{3\\pi}{2}\\).",
+          "Evaluate: \\(32\\text{cis}\\left(\\frac{3\\pi}{2}\\right) = 32(0 - i) = -32i\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "771df11bac70",
+        "prompt": "Find all four fourth roots of \\(z = -16\\). Express your solutions in standard rectangular form \\(a + bi\\).",
+        "answer": "\\(\\sqrt{2} + i\\sqrt{2}\\), \\(-\\sqrt{2} + i\\sqrt{2}\\), \\(-\\sqrt{2} - i\\sqrt{2}\\), \\(\\sqrt{2} - i\\sqrt{2}\\)",
+        "steps": [
+          "Express \\(-16\\) in polar form: \\(-16 = 16\\text{cis}(\\pi)\\).",
+          "Use root formula: \\(w_k = \\sqrt[4]{16}\\text{cis}\\left(\\frac{\\pi + 2k\\pi}{4}\\right) = 2\\text{cis}\\left(\\frac{\\pi}{4} + \\frac{k\\pi}{2}\\right)\\) for \\(k = 0, 1, 2, 3\\).",
+          "For \\(k = 0\\): \\(2\\text{cis}\\left(\\frac{\\pi}{4}\\right) = 2\\left(\\frac{\\sqrt{2}}{2} + i\\frac{\\sqrt{2}}{2}\\right) = \\sqrt{2} + i\\sqrt{2}\\).",
+          "For \\(k = 1\\): \\(2\\text{cis}\\left(\\frac{3\\pi}{4}\\right) = 2\\left(-\\frac{\\sqrt{2}}{2} + i\\frac{\\sqrt{2}}{2}\\right) = -\\sqrt{2} + i\\sqrt{2}\\).",
+          "For \\(k = 2\\): \\(2\\text{cis}\\left(\\frac{5\\pi}{4}\\right) = 2\\left(-\\frac{\\sqrt{2}}{2} - i\\frac{\\sqrt{2}}{2}\\right) = -\\sqrt{2} - i\\sqrt{2}\\).",
+          "For \\(k = 3\\): \\(2\\text{cis}\\left(\\frac{7\\pi}{4}\\right) = 2\\left(\\frac{\\sqrt{2}}{2} - i\\frac{\\sqrt{2}}{2}\\right) = \\sqrt{2} - i\\sqrt{2}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1776bd39558d",
+        "prompt": "Find the distance between the 3D points \\(A(-3, 2, 5)\\) and \\(B(1, -4, 2)\\), and state the coordinates of the midpoint \\(M\\) of segment \\(AB\\).",
+        "answer": "Distance = \\(\\sqrt{61}\\), Midpoint = \\(\\left(-1, -1, \\frac{7}{2}\\right)\\)",
+        "steps": [
+          "Calculate distance: \\(d = \\sqrt{(1 - (-3))^2 + (-4 - 2)^2 + (2 - 5)^2} = \\sqrt{4^2 + (-6)^2 + (-3)^2} = \\sqrt{16 + 36 + 9} = \\sqrt{61}\\).",
+          "Calculate midpoint: \\(M = \\left(\\frac{-3 + 1}{2}, \\frac{2 + (-4)}{2}, \\frac{5 + 2}{2}\\right) = \\left(-1, -1, \\frac{7}{2}\\right)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "52b9dc2a86db",
+        "prompt": "Find the equation of a sphere in 3D space whose diameter has endpoints \\(P(2, -1, 4)\\) and \\(Q(6, 3, -2)\\). Write the equation in standard form \\((x-h)^2 + (y-k)^2 + (z-l)^2 = R^2\\).",
+        "answer": "\\((x-4)^2 + (y-1)^2 + (z-1)^2 = 17\\)",
+        "steps": [
+          "Find the center \\((h, k, l)\\) as the midpoint of \\(PQ\\): \\((h, k, l) = \\left(\\frac{2+6}{2}, \\frac{-1+3}{2}, \\frac{4+(-2)}{2}\\right) = (4, 1, 1)\\).",
+          "Find the length of diameter \\(D\\): \\(D = \\sqrt{(6-2)^2 + (3 - (-1))^2 + (-2-4)^2} = \\sqrt{16 + 16 + 36} = \\sqrt{68}\\).",
+          "The radius is \\(R = \\frac{\\sqrt{68}}{2} = \\sqrt{17}\\), so \\(R^2 = 17\\).",
+          "Substitute into standard form: \\((x-4)^2 + (y-1)^2 + (z-1)^2 = 17\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "8d3e83e1d6fe",
+        "prompt": "Classify the quadric surface given by the equation \\(4x^2 - 9y^2 + 36z^2 = 36\\) and identify its axis of symmetry.",
+        "answer": "Hyperboloid of one sheet, symmetric along the y-axis",
+        "steps": [
+          "Divide the entire equation by 36 to get standard form: \\(\\frac{x^2}{9} - \\frac{y^2}{4} + \\frac{z^2}{1} = 1\\).",
+          "Observe the signs of the terms: two positive squared terms (\\(x^2\\) and \\(z^2\\)) and one negative squared term (\\(-y^2\\)).",
+          "This form represents a Hyperboloid of One Sheet.",
+          "The negative sign corresponds to the \\(y\\)-variable, meaning the surface opens around the y-axis."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "5a46fdff83af",
+        "prompt": "Find the exact distance between the two polar points \\(A\\left(6, \\frac{\\pi}{3}\\right)\\) and \\(B\\left(4, \\frac{5\\pi}{6}\\right)\\).",
+        "answer": "\\(2\\sqrt{13}\\)",
+        "steps": [
+          "Use the polar distance formula: \\(d = \\sqrt{r_1^2 + r_2^2 - 2r_1 r_2 \\cos(\\theta_2 - \\theta_1)}\\).",
+          "Plug in values: \\(r_1 = 6, r_2 = 4, \\theta_1 = \\frac{\\pi}{3}, \\theta_2 = \\frac{5\\pi}{6}\\).",
+          "Find difference of \\rangles: \\(\\theta_2 - \\theta_1 = \\frac{5\\pi}{6} - \\frac{2\\pi}{6} = \\frac{3\\pi}{6} = \\frac{\\pi}{2}\\).",
+          "Evaluate cosine term: \\(\\cos\\left(\\frac{\\pi}{2}\\right) = 0\\).",
+          "Calculate distance: \\(d = \\sqrt{6^2 + 4^2 - 2(6)(4)(0)} = \\sqrt{36 + 16} = \\sqrt{52} = 2\\sqrt{13}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Polar Form of a Complex Number: Any complex number \\(z = a + bi\\) can be written in polar/trigonometric form as \\(z = r(\\cos\\theta + i\\sin\\theta) = r\\text{cis}\\theta\\), where the modulus is \\(r = |z| = \\sqrt{a^2 + b^2}\\) and the argument \\(\\theta\\) satisfies \\(\\tan\\theta = \\frac{b}{a}\\).",
+      "Products, Quotients, and Powers (De Moivre's Theorem): For \\(z_1 = r_1\\text{cis}\\theta_1\\) and \\(z_2 = r_2\\text{cis}\\theta_2\\), \\(z_1 z_2 = r_1 r_2\\text{cis}(\\theta_1 + \\theta_2)\\) and \\(\\frac{z_1}{z_2} = \\frac{r_1}{r_2}\\text{cis}(\\theta_1 - \\theta_2)\\). For any integer \\(n\\), De Moivre's Theorem states that \\(z^n = r^n\\text{cis}(n\\theta)\\).",
+      "Roots of Complex Numbers: The \\(n\\) distinct \\(n\\)-th roots of \\(z = r\\text{cis}\\theta\\) are given by \\(w_k = \\sqrt[n]{r}\\text{cis}\\left(\\frac{\\theta + 2k\\pi}{n}\\right)\\) for \\(k = 0, 1, 2, \\dots, n-1\\).",
+      "3D Coordinates and Quadric Surfaces: The distance between \\(P(x_1, y_1, z_1)\\) and \\(Q(x_2, y_2, z_2)\\) is \\(d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}\\). Quadric surfaces are 3D representations of second-degree equations (e.g., ellipsoids, hyperboloids of 1 or 2 sheets, elliptic cones, and paraboloids)."
+    ],
+    "asked_solution": null
+  },
+  "topic::vectors and parametrics: vectors & dot/cross products": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "d5e533841e77",
+      "prompt": "Given the points \\(P(1, 3, 2)\\), \\(Q(2, 5, 1)\\), and \\(R(4, 2, 6)\\) in 3D space:\\a) Find vectors \\(\\vec{PQ}\\) and \\(\\vec{PR}\\).\\b) Calculate \\(\\text{proj}_{\\vec{PR}}\\vec{PQ}\\).\\c) Find \\(\\vec{PQ} \\times \\vec{PR}\\) and determine the area of \\(\\triangle PQR\\).\\d) Write the standard equation \\((Ax + By + Cz = D)\\) of the plane containing points \\(P\\), \\(Q\\), and \\(R\\).",
+      "answer": "a) \\(\\vec{PQ} = \\langle 1, 2, -1 \\rangle\\), \\(\\vec{PR} = \\langle 3, -1, 4 \\rangle\\)\\b) \\(\\left\\langle -\\frac{9}{26}, \\frac{3}{26}, -\\frac{6}{13} \\right\\rangle\\)\\c) \\(\\vec{PQ} \\times \\vec{PR} = \\langle 7, -7, -7 \\rangle\\); Area = \\(\\frac{7\\sqrt{3}}{2}\\)\\d) \\(x - y - z = -4\\)",
+      "steps": [
+        "a) Calculate component vectors: \\(\\vec{PQ} = \\langle 2-1, 5-3, 1-2 \\rangle = \\langle 1, 2, -1 \\rangle\\) and \\(\\vec{PR} = \\langle 4-1, 2-3, 6-2 \\rangle = \\langle 3, -1, 4 \\rangle\\).",
+        "b) Compute \\(\\vec{PQ} \\cdot \\vec{PR} = (1)(3) + (2)(-1) + (-1)(4) = 3 - 2 - 4 = -3\\). Compute \\(\\|\\vec{PR}\\|^2 = 3^2 + (-1)^2 + 4^2 = 26\\). Then \\(\\text{proj}_{\\vec{PR}}\\vec{PQ} = \\frac{-3}{26}\\langle 3, -1, 4 \\rangle = \\left\\langle -\\frac{9}{26}, \\frac{3}{26}, -\\frac{6}{13} \\right\\rangle\\).",
+        "c) Compute cross product: \\(\\vec{PQ} \\times \\vec{PR} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\ 1 & 2 & -1 \\ 3 & -1 & 4 \\end{vmatrix} = \\hat{i}(8 - 1) - \\hat{j}(4 - (-3)) + \\hat{k}(-1 - 6) = \\langle 7, -7, -7 \\rangle\\). The area of \\(\\triangle PQR\\) is \\(\\frac{1}{2}\\|\\vec{PQ} \\times \\vec{PR}\\| = \\frac{1}{2}\\sqrt{7^2 + (-7)^2 + (-7)^2} = \\frac{7\\sqrt{3}}{2}\\).",
+        "d) Using normal vector \\(\\vec{n} = \\frac{1}{7}\\langle 7, -7, -7 \\rangle = \\langle 1, -1, -1 \\rangle\\) and point \\(P(1, 3, 2)\\): \\(1(x - 1) - 1(y - 3) - 1(z - 2) = 0 \\implies x - y - z = -4\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "441c4b6fe0c8",
+        "prompt": "Given vectors \\(\\vec{u} = \\langle -4, 2 \\rangle\\) and \\(\\vec{v} = \\langle 3, -1 \\rangle\\):\\a) Find a unit vector in the opposite direction of \\(\\vec{u}\\).\\b) Compute \\(\\text{proj}_{\\vec{v}}\\vec{u}\\).",
+        "answer": "a) \\(\\left\\langle \\frac{2\\sqrt{5}}{5}, -\\frac{\\sqrt{5}}{5} \\right\\rangle\\)\\b) \\(\\left\\langle -\\frac{21}{5}, \\frac{7}{5} \\right\\rangle\\)",
+        "steps": [
+          "a) Magnitude of \\(\\vec{u}\\): \\(\\|\\vec{u}\\| = \\sqrt{(-4)^2 + 2^2} = \\sqrt{20} = 2\\sqrt{5}\\). A unit vector in the opposite direction is \\(-\\frac{\\vec{u}}{\\|\\vec{u}\\|} = -\\frac{1}{2\\sqrt{5}}\\langle -4, 2 \\rangle = \\left\\langle \\frac{2}{\\sqrt{5}}, -\\frac{1}{\\sqrt{5}} \\right\\rangle = \\left\\langle \\frac{2\\sqrt{5}}{5}, -\\frac{\\sqrt{5}}{5} \\right\\rangle\\).",
+          "b) Calculate \\(\\vec{u} \\cdot \\vec{v} = (-4)(3) + (2)(-1) = -14\\) and \\(\\|\\vec{v}\\|^2 = 3^2 + (-1)^2 = 10\\). Thus, \\(\\text{proj}_{\\vec{v}}\\vec{u} = \\frac{-14}{10}\\langle 3, -1 \\rangle = -\\frac{7}{5}\\langle 3, -1 \\rangle = \\left\\langle -\\frac{21}{5}, \\frac{7}{5} \\right\\rangle\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "ab6f74f9eaae",
+        "prompt": "Consider points \\(A(1, -2, 3)\\), \\(B(3, 1, 0)\\), and \\(C(5, y, 2)\\). Solve for \\(y\\) such that vector \\(\\vec{AB}\\) is orthogonal to vector \\(\\vec{AC}\\).",
+        "answer": "\\(y = -\\frac{17}{3}\\)",
+        "steps": [
+          "Find component vectors: \\(\\vec{AB} = \\langle 3-1, 1-(-2), 0-3 \\rangle = \\langle 2, 3, -3 \\rangle\\) and \\(\\vec{AC} = \\langle 5-1, y-(-2), 2-3 \\rangle = \\langle 4, y+2, -1 \\rangle\\).",
+          "Set the dot product equal to zero for orthogonality: \\(\\vec{AB} \\cdot \\vec{AC} = (2)(4) + (3)(y+2) + (-3)(-1) = 0\\).",
+          "Simplify: \\(8 + 3y + 6 + 3 = 0 \\implies 3y + 17 = 0 \\implies y = -\\frac{17}{3}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "5fb2a15885f4",
+        "prompt": "Given two non-zero vectors \\(\\vec{u}\\) and \\(\\vec{v}\\) such that \\(\\vec{u} \\cdot \\vec{v} = 0\\), \\(\\|\\vec{u}\\| = 5\\), and \\(\\|\\vec{u} \\times \\vec{v}\\| = 20\\), find \\(\\|\\vec{v}\\|\\).",
+        "answer": "\\(\\|\\vec{v}\\| = 4\\)",
+        "steps": [
+          "Since \\(\\vec{u} \\cdot \\vec{v} = 0\\), vectors \\(\\vec{u}\\) and \\(\\vec{v}\\) are orthogonal, meaning the \\rangle \\(\\theta\\) between them is \\(90^\\circ\\).",
+          "Use the formula \\(\\|\\vec{u} \\times \\vec{v}\\| = \\|\\vec{u}\\|\\|\\vec{v}\\|\\sin\\theta\\).",
+          "Substitute known values: \\(20 = (5)\\|\\vec{v}\\|\\sin(90^\\circ) \\implies 20 = 5\\|\\vec{v}\\|(1) \\implies \\|\\vec{v}\\| = 4\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "559cffd8f9b8",
+        "prompt": "Given 3D points \\(P(2, -1, 4)\\) and \\(Q(5, 3, -2)\\):\\a) Write a vector equation of the line \\(PQ\\).\\b) Find the point where line \\(PQ\\) intersects the \\(xz\\)-plane.",
+        "answer": "a) \\(\\langle x, y, z \\rangle = \\langle 2, -1, 4 \\rangle + t\\langle 3, 4, -6 \\rangle\\)\\b) \\(\\left(\\frac{11}{4}, 0, \\frac{5}{2}\\right)\\)",
+        "steps": [
+          "a) Direction vector \\(\\vec{d} = \\vec{PQ} = \\langle 5-2, 3-(-1), -2-4 \\rangle = \\langle 3, 4, -6 \\rangle\\). Vector equation of the line: \\(\\langle x, y, z \\rangle = \\langle 2, -1, 4 \\rangle + t\\langle 3, 4, -6 \\rangle\\).",
+          "b) The \\(xz\\)-plane has equation \\(y = 0\\). Set \\(y(t) = -1 + 4t = 0 \\implies t = \\frac{1}{4}\\).",
+          "Substitute \\(t = \\frac{1}{4}\\) back into the line equation: \\(x = 2 + 3\\left(\\frac{1}{4}\\right) = \\frac{11}{4}\\), \\(y = 0\\), \\(z = 4 - 6\\left(\\frac{1}{4}\\right) = \\frac{5}{2}\\). The intersection point is \\(\\left(\\frac{11}{4}, 0, \\frac{5}{2}\\right)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "547e486ddbf1",
+        "prompt": "Given points \\(A(2, 0, 1)\\), \\(B(4, 3, -1)\\), and \\(C(1, 2, 3)\\):\\a) Compute \\(\\vec{AB} \\times \\vec{AC}\\).\\b) Find the area of the triangle formed by vertices \\(A\\), \\(B\\), and \\(C\\).",
+        "answer": "a) \\(\\langle 10, -2, 7 \\rangle\\)\\b) \\(\\frac{3\\sqrt{17}}{2}\\)",
+        "steps": [
+          "a) Calculate \\(\\vec{AB} = \\langle 2, 3, -2 \\rangle\\) and \\(\\vec{AC} = \\langle -1, 2, 2 \\rangle\\). Compute cross product: \\(\\vec{AB} \\times \\vec{AC} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\ 2 & 3 & -2 \\ -1 & 2 & 2 \\end{vmatrix} = \\hat{i}(6 - (-4)) - \\hat{j}(4 - 2) + \\hat{k}(4 - (-3)) = \\langle 10, -2, 7 \\rangle\\).",
+          "b) Area of \\(\\triangle ABC = \\frac{1}{2}\\|\\vec{AB} \\times \\vec{AC}\\| = \\frac{1}{2}\\sqrt{10^2 + (-2)^2 + 7^2} = \\frac{1}{2}\\sqrt{100 + 4 + 49} = \\frac{\\sqrt{153}}{2} = \\frac{3\\sqrt{17}}{2}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "2ef91de3412b",
+        "prompt": "A plane \\(P\\) is given by the vector equation \\(\\langle x, y, z \\rangle = \\langle 1, 4, -2 \\rangle + s\\langle 2, 1, 0 \\rangle + t\\langle -1, 0, 3 \\rangle\\). Write the equation of plane \\(P\\) in standard form \\(Ax + By + Cz = D\\).",
+        "answer": "\\(3x - 6y + z = -23\\)",
+        "steps": [
+          "Find a normal vector \\(\\vec{n}\\) by taking the cross product of the direction vectors \\(\\vec{u} = \\langle 2, 1, 0 \\rangle\\) and \\(\\vec{v} = \\langle -1, 0, 3 \\rangle\\): \\(\\vec{n} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\ 2 & 1 & 0 \\ -1 & 0 & 3 \\end{vmatrix} = \\langle 3(1) - 0, -(6 - 0), 0 - (-1) \\rangle = \\langle 3, -6, 1 \\rangle\\).",
+          "Use normal vector \\(\\vec{n} = \\langle 3, -6, 1 \\rangle\\) and point \\((1, 4, -2)\\): \\(3(x - 1) - 6(y - 4) + 1(z + 2) = 0\\).",
+          "Simplify to standard form: \\(3x - 3 - 6y + 24 + z + 2 = 0 \\implies 3x - 6y + z + 23 = 0 \\implies 3x - 6y + z = -23\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "b5f715647756",
+        "prompt": "Given that \\(\\langle 3, y, z \\rangle \\times \\langle 1, 2, 4 \\rangle = \\langle -6, -7, 5 \\rangle\\), solve for \\(y\\) and \\(z\\).",
+        "answer": "\\(y = 1\\), \\(z = 5\\)",
+        "steps": [
+          "Compute the cross product in terms of \\(y\\) and \\(z\\): \\(\\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\ 3 & y & z \\ 1 & 2 & 4 \\end{vmatrix} = \\langle 4y - 2z, -(12 - z), 6 - y \\rangle = \\langle 4y - 2z, z - 12, 6 - y \\rangle\\).",
+          "Equate corresponding components: \\(6 - y = 5 \\implies y = 1\\).",
+          "Equate the \\(y\\)-component: \\(z - 12 = -7 \\implies z = 5\\).",
+          "Verify with the \\(x\\)-component: \\(4(1) - 2(5) = 4 - 10 = -6\\), which matches."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "7e93d68ae062",
+        "prompt": "Plane \\(P\\) is determined by the equation \\(2x - y + 2z = 5\\). Find the rectangular equations of both planes that are parallel to Plane \\(P\\) and located \\(4\\) units away from Plane \\(P\\).",
+        "answer": "\\(2x - y + 2z = 17\\) and \\(2x - y + 2z = -7\\)",
+        "steps": [
+          "Planes parallel to \\(P\\) have the form \\(2x - y + 2z = D\\).",
+          "The distance between parallel planes \\(2x - y + 2z = 5\\) and \\(2x - y + 2z = D\\) is given by \\(d = \\frac{|D - 5|}{\\sqrt{2^2 + (-1)^2 + 2^2}} = \\frac{|D - 5|}{3}\\).",
+          "Set distance to \\(4\\): \\(\\frac{|D - 5|}{3} = 4 \\implies |D - 5| = 12\\).",
+          "Solve for \\(D\\): \\(D - 5 = 12 \\implies D = 17\\), or \\(D - 5 = -12 \\implies D = -7\\).",
+          "The two equations are \\(2x - y + 2z = 17\\) and \\(2x - y + 2z = -7\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Vector Projection: The vector projection of \\(\\vec{u}\\) onto \\(\\vec{v}\\) is given by \\(\\text{proj}_{\\vec{v}}\\vec{u} = \\left(\\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{v}\\|^2}\\right)\\vec{v}\\).",
+      "Dot Product & Orthogonality: \\(\\vec{u} \\cdot \\vec{v} = \\|\\vec{u}\\|\\|\\vec{v}\\|\\cos\\theta\\). If \\(\\vec{u} \\cdot \\vec{v} = 0\\), the non-zero vectors are orthogonal (\\(\\theta = 90^\\circ\\)). If \\(\\vec{u} \\cdot \\vec{v} < 0\\), the \\rangle \\(\\theta\\) is obtuse.",
+      "Cross Product & Area: The cross product \\(\\vec{u} \\times \\vec{v}\\) yields a vector orthogonal to both \\(\\vec{u}\\) and \\(\\vec{v}\\), with magnitude \\(\\|\\vec{u} \\times \\vec{v}\\| = \\|\\vec{u}\\|\\|\\vec{v}\\|\\sin\\theta\\). The area of the triangle formed by vectors \\(\\vec{u}\\) and \\(\\vec{v}\\) is \\(\\frac{1}{2}\\|\\vec{u} \\times \\vec{v}\\|\\).",
+      "Equations of Planes: A plane with normal vector \\(\\vec{n} = \\langle A, B, C \\rangle\\) passing through point \\((x_0, y_0, z_0)\\) has standard form equation \\(Ax + By + Cz = D\\), where \\(D = Ax_0 + By_0 + Cz_0\\). The distance between parallel planes \\(Ax+By+Cz=D_1\\) and \\(Ax+By+Cz=D_2\\) is \\(\\frac{|D_1 - D_2|}{\\sqrt{A^2 + B^2 + C^2}}\\)."
+    ],
+    "asked_solution": null
+  },
+  "topic::vectors and parametrics: parametric & vector equations": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "5e6181b3d931",
+      "prompt": "Consider plane \\(R\\) given by the vector equation \\(\\langle x, y, z \\rangle = \\langle 3, -1, 4 \\rangle + s\\langle 1, 2, -1 \\rangle + t\\langle 2, 0, 3 \\rangle\\).\\a) Find a normal vector \\(\\vec{n}\\) to plane \\(R\\).\\b) Write the equation of plane \\(R\\) in standard form (\\(Ax + By + Cz = D\\)).\\c) Find the distance from plane \\(R\\) to the point \\(M(5, 4, 1)\\).",
+      "answer": "a) \\(\\vec{n} = \\langle 6, -5, -4 \\rangle\\)\\b) \\(6x - 5y - 4z = 7\\)\\c) \\(\\frac{1}{\\sqrt{77}}\\)",
+      "steps": [
+        "a) The direction vectors in the plane are \\(\\vec{u} = \\langle 1, 2, -1 \\rangle\\) and \\(\\vec{v} = \\langle 2, 0, 3 \\rangle\\). The normal vector is perpendicular to both, so take their cross product: \\[\\vec{n} = \\vec{u} \\times \\vec{v} = \\begin{vmatrix} \\vec{i} & \\vec{j} & \\vec{k} \\ 1 & 2 & -1 \\ 2 & 0 & 3 \\end{vmatrix} = \\vec{i}(6 - 0) - \\vec{j}(3 - (-2)) + \\vec{k}(0 - 4) = \\langle 6, -5, -4 \\rangle\\]",
+        "b) Using point \\(P(3, -1, 4)\\) from the vector equation and normal vector \\(\\vec{n} = \\langle 6, -5, -4 \\rangle\\): \\[6(x - 3) - 5(y + 1) - 4(z - 4) = 0\\] \\[6x - 18 - 5y - 5 - 4z + 16 = 0 \\implies 6x - 5y - 4z = 7\\]",
+        "c) Use the distance formula from a point \\((x_0, y_0, z_0) = (5, 4, 1)\\) to plane \\(6x - 5y - 4z = 7\\): \\[d = \\frac{|6(5) - 5(4) - 4(1) - 7|}{\\sqrt{6^2 + (-5)^2 + (-4)^2}} = \\frac{|30 - 20 - 4 - 7|}{\\sqrt{36 + 25 + 16}} = \\frac{|-1|}{\\sqrt{77}} = \\frac{1}{\\sqrt{77}}\\]"
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "01e4131f0670",
+        "prompt": "Given the vectors \\(\\vec{a} = \\langle 4, -2, 4 \\rangle\\) and \\(\\vec{b} = \\langle 1, 3, -2 \\rangle\\), find the vector projection \\(\\text{proj}_{\\vec{a}}\\vec{b}\\).",
+        "answer": "\\(\\left\\langle -\\frac{10}{9}, \\frac{5}{9}, -\\frac{10}{9} \\right\\rangle\\)",
+        "steps": [
+          "Calculate the dot product \\(\\vec{a} \\cdot \\vec{b}\\): \\[\\vec{a} \\cdot \\vec{b} = 4(1) + (-2)(3) + 4(-2) = 4 - 6 - 8 = -10\\]",
+          "Calculate the magnitude squared \\(\\|\\vec{a}\\|^2\\): \\[\\|\\vec{a}\\|^2 = 4^2 + (-2)^2 + 4^2 = 16 + 4 + 16 = 36\\]",
+          "Apply the vector projection formula \\(\\text{proj}_{\\vec{a}}\\vec{b} = \\left(\\frac{\\vec{a} \\cdot \\vec{b}}{\\|\\vec{a}\\|^2}\\right)\\vec{a}\\): \\[\\text{proj}_{\\vec{a}}\\vec{b} = -\\frac{10}{36}\\langle 4, -2, 4 \\rangle = -\\frac{5}{18}\\langle 4, -2, 4 \\rangle = \\left\\langle -\\frac{10}{9}, \\frac{5}{9}, -\\frac{10}{9} \\right\\rangle\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "49cc881fa07f",
+        "prompt": "Find the coordinates of the point where the 3D line passing through \\(P(2, -1, 5)\\) and \\(Q(6, 3, 1)\\) intersects the \\(x\\)-\\(y\\) plane.",
+        "answer": "\\((7, 4, 0)\\)",
+        "steps": [
+          "Find the direction vector of line \\(PQ\\): \\[\\vec{PQ} = \\langle 6 - 2, 3 - (-1), 1 - 5 \\rangle = \\langle 4, 4, -4 \\rangle\\]",
+          "Write parametric equations for the line: \\[x(t) = 2 + 4t, \\quad y(t) = -1 + 4t, \\quad z(t) = 5 - 4t\\]",
+          "In the \\(x\\)-\\(y\\) plane, \\(z = 0\\): \\[5 - 4t = 0 \\implies t = \\frac{5}{4}\\]",
+          "Substitute \\(t = \\frac{5}{4}\\) into \\(x(t)\\) and \\(y(t)\\): \\[x = 2 + 4\\left(\\frac{5}{4}\\right) = 7, \\quad y = -1 + 4\\left(\\frac{5}{4}\\right) = 4\\]",
+          "The point of intersection is \\((7, 4, 0)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "8bb163f9e75c",
+        "prompt": "Consider the parametric equations \\(x(t) = 3\\cos(\\pi t)\\) and \\(y(t) = t^2\\) for \\(t \\in [-1, 2]\\).\\a) State the domain and range of the parametric curve on the \\(xy\\)-plane.\\b) Eliminate the parameter to express \\(x\\) as a function of \\(y\\).",
+        "answer": "a) Domain: \\([-3, 3]\\), Range: \\([0, 4]\\)\\b) \\(x = 3\\cos(\\pi \\sqrt{y})\\)",
+        "steps": [
+          "a) For \\(t \\in [-1, 2]\\), \\(\\cos(\\pi t)\\) reaches its minimum of \\(-1\\) (e.g., at \\(t = -1, 1\\)) and maximum of \\(1\\) (e.g., at \\(t = 0, 2\\)). Thus, domain of \\(x\\) is \\([-3, 3]\\).\\nFor \\(y(t) = t^2\\) on \\(t \\in [-1, 2]\\), the minimum value is \\(0\\) (at \\(t = 0\\)) and maximum is \\(2^2 = 4\\) (at \\(t = 2\\)). Thus, range of \\(y\\) is \\([0, 4]\\).",
+          "b) From \\(y = t^2\\), we have \\(|t| = \\sqrt{y}\\).",
+          "Since \\(\\cos(\\pi t)\\) is an even function, \\(\\cos(\\pi t) = \\cos(\\pi |t|) = \\cos(\\pi \\sqrt{y})\\).",
+          "Substituting into \\(x(t)\\) gives \\(x = 3\\cos(\\pi \\sqrt{y})\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "781a518ce235",
+        "prompt": "Given that \\(\\langle 2, y, z \\rangle \\times \\langle 3, 1, 4 \\rangle = \\langle 9, -11, -4 \\rangle\\), solve for \\(y\\) and \\(z\\).",
+        "answer": "\\(y = 2, z = -1\\)",
+        "steps": [
+          "Compute the cross product in terms of \\(y\\) and \\(z\\): \\[\\begin{vmatrix} \\vec{i} & \\vec{j} & \\vec{k} \\ 2 & y & z \\ 3 & 1 & 4 \\end{vmatrix} = \\langle 4y - z, -(8 - 3z), 2 - 3y \\rangle = \\langle 4y - z, 3z - 8, 2 - 3y \\rangle\\]",
+          "Set components equal to \\(\\langle 9, -11, -4 \\rangle\\): \\[3z - 8 = -11 \\implies 3z = -3 \\implies z = -1\\] \\[2 - 3y = -4 \\implies -3y = -6 \\implies y = 2\\]",
+          "Verify with the first component: \\(4(2) - (-1) = 8 + 1 = 9\\), which matches."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "f7ab1ab4c632",
+        "prompt": "Consider points \\(A(x, 4, -2)\\), \\(B(5, 1, 2)\\), and \\(C(3, 8, 1)\\). Find all values of \\(x\\) such that \\(\\vec{AB}\\) is orthogonal to \\(\\vec{AC}\\).",
+        "answer": "\\(x = 3\\) or \\(x = 5\\)",
+        "steps": [
+          "Find vectors \\(\\vec{AB}\\) and \\(\\vec{AC}\\): \\[\\vec{AB} = \\langle 5 - x, 1 - 4, 2 - (-2) \\rangle = \\langle 5 - x, -3, 4 \\rangle\\] \\[\\vec{AC} = \\langle 3 - x, 8 - 4, 1 - (-2) \\rangle = \\langle 3 - x, 4, 3 \\rangle\\]",
+          "Set their dot product to zero for orthogonality: \\[\\vec{AB} \\cdot \\vec{AC} = (5 - x)(3 - x) + (-3)(4) + 4(3) = 0\\]",
+          "Simplify the algebraic equation: \\[(15 - 8x + x^2) - 12 + 12 = 0 \\implies x^2 - 8x + 15 = 0\\]",
+          "Factor to find \\(x\\): \\[(x - 3)(x - 5) = 0 \\implies x = 3 \\text{ or } x = 5\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "b3e61cd5a310",
+        "prompt": "Plane \\(P\\) is given by the equation \\(2x - 2y + z = 10\\). Find the rectangular equations of both planes that are parallel to Plane \\(P\\) and are \\(4\\) units away from Plane \\(P\\).",
+        "answer": "\\(2x - 2y + z = 22\\) and \\(2x - 2y + z = -2\\)",
+        "steps": [
+          "Planes parallel to \\(P\\) have the form \\(2x - 2y + z = D\\).",
+          "The distance between parallel planes \\(2x - 2y + z = 10\\) and \\(2x - 2y + z = D\\) is given by: \\[d = \\frac{|D - 10|}{\\sqrt{2^2 + (-2)^2 + 1^2}}\\]",
+          "Calculate magnitude of normal vector: \\(\\sqrt{4 + 4 + 1} = 3\\).",
+          "Set distance equal to 4: \\[\\frac{|D - 10|}{3} = 4 \\implies |D - 10| = 12\\]",
+          "Solve for \\(D\\): \\[D - 10 = 12 \\implies D = 22\\] \\[D - 10 = -12 \\implies D = -2\\]",
+          "The equations are \\(2x - 2y + z = 22\\) and \\(2x - 2y + z = -2\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "3ba4e1677a6f",
+        "prompt": "Find the area of the triangle with vertices \\(P(1, 0, 2)\\), \\(Q(3, 2, 1)\\), and \\(R(0, 4, 5)\\).",
+        "answer": "\\(\\frac{15}{2}\\)",
+        "steps": [
+          "Find vectors \\(\\vec{PQ}\\) and \\(\\vec{PR}\\): \\[\\vec{PQ} = \\langle 3 - 1, 2 - 0, 1 - 2 \\rangle = \\langle 2, 2, -1 \\rangle\\] \\[\\vec{PR} = \\langle 0 - 1, 4 - 0, 5 - 2 \\rangle = \\langle -1, 4, 3 \\rangle\\]",
+          "Compute the cross product \\(\\vec{PQ} \\times \\vec{PR}\\): \\[\\vec{PQ} \\times \\vec{PR} = \\begin{vmatrix} \\vec{i} & \\vec{j} & \\vec{k} \\ 2 & 2 & -1 \\ -1 & 4 & 3 \\end{vmatrix} = \\vec{i}(6 - (-4)) - \\vec{j}(6 - 1) + \\vec{k}(8 - (-2)) = \\langle 10, -5, 10 \\rangle\\]",
+          "Find the magnitude of the cross product: \\[\\|\\vec{PQ} \\times \\vec{PR}\\| = \\sqrt{10^2 + (-5)^2 + 10^2} = \\sqrt{100 + 25 + 100} = \\sqrt{225} = 15\\]",
+          "The area of the triangle is half the magnitude of the cross product: \\[\\text{Area} = \\frac{1}{2}(15) = \\frac{15}{2}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "f2698b6f16dd",
+        "prompt": "Given non-zero vectors \\(\\vec{u}\\) and \\(\\vec{v}\\) such that \\(\\vec{u} \\cdot \\vec{v} = 0\\), \\(\\|\\vec{u}\\| = 5\\), and \\(\\|\\vec{u} \\times \\vec{v}\\| = 20\\), find \\(\\|\\vec{v}\\|\\).",
+        "answer": "\\(4\\)",
+        "steps": [
+          "Since \\(\\vec{u} \\cdot \\vec{v} = 0\\), the non-zero vectors \\(\\vec{u}\\) and \\(\\vec{v}\\) are orthogonal, so the \\rangle between them is \\(\\theta = 90^\\circ\\).",
+          "Use the formula for magnitude of the cross product: \\(\\|\\vec{u} \\times \\vec{v}\\| = \\|\\vec{u}\\|\\|\\vec{v}\\|\\sin\\theta\\).",
+          "Substitute known values: \\[20 = 5 \\cdot \\|\\vec{v}\\| \\cdot \\sin(90^\\circ) = 5 \\cdot \\|\\vec{v}\\| \\cdot 1\\]",
+          "Solve for \\(\\|\\vec{v}\\|\\): \\[\\|\\vec{v}\\| = \\frac{20}{5} = 4\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Vector Projections and Angle Formulas: The vector projection of \\(\\vec{u}\\) onto \\(\\vec{v}\\) is given by \\(\\text{proj}_{\\vec{v}}\\vec{u} = \\left(\\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{v}\\|^2}\\right)\\vec{v}\\). The dot product satisfies \\(\\vec{u} \\cdot \\vec{v} = \\|\\vec{u}\\|\\|\\vec{v}\\|\\cos\\theta\\), and the magnitude of the cross product satisfies \\(\\|\\vec{u} \\times \\vec{v}\\| = \\|\\vec{u}\\|\\|\\vec{v}\\|\\sin\\theta\\).",
+      "Lines and Planes in 3D: A line containing point \\(P\\) with direction vector \\(\\vec{d}\\) has vector equation \\(\\vec{r}(t) = P + t\\vec{d}\\). A plane containing point \\(P(x_0, y_0, z_0)\\) with normal vector \\(\\vec{n} = \\langle A, B, C \\rangle\\) has standard equation \\(A(x - x_0) + B(y - y_0) + C(z - z_0) = 0\\), or \\(Ax + By + Cz = D\\).",
+      "Vector Equation of Planes & Distance: A plane written as \\(\\vec{r}(s, t) = P + s\\vec{u} + t\\vec{v}\\) has normal vector \\(\\vec{n} = \\vec{u} \\times \\vec{v}\\). The perpendicular distance from a point \\((x_0, y_0, z_0)\\) to the plane \\(Ax + By + Cz = D\\) is given by \\(d = \\frac{|Ax_0 + By_0 + Cz_0 - D|}{\\sqrt{A^2 + B^2 + C^2}}\\).",
+      "Parametric Equations & Geometric Interpretations: Two non-zero vectors are perpendicular if \\(\\vec{u} \\cdot \\vec{v} = 0\\) and parallel if \\(\\vec{u} \\times \\vec{v} = \\vec{0}\\). To eliminate parameters in parametric curves, isolate \\(t\\) in terms of one variable and substitute into the other equation, being mindful of domain restrictions."
+    ],
+    "asked_solution": null
+  },
+  "topic::growth: exponentials & logarithms": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "e4e6963f30b8",
+      "prompt": "Solve for \\(x\\): \\[\\log_4(x - 2) + \\log_{16}(x + 4) = 1\\]",
+      "answer": "\\(x = 2\\sqrt{3}\\)",
+      "steps": [
+        "Use the change of base formula to write \\(\\log_{16}(x + 4)\\) in base 4: \\[\\log_{16}(x + 4) = \\frac{\\log_4(x + 4)}{\\log_4 16} = \\frac{1}{2}\\log_4(x + 4)\\]",
+        "Substitute this back into the original equation: \\[\\log_4(x - 2) + \\frac{1}{2}\\log_4(x + 4) = 1\\]",
+        "Multiply the entire equation by 2: \\[2\\log_4(x - 2) + \\log_4(x + 4) = 2\\]",
+        "Apply logarithm properties to combine the terms: \\[\\log_4\\left((x - 2)^2(x + 4)\\right) = 2\\]",
+        "Rewrite in exponential form: \\[(x - 2)^2(x + 4) = 4^2 = 16\\]",
+        "Expand the left side: \\[(x^2 - 4x + 4)(x + 4) = 16 \\implies x^3 - 12x + 16 = 16 \\implies x^3 - 12x = 0\\]",
+        "Factor the polynomial: \\[x(x^2 - 12) = 0 \\implies x = 0, \\quad x = 2\\sqrt{3}, \\quad x = -2\\sqrt{3}\\]",
+        "Check the domain requirements for the original logarithms: \\(x - 2 > 0 \\implies x > 2\\). Therefore, \\(x = 0\\) and \\(x = -2\\sqrt{3}\\) are extraneous. The only valid solution is \\(x = 2\\sqrt{3}\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "eb59b3b44cb9",
+        "prompt": "Evaluate \\(\\log \\left( \\frac{x^4}{\\sqrt{y} z^3} \\right)\\) given that \\(\\log x = 3\\), \\(\\log y = 6\\), and \\(\\log z = 2\\).",
+        "answer": "\\(3\\)",
+        "steps": [
+          "Apply log properties to expand: \\[\\log \\left( \\frac{x^4}{\\sqrt{y} z^3} \\right) = 4\\log x - \\frac{1}{2}\\log y - 3\\log z\\]",
+          "Substitute the given logarithmic values: \\[= 4(3) - \\frac{1}{2}(6) - 3(2)\\]",
+          "Simplify: \\[= 12 - 3 - 6 = 3\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "042077e56be6",
+        "prompt": "Solve for \\(x\\): \\[9^x - 10 \\cdot 3^{x-1} + 1 = 0\\]",
+        "answer": "\\(x = -1\\) or \\(x = 1\\)",
+        "steps": [
+          "Rewrite \\(9^x\\) as \\((3^x)^2\\) and \\(3^{x-1}\\) as \\(\\frac{1}{3} \\cdot 3^x\\): \\[(3^x)^2 - \\frac{10}{3}(3^x) + 1 = 0\\]",
+          "Multiply by 3 to clear the fraction: \\[3(3^x)^2 - 10(3^x) + 3 = 0\\]",
+          "Let \\(u = 3^x\\) and factor the quadratic: \\[3u^2 - 10u + 3 = 0 \\implies (3u - 1)(u - 3) = 0\\]",
+          "Solve for \\(u\\): \\(u = \\frac{1}{3}\\) or \\(u = 3\\).",
+          "Substitute back \\(3^x = u\\): \\(3^x = 3^{-1} \\implies x = -1\\), and \\(3^x = 3^1 \\implies x = 1\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "5322fcc1a4e1",
+        "prompt": "Solve for \\(n\\): \\[\\log_3 4 \\cdot \\log_4 5 \\cdot \\log_5 6 \\cdots \\log_n(n+1) = 4\\]",
+        "answer": "\\(n = 80\\)",
+        "steps": [
+          "Apply the change of base formula to each logarithm: \\[\\frac{\\ln 4}{\\ln 3} \\cdot \\frac{\\ln 5}{\\ln 4} \\cdot \\frac{\\ln 6}{\\ln 5} \\cdots \\frac{\\ln(n+1)}{\\ln n} = 4\\]",
+          "Notice that all intermediate terms cancel in a telescoping product: \\[\\frac{\\ln(n+1)}{\\ln 3} = 4\\]",
+          "Convert back to a single logarithm: \\[\\log_3(n+1) = 4\\]",
+          "Rewrite in exponential form: \\[n + 1 = 3^4 = 81 \\implies n = 80\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "ef5f7b2ccf5d",
+        "prompt": "Solve for \\(x\\): \\[\\ln[\\log_2(3 + \\log_3(x - 1))] = 0\\]",
+        "answer": "\\(x = \\frac{4}{3}\\)",
+        "steps": [
+          "Exponentiate both sides with base \\(e\\): \\[\\log_2(3 + \\log_3(x - 1)) = e^0 = 1\\]",
+          "Rewrite in exponential form with base 2: \\[3 + \\log_3(x - 1) = 2^1 = 2\\]",
+          "Isolate \\(\\log_3(x - 1)\\): \\[\\log_3(x - 1) = 2 - 3 = -1\\]",
+          "Rewrite in exponential form with base 3: \\[x - 1 = 3^{-1} = \\frac{1}{3} \\implies x = \\frac{4}{3}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "e5fcd075bcd5",
+        "prompt": "Consider the logistic function: \\[y = \\frac{18}{1 + 5e^{-2(x - 1)}}\\]\\a) Find the equations of the horizontal asymptotes.\\b) Find the point of inflection.",
+        "answer": "a) \\(y = 0\\) and \\(y = 18\\); b) \\(\\left(1 + \\frac{\\ln 5}{2}, 9\\right)\\)",
+        "steps": [
+          "a) As \\(x \\to -\\infty\\), \\(e^{-2(x-1)} \\to \\infty\\), so \\(y \\to 0\\). As \\(x \\to \\infty\\), \\(e^{-2(x-1)} \\to 0\\), so \\(y \\to \\frac{18}{1+0} = 18\\). The horizontal asymptotes are \\(y = 0\\) and \\(y = 18\\).",
+          "b) The \\(y\\)-value of the inflection point of a logistic function is half the upper limit, so \\(y = \\frac{18}{2} = 9\\).",
+          "Set \\(y = 9\\) and solve for \\(x\\): \\[\\frac{18}{1 + 5e^{-2(x - 1)}} = 9 \\implies 1 + 5e^{-2(x - 1)} = 2\\]",
+          "Isolate the exponential term: \\[5e^{-2(x - 1)} = 1 \\implies e^{-2(x - 1)} = \\frac{1}{5}\\]",
+          "Take the natural log: \\[-2(x - 1) = \\ln\\left(\\frac{1}{5}\\right) = -\\ln 5 \\implies x - 1 = \\frac{\\ln 5}{2} \\implies x = 1 + \\frac{\\ln 5}{2}\\]",
+          "The point of inflection is \\(\\left(1 + \\frac{\\ln 5}{2}, 9\\right)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "3bc8cdb23df7",
+        "prompt": "Solve for \\(x\\): \\[\\log_4(x - 1) + \\log_4(3x - 1) = \\log_2(x + 1)\\]",
+        "answer": "\\(x = 3\\)",
+        "steps": [
+          "Change \\(\\log_2(x + 1)\\) to base 4: \\[\\log_2(x + 1) = \\frac{\\log_4(x + 1)}{\\log_4 2} = \\frac{\\log_4(x + 1)}{1/2} = 2\\log_4(x + 1) = \\log_4((x + 1)^2)\\]",
+          "Substitute back into the equation: \\[\\log_4((x - 1)(3x - 1)) = \\log_4((x + 1)^2)\\]",
+          "Equate the arguments: \\[(x - 1)(3x - 1) = (x + 1)^2\\]",
+          "Expand both sides: \\[3x^2 - 4x + 1 = x^2 + 2x + 1\\]",
+          "Rearrange into quadratic form: \\[2x^2 - 6x = 0 \\implies 2x(x - 3) = 0 \\implies x = 0 \\text{ or } x = 3\\]",
+          "Check domain constraints: \\(x - 1 > 0 \\implies x > 1\\). Thus \\(x = 0\\) is extraneous, and the only solution is \\(x = 3\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "10f45c4f8d09",
+        "prompt": "Starting at age 25, Alex invests \\(\\$400\\) at the end of every month into an account earning \\(9\\%\\) interest per year compounded monthly. How much money will be in the account when Alex retires at age 65? (Round to the nearest cent).",
+        "answer": "\\(\\$1,872,238.40\\)",
+        "steps": [
+          "Identify parameters for the Future Value of an annuity: \\(R = 400\\), \\(r = 0.09\\), \\(m = 12 \\implies i = \\frac{0.09}{12} = 0.0075\\).",
+          "Calculate the total number of periods over 40 years: \\(n = 40 \\times 12 = 480\\).",
+          "Use the Future Value formula: \\[FV = R \\left[ \\frac{(1+i)^n - 1}{i} \\right] = 400 \\left[ \\frac{(1 + 0.0075)^{480} - 1}{0.0075} \\right]\\]",
+          "Compute value: \\((1.0075)^{480} \\approx 36.10447\\).",
+          "Substitute and simplify: \\[FV = 400 \\left[ \\frac{36.10447 - 1}{0.0075} \\right] = 400 \\times 4680.596 \\approx \\$1,872,238.40\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "653a13c3265b",
+        "prompt": "Consider the power function \\(f(x) = k x^{\\frac{a}{b}}\\), where \\(k, a, b\\) are integers with \\(a\\) and \\(b\\) having no common factors. State non-zero integer values for \\(k, a, b\\) such that \\(f(x)\\) exists in Quadrants 1 and 3, passes through the origin, and is concave down in Quadrant 1.",
+        "answer": "\\(k = 1, a = 1, b = 3\\) (or any positive \\(k\\), odd positive \\(a\\), odd positive \\(b\\) with \\(a < b\\))",
+        "steps": [
+          "For \\(f(x)\\) to be defined for negative \\(x\\) (Quadrant 3), the denominator \\(b\\) must be an odd integer.",
+          "For \\(f(x)\\) to be an odd function (occupying Quadrants 1 and 3), the numerator \\(a\\) must also be an odd integer, and \\(k > 0\\).",
+          "For the function to pass through \\((0,0)\\), \\(\\frac{a}{b} > 0\\).",
+          "For the graph to be concave down in Quadrant 1, the exponent must satisfy \\(0 < \\frac{a}{b} < 1\\), which means \\(a < b\\).",
+          "Choosing the simplest values: \\(k = 1, a = 1, b = 3\\) gives \\(f(x) = x^{1/3}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Logarithm Properties & Change of Base: \\(\\log_b(xy) = \\log_b x + \\log_b y\\), \\(\\log_b(x^k) = k \\log_b x\\), and \\(\\log_b a = \\frac{\\ln a}{\\ln b}\\). Telescoping log products utilize \\(\\log_a b \\cdot \\log_b c = \\log_a c\\).",
+      "Solving Exponential Equations: Exponential equations in quadratic form, such as \\(A \\cdot b^{2x} + B \\cdot b^x + C = 0\\), can be solved by substituting \\(u = b^x\\) to find valid roots, discarding extraneous solutions where \\(u \\le 0\\).",
+      "Logistic Functions: For a logistic model \\(y = \\frac{L}{1 + B e^{-k(x - c)}}\\), horizontal asymptotes are \\(y = 0\\) and \\(y = L\\). The point of inflection always occurs at half the carrying capacity, \\(y = \\frac{L}{2}\\).",
+      "Financial Annuities: The Future Value of an ordinary annuity is \\(FV = R \\left[ \\frac{(1+i)^n - 1}{i} \\right]\\) and Present Value is \\(PV = R \\left[ \\frac{1 - (1+i)^{-n}}{i} \\right]\\), where \\(R\\) is the periodic payment, \\(i = \\frac{r}{m}\\) is the periodic rate, and \\(n = mt\\) is the total number of periods."
+    ],
+    "asked_solution": null
+  },
+  "topic::growth: power functions & modeling": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "38a0513f56fb",
+      "prompt": "Solve for \\(x\\): \\[\\log_9(x - 1) + \\log_9(2x - 1) = \\log_3(x + 1)\\]",
+      "answer": "\\(x = 5\\)",
+      "steps": [
+        "Use the change-of-base formula to rewrite the base-9 logarithms in base 3: \\[\\log_9 u = \\frac{\\log_3 u}{\\log_3 9} = \\frac{1}{2}\\log_3 u\\]",
+        "Substitute this back into the equation: \\[\\frac{1}{2}\\log_3(x-1) + \\frac{1}{2}\\log_3(2x-1) = \\log_3(x+1)\\]",
+        "Multiply the entire equation by 2: \\[\\log_3(x-1) + \\log_3(2x-1) = 2\\log_3(x+1)\\]",
+        "Apply logarithm properties to combine the left side and rewrite the right side: \\[\\log_3[(x-1)(2x-1)] = \\log_3[(x+1)^2]\\]",
+        "Set the arguments equal: \\[(x-1)(2x-1) = (x+1)^2\\]",
+        "Expand both sides: \\[2x^2 - 3x + 1 = x^2 + 2x + 1\\]",
+        "Rearrange into standard quadratic form: \\[x^2 - 5x = 0 \\implies x(x - 5) = 0\\]",
+        "Check domain constraints: For \\(\\log_9(x-1)\\) to be defined, \\(x > 1\\). Thus, \\(x = 0\\) is extraneous, leaving \\(x = 5\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "49773c568f5b",
+        "prompt": "Consider the power function \\(f(x) = k x^{a/b}\\), where \\(k, a, b\\) are non-zero integers with no common factors (other than 1) and \\(a \\neq b\\). Find values for \\(k, a,\\) and \\(b\\) such that the function exists ONLY in Quadrant 4 and \\(f(2) > f(5)\\).",
+        "answer": "\\(k = -1, a = 1, b = 2\\) (or any \\(k < 0\\), odd positive \\(a\\), even positive \\(b\\) where \\(a < b\\))",
+        "steps": [
+          "Quadrant 4 requires \\(x > 0\\) and \\(y < 0\\). For the domain to be restricted to \\(x \\ge 0\\), the denominator \\(b\\) must be an even integer.",
+          "Since \\(y < 0\\) for positive \\(x\\), the coefficient \\(k\\) must be negative. Choose \\(k = -1\\).",
+          "The condition \\(f(2) > f(5)\\) means that as \\(x\\) increases, \\(f(x)\\) becomes less negative (closer to zero), or decreases in magnitude. Since \\(k < 0\\), the magnitude decreases if \\(a/b > 0\\) and the function is increasing toward 0 or decreasing away from 0. Wait: \\(-\\sqrt{2} \\approx -1.414\\) and \\(-\\sqrt{5} \\approx -2.236\\). Here \\(-1.414 > -2.236\\), so \\(f(2) > f(5)\\) holds for \\(f(x) = -x^{1/2}\\).",
+          "Thus, a valid set of constants is \\(k = -1, a = 1, b = 2\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1f2f327c9020",
+        "prompt": "Evaluate \\(\\log \\left( \\sqrt[4]{\\frac{x^8 y^2}{z^3}} \\right)\\) given that \\(\\log x = 3\\), \\(\\log y = -2\\), and \\(\\log z = 5\\).",
+        "answer": "\\(\\frac{5}{4}\\)",
+        "steps": [
+          "Rewrite the radical as a fractional exponent: \\[\\log \\left( \\left(\\frac{x^8 y^2}{z^3}\\right)^{1/4} \\right) = \\frac{1}{4} \\log \\left( \\frac{x^8 y^2}{z^3} \\right)\\]",
+          "Expand using logarithm rules: \\[\\frac{1}{4} \\left( 8\\log x + 2\\log y - 3\\log z \\right)\\]",
+          "Substitute the given values: \\[\\frac{1}{4} \\left( 8(3) + 2(-2) - 3(5) \\right) = \\frac{1}{4} (24 - 4 - 15) = \\frac{1}{4} (5) = \\frac{5}{4}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "e4d329fa2b9d",
+        "prompt": "Solve for \\(x\\): \\[9^x - 10 \\cdot 3^{x-1} + 1 = 0\\]",
+        "answer": "\\(x = -1\\) or \\(x = 1\\)",
+        "steps": [
+          "Rewrite \\(9^x\\) as \\((3^x)^2\\) and \\(3^{x-1}\\) as \\(\\frac{1}{3} \\cdot 3^x\\): \\[(3^x)^2 - \\frac{10}{3}(3^x) + 1 = 0\\]",
+          "Multiply the entire equation by 3: \\[3(3^x)^2 - 10(3^x) + 3 = 0\\]",
+          "Let \\(u = 3^x\\): \\[3u^2 - 10u + 3 = 0\\]",
+          "Factor the quadratic: \\[(3u - 1)(u - 3) = 0 \\implies u = \\frac{1}{3} \\text{ or } u = 3\\]",
+          "Solve for \\(x\\): \\[3^x = 3^{-1} \\implies x = -1\\] \\[3^x = 3^1 \\implies x = 1\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1ac6e711e782",
+        "prompt": "Consider the logistic function \\(f(x) = \\frac{24}{1 + 3e^{-2(x-1)}}\\). Find: (a) the y-intercept, (b) the equations of the horizontal asymptotes, and (c) the point of inflection.",
+        "answer": "(a) \\(\\left(0, \\frac{24}{1 + 3e^2}\\right)\\), (b) \\(y = 0\\) and \\(y = 24\\), (c) \\(\\left(1 + \\frac{\\ln 3}{2}, 12\\right)\\)",
+        "steps": [
+          "(a) Find y-intercept by setting \\(x = 0\\): \\[f(0) = \\frac{24}{1 + 3e^{-2(0-1)}} = \\frac{24}{1 + 3e^2}\\]",
+          "(b) As \\(x \\to -\\infty\\), \\(e^{-2(x-1)} \\to \\infty\\), so \\(f(x) \\to 0\\). As \\(x \\to \\infty\\), \\(e^{-2(x-1)} \\to 0\\), so \\(f(x) \\to \\frac{24}{1} = 24\\). Horizontal asymptotes are \\(y = 0\\) and \\(y = 24\\).",
+          "(c) The point of inflection occurs at half the carrying capacity, \\(y = 12\\): \\[\\frac{24}{1 + 3e^{-2(x-1)}} = 12 \\implies 1 + 3e^{-2(x-1)} = 2 \\implies 3e^{-2(x-1)} = 1\\]",
+          "\\[e^{-2(x-1)} = \\frac{1}{3} \\implies -2(x-1) = -\\ln 3 \\implies x - 1 = \\frac{\\ln 3}{2} \\implies x = 1 + \\frac{\\ln 3}{2}\\]",
+          "Thus, the point of inflection is \\(\\left(1 + \\frac{\\ln 3}{2}, 12\\right)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "96deee642d9e",
+        "prompt": "Solve for \\(n\\): \\[\\log_3 4 \\cdot \\log_4 5 \\cdot \\log_5 6 \\cdots \\log_n (n+1) = 5\\]",
+        "answer": "\\(n = 242\\)",
+        "steps": [
+          "Apply the change-of-base formula to each term using natural logarithms: \\[\\frac{\\ln 4}{\\ln 3} \\cdot \\frac{\\ln 5}{\\ln 4} \\cdot \\frac{\\ln 6}{\\ln 5} \\cdots \\frac{\\ln(n+1)}{\\ln n} = 5\\]",
+          "Telescope the product by canceling intermediate terms: \\[\\frac{\\ln(n+1)}{\\ln 3} = 5\\]",
+          "Convert back to a single logarithm: \\[\\log_3(n+1) = 5\\]",
+          "Rewrite in exponential form: \\[n + 1 = 3^5 = 243 \\implies n = 242\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "affea0ae7d46",
+        "prompt": "Solve for \\(x\\): \\[\\ln[\\log_2(3 + \\log_3(x - 2))] = 0\\]",
+        "answer": "\\(x = \\frac{7}{3}\\)",
+        "steps": [
+          "Exponentiate both sides with base \\(e\\): \\[\\log_2(3 + \\log_3(x - 2)) = e^0 = 1\\]",
+          "Exponentiate both sides with base 2: \\[3 + \\log_3(x - 2) = 2^1 = 2\\]",
+          "Isolate the remaining logarithm: \\[\\log_3(x - 2) = -1\\]",
+          "Rewrite in exponential form: \\[x - 2 = 3^{-1} = \\frac{1}{3} \\implies x = 2 + \\frac{1}{3} = \\frac{7}{3}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "e5e6fb6250ea",
+        "prompt": "Starting at age 25, Alex deposits \\$300 at the end of each month into an investment account earning 9% annual interest compounded monthly. How much will be in the account when Alex turns 65 (40 years later)?",
+        "answer": "\\$1,404,394.46",
+        "steps": [
+          "Identify the annuity parameters: monthly payment \\(R = 300\\), monthly interest rate \\(i = \\frac{0.09}{12} = 0.0075\\), total number of payments \\(n = 40 \\times 12 = 480\\).",
+          "Use the Future Value formula for an ordinary annuity: \\[FV = R \\left[ \\frac{(1+i)^n - 1}{i} \\right]\\]",
+          "Substitute the values: \\[FV = 300 \\left[ \\frac{(1 + 0.0075)^{480} - 1}{0.0075} \\right] = 40000 \\left[ (1.0075)^{480} - 1 \\right]\\]",
+          "Calculate \\((1.0075)^{480} \\approx 36.10986\\): \\[FV = 40000 \\times (35.10986) \\approx \\$1,404,394.46\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "39c51c3e825e",
+        "prompt": "You take out a 30-year fixed-rate mortgage for \\$350,000 at an annual interest rate of 4.8% compounded monthly. What is your required monthly payment?",
+        "answer": "\\$1,836.35",
+        "steps": [
+          "Identify the present value parameters: present value \\(PV = 350000\\), monthly interest rate \\(i = \\frac{0.048}{12} = 0.004\\), total payments \\(n = 30 \\times 12 = 360\\).",
+          "Use the Present Value formula for an ordinary annuity: \\[PV = R \\left[ \\frac{1 - (1+i)^{-n}}{i} \\right]\\]",
+          "Substitute the values and solve for \\(R\\): \\[350000 = R \\left[ \\frac{1 - (1.004)^{-360}}{0.004} \\right]\\]",
+          "Evaluate \\((1.004)^{-360} \\approx 0.23762\\): \\[350000 = R \\left[ \\frac{1 - 0.23762}{0.004} \\right] = R (190.595)\\]",
+          "Solve for \\(R\\): \\[R = \\frac{350000}{190.595} \\approx \\$1,836.35\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Power Functions \\(f(x) = k x^{a/b}\\): The domain and graph behavior depend on the parity of \\(a\\) and \\(b\\). If \\(b\\) is even, the domain is restricted to \\(x \\ge 0\\). If exponent \\(a/b < 0\\), the graph has a vertical asymptote at \\(x = 0\\).",
+      "Logistic Growth Models \\(y = \\frac{L}{1 + B e^{-kx}}\\): Horizontal asymptotes occur at \\(y = 0\\) and \\(y = L\\) (carrying capacity). The point of inflection occurs at half the maximum value, \\(y = \\frac{L}{2}\\), where \\(x = \\frac{\\ln B}{k}\\).",
+      "Logarithm Properties and Base Changes: Use \\(\\log_b a = \\frac{\\log_c a}{\\log_c b}\\) to rewrite expressions with different bases. Always verify domain restrictions (\\(x > 0\\) for argument) to eliminate extraneous solutions.",
+      "Financial Annuities: Future Value of an ordinary annuity is \\(FV = R \\left[\\frac{(1+i)^n - 1}{i}\\right]\\) and Present Value is \\(PV = R \\left[\\frac{1 - (1+i)^{-n}}{i}\\right]\\), where \\(R\\) is periodic payment, \\(i = \\frac{r}{m}\\) is interest rate per period, and \\(n = m \\cdot t\\) is total number of periods."
+    ],
+    "asked_solution": null
+  },
+  "topic::matrices: operations & determinants": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "829cddec26f2",
+      "prompt": "Given the matrices \\[A = \\begin{bmatrix} 1 & -1 & 2 \\ 0 & 3 & 1 \\ 2 & 1 & 0 \\end{bmatrix}, \\quad B = \\begin{bmatrix} 2 & 1 \\ -1 & 0 \\ 3 & -2 \\end{bmatrix}\\]\\nevaluate the product \\(AB\\) if defined, and compute \\(\\det(A)\\).",
+      "answer": "\\(AB = \\begin{bmatrix} 9 & -3 \\ 0 & -2 \\ 3 & 2 \\end{bmatrix}\\) and \\(\\det(A) = -15\\)",
+      "steps": [
+        "Verify dimensions: Matrix \\(A\\) is \\(3 \\times 3\\) and \\(B\\) is \\(3 \\times 2\\). Since the inner dimensions match, \\(AB\\) is defined with dimensions \\(3 \\times 2\\).",
+        "Compute entries of matrix product \\(AB\\):",
+        "Row 1: \\((1)(2) + (-1)(-1) + (2)(3) = 9\\), and \\((1)(1) + (-1)(0) + (2)(-2) = -3\\)",
+        "Row 2: \\((0)(2) + (3)(-1) + (1)(3) = 0\\), and \\((0)(1) + (3)(0) + (1)(-2) = -2\\)",
+        "Row 3: \\((2)(2) + (1)(-1) + (0)(3) = 3\\), and \\((2)(1) + (1)(0) + (0)(-2) = 2\\)",
+        "Thus, \\(AB = \\begin{bmatrix} 9 & -3 \\ 0 & -2 \\ 3 & 2 \\end{bmatrix}\\).",
+        "Compute \\(\\det(A)\\) using cofactor expansion along the first row:",
+        "\\(\\det(A) = 1 \\cdot \\begin{vmatrix} 3 & 1 \\ 1 & 0 \\end{vmatrix} - (-1) \\cdot \\begin{vmatrix} 0 & 1 \\ 2 & 0 \\end{vmatrix} + 2 \\cdot \\begin{vmatrix} 0 & 3 \\ 2 & 1 \\end{vmatrix}\\)",
+        "Calculate the \\(2 \\times 2\\) determinants: \\((3)(0) - (1)(1) = -1\\), \\((0)(0) - (1)(2) = -2\\), and \\((0)(1) - (3)(2) = -6\\).",
+        "Combine results: \\(\\det(A) = 1(-1) + 1(-2) + 2(-6) = -1 - 2 - 12 = -15\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "f49b30f21f51",
+        "prompt": "If matrix \\(A\\) has dimensions \\(3 \\times 4\\), \\(B\\) has dimensions \\(4 \\times 2\\), and \\(C\\) has dimensions \\(2 \\times 3\\), determine the dimensions of the matrix expression \\((A B C)^T\\).",
+        "answer": "\\(3 \\times 3\\)",
+        "steps": [
+          "Find the dimension of \\(AB\\): \\((3 \\times 4) \\times (4 \\times 2) = 3 \\times 2\\).",
+          "Find the dimension of \\((AB)C\\): \\((3 \\times 2) \\times (2 \\times 3) = 3 \\times 3\\).",
+          "Taking the transpose of a \\(3 \\times 3\\) matrix swaps rows and columns, remaining \\(3 \\times 3\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "ec845e7bca84",
+        "prompt": "If \\(A\\) is an invertible square matrix satisfying \\(A^2 - 4A - 2I = 0\\), express \\(A^{-1}\\) in terms of \\(A\\) and \\(I\\).",
+        "answer": "\\(A^{-1} = \\frac{1}{2}A - 2I\\)",
+        "steps": [
+          "Rearrange the equation: \\(2I = A^2 - 4A\\).",
+          "Multiply both sides by \\(A^{-1}\\): \\(2I A^{-1} = (A^2 - 4A) A^{-1}\\).",
+          "Simplify: \\(2 A^{-1} = A - 4I\\).",
+          "Divide by 2: \\(A^{-1} = \\frac{1}{2}A - 2I\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "09363ca36996",
+        "prompt": "Given matrices \\(A = \\begin{bmatrix} 2 & -1 \\ 3 & 4 \\end{bmatrix}\\) and \\(B = \\begin{bmatrix} 1 & 5 \\ -2 & 0 \\end{bmatrix}\\), compute \\(3A - 2B^T\\).",
+        "answer": "\\(\\begin{bmatrix} 4 & 1 \\ -1 & 12 \\end{bmatrix}\\)",
+        "steps": [
+          "Find the transpose \\(B^T\\): \\(B^T = \\begin{bmatrix} 1 & -2 \\ 5 & 0 \\end{bmatrix}\\).",
+          "Calculate scalar multiples: \\(3A = \\begin{bmatrix} 6 & -3 \\ 9 & 12 \\end{bmatrix}\\) and \\(2B^T = \\begin{bmatrix} 2 & -4 \\ 10 & 0 \\end{bmatrix}\\).",
+          "Subtract matrices element-wise: \\(3A - 2B^T = \\begin{bmatrix} 6-2 & -3-(-4) \\ 9-10 & 12-0 \\end{bmatrix} = \\begin{bmatrix} 4 & 1 \\ -1 & 12 \\end{bmatrix}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "2f65ecdea5a6",
+        "prompt": "Let \\(A = \\begin{bmatrix} 1 & 2 \\ 3 & 4 \\end{bmatrix}\\) and \\(B = -\\frac{1}{2}\\begin{bmatrix} 4 & -2 \\ x & 1 \\end{bmatrix}\\). If \\(B\\) is the inverse of \\(A\\), find the value of \\(x\\).",
+        "answer": "\\(x = -3\\)",
+        "steps": [
+          "Compute \\(\\det(A) = (1)(4) - (2)(3) = 4 - 6 = -2\\).",
+          "Use the \\(2 \\times 2\\) inverse formula: \\(A^{-1} = \\frac{1}{-2}\\begin{bmatrix} 4 & -2 \\ -3 & 1 \\end{bmatrix} = -\\frac{1}{2}\\begin{bmatrix} 4 & -2 \\ -3 & 1 \\end{bmatrix}\\).",
+          "Equate \\(A^{-1}\\) with \\(B = -\\frac{1}{2}\\begin{bmatrix} 4 & -2 \\ x & 1 \\end{bmatrix}\\).",
+          "Comparing the row 2, column 1 entries gives \\(x = -3\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "5a73649ebf41",
+        "prompt": "If \\(A = \\begin{bmatrix} \\cos \\theta & 0 \\ 0 & \\cos \\theta \\end{bmatrix}\\) and \\(\\det\\left(A^2 - \\frac{3}{4}I\\right) = 0\\), find all possible values of \\(\\theta\\) in the interval \\([0, \\pi]\\).",
+        "answer": "\\(\\theta = \\frac{\\pi}{6}, \\frac{5\\pi}{6}\\)",
+        "steps": [
+          "Compute \\(A^2 = \\begin{bmatrix} \\cos^2 \\theta & 0 \\ 0 & \\cos^2 \\theta \\end{bmatrix}\\).",
+          "Form the matrix \\(A^2 - \\frac{3}{4}I = \\begin{bmatrix} \\cos^2 \\theta - \\frac{3}{4} & 0 \\ 0 & \\cos^2 \\theta - \\frac{3}{4} \\end{bmatrix}\\).",
+          "Compute the determinant: \\(\\det\\left(A^2 - \\frac{3}{4}I\\right) = \\left(\\cos^2 \\theta - \\frac{3}{4}\\right)^2 = 0\\).",
+          "Solve for \\(\\cos \\theta\\): \\(\\cos^2 \\theta = \\frac{3}{4} \\implies \\cos \\theta = \\pm \\frac{\\sqrt{3}}{2}\\).",
+          "On the interval \\([0, \\pi]\\), \\(\\theta = \\frac{\\pi}{6}\\) and \\(\\theta = \\frac{5\\pi}{6}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "8631ff69d3a2",
+        "prompt": "Find both eigenvalues for the matrix \\(M = \\begin{bmatrix} 2 & 3 \\ 4 & 3 \\end{bmatrix}\\).",
+        "answer": "\\(\\lambda_1 = 6, \\lambda_2 = -1\\)",
+        "steps": [
+          "Set up the characteristic equation \\(\\det(M - \\lambda I) = 0\\).",
+          "Write the determinant expression: \\(\\det\\begin{bmatrix} 2 - \\lambda & 3 \\ 4 & 3 - \\lambda \\end{bmatrix} = (2 - \\lambda)(3 - \\lambda) - 12 = 0\\).",
+          "Expand: \\(\\lambda^2 - 5\\lambda + 6 - 12 = 0 \\implies \\lambda^2 - 5\\lambda - 6 = 0\\).",
+          "Factor the quadratic equation: \\((\\lambda - 6)(\\lambda + 1) = 0\\).",
+          "Solve for eigenvalues: \\(\\lambda_1 = 6\\) and \\(\\lambda_2 = -1\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1a00a7d219c9",
+        "prompt": "Matrix \\(T\\) has eigenvectors \\(\\mathbf{v}_1 = \\begin{bmatrix} 1 \\ 2 \\end{bmatrix}\\) with eigenvalue \\(\\lambda_1 = 3\\), and \\(\\mathbf{v}_2 = \\begin{bmatrix} 1 \\ -1 \\end{bmatrix}\\) with eigenvalue \\(\\lambda_2 = -2\\). Find \\(T \\begin{bmatrix} 5 \\ 1 \\end{bmatrix}\\).",
+        "answer": "\\(\\begin{bmatrix} 0 \\ 18 \\end{bmatrix}\\)",
+        "steps": [
+          "Express \\(\\begin{bmatrix} 5 \\ 1 \\end{bmatrix}\\) as a linear combination \\(c_1 \\mathbf{v}_1 + c_2 \\mathbf{v}_2\\):",
+          "System: \\(c_1 + c_2 = 5\\) and \\(2c_1 - c_2 = 1\\).",
+          "Adding equations gives \\(3c_1 = 6 \\implies c_1 = 2\\). Then \\(c_2 = 3\\).",
+          "Apply transformation \\(T\\): \\(T\\begin{bmatrix} 5 \\ 1 \\end{bmatrix} = T(2\\mathbf{v}_1 + 3\\mathbf{v}_2) = 2(\\lambda_1 \\mathbf{v}_1) + 3(\\lambda_2 \\mathbf{v}_2)\\).",
+          "Calculate: \\(2(3)\\begin{bmatrix} 1 \\ 2 \\end{bmatrix} + 3(-2)\\begin{bmatrix} 1 \\ -1 \\end{bmatrix} = \\begin{bmatrix} 6 \\ 12 \\end{bmatrix} + \\begin{bmatrix} -6 \\ 6 \\end{bmatrix} = \\begin{bmatrix} 0 \\ 18 \\end{bmatrix}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "79b5ca44fb32",
+        "prompt": "Write the linear system as an augmented matrix, then solve using Gauss-Jordan elimination: \\[\\begin{aligned} x + y + z &= 6 \\ 2x + 3y + z &= 11 \\ 3x - y + 2z &= 7 \\end{aligned}\\]",
+        "answer": "\\(x = 1, y = 2, z = 3\\)",
+        "steps": [
+          "Write the augmented matrix: \\(\\begin{bmatrix} 1 & 1 & 1 & | & 6 \\ 2 & 3 & 1 & | & 11 \\ 3 & -1 & 2 & | & 7 \\end{bmatrix}\\).",
+          "Perform row operations to eliminate \\(x\\) in rows 2 and 3:",
+          "\\(R_2 \\leftarrow R_2 - 2R_1 = \\begin{bmatrix} 0 & 1 & -1 & | & -1 \\end{bmatrix}\\)",
+          "\\(R_3 \\leftarrow R_3 - 3R_1 = \\begin{bmatrix} 0 & -4 & -1 & | & -11 \\end{bmatrix}\\)",
+          "Eliminate \\(y\\) in row 3: \\(R_3 \\leftarrow R_3 + 4R_2 = \\begin{bmatrix} 0 & 0 & -5 & | & -15 \\end{bmatrix}\\).",
+          "Scale row 3: \\(R_3 \\leftarrow -\\frac{1}{5}R_3 = \\begin{bmatrix} 0 & 0 & 1 & | & 3 \\end{bmatrix}\\).",
+          "Back-substitute to find reduced row echelon form:",
+          "\\(R_2 \\leftarrow R_2 + R_3 = \\begin{bmatrix} 0 & 1 & 0 & | & 2 \\end{bmatrix}\\)",
+          "\\(R_1 \\leftarrow R_1 - R_2 - R_3 = \\begin{bmatrix} 1 & 0 & 0 & | & 1 \\end{bmatrix}\\)",
+          "Read off solution: \\(x = 1, y = 2, z = 3\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "**Matrix Multiplication & Dimensions**: Matrix multiplication \\(AB\\) is defined if and only if the number of columns of \\(A\\) equals the number of rows of \\(B\\). If \\(A\\) is \\(m \\times n\\) and \\(B\\) is \\(n \\times p\\), then \\(AB\\) is \\(m \\times p\\). Matrix multiplication is non-commutative in general (\\(AB \\neq BA\\)), and transpose operations satisfy \\((AB)^T = B^T A^T\\).",
+      "**Determinants and Inverses**: For a \\(2 \\times 2\\) matrix \\(A = \\begin{bmatrix} a & b \\ c & d \\end{bmatrix}\\), the determinant is \\(\\det(A) = ad - bc\\) and the inverse is \\(A^{-1} = \\frac{1}{\\det(A)}\\begin{bmatrix} d & -b \\ -c & a \\end{bmatrix}\\). A matrix is invertible if and only if its determinant is non-zero.",
+      "**Eigenvalues and Eigenvectors**: An eigenvector \\(\\mathbf{v} \\neq \\mathbf{0}\\) and corresponding eigenvalue \\(\\lambda\\) satisfy \\(A\\mathbf{v} = \\lambda\\mathbf{v}\\), which requires \\(\\det(A - \\lambda I) = 0\\). If a vector \\(\\mathbf{x}\\) is written as a linear combination of eigenvectors \\(\\mathbf{x} = c_1 \\mathbf{v}_1 + c_2 \\mathbf{v}_2\\), then \\(A\\mathbf{x} = c_1 \\lambda_1 \\mathbf{v}_1 + c_2 \\lambda_2 \\mathbf{v}_2\\).",
+      "**Matrix Algebra Equations**: If a square matrix satisfies a polynomial equation such as \\(A^2 - kA - cI = 0\\) with \\(c \\neq 0\\), the inverse can be solved algebraically by multiplying both sides by \\(A^{-1}\\), yielding \\(A^{-1} = \\frac{1}{c}(A - kI)\\)."
+    ],
+    "asked_solution": null
+  },
+  "topic::matrices: systems & inverses": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "2cee984a1a55",
+      "prompt": "Write the system as a \\(3 \\times 4\\) augmented matrix, then use Gauss-Jordan elimination to solve the linear system: \\[\\begin{aligned}\\nx + 2y + z &= 4 \\ 2x + 5y + 4z &= 13 \\\\\\nx + 3y + 4z &= 11 \\end{aligned}\\]",
+      "answer": "\\(x = 0, y = 1, z = 2\\)",
+      "steps": [
+        "Write the augmented matrix representing the system: \\[\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 4 \\ 2 & 5 & 4 & 13 \\ 1 & 3 & 4 & 11 \\end{array}\\right]\\]",
+        "Eliminate the \\(x\\)-coefficients in rows 2 and 3 using row operations \\(R_2 \\to R_2 - 2R_1\\) and \\(R_3 \\to R_3 - R_1\\): \\[\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 4 \\ 0 & 1 & 2 & 5 \\ 0 & 1 & 3 & 7 \\end{array}\\right]\\]",
+        "Eliminate the \\(y\\)-coefficient in row 3 using \\(R_3 \\to R_3 - R_2\\): \\[\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 4 \\ 0 & 1 & 2 & 5 \\ 0 & 0 & 1 & 2 \\end{array}\\right]\\]",
+        "Use back-substitution (row operations) to reach RREF. First, eliminate entry in row 2 column 3 via \\(R_2 \\to R_2 - 2R_3\\) and row 1 column 3 via \\(R_1 \\to R_1 - R_3\\): \\[\\left[\\begin{array}{ccc|c} 1 & 2 & 0 & 2 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\end{array}\\right]\\]",
+        "Eliminate entry in row 1 column 2 via \\(R_1 \\to R_1 - 2R_2\\): \\[\\left[\\begin{array}{ccc|c} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2 \\end{array}\\right]\\]",
+        "Read off the solution: \\(x = 0\\), \\(y = 1\\), \\(z = 2\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "9439251e1694",
+        "prompt": "If matrix \\(A\\) has dimensions \\(3 \\times 5\\), matrix \\(B\\) has dimensions \\(3 \\times 4\\), and matrix \\(C\\) has dimensions \\(4 \\times 5\\), determine the dimensions of \\((AC^T)^T B\\).",
+        "answer": "\\(4 \\times 4\\)",
+        "steps": [
+          "Determine the dimension of \\(C^T\\): Since \\(C\\) is \\(4 \\times 5\\), \\(C^T\\) is \\(5 \\times 4\\).",
+          "Determine the dimension of \\(AC^T\\): \\(A\\) is \\(3 \\times 5\\) and \\(C^T\\) is \\(5 \\times 4\\), so \\(AC^T\\) is \\(3 \\times 4\\).",
+          "Determine the dimension of \\((AC^T)^T\\): Transposing a \\(3 \\times 4\\) matrix yields a \\(4 \\times 3\\) matrix.",
+          "Multiply by \\(B\\): \\((AC^T)^T\\) is \\(4 \\times 3\\) and \\(B\\) is \\(3 \\times 4\\), so the product has dimensions \\(4 \\times 4\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1b40161a7fa5",
+        "prompt": "If a non-singular square matrix \\(A\\) satisfies the equation \\(A^2 - 3A - 2I = 0\\), express \\(A^{-1}\\) in terms of \\(A\\) and the identity matrix \\(I\\).",
+        "answer": "\\(A^{-1} = \\frac{1}{2}A - \\frac{3}{2}I\\)",
+        "steps": [
+          "Isolate the identity matrix term: \\(A^2 - 3A = 2I\\).",
+          "Factor out \\(A\\) on the left side: \\(A(A - 3I) = 2I\\).",
+          "Multiply both sides by \\(\\frac{1}{2}\\): \\(A\\left(\\frac{1}{2}A - \\frac{3}{2}I\\right) = I\\).",
+          "By definition of the inverse matrix \\(AA^{-1} = I\\), we conclude \\(A^{-1} = \\frac{1}{2}A - \\frac{3}{2}I\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "9391ae3291b3",
+        "prompt": "Let \\(A = \\begin{bmatrix} 1 & 2 & 1 \\ 0 & 1 & 3 \\ 1 & 1 & 0 \\end{bmatrix}\\) and \\(B = \\frac{1}{2}\\begin{bmatrix} -3 & 1 & 5 \\ 3 & -1 & x \\ -1 & 1 & 1 \\end{bmatrix}\\). If \\(B = A^{-1}\\), find the value of \\(x\\).",
+        "answer": "\\(x = -3\\)",
+        "steps": [
+          "Since \\(B = A^{-1}\\), it must hold that \\(A(2B) = 2I\\).",
+          "Consider entry \\((2, 3)\\) of the matrix product \\(A(2B)\\): this is the dot product of Row 2 of \\(A\\) and Column 3 of \\(2B\\).",
+          "Row 2 of \\(A\\) is \\([0, 1, 3]\\) and Column 3 of \\(2B\\) is \\([5, x, 1]^T\\).",
+          "Compute the product: \\(0(5) + 1(x) + 3(1) = x + 3\\).",
+          "Because entry \\((2, 3)\\) in \\(2I\\) is \\(0\\), set \\(x + 3 = 0\\), which gives \\(x = -3\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "457380e71452",
+        "prompt": "Write the linear system as an augmented matrix and solve using Gauss-Jordan elimination: \\[\\begin{aligned}\\nx - y + 2z &= 5 \\ 2x + y - z &= 2 \\ -x + 2y + z &= -3 \\end{aligned}\\]",
+        "answer": "\\(x = 2, y = -1, z = 1\\)",
+        "steps": [
+          "Form the augmented matrix: \\[\\left[\\begin{array}{ccc|c} 1 & -1 & 2 & 5 \\ 2 & 1 & -1 & 2 \\ -1 & 2 & 1 & -3 \\end{array}\\right]\\]",
+          "Perform \\(R_2 \\to R_2 - 2R_1\\) and \\(R_3 \\to R_3 + R_1\\): \\[\\left[\\begin{array}{ccc|c} 1 & -1 & 2 & 5 \\ 0 & 3 & -5 & -8 \\ 0 & 1 & 3 & 2 \\end{array}\\right]\\]",
+          "Swap \\(R_2\\) and \\(R_3\\): \\[\\left[\\begin{array}{ccc|c} 1 & -1 & 2 & 5 \\ 0 & 1 & 3 & 2 \\ 0 & 3 & -5 & -8 \\end{array}\\right]\\]",
+          "Perform \\(R_3 \\to R_3 - 3R_2\\): \\[\\left[\\begin{array}{ccc|c} 1 & -1 & 2 & 5 \\ 0 & 1 & 3 & 2 \\ 0 & 0 & -14 & -14 \\end{array}\\right]\\]",
+          "Scale \\(R_3 \\to -\\frac{1}{14}R_3\\) to get \\(z = 1\\).",
+          "Back-substitute to find RREF: \\(R_2 \\to R_2 - 3R_3\\) gives \\(y = -1\\), and \\(R_1 \\to R_1 + R_2 - 2R_3\\) gives \\(x = 2\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1c8a40ac51b4",
+        "prompt": "Given \\(A = \\begin{bmatrix} 2 & 5 \\ 1 & 3 \\end{bmatrix}\\) and \\(B = \\begin{bmatrix} 1 & -2 \\ 3 & 4 \\end{bmatrix}\\), find \\((AB)^{-1}\\) using the identity \\((AB)^{-1} = B^{-1}A^{-1}\\).",
+        "answer": "\\(\\frac{1}{10}\\begin{bmatrix} 10 & -16 \\ -10 & 17 \\end{bmatrix}\\) or \\(\\begin{bmatrix} 1 & -1.6 \\ -1 & 1.7 \\end{bmatrix}\\)",
+        "steps": [
+          "Find \\(A^{-1}\\): \\(\\det(A) = (2)(3) - (5)(1) = 1\\), so \\(A^{-1} = \\begin{bmatrix} 3 & -5 \\ -1 & 2 \\end{bmatrix}\\).",
+          "Find \\(B^{-1}\\): \\(\\det(B) = (1)(4) - (-2)(3) = 10\\), so \\(B^{-1} = \\frac{1}{10}\\begin{bmatrix} 4 & 2 \\ -3 & 1 \\end{bmatrix}\\).",
+          "Multiply \\(B^{-1}A^{-1}\\): \\[(AB)^{-1} = \\frac{1}{10}\\begin{bmatrix} 4 & 2 \\ -3 & 1 \\end{bmatrix} \\begin{bmatrix} 3 & -5 \\ -1 & 2 \\end{bmatrix}\\]",
+          "Compute matrix product: \\[\\begin{bmatrix} 4(3)+2(-1) & 4(-5)+2(2) \\ -3(3)+1(-1) & -3(-5)+1(2) \\end{bmatrix} = \\begin{bmatrix} 10 & -16 \\ -10 & 17 \\end{bmatrix}\\]",
+          "Divide by 10 to get \\(\\begin{bmatrix} 1 & -1.6 \\ -1 & 1.7 \\end{bmatrix}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "da5be63e9537",
+        "prompt": "If \\(A = \\begin{bmatrix} \\cos b & 0 \\ 0 & \\cos b \\end{bmatrix}\\) and \\(\\det\\left(A^2 - \\frac{1}{4}I\\right) = 0\\), find all possible values of \\(b\\) in the interval \\([0, 2\\pi)\\).",
+        "answer": "\\(b = \\frac{\\pi}{3}, \\frac{2\\pi}{3}, \\frac{4\\pi}{3}, \\frac{5\\pi}{3}\\)",
+        "steps": [
+          "Compute \\(A^2\\): \\[A^2 = \\begin{bmatrix} \\cos^2 b & 0 \\ 0 & \\cos^2 b \\end{bmatrix}\\]",
+          "Subtract \\(\\frac{1}{4}I\\): \\[A^2 - \\frac{1}{4}I = \\begin{bmatrix} \\cos^2 b - \\frac{1}{4} & 0 \\ 0 & \\cos^2 b - \\frac{1}{4} \\end{bmatrix}\\]",
+          "Calculate determinant: \\(\\det\\left(A^2 - \\frac{1}{4}I\\right) = \\left(\\cos^2 b - \\frac{1}{4}\\right)^2 = 0\\).",
+          "Solve for \\(\\cos b\\): \\(\\cos^2 b = \\frac{1}{4} \\implies \\cos b = \\pm \\frac{1}{2}\\).",
+          "Find all solutions on \\([0, 2\\pi)\\): \\(b = \\frac{\\pi}{3}, \\frac{2\\pi}{3}, \\frac{4\\pi}{3}, \\frac{5\\pi}{3}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "2e3ec78f7400",
+        "prompt": "Find the value of \\(k\\) for which the homogeneous matrix equation \\(\\begin{bmatrix} 1 & 2 & -1 \\ 2 & 5 & 1 \\ 3 & 7 & k \\end{bmatrix} \\begin{bmatrix} x \\ y \\ z \\end{bmatrix} = \\begin{bmatrix} 0 \\ 0 \\ 0 \\end{bmatrix}\\) has non-trivial solutions.",
+        "answer": "\\(k = 0\\)",
+        "steps": [
+          "A homogeneous linear system \\(A\\mathbf{x} = \\mathbf{0}\\) has non-trivial solutions if and only if \\(\\det(A) = 0\\).",
+          "Expand \\(\\det(A)\\) along Row 1: \\[\\det(A) = 1\\begin{vmatrix} 5 & 1 \\ 7 & k \\end{vmatrix} - 2\\begin{vmatrix} 2 & 1 \\ 3 & k \\end{vmatrix} + (-1)\\begin{vmatrix} 2 & 5 \\ 3 & 7 \\end{vmatrix}\\]",
+          "Evaluate the $2 \\times 2$ determinants: \\[= 1(5k - 7) - 2(2k - 3) - 1(14 - 15)\\]",
+          "Simplify the expression: \\(5k - 7 - 4k + 6 + 1 = k\\).",
+          "Set \\(\\det(A) = 0 \\implies k = 0\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "f109434a7c91",
+        "prompt": "Given non-singular matrices \\(A\\) and \\(B\\), solve the matrix equation \\(AXB + A = B\\) for the matrix \\(X\\).",
+        "answer": "\\(X = A^{-1} - B^{-1}\\)",
+        "steps": [
+          "Subtract matrix \\(A\\) from both sides: \\(AXB = B - A\\).",
+          "Left-multiply by \\(A^{-1}\\): \\(A^{-1}(AXB) = A^{-1}(B - A) \\implies XB = A^{-1}B - I\\).",
+          "Right-multiply by \\(B^{-1}\\): \\(X = (A^{-1}B - I)B^{-1}\\).",
+          "Distribute \\(B^{-1}\\) on the right: \\(X = A^{-1}BB^{-1} - IB^{-1} = A^{-1} - B^{-1}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Matrix Inverses & Algebraic Properties: A square matrix \\(A\\) has an inverse \\(A^{-1}\\) if and only if \\(\\det(A) \\neq 0\\). If \\(A\\) satisfies a polynomial equation like \\(A^2 - kA - cI = 0\\) (with \\(c \\neq 0\\)), its inverse can be expressed algebraically as \\(A^{-1} = \\frac{1}{c}(A - kI)\\). Additionally, \\((AB)^{-1} = B^{-1}A^{-1}\\).",
+      "Matrix Dimensions & Multiplication Rules: For matrix multiplication \\(A_{m \\times n} B_{p \\times q}\\) to be defined, inner dimensions must match (\\(n = p\\)), yielding a result of dimension \\(m \\times q\\). Transposition reverses multiplication order: \\((AB)^T = B^T A^T\\). In general, matrix multiplication is non-commutative (\\(AB \\neq BA\\)).",
+      "Gaussian and Gauss-Jordan Elimination: A system of linear equations is solved by forming an augmented matrix \\([A \\mid \\mathbf{b}]\\) and applying elementary row operations (row swapping, scaling, and row addition/subtraction) to produce Row Echelon Form (REF) or Reduced Row Echelon Form (RREF).",
+      "Matrix Equations & Homogeneous Systems: A linear system \\(A\\mathbf{x} = \\mathbf{b}\\) has a unique solution \\(\\mathbf{x} = A^{-1}\\mathbf{b}\\) when \\(A\\) is non-singular. For a homogeneous system \\(A\\mathbf{x} = \\mathbf{0}\\), non-trivial (infinitely many) solutions exist if and only if \\(\\det(A) = 0\\)."
+    ],
+    "asked_solution": null
+  },
+  "topic::matrices: eigenvalues & transformations": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "ec01e1468f01",
+      "prompt": "Matrix \\(T\\) has eigenvectors \\(\\mathbf{v}_1 = \\begin{bmatrix} 1 \\ 2 \\end{bmatrix}\\) with eigenvalue \\(\\lambda_1 = 3\\) and \\(\\mathbf{v}_2 = \\begin{bmatrix} -1 \\ 1 \\end{bmatrix}\\) with eigenvalue \\(\\lambda_2 = -2\\). Find \\(T\\begin{bmatrix} 1 \\ 8 \\end{bmatrix}\\).",
+      "answer": "\\(\\begin{bmatrix} 13 \\ 14 \\end{bmatrix}\\)",
+      "steps": [
+        "Express \\(\\mathbf{x} = \\begin{bmatrix} 1 \\ 8 \\end{bmatrix}\\) as a linear combination of the eigenvectors: \\(c_1 \\begin{bmatrix} 1 \\ 2 \\end{bmatrix} + c_2 \\begin{bmatrix} -1 \\ 1 \\end{bmatrix} = \\begin{bmatrix} 1 \\ 8 \\end{bmatrix}\\).",
+        "Set up the system of linear equations: \\(c_1 - c_2 = 1\\) and \\(2c_1 + c_2 = 8\\).",
+        "Add the two equations: \\(3c_1 = 9 \\implies c_1 = 3\\). Substitute \\(c_1 = 3\\) into \\(c_1 - c_2 = 1\\) to get \\(c_2 = 2\\).",
+        "Apply the linear transformation property \\(T(\\mathbf{x}) = c_1 \\lambda_1 \\mathbf{v}_1 + c_2 \\lambda_2 \\mathbf{v}_2\\): \\(T\\begin{bmatrix} 1 \\ 8 \\end{bmatrix} = 3(3)\\begin{bmatrix} 1 \\ 2 \\end{bmatrix} + 2(-2)\\begin{bmatrix} -1 \\ 1 \\end{bmatrix}\\).",
+        "Simplify the vector sum: \\(9\\begin{bmatrix} 1 \\ 2 \\end{bmatrix} - 4\\begin{bmatrix} -1 \\ 1 \\end{bmatrix} = \\begin{bmatrix} 9 + 4 \\ 18 - 4 \\end{bmatrix} = \\begin{bmatrix} 13 \\ 14 \\end{bmatrix}\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "e8f66fa009a2",
+        "prompt": "If \\(A^2 + 4A - 3I = 0\\) and the inverse of \\(A\\) exists, express \\(A^{-1}\\) in terms of \\(A\\) and \\(I\\).",
+        "answer": "\\(\\frac{1}{3}A + \\frac{4}{3}I\\)",
+        "steps": [
+          "Rearrange the equation to isolate the identity matrix term: \\(A^2 + 4A = 3I\\).",
+          "Divide both sides by 3: \\(\\frac{1}{3}A^2 + \\frac{4}{3}A = I\\).",
+          "Factor out matrix \\(A\\) on the left: \\(A\\left(\\frac{1}{3}A + \\frac{4}{3}I\\right) = I\\).",
+          "By definition of matrix inverse \\(A A^{-1} = I\\), conclude \\(A^{-1} = \\frac{1}{3}A + \\frac{4}{3}I\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "527bfc89eabc",
+        "prompt": "Find both eigenvalues of the matrix \\(A = \\begin{bmatrix} 1 & 3 \\ 4 & 2 \\end{bmatrix}\\).",
+        "answer": "\\(\\lambda_1 = 5, \\lambda_2 = -2\\)",
+        "steps": [
+          "Set up the characteristic equation \\(\\det(A - \\lambda I) = 0\\): \\(\\det\\begin{bmatrix} 1-\\lambda & 3 \\ 4 & 2-\\lambda \\end{bmatrix} = 0\\).",
+          "Compute the determinant: \\((1 - \\lambda)(2 - \\lambda) - (3)(4) = 0\\).",
+          "Expand and simplify to form a quadratic equation: \\(\\lambda^2 - 3\\lambda + 2 - 12 = 0 \\implies \\lambda^2 - 3\\lambda - 10 = 0\\).",
+          "Factor the quadratic: \\((\\lambda - 5)(\\lambda + 2) = 0\\).",
+          "Solve for \\(\\lambda\\) to get eigenvalues \\(\\lambda_1 = 5\\) and \\(\\lambda_2 = -2\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "03b4549c7a5e",
+        "prompt": "Given the matrix \\(P = \\begin{bmatrix} 4 & 2 \\ 1 & 3 \\end{bmatrix}\\), one of its eigenvalues is \\(\\lambda = 5\\). Find a corresponding eigenvector.",
+        "answer": "\\(\\begin{bmatrix} 2 \\ 1 \\end{bmatrix}\\) (or any non-zero scalar multiple)",
+        "steps": [
+          "Substitute \\(\\lambda = 5\\) into \\((P - \\lambda I)\\mathbf{v} = \\mathbf{0}\\): \\(\\begin{bmatrix} 4-5 & 2 \\ 1 & 3-5 \\end{bmatrix}\\begin{bmatrix} x \\ y \\end{bmatrix} = \\begin{bmatrix} 0 \\ 0 \\end{bmatrix}\\).",
+          "Simplify the matrix: \\(\\begin{bmatrix} -1 & 2 \\ 1 & -2 \\end{bmatrix}\\begin{bmatrix} x \\ y \\end{bmatrix} = \\begin{bmatrix} 0 \\ 0 \\end{bmatrix}\\).",
+          "Write out the resulting linear equation: \\(-x + 2y = 0 \\implies x = 2y\\).",
+          "Choose \\(y = 1\\) to get \\(x = 2\\), yielding eigenvector \\(\\begin{bmatrix} 2 \\ 1 \\end{bmatrix}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "76f6865bcb59",
+        "prompt": "Matrix \\(T\\) has eigenvectors \\(\\mathbf{v}_1 = \\begin{bmatrix} 1 \\ 1 \\end{bmatrix}\\) with \\(\\lambda_1 = 2\\) and \\(\\mathbf{v}_2 = \\begin{bmatrix} 2 \\ -1 \\end{bmatrix}\\) with \\(\\lambda_2 = -3\\). Find \\(T\\begin{bmatrix} 15 \\ 6 \\end{bmatrix}\\).",
+        "answer": "\\(\\begin{bmatrix} 0 \\ 27 \\end{bmatrix}\\)",
+        "steps": [
+          "Write \\(\\begin{bmatrix} 15 \\ 6 \\end{bmatrix}\\) as \\(c_1 \\begin{bmatrix} 1 \\ 1 \\end{bmatrix} + c_2 \\begin{bmatrix} 2 \\ -1 \\end{bmatrix}\\).",
+          "Set up the system: \\(c_1 + 2c_2 = 15\\) and \\(c_1 - c_2 = 6\\).",
+          "Subtract the second equation from the first: \\(3c_2 = 9 \\implies c_2 = 3\\).",
+          "Substitute \\(c_2 = 3\\) into the second equation: \\(c_1 - 3 = 6 \\implies c_1 = 9\\).",
+          "Apply transformation \\(T\\): \\(T\\mathbf{x} = 9(2)\\begin{bmatrix} 1 \\ 1 \\end{bmatrix} + 3(-3)\\begin{bmatrix} 2 \\ -1 \\end{bmatrix} = 18\\begin{bmatrix} 1 \\ 1 \\end{bmatrix} - 9\\begin{bmatrix} 2 \\ -1 \\end{bmatrix} = \\begin{bmatrix} 0 \\ 27 \\end{bmatrix}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d408762858da",
+        "prompt": "Let \\(A = \\begin{bmatrix} 1 & -1 & 1 \\ 2 & 1 & -3 \\ 1 & 1 & 1 \\end{bmatrix}\\) and \\(B = \\frac{1}{10}\\begin{bmatrix} 4 & 2 & 2 \\ -5 & 0 & x \\ 1 & -2 & 3 \\end{bmatrix}\\). If \\(B\\) is the inverse of \\(A\\), find the value of \\(x\\).",
+        "answer": "\\(x = 5\\)",
+        "steps": [
+          "Since \\(B = A^{-1}\\), the product matrix \\(A B = I\\).",
+          "Focus on entry \\((A B)_{2,3}\\), which corresponds to Row 2 of \\(A\\) dot Column 3 of \\(B\\), and must equal 0.",
+          "Calculate the dot product: \\((2)(2) + (1)(x) + (-3)(3) = 0\\).",
+          "Simplify the scalar equation: \\(4 + x - 9 = 0 \\implies x - 5 = 0 \\implies x = 5\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d6ea71863482",
+        "prompt": "If \\(A = \\begin{bmatrix} \\sin b & 0 \\ 0 & \\sin b \\end{bmatrix}\\) and \\(\\det\\left(A^2 - \\frac{1}{2}I\\right) = 0\\), find one possible value of \\(b\\) in the interval \\([0, \\pi]\\).",
+        "answer": "\\(\\frac{\\pi}{4}\\)",
+        "steps": [
+          "Compute \\(A^2 = \\begin{bmatrix} \\sin^2 b & 0 \\ 0 & \\sin^2 b \\end{bmatrix}\\).",
+          "Form the matrix \\(A^2 - \\frac{1}{2}I = \\begin{bmatrix} \\sin^2 b - \\frac{1}{2} & 0 \\ 0 & \\sin^2 b - \\frac{1}{2} \\end{bmatrix}\\).",
+          "Compute determinant: \\(\\left(\\sin^2 b - \\frac{1}{2}\\right)^2 = 0 \\implies \\sin^2 b = \\frac{1}{2}\\).",
+          "Take square roots: \\(\\sin b = \\frac{1}{\\sqrt{2}}\\).",
+          "Within \\([0, \\pi]\\), one valid value for \\(b\\) is \\(\\frac{\\pi}{4}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "06201159baa3",
+        "prompt": "If matrix \\(A\\) has dimensions \\(3 \\times 4\\), \\(B\\) has dimensions \\(3 \\times 2\\), and \\(C\\) has dimensions \\(4 \\times 2\\), find the dimensions of \\((A^T B C^T)^T\\).",
+        "answer": "\\(4 \\times 4\\)",
+        "steps": [
+          "Determine dimension of \\(A^T\\): transpose of \\(3 \\times 4\\) is \\(4 \\times 3\\).",
+          "Multiply \\(A^T\\) (size \\(4 \\times 3\\)) by \\(B\\) (size \\(3 \\times 2\\)): \\(A^T B\\) has dimensions \\(4 \\times 2\\).",
+          "Determine dimension of \\(C^T\\): transpose of \\(4 \\times 2\\) is \\(2 \\times 4\\).",
+          "Multiply \\((A^T B)\\) (size \\(4 \\times 2\\)) by \\(C^T\\) (size \\(2 \\times 4\\)): \\(A^T B C^T\\) has dimensions \\(4 \\times 4\\).",
+          "Transpose the product: the transpose of a \\(4 \\times 4\\) matrix remains \\(4 \\times 4\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "0c9e35e272b8",
+        "prompt": "Write the linear system as an augmented matrix, then use Gauss-Jordan elimination to solve: \\[x + y + z = 3\\] \\[2x + 3y + 4z = 11\\] \\[4x + 9y + 16z = 41\\]",
+        "answer": "\\(x = 0, y = 1, z = 2\\)",
+        "steps": [
+          "Write augmented matrix: \\(\\begin{bmatrix} 1 & 1 & 1 & | & 3 \\ 2 & 3 & 4 & | & 11 \\ 4 & 9 & 16 & | & 41 \\end{bmatrix}\\).",
+          "Eliminate row 2 and 3 first elements: \\(R_2 \\to R_2 - 2R_1\\) gives \\(\\begin{bmatrix} 0 & 1 & 2 & | & 5 \\end{bmatrix}\\); \\(R_3 \\to R_3 - 4R_1\\) gives \\(\\begin{bmatrix} 0 & 5 & 12 & | & 29 \\end{bmatrix}\\).",
+          "Eliminate row 3 second element: \\(R_3 \\to R_3 - 5R_2\\) gives \\(\\begin{bmatrix} 0 & 0 & 2 & | & 4 \\end{bmatrix}\\).",
+          "Solve back: \\(2z = 4 \\implies z = 2\\). Then \\(y + 2(2) = 5 \\implies y = 1\\). Finally \\(x + 1 + 2 = 3 \\implies x = 0\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Eigenvalues and Eigenvectors: An eigenvector \\(\\mathbf{v}\\) of a square matrix \\(A\\) is a non-zero vector satisfying \\(A\\mathbf{v} = \\lambda\\mathbf{v}\\) for a scalar eigenvalue \\(\\lambda\\). Eigenvalues are found by solving the characteristic equation \\(\\det(A - \\lambda I) = 0\\).",
+      "Linear Transformations via Eigenvectors: If a linear transformation \\(T\\) is defined by a matrix \\(A\\), and a vector \\(\\mathbf{x}\\) can be expressed as a linear combination of eigenvectors \\(\\mathbf{x} = c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2\\), then applying \\(T\\) yields \\(T(\\mathbf{x}) = c_1\\lambda_1\\mathbf{v}_1 + c_2\\lambda_2\\mathbf{v}_2\\).",
+      "Matrix Inverse Identities: If a matrix satisfies a polynomial equation like \\(A^2 + c_1 A + c_2 I = 0\\), its inverse can be expressed algebraically by isolating the identity matrix: \\(A\\left(-\\frac{1}{c_2}A - \\frac{c_1}{c_2}I\\right) = I \\implies A^{-1} = -\\frac{1}{c_2}(A + c_1 I)\\).",
+      "Absorbing Markov Chains: In an absorbing Markov chain formatted into canonical form, the transient submatrix \\(Q\\) is used to calculate the fundamental matrix \\(N = (I - Q)^{-1}\\). The matrix product \\(NR\\) yields long-term probabilities of absorption into each absorbing state."
+    ],
+    "asked_solution": null
+  },
+  "topic::gatm: complex numbers geometrically": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "84eaa7e1a68a",
+      "prompt": "Consider the complex numbers \\(x = 1 + \\sqrt{3}i\\) and \\(y = -2 + 2\\sqrt{3}i\\).\\a) Find a complex number \\(w\\) in \\(a + bi\\) form such that \\(wx = y\\).\\b) Find the \\(2 \\times 2\\) real matrix \\(M\\) that represents the transformation corresponding to multiplication by \\(w\\).\\c) Calculate the area of the triangle formed by the origin, \\(x\\), and \\(y\\) in the complex plane.",
+      "answer": "a) \\(w = 1 + \\sqrt{3}i\\)\\b) \\(M = \\begin{bmatrix} 1 & -\\sqrt{3} \\ \\sqrt{3} & 1 \\end{bmatrix}\\)\\c) Area = \\(2\\sqrt{3}\\)",
+      "steps": [
+        "a) To find \\(w\\), divide \\(y\\) by \\(x\\): \\(w = \\frac{y}{x} = \\frac{-2 + 2\\sqrt{3}i}{1 + \\sqrt{3}i}\\). Multiply numerator and denominator by the conjugate \\(1 - \\sqrt{3}i\\): \\(w = \\frac{(-2 + 2\\sqrt{3}i)(1 - \\sqrt{3}i)}{1^2 + (\\sqrt{3})^2} = \\frac{-2 + 2\\sqrt{3}i + 2\\sqrt{3}i + 6}{4} = \\frac{4 + 4\\sqrt{3}i}{4} = 1 + \\sqrt{3}i\\).",
+        "b) A complex number \\(a + bi\\) corresponds to the matrix \\(\\begin{bmatrix} a & -b \\ b & a \\end{bmatrix}\\). For \\(w = 1 + \\sqrt{3}i\\), we have \\(a = 1\\) and \\(b = \\sqrt{3}\\), so \\(M = \\begin{bmatrix} 1 & -\\sqrt{3} \\ \\sqrt{3} & 1 \\end{bmatrix}\\).",
+        "c) The vertices of the triangle in Cartesian coordinates are \\(O(0,0)\\), \\(x(1, \\sqrt{3})\\), and \\(y(-2, 2\\sqrt{3})\\). The area is \\(\\frac{1}{2} |x_1 y_2 - x_2 y_1| = \\frac{1}{2} |(1)(2\\sqrt{3}) - (\\sqrt{3})(-2)| = \\frac{1}{2} |2\\sqrt{3} + 2\\sqrt{3}| = 2\\sqrt{3}\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "b9871c5c8fd1",
+        "prompt": "For a complex number \\(z\\) lying strictly in the second quadrant (\\(\\text{Re}(z) < 0\\) and \\(\\text{Im}(z) > 0\\)), answer 'Always', 'Sometimes', or 'Never' for each statement:\\a) \\(\\text{Re}(z^2) < 0\\)\\b) \\(\\text{Im}(z^2) < 0\\)\\c) \\(\\text{Re}(i \\cdot z) > 0\\)\\d) \\(\\text{Im}(\\bar{z}) < 0\\)",
+        "answer": "a) Sometimes\\b) Always\\c) Never\\d) Always",
+        "steps": [
+          "Let \\(z = x + yi\\) with \\(x < 0\\) and \\(y > 0\\).",
+          "a) \\(z^2 = (x^2 - y^2) + 2xy i\\), so \\(\\text{Re}(z^2) = x^2 - y^2\\). This can be positive, negative, or zero depending on whether \\(|x| > |y|\\), \\(|x| < |y|\\), or \\(|x| = |y|\\). Answer: Sometimes.",
+          "b) \\(\\text{Im}(z^2) = 2xy\\). Since \\(x < 0\\) and \\(y > 0\\), \\(2xy < 0\\) always. Answer: Always.",
+          "c) \\(i z = i(x + yi) = -y + xi\\), so \\(\\text{Re}(i z) = -y\\). Since \\(y > 0\\), \\(-y < 0\\) always, so it is never positive. Answer: Never.",
+          "d) \\(\\bar{z} = x - yi\\), so \\(\\text{Im}(\\bar{z}) = -y < 0\\) always. Answer: Always."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "552dd40f1c72",
+        "prompt": "Find the \\(2 \\times 2\\) real matrix representation for the transformation given by multiplication by the complex number \\(z = 3e^{-i \\pi / 4}\\). Express all matrix elements in exact radical form.",
+        "answer": "\\(\\begin{bmatrix} \\frac{3\\sqrt{2}}{2} & \\frac{3\\sqrt{2}}{2} \\ -\\frac{3\\sqrt{2}}{2} & \\frac{3\\sqrt{2}}{2} \\end{bmatrix}\\)",
+        "steps": [
+          "Convert \\(z\\) to rectangular form \\(a + bi\\): \\(z = 3\\left(\\cos\\left(-\\frac{\\pi}{4}\\right) + i\\sin\\left(-\\frac{\\pi}{4}\\right)\\right) = 3\\left(\\frac{\\sqrt{2}}{2} - i\\frac{\\sqrt{2}}{2}\\right) = \\frac{3\\sqrt{2}}{2} - \\frac{3\\sqrt{2}}{2}i\\).",
+          "Identify \\(a = \\frac{3\\sqrt{2}}{2}\\) and \\(b = -\\frac{3\\sqrt{2}}{2}\\).",
+          "Construct the matrix \\(\\begin{bmatrix} a & -b \\ b & a \\end{bmatrix} = \\begin{bmatrix} \\frac{3\\sqrt{2}}{2} & \\frac{3\\sqrt{2}}{2} \\ -\\frac{3\\sqrt{2}}{2} & \\frac{3\\sqrt{2}}{2} \\end{bmatrix}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "6b4070ee6c79",
+        "prompt": "Consider the equation \\(z^3 = (z - 2)^3\\).\\a) Show algebraically that all solutions \\(z\\) must lie on the vertical line \\(\\text{Re}(z) = 1\\).\\b) Find all solutions for \\(z\\) in exact rectangular form \\(a + bi\\).",
+        "answer": "a) Taking modulus yields \\(|z| = |z-2|\\), which describes the line \\(\\text{Re}(z) = 1\\).\\b) \\(z = 1 + \\frac{\\sqrt{3}}{3}i\\) and \\(z = 1 - \\frac{\\sqrt{3}}{3}i\\)",
+        "steps": [
+          "a) Take the modulus of both sides: \\(|z^3| = |(z-2)^3| \\implies |z|^3 = |z-2|^3 \\implies |z| = |z-2|\\). The set of points equidistant from \\(0\\) and \\(2\\) in the complex plane is the perpendicular bisector of the segment \\([0, 2]\\), which is \\(\\text{Re}(z) = 1\\).",
+          "b) Rewrite the equation as \\(\\left(\\frac{z-2}{z}\\right)^3 = 1\\). Thus \\(\\frac{z-2}{z}\\) must be a cube root of unity.",
+          "If \\(\\frac{z-2}{z} = 1\\), then \\(z - 2 = z \\implies -2 = 0\\), which has no solution.",
+          "For \\(\\frac{z-2}{z} = e^{i 2\\pi/3} = -\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}\\): \\(1 - \\frac{2}{z} = -\\frac{1}{2} + i\\frac{\\sqrt{3}}{2} \\implies \\frac{2}{z} = \\frac{3}{2} - i\\frac{\\sqrt{3}}{2}\\). Taking the reciprocal gives \\(z = \\frac{4}{3 - i\\sqrt{3}} = \\frac{4(3 + i\\sqrt{3})}{12} = 1 + \\frac{\\sqrt{3}}{3}i\\).",
+          "For \\(\\frac{z-2}{z} = e^{-i 2\\pi/3}\\), taking the conjugate gives \\(z = 1 - \\frac{\\sqrt{3}}{3}i\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "773696ebcdfd",
+        "prompt": "Given the complex numbers \\(z_1 = 3 + 4i\\) and \\(z_2 = -4 + 3i\\):\\a) Find the complex number \\(w\\) in \\(a + bi\\) form such that \\(w z_1 = z_2\\).\\b) Describe the geometric transformation that multiplication by \\(w\\) represents in the complex plane.",
+        "answer": "a) \\(w = i\\)\\b) Counterclockwise rotation by \\(90^\\circ\\) (\\(\\frac{\\pi}{2}\\) radians) about the origin.",
+        "steps": [
+          "a) Compute \\(w = \\frac{z_2}{z_1} = \\frac{-4 + 3i}{3 + 4i}\\). Multiply by the conjugate: \\(w = \\frac{(-4 + 3i)(3 - 4i)}{3^2 + 4^2} = \\frac{-12 + 16i + 9i + 12}{25} = \\frac{25i}{25} = i\\).",
+          "b) In polar form, \\(w = i = 1 e^{i \\pi/2}\\). Multiplication by \\(w\\) has modulus 1 and argument \\(\\frac{\\pi}{2}\\), representing a pure counterclockwise rotation by \\(90^\\circ\\) about the origin."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "675995b280a0",
+        "prompt": "Let \\(z\\) be a complex number with \\(|z| = 4\\) and \\(\\text{Arg}(z) = \\theta\\) where \\(0 < \\theta < \\pi\\).\\a) Express \\(z\\) and \\(z + 3i\\) in rectangular coordinates in terms of \\(\\theta\\).\\b) Find an expression in terms of \\(\\theta\\) for the area of the triangle formed by the origin, \\(z\\), and \\(z + 3i\\).",
+        "answer": "a) \\(z = (4\\cos\\theta, 4\\sin\\theta)\\) and \\(z + 3i = (4\\cos\\theta, 4\\sin\\theta + 3)\\)\\b) Area = \\(6 |\\cos\\theta|\\)",
+        "steps": [
+          "a) In rectangular form, \\(z = 4\\cos\\theta + 4i\\sin\\theta\\), which corresponds to the point \\((4\\cos\\theta, 4\\sin\\theta)\\). Then \\(z + 3i = 4\\cos\\theta + (4\\sin\\theta + 3)i\\), corresponding to \\((4\\cos\\theta, 4\\sin\\theta + 3)\\).",
+          "b) The segment connecting \\(z\\) and \\(z + 3i\\) is vertical with length \\(|(z+3i) - z| = 3\\). Taking this as the base of the triangle, the altitude from the origin \\((0,0)\\) to the line containing this vertical segment is the horizontal coordinate \\(|\\text{Re}(z)| = |4\\cos\\theta|\\).",
+          "Area = \\(\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} (3) (4|\\cos\\theta|) = 6|\\cos\\theta|\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1686eb440c96",
+        "prompt": "A transformation on the complex plane is represented in augmented matrix form by \\(T = \\begin{bmatrix} 0 & -2 & 3 \\ 2 & 0 & -1 \\ 0 & 0 & 1 \\end{bmatrix}\\).\\a) Apply this transformation to the point corresponding to \\(z = 2 + i\\).\\b) Describe this transformation as a sequence of geometric operations.",
+        "answer": "a) Transformed point: \\(1 + 3i\\)\\b) Counterclockwise rotation by \\(90^\\circ\\), followed by a dilation by factor 2, followed by a translation by vector \\(\\begin{bmatrix} 3 \\ -1 \\end{bmatrix}\\) (or \\(3 - i\\)).",
+        "steps": [
+          "a) Represent \\(z = 2 + i\\) as the homogeneous column vector \\(\\begin{bmatrix} 2 \\ 1 \\ 1 \\end{bmatrix}\\). Multiply: \\(T \\begin{bmatrix} 2 \\ 1 \\ 1 \\end{bmatrix} = \\begin{bmatrix} 0(2) - 2(1) + 3(1) \\ 2(2) + 0(1) - 1(1) \\ 1 \\end{bmatrix} = \\begin{bmatrix} 1 \\ 3 \\ 1 \\end{bmatrix}\\). This corresponds to \\(1 + 3i\\).",
+          "b) Decompose the matrix \\(T\\): the linear transformation part is \\(M = \\begin{bmatrix} 0 & -2 \\ 2 & 0 \\end{bmatrix} = 2 \\begin{bmatrix} 0 & -1 \\ 1 & 0 \\end{bmatrix}\\), which represents a \\(90^\\circ\\) counterclockwise rotation followed by a uniform dilation of factor 2. The third column \\(\\begin{bmatrix} 3 \\ -1 \\end{bmatrix}\\) represents a translation by 3 units right and 1 unit down."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "f671947b85b1",
+        "prompt": "Determine the geometric locus in the complex plane defined by the equation \\(|z - 3i| = 2|z + 3i|\\). State the center and radius of the resulting figure.",
+        "answer": "Circle centered at \\((0, -5)\\) (or \\(-5i\\)) with radius \\(R = 4\\).",
+        "steps": [
+          "Let \\(z = x + yi\\). Square both sides: \\(|z - 3i|^2 = 4|z + 3i|^2\\).",
+          "Substitute \\(z = x + yi\\): \\(x^2 + (y - 3)^2 = 4(x^2 + (y + 3)^2)\\).",
+          "Expand both sides: \\(x^2 + y^2 - 6y + 9 = 4x^2 + 4y^2 + 24y + 36\\).",
+          "Rearrange: \\(3x^2 + 3y^2 + 30y + 27 = 0 \\implies x^2 + y^2 + 10y + 9 = 0\\).",
+          "Complete the square in \\(y\\): \\(x^2 + (y + 5)^2 - 25 + 9 = 0 \\implies x^2 + (y + 5)^2 = 16\\).",
+          "This is a circle with center \\((0, -5)\\) and radius \\(R = \\sqrt{16} = 4\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "394eb20ff1c0",
+        "prompt": "The solutions to \\(z^6 = 64\\) form the vertices of a regular polygon in the complex plane.\\a) List all 6 roots in rectangular form \\(a + bi\\).\\b) Find the perimeter and area of the polygon.",
+        "answer": "a) \\(2, 1 + \\sqrt{3}i, -1 + \\sqrt{3}i, -2, -1 - \\sqrt{3}i, 1 - \\sqrt{3}i\\)\\b) Perimeter = 12, Area = \\(6\\sqrt{3}\\)",
+        "steps": [
+          "a) In polar form, \\(64 = 64 e^{i 0}\\). The 6th roots are \\(z_k = 2 e^{i k \\pi / 3}\\) for \\(k = 0, 1, 2, 3, 4, 5\\).",
+          "Converting to rectangular form gives: \\(z_0 = 2\\) \\(z_1 = 2(\\cos\\frac{\\pi}{3} + i\\sin\\frac{\\pi}{3}) = 1 + \\sqrt{3}i\\) \\(z_2 = 2(\\cos\\frac{2\\pi}{3} + i\\sin\\frac{2\\pi}{3}) = -1 + \\sqrt{3}i\\) \\(z_3 = -2\\) \\(z_4 = 2(\\cos\\frac{4\\pi}{3} + i\\sin\\frac{4\\pi}{3}) = -1 - \\sqrt{3}i\\) \\(z_5 = 2(\\cos\\frac{5\\pi}{3} + i\\sin\\frac{5\\pi}{3}) = 1 - \\sqrt{3}i\\).",
+          "b) The vertices form a regular hexagon inscribed in a circle of radius \\(R = 2\\). The side length \\(s\\) of an inscribed regular hexagon equals the radius, so \\(s = 2\\).",
+          "Perimeter = \\(6s = 6 \\times 2 = 12\\).",
+          "Area = \\(6 \\times \\left(\\frac{\\sqrt{3}}{4} s^2\\right) = 6 \\times \\left(\\frac{\\sqrt{3}}{4} \\times 4\\right) = 6\\sqrt{3}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Modulus, Argument, and Polar Form: Any complex number \\(z = a + bi\\) can be written as \\(z = r(\\cos\\theta + i\\sin\\theta) = r e^{i\\theta}\\), where the modulus is \\(|z| = r = \\sqrt{a^2 + b^2}\\) and the argument is \\(\\theta = \\text{Arg}(z)\\).",
+      "Complex Multiplication as Geometric Transformations: Multiplying by \\(w = R e^{i\\phi}\\) scales a complex number by factor \\(R = |w|\\) (dilation) and rotates it counterclockwise by \\rangle \\(\\phi = \\text{Arg}(w)\\).",
+      "Matrix Representation of Complex Numbers: A complex number \\(a + bi\\) corresponds to the \\(2 \\times 2\\) transformation matrix \\(\\begin{bmatrix} a & -b \\ b & a \\end{bmatrix}\\), combining uniform scaling and rotation.",
+      "Distance and Loci in the Argand Plane: The magnitude \\(|z_1 - z_2|\\) represents the distance between points \\(z_1\\) and \\(z_2\\). Equations of the form \\(|z - z_1| = k|z - z_2|\\) define circles of Apollonius or perpendicular bisectors."
+    ],
+    "asked_solution": null
+  },
+  "topic::gatm: countability & cardinality": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "22caf7715eb2",
+      "prompt": "Consider mapping the points inside the open unit square \\(SET A = (0,1) \\times (0,1)\\) to points on the open unit interval \\(SET B = (0,1)\\).\\a) Map the point \\((0.2468\\dots, 0.1357\\dots) \\in SET A\\) to a point in \\(SET B\\) by alternating the digits of the \\(x\\)- and \\(y\\)-coordinates.\\b) A student proposes mapping \\(SET A\\) to \\(SET B\\) using the function \\(f(x,y) = x \\cdot y\\). Explain, using a specific counterexample, why this function does **not** provide a one-to-one correspondence between \\(SET A\\) and \\(SET B\\).\\c) Classify the cardinality of each of the following sets as an integer (give the exact number of elements), \"C\" (countably infinite), or \"UNC\" (uncountably infinite): \\(i)\\) Set of all points in \\(SET A\\) whose coordinates are both rational numbers. \\(ii)\\) Set of all points in \\(SET A\\). \\(iii)\\) Set of all non-zero complex numbers \\(z = a+bi\\) such that \\(a^2 + b^2 = 1\\) and \\(a, b \\in \\mathbb{Q}\\).",
+      "answer": "a) \\(0.21436587\\dots\\)\\b) The mapping is not one-to-one (injective). For example, both \\((0.2, 0.3)\\) and \\((0.1, 0.6)\\) in \\(SET A\\) map to the same point \\(0.06 \\in SET B\\).\\c) \\(i)\\) C, \\(ii)\\) UNC, \\(iii)\\) C",
+      "steps": [
+        "a) Alternating digits takes the 1st digit of x, 1st of y, 2nd of x, 2nd of y, etc.: \\(x = 0.2468\\dots\\), \\(y = 0.1357\\dots \\implies 0.21436587\\dots\\).",
+        "b) To disprove a one-to-one correspondence, we must show that \\(f(x_1, y_1) = f(x_2, y_2)\\) for distinct points \\((x_1,y_1) \\neq (x_2,y_2)\\). Take \\((0.2, 0.3)\\) and \\((0.1, 0.6)\\). Both points lie in \\(SET A = (0,1) \\times (0,1)\\). \\(f(0.2, 0.3) = 0.2 \\times 0.3 = 0.06\\) and \\(f(0.1, 0.6) = 0.1 \\times 0.6 = 0.06\\). Since two distinct points map to the same output, \\(f\\) is not injective, so it is not a bijection.",
+        "c) (i) The set of rational points in \\((0,1) \\times (0,1)\\) is \\((\\mathbb{Q} \\cap (0,1)) \\times (\\mathbb{Q} \\cap (0,1))\\). Since \\(\\mathbb{Q}\\) is countable, the Cartesian product of two countable sets is countable. Answer: C.",
+        "c) (ii) \\(SET A\\) has the same cardinality as \\(\\mathbb{R}^2\\), which is uncountably infinite (\\(c\\)). Answer: UNC.",
+        "c) (iii) This set represents rational points on the unit circle. Each element corresponds to a pair of rational numbers \\((a,b) \\in \\mathbb{Q} \\times \\mathbb{Q}\\). Since \\(\\mathbb{Q} \\times \\mathbb{Q}\\) is countable, any subset of it is finite or countably infinite. Since there are infinitely many Pythagorean triples, it is countably infinite. Answer: C."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "d76123c383d3",
+        "prompt": "For each set listed below, write the exact number of elements if finite, \"C\" if the set is countably infinite, or \"UNC\" if the set is uncountably infinite:\\a) The set of all irrational numbers between 0 and 1.\\b) The set of all \\(2 \\times 2\\) matrices with integer entries.\\c) The set of all polynomials of any degree with rational coefficients.\\d) Elements in the Cantor Set.\\e) The set of all continuous functions \\(f: [0,1] \\to \\mathbb{R}\\).\\f) The symmetries (rotations and reflections) of a regular hexagon.",
+        "answer": "a) UNC\\b) C\\c) C\\d) UNC\\e) UNC\\f) 12",
+        "steps": [
+          "a) \\(\\mathbb{R}\\) is uncountable and \\(\\mathbb{Q}\\) is countable. \\(\\mathbb{R} \\setminus \\mathbb{Q}\\) must be uncountably infinite (UNC).",
+          "b) \\(2 \\times 2\\) matrices with integer entries can be identified with \\(\\mathbb{Z}^4 = \\mathbb{Z} \\times \\mathbb{Z} \\times \\mathbb{Z} \\times \\mathbb{Z}\\), which is a finite Cartesian product of countable sets, hence countably infinite (C).",
+          "c) The set of polynomials of degree \\(n\\) with coefficients in \\(\\mathbb{Q}\\) is isomorphic to \\(\\mathbb{Q}^{n+1}\\) (countable). The countable union of countable sets (over all degrees \\(n \\in \\mathbb{N}\\)) is countably infinite (C).",
+          "d) The Cantor set has a bijection with the set of all infinite sequences of 0s and 2s, which has cardinality \\(2^{\\aleph_0}\\) (uncountable, UNC).",
+          "e) Continuous functions on \\([0,1]\\) are uniquely determined by their values on \\(\\mathbb{Q} \\cap [0,1]\\). However, the set of such functions has cardinality \\(c^{\\aleph_0} = (2^{\\aleph_0})^{\\aleph_0} = 2^{\\aleph_0\\cdot\\aleph_0} = 2^{\\aleph_0} = c\\), which is uncountably infinite (UNC).",
+          "f) The symmetry group of a regular hexagon is the Dihedral group \\(D_6\\), which has \\(2 \\times 6 = 12\\) elements."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "33f3ad3f477e",
+        "prompt": "Consider mapping points in the 2D square \\(SET A = (0,1) \\times (0,1)\\) to the 1D line segment \\(SET B = (0,1)\\) by alternating digits.\\a) Complete the table below: | SET A point | SET B point | | :--- | :--- | | \\((0.482, 0.193)\\) | \\(\\underline{\\quad\\quad\\quad\\quad}\\) | | \\(\\underline{\\quad\\quad\\quad\\quad}\\) | \\(0.518290\\) | | \\((0.7, 0.054)\\) | \\(\\underline{\\quad\\quad\\quad\\quad}\\) |\\b) Chris proposes a mapping function \\(g(x,y) = 0.x_1 y_1 x_2 y_2 x_3 y_3 \\dots\\) where non-terminating expansions with repeating 9s are forbidden. Explain why this mapping fails to cover all points in \\(SET B\\) (i.e., why it is not surjective/onto).",
+        "answer": "a) Row 1: \\(0.418923\\); Row 2: \\((0.589, 0.120)\\); Row 3: \\(0.700504\\)\\b) Points in \\(SET B\\) whose alternating digits produce a terminating representation ending in repeating 9s for one coordinate cannot be produced. For instance, \\(0.190909\\dots \\in SET B\\) would require \\(y = 0.999\\dots = 1\\), but \\(1 \\notin (0,1)\\). Thus \\(g\\) is not onto.",
+        "steps": [
+          "a) Row 1: \\(x = 0.482000\\dots, y = 0.193000\\dots \\implies 0.418923\\).\\nRow 2: \\(z = 0.518290 \\implies x_1=5, y_1=1, x_2=8, y_2=2, x_3=9, y_3=0 \\implies x = 0.589, y = 0.120\\).\\nRow 3: \\(x = 0.700\\dots, y = 0.054\\dots \\implies x_1=7, y_1=0, x_2=0, y_2=5, x_3=0, y_3=4 \\implies 0.700504\\).",
+          "b) Consider the point \\(z = 0.19090909\\dots \\in SET B\\). De-interleaving digits gives \\(x = 0.1000\\dots = 0.1\\) and \\(y = 0.9999\\dots = 1.0\\). Since \\(y=1.0\\) is outside the domain \\((0,1)\\), there is no pre-image in \\(SET A\\) for this point in \\(SET B\\). Hence, \\(g\\) is not onto."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "e6ae8cbf91d1",
+        "prompt": "Is there a one-to-one correspondence (bijection) between the set of complex numbers \\(\\mathbb{C}\\) and the set of all \\(2 \\times 2\\) real matrices \\(\\mathbb{M}_{2 \\times 2}(\\mathbb{R})\\)? \\nIf yes, justify your answer by comparing their cardinalities and provide an explicit injective mapping from \\(\\mathbb{C}\\) into \\(\\mathbb{M}_{2 \\times 2}(\\mathbb{R})\\). If no, explain why no such correspondence can exist.",
+        "answer": "Yes, a one-to-one correspondence exists because both sets have the same cardinality \\(c = 2^{\\aleph_0}\\). An explicit sub-mapping embedding \\(\\mathbb{C}\\) into \\(\\mathbb{M}_{2 \\times 2}(\\mathbb{R})\\) is \\(a + bi \\mapsto \\begin{bmatrix} a & -b \\ b & a \\end{bmatrix}\\).",
+        "steps": [
+          "1. \\(\\mathbb{C}\\) is isomorphic as a real vector space to \\(\\mathbb{R}^2\\), so \\(|\\mathbb{C}| = |\\mathbb{R}^2| = c\\).",
+          "2. \\(\\mathbb{M}_{2 \\times 2}(\\mathbb{R})\\) is isomorphic to \\(\\mathbb{R}^4\\), so \\(|\\mathbb{M}_{2 \\times 2}(\\mathbb{R})| = |\\mathbb{R}^4| = c\\).",
+          "3. Since both sets have cardinality \\(c\\) (the continuum), the Cantor-Bernstein-Schröder theorem guarantees a bijection between them.",
+          "4. An explicit injective ring homomorphism embedding \\(\\mathbb{C}\\) into \\(\\mathbb{M}_{2 \\times 2}(\\mathbb{R})\\) maps \\(a+bi \\to \\begin{bmatrix} a & -b \\ b & a \\end{bmatrix}\\). For example, \\(3 + 4i \\mapsto \\begin{bmatrix} 3 & -4 \\ 4 & 3 \\end{bmatrix}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d3f06924fa89",
+        "prompt": "Show that the open interval \\((0,1)\\) has the same cardinality as the entire real line \\(\\mathbb{R}\\) by constructing an explicit bijection \\(f: (0,1) \\to \\mathbb{R}\\). Verify both injectivity and surjectivity.",
+        "answer": "\\(f(x) = \\tan\\left(\\pi x - \\frac{\\pi}{2}\\right)\\) is a bijection from \\((0,1)\\) to \\(\\mathbb{R}\\).",
+        "steps": [
+          "1. Define \\(f(x) = \\tan\\left(\\pi x - \\frac{\\pi}{2}\\right)\\) for \\(x \\in (0,1)\\).",
+          "2. Domain check: As \\(x \\to 0^+\\), \\(\\pi x - \\frac{\\pi}{2} \\to -\\frac{\\pi}{2}^+\\), so \\(f(x) \\to -\\infty\\). As \\(x \\to 1^-\\), \\(\\pi x - \\frac{\\pi}{2} \\to \\frac{\\pi}{2}^-\\), so \\(f(x) \\to +\\infty\\).",
+          "3. Injectivity: The derivative \\(f'(x) = \\pi \\sec^2\\left(\\pi x - \\frac{\\pi}{2}\\right) > 0\\) for all \\(x \\in (0,1)\\). Since \\(f\\) is strictly increasing, it is one-to-one.",
+          "4. Surjectivity: For any \\(y \\in \\mathbb{R}\\), \\(x = \\frac{1}{\\pi} \\arctan(y) + \\frac{1}{2}\\) lies in \\((0,1)\\) and satisfies \\(f(x) = y\\). Thus \\(f\\) is onto.",
+          "5. Since \\(f\\) is injective and surjective, \\(|(0,1)| = |\\mathbb{R}| = c\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "03cd88e41609",
+        "prompt": "A student attempts to prove that the set of all infinite binary sequences (sequences of 0s and 1s) is countable by listing them in a grid: \\[S_1 = 0, 0, 0, 0, 0, \\dots\\] \\[S_2 = 1, 1, 1, 1, 1, \\dots\\] \\[S_3 = 0, 1, 0, 1, 0, \\dots\\] \\[S_4 = 1, 0, 1, 0, 1, \\dots\\] \\nUse Cantor's Diagonalization Argument to construct a sequence \\(D\\) that is **not** present anywhere in the student's list, proving the list is incomplete.",
+        "answer": "Sequence \\(D = 1, 0, 1, 1, \\dots\\) (where the \\(k\\)-th digit is the flip of the \\(k\\)-th digit of \\(S_k\\)).",
+        "steps": [
+          "1. Cantor's diagonal argument constructs a missing element by flipping the \\(k\\)-th entry of the \\(k\\)-th sequence \\(S_k\\).",
+          "2. The 1st element of \\(S_1\\) is 0, so the 1st element of \\(D\\) is 1.",
+          "3. The 2nd element of \\(S_2\\) is 1, so the 2nd element of \\(D\\) is 0.",
+          "4. The 3rd element of \\(S_3\\) is 0, so the 3rd element of \\(D\\) is 1.",
+          "5. The 4th element of \\(S_4\\) is 0, so the 4th element of \\(D\\) is 1.",
+          "6. Therefore, \\(D\\) begins as \\((1, 0, 1, 1, \\dots)\\). Since \\(D\\) differs from \\(S_k\\) at position \\(k\\) for every \\(k \\in \\mathbb{N}\\), \\(D\\) is not on the list. Thus the set of infinite binary sequences is uncountable."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "4af06dc2206e",
+        "prompt": "Determine whether each of the following geometric sets in \\(\\mathbb{R}^2\\) is Countably Infinite (\"C\") or Uncountably Infinite (\"UNC\"):\\a) The set of all circles in \\(\\mathbb{R}^2\\) centered at the origin with rational radius.\\b) The set of all circles in \\(\\mathbb{R}^2\\) centered at \\((a,b)\\) with radius \\(r\\), where \\(a, b, r \\in \\mathbb{Q}\\) and \\(r > 0\\).\\c) The set of all lines in \\(\\mathbb{R}^2\\) passing through the origin.",
+        "answer": "a) C\\b) C\\c) UNC",
+        "steps": [
+          "a) Each circle is uniquely determined by its radius \\(r \\in \\mathbb{Q}^+\\). Since \\(\\mathbb{Q}^+\\) is countably infinite, the set of circles is countably infinite (C).",
+          "b) Each circle is uniquely determined by a triple \\((a,b,r) \\in \\mathbb{Q} \\times \\mathbb{Q} \\times \\mathbb{Q}^+\\). The Cartesian product of three countable sets is countable (C).",
+          "c) Each line through the origin can be uniquely identified by its \\rangle \\(\\theta \\in [0, \\pi)\\). Since \\([0, \\pi)\\) is an uncountably infinite real interval, the set of lines is uncountably infinite (UNC)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d29a9ae2fd78",
+        "prompt": "Construct an explicit one-to-one correspondence (bijection) \\(h: \\mathbb{N} \\to \\mathbb{Z}\\) where \\(\\mathbb{N} = \\{1, 2, 3, 4, 5, \\dots\\}\\). Find the image of \\(n = 7\\) and the pre-image of \\(z = -4\\).",
+        "answer": "Bijection: \\(h(n) = \\begin{cases} \\frac{n}{2} & \\text{if } n \\text{ is even} \\ -\\frac{n-1}{2} & \\text{if } n \\text{ is odd} \\end{cases}\\). Image of \\(7\\) is \\(-3\\); pre-image of \\(-4\\) is \\(8\\).",
+        "steps": [
+          "1. Map odd natural numbers to non-positive integers: \\(1 \\mapsto 0\\), \\(3 \\mapsto -1\\), \\(5 \\mapsto -2\\), \\(7 \\mapsto -3\\), etc. In general, \\(h(n) = -\\frac{n-1}{2}\\) for odd \\(n\\).",
+          "2. Map even natural numbers to positive integers: \\(2 \\mapsto 1\\), \\(4 \\mapsto 2\\), \\(6 \\mapsto 3\\), \\(8 \\mapsto 4\\), etc. In general, \\(h(n) = \\frac{n}{2}\\) for even \\(n\\).",
+          "3. Image of \\(n = 7\\): Since 7 is odd, \\(h(7) = -\\frac{7-1}{2} = -3\\).",
+          "4. Pre-image of \\(z = -4\\): Since \\(-4\\) is negative, it comes from an even natural number set to a negative value in the formula: \\(-\\frac{n-1}{2} = -4 \\implies n-1 = 8 \\implies n = 9\\). (Wait: \\(h(8) = 8/2 = 4\\); for \\(-4\\), \\(-\\frac{n-1}{2} = -4 \\implies n=9\\))."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "9d3503f7af69",
+        "prompt": "Consider the set \\(S\\) of all polynomial equations of the form \\(ax^2 + bx + c = 0\\) with integer coefficients \\(a, b, c \\in \\mathbb{Z}\\) and \\(a \\neq 0\\).\\a) Prove that the set \\(S\\) of all such equations is countably infinite.\\b) Prove that the set of all roots of all equations in \\(S\\) (i.e., the set of algebraic numbers of degree 2 or less) is countably infinite.",
+        "answer": "a) \\(S\\) is in bijection with \\((\\mathbb{Z} \\setminus \\{0\\}) \\times \\mathbb{Z} \\times \\mathbb{Z}\\), a finite product of countable sets, so \\(S\\) is countable.\\b) Each equation has at most 2 roots. A countable union of finite sets (at most 2 roots per equation) is countable.",
+        "steps": [
+          "a) Each quadratic equation \\(ax^2 + bx + c = 0\\) is uniquely determined by the triple \\((a,b,c) \\in (\\mathbb{Z} \\setminus \\{0\\}) \\times \\mathbb{Z} \\times \\mathbb{Z}\\). Since \\(\\mathbb{Z}\\) is countable, the product of three countable sets is countable. Thus \\(S\\) is countably infinite.",
+          "b) Let \\(R(e)\\) be the set of complex roots of equation \\(e \\in S\\). The cardinality of \\(R(e)\\) is at most 2 (a finite set). The set of all roots is \\(R = \\bigcup_{e \\in S} R(e)\\). Since \\(S\\) is countable and each \\(R(e)\\) is finite, \\(R\\) is a countable union of finite sets, which is countably infinite."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "A set \\(A\\) is **countably infinite** (denoted with cardinality \\(\\aleph_0\\)) if there exists a one-to-one correspondence (bijection) between \\(A\\) and the set of natural numbers \\(\\mathbb{N}\\). Common countable sets include \\(\\mathbb{N}\\), \\(\\mathbb{Z}\\), \\(\\mathbb{Q}\\), the prime numbers, and any Cartesian product of finite or countable sets (e.g., \\(\\mathbb{Z} \\times \\mathbb{Z}\\)).",
+      "A set \\(A\\) is **uncountably infinite** (denoted with cardinality \\(c\\) or \\(2^{\\aleph_0}\\)) if it is infinite but cannot be put into a one-to-one correspondence with \\(\\mathbb{N}\\). Examples include \\(\\mathbb{R}\\), any real interval \\((a,b)\\), the Cantor set, \\(\\mathbb{R}^2\\), \\(\\mathbb{C}\\), and the power set \\(\\mathcal{P}(\\mathbb{N})\\).",
+      "To establish that two sets have the **same cardinality** (\\(|A| = |B|\\)), one must describe a valid bijection \\(f: A \\to B\\). Digit-interleaving can be used to map multi-dimensional spaces like \\((0,1) \\times (0,1)\\) onto 1D spaces like \\((0,1)\\), though edge cases with terminating decimals must be handled.",
+      "A proposed mapping function \\(f: A \\to B\\) fails to be a bijection if it is not **one-to-one** (injective)—meaning two distinct inputs produce the same output—or not **onto** (surjective)—meaning some elements in \\(B\\) have no pre-image in \\(A\\)."
+    ],
+    "asked_solution": null
+  },
+  "topic::limits and calculus: sequences & limits": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "bd6fca170ee0",
+      "prompt": "Consider the sequence \\(a_n = \\frac{4^n}{n!}\\) for \\(n \\ge 1\\). (a) Determine the set of integers \\(n\\) for which the sequence is strictly decreasing. (b) Prove that \\(\\{a_n\\}\\) converges using the Monotone Convergence Theorem and find its limit.",
+      "answer": "(a) Strictly decreasing for all \\(n \\ge 4\\). (b) The sequence is bounded below by \\(0\\) and strictly decreasing for \\(n \\ge 4\\), so by the Monotone Convergence Theorem it converges. Its limit is \\(0\\).",
+      "steps": [
+        "Step 1: To test for monotonicity, take the ratio of consecutive terms \\(\\frac{a_{n+1}}{a_n}\\): \\[\\frac{a_{n+1}}{a_n} = \\frac{\\frac{4^{n+1}}{(n+1)!}}{\\frac{4^n}{n!}} = \\frac{4^{n+1}}{4^n} \\cdot \\frac{n!}{(n+1)!} = \\frac{4}{n+1}\\]",
+        "Step 2: For the sequence to be strictly decreasing, we require \\(\\frac{a_{n+1}}{a_n} < 1\\): \\[\\frac{4}{n+1} < 1 \\implies n+1 > 4 \\implies n > 3\\]\\nThus, the sequence is strictly decreasing for \\(n \\ge 4\\).",
+        "Step 3: Since \\(4^n > 0\\) and \\(n! > 0\\) for all \\(n \\ge 1\\), \\(a_n > 0\\) for all \\(n\\). Therefore, \\(\\{a_n\\}\\) is bounded below by \\(0\\).",
+        "Step 4: Since \\(\\{a_n\\}\\) is bounded below by \\(0\\) and eventually strictly decreasing (for \\(n \\ge 4\\)), by the Monotone Convergence Theorem, \\(\\{a_n\\}\\) must converge to a finite limit \\(L\\).",
+        "Step 5: To evaluate the limit, observe that for \\(n \\ge 4\\): \\[a_n = \\frac{4}{1} \\cdot \\frac{4}{2} \\cdot \\frac{4}{3} \\cdot \\frac{4}{4} \\cdot \\left(\\frac{4}{5} \\cdot \\frac{4}{6} \\cdots \\frac{4}{n}\\right) \\le \\frac{32}{3} \\cdot \\left(\\frac{4}{5}\\right)^{n-4}\\]\\nSince \\(\\lim_{n \\to \\infty} \\frac{32}{3} \\left(\\frac{4}{5}\\right)^{n-4} = 0\\) and \\(a_n > 0\\), by the Squeeze Theorem, \\(\\lim_{n \\to \\infty} a_n = 0\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "7ce0f2fd25f3",
+        "prompt": "State whether the following statement is True or False: 'If a sequence \\(a_n \\le b_n \\le c_n\\) for all \\(n\\), \\(\\lim_{n \\to \\infty} a_n = -1\\), and \\(\\lim_{n \\to \\infty} c_n = 1\\), then \\(\\{b_n\\}\\) must converge to \\(0\\).'",
+        "answer": "False",
+        "steps": [
+          "The Squeeze Theorem requires \\(\\lim_{n \\to \\infty} a_n\\) and \\(\\lim_{n \\to \\infty} c_n\\) to be equal to the SAME value \\(L\\).",
+          "Since \\(-1 \\neq 1\\), the Squeeze Theorem does not apply. \\(\\{b_n\\}\\) could oscillate (e.g., \\(b_n = \\sin(n)\\)) or diverge without settling on \\(0\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "955bf678b2e9",
+        "prompt": "Find all real values of \\(k\\) such that the geometric sequence \\(\\left\\{\\left(\\frac{2k - 1}{5}\\right)^n\\right\\}\\) converges.",
+        "answer": "\\(-2 < k \\le 3\\)",
+        "steps": [
+          "A geometric sequence \\(\\{r^n\\}\\) converges if and only if \\(-1 < r \\le 1\\).",
+          "Set up the compound inequality: \\(-1 < \\frac{2k - 1}{5} \\le 1\\).",
+          "Multiply all parts by \\(5\\): \\(-5 < 2k - 1 \\le 5\\).",
+          "Add \\(1\\): \\(-4 < 2k \\le 6\\).",
+          "Divide by \\(2\\): \\(-2 < k \\le 3\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "fd9afd0e72f8",
+        "prompt": "Find the limit of the recursive sequence defined by \\(a_1 = 4\\) and \\(a_n = \\frac{a_{n-1}}{3} + 2\\) for \\(n \\ge 2\\), or state that it diverges.",
+        "answer": "\\(3\\)",
+        "steps": [
+          "Assume the sequence converges to a limit \\(L\\).",
+          "Take the limit of both sides of the recursive relation \\(a_n = \\frac{a_{n-1}}{3} + 2\\) as \\(n \\to \\infty\\):",
+          "\\[L = \\frac{L}{3} + 2\\]",
+          "Subtract \\(\\frac{L}{3}\\) from both sides: \\(\\frac{2}{3}L = 2\\).",
+          "Multiply by \\(\\frac{3}{2}\\): \\(L = 3\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "856c3759d406",
+        "prompt": "Consider the sequence \\(\\{b_n\\}\\) defined by \\(b_n = \\begin{cases} 4 & \\text{if } n \\text{ is odd} \\ \\frac{8n}{2n+3} & \\text{if } n \\text{ is even} \\end{cases}\\). Determine whether \\(\\{b_n\\}\\) converges or diverges. If it converges, state the limit and clearly justify.",
+        "answer": "Converges to \\(4\\)",
+        "steps": [
+          "Examine the odd subsequence: \\(b_{2k-1} = 4\\). Thus, \\(\\lim_{k \\to \\infty} b_{2k-1} = 4\\).",
+          "Examine the even subsequence: \\(b_{2k} = \\frac{8(2k)}{2(2k)+3} = \\frac{16k}{4k+3}\\).",
+          "Calculate the limit of the even subsequence: \\[\\lim_{k \\to \\infty} \\frac{16k}{4k+3} = \\lim_{k \\to \\infty} \\frac{16}{4 + \\frac{3}{k}} = 4\\]",
+          "Since both the odd and even subsequences converge to the exact same value \\(4\\), the overall sequence \\(\\{b_n\\}\\) converges to \\(4\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "a3a526af6718",
+        "prompt": "Find the limit of the sequence \\(a_n = \\frac{6n}{\\sqrt{9n^2 + 4}}\\), or state that it diverges.",
+        "answer": "\\(2\\)",
+        "steps": [
+          "Divide the numerator and denominator by \\(n\\) (where \\(n = \\sqrt{n^2}\\) for \\(n > 0\\)):",
+          "\\[a_n = \\frac{\\frac{6n}{n}}{\\frac{\\sqrt{9n^2 + 4}}{\\sqrt{n^2}}} = \\frac{6}{\\sqrt{9 + \\frac{4}{n^2}}}\\]",
+          "Take the limit as \\(n \\to \\infty\\):",
+          "\\[\\lim_{n \\to \\infty} a_n = \\frac{6}{\\sqrt{9 + 0}} = \\frac{6}{3} = 2\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "09bae47c2b39",
+        "prompt": "State the limit of the sequence \\(b_n = \\frac{\\cos(n^2)}{n^3 + 2}\\) and prove your answer using the Squeeze Theorem.",
+        "answer": "\\(0\\)",
+        "steps": [
+          "Since \\(-1 \\le \\cos(\\theta) \\le 1\\) for all real numbers \\(\\theta\\), we can bound \\(\\cos(n^2)\\):",
+          "\\[-1 \\le \\cos(n^2) \\le 1\\]",
+          "Divide by \\(n^3 + 2\\) (which is positive for all \\(n \\ge 1\\)):",
+          "\\[-\\frac{1}{n^3 + 2} \\le \\frac{\\cos(n^2)}{n^3 + 2} \\le \\frac{1}{n^3 + 2}\\]",
+          "Evaluate the outer limits as \\(n \\to \\infty\\):",
+          "\\[\\lim_{n \\to \\infty} \\left(-\\frac{1}{n^3 + 2}\\right) = 0 \\quad \\text{and} \\quad \\lim_{n \\to \\infty} \\left(\\frac{1}{n^3 + 2}\\right) = 0\\]",
+          "By the Squeeze Theorem, \\(\\lim_{n \\to \\infty} b_n = 0\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "7b56ceab9ee3",
+        "prompt": "State the value to which the sequence \\(c_n = \\frac{5^n}{(2n - 1)!}\\) converges, or state that it diverges. Justify your conclusion.",
+        "answer": "Converges to \\(0\\)",
+        "steps": [
+          "Write out terms of \\(c_n\\) for \\(n \\ge 3\\):",
+          "\\[c_n = \\frac{5 \\cdot 5 \\cdot 5 \\cdots 5}{1 \\cdot 2 \\cdot 3 \\cdot 4 \\cdots (2n-1)}\\]",
+          "Observe that factorial growth \\((2n-1)!\\) far outpaces exponential growth \\(5^n\\).",
+          "More formally, for \\(n \\ge 5\\), the denominator has \\(2n-1 \\ge 9\\) terms, most of which are greater than 5.",
+          "Using comparison or squeeze theorem: \\(0 < c_n \\le \\frac{5^5}{9!} \\cdot \\left(\\frac{5}{10}\\right)^{2n - 1 - 9} \\to 0\\) as \\(n \\to \\infty\\).",
+          "Therefore, the sequence converges to \\(0\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "c8bef5b1e8e8",
+        "prompt": "Determine the values of \\(n\\) for which the sequence \\(a_n = \\frac{n^2}{3^n}\\) is strictly decreasing.",
+        "answer": "Strictly decreasing for \\(n \\ge 2\\)",
+        "steps": [
+          "Compute the ratio \\(\\frac{a_{n+1}}{a_n}\\):",
+          "\\[\\frac{a_{n+1}}{a_n} = \\frac{\\frac{(n+1)^2}{3^{n+1}}}{\\frac{n^2}{3^n}} = \\frac{(n+1)^2}{n^2} \\cdot \\frac{3^n}{3^{n+1}} = \\frac{1}{3}\\left(1 + \\frac{1}{n}\\right)^2\\]",
+          "Set \\(\\frac{a_{n+1}}{a_n} < 1\\):",
+          "\\[\\frac{1}{3}\\left(1 + \\frac{1}{n}\\right)^2 < 1 \\implies \\left(1 + \\frac{1}{n}\\right)^2 < 3 \\implies 1 + \\frac{1}{n} < \\sqrt{3}\\]",
+          "\\[\\frac{1}{n} < \\sqrt{3} - 1 \\approx 0.732 \\implies n > \\frac{1}{\\sqrt{3}-1} = \\frac{\\sqrt{3}+1}{2} \\approx 1.366\\]",
+          "Since \\(n\\) must be an integer, the sequence is strictly decreasing for all \\(n \\ge 2\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Monotone Convergence Theorem (Big Theorem): If a sequence \\(\\{a_n\\}\\) is monotonic (everywhere non-decreasing or everywhere non-increasing) and bounded, then \\(\\{a_n\\}\\) must converge.",
+      "Squeeze Theorem: If \\(a_n \\le b_n \\le c_n\\) for all \\(n \\ge N\\) and \\(\\lim_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} c_n = L\\), then \\(\\lim_{n \\to \\infty} b_n = L\\).",
+      "Geometric & Power Sequence Convergence: The sequence \\(\\{r^n\\}\\) converges to \\(0\\) if \\(|r| < 1\\), converges to \\(1\\) if \\(r = 1\\), and diverges otherwise. The power sequence \\(\\{n^p\\}\\) converges if and only if \\(p \\le 0\\).",
+      "Limits of Recursive Sequences: If a recursively defined sequence \\(a_n = f(a_{n-1})\\) converges to a limit \\(L\\) and \\(f\\) is continuous, taking the limit on both sides gives \\(L = f(L)\\)."
+    ],
+    "asked_solution": null
+  },
+  "topic::limits and calculus: continuity & derivatives": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "d7fad5a88042",
+      "prompt": "Find the values of the constants \\(a\\) and \\(b\\) such that the piecewise function \\(f(x) = \\begin{cases} ax^2 + bx + 1 & x \\le 2 \\ 2x^3 - 3 & x > 2 \\end{cases}\\) is differentiable everywhere on its domain.",
+      "answer": "\\(a = 9\\) and \\(b = -12\\)",
+      "steps": [
+        "For \\(f(x)\\) to be differentiable at \\(x = 2\\), it must first be continuous at \\(x = 2\\). Evaluate the one-sided limits and function value at \\(x = 2\\): \\(\\lim_{x \\to 2^-} f(x) = f(2) = a(2)^2 + b(2) + 1 = 4a + 2b + 1\\) and \\(\\lim_{x \\to 2^+} f(x) = 2(2)^3 - 3 = 13\\).",
+        "Set the left and right limits equal for continuity: \\[4a + 2b + 1 = 13 \\implies 4a + 2b = 12 \\implies 2a + b = 6 \\quad (\\text{Equation 1})\\]",
+        "For differentiability at \\(x = 2\\), the left-hand derivative must equal the right-hand derivative: Left derivative: \\(\\frac{d}{dx}(ax^2 + bx + 1) = 2ax + b \\implies 2a(2) + b = 4a + b\\). Right derivative: \\(\\frac{d}{dx}(2x^3 - 3) = 6x^2 \\implies 6(2)^2 = 24\\).",
+        "Set the derivatives equal to each other: \\[4a + b = 24 \\quad (\\text{Equation 2})\\]",
+        "Subtract Equation 1 from Equation 2: \\((4a + b) - (2a + b) = 24 - 6 \\implies 2a = 18 \\implies a = 9\\).",
+        "Substitute \\(a = 9\\) back into Equation 1: \\(2(9) + b = 6 \\implies 18 + b = 6 \\implies b = -12\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "e7e971a9b2dd",
+        "prompt": "Use the limit definition of the derivative, \\(f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}\\), to find \\(f'(x)\\) for \\(f(x) = \\frac{3}{2x - 1}\\).",
+        "answer": "\\(f'(x) = -\\frac{6}{(2x - 1)^2}\\)",
+        "steps": [
+          "Set up the limit definition: \\[f'(x) = \\lim_{h \\to 0} \\frac{\\frac{3}{2(x+h)-1} - \\frac{3}{2x-1}}{h}\\]",
+          "Find a common denominator in the numerator: \\[f'(x) = \\lim_{h \\to 0} \\frac{3(2x-1) - 3(2x+2h-1)}{h(2(x+h)-1)(2x-1)}\\]",
+          "Simplify the numerator: \\[f'(x) = \\lim_{h \\to 0} \\frac{6x - 3 - 6x - 6h + 3}{h(2x+2h-1)(2x-1)} = \\lim_{h \\to 0} \\frac{-6h}{h(2x+2h-1)(2x-1)}\\]",
+          "Cancel \\(h\\) from numerator and denominator: \\[f'(x) = \\lim_{h \\to 0} \\frac{-6}{(2x+2h-1)(2x-1)}\\]",
+          "Evaluate the limit as \\(h \\to 0\\): \\[f'(x) = \\frac{-6}{(2x-1)(2x-1)} = -\\frac{6}{(2x-1)^2}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "4f8c3da5d067",
+        "prompt": "Determine the values of constants \\(k\\) and \\(m\\) so that the function \\(g(x) = \\begin{cases} k \\sqrt{x+3} & -3 \\le x < 1 \\ mx^2 + 4 & x \\ge 1 \\end{cases}\\) is differentiable at \\(x = 1\\).",
+        "answer": "\\(k = \\frac{32}{15}, m = \\frac{4}{15}\\)",
+        "steps": [
+          "Ensure continuity at \\(x = 1\\): \\(\\lim_{x \\to 1^-} g(x) = k\\sqrt{1+3} = 2k\\) and \\(g(1) = \\lim_{x \\to 1^+} g(x) = m(1)^2 + 4 = m + 4\\). Equating gives \\(2k = m + 4\\).",
+          "Ensure differentiability at \\(x = 1\\): Left derivative is \\(\\frac{d}{dx}(k(x+3)^{1/2}) = \\frac{k}{2\\sqrt{x+3}} \\implies \\frac{k}{2\\sqrt{4}} = \\frac{k}{4}\\). Right derivative is \\(\\frac{d}{dx}(mx^2+4) = 2mx \\implies 2m(1) = 2m\\).",
+          "Set left and right derivatives equal: \\(\\frac{k}{4} = 2m \\implies k = 8m\\).",
+          "Substitute \\(k = 8m\\) into the continuity equation: \\(2(8m) = m + 4 \\implies 16m = m + 4 \\implies 15m = 4 \\implies m = \\frac{4}{15}\\).",
+          "Calculate \\(k\\): \\(k = 8\\left(\\frac{4}{15}\\right) = \\frac{32}{15}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "d62e3c5c0a64",
+        "prompt": "Evaluate \\(\\lim_{x \\to \\frac{\\pi}{3}} \\frac{\\cos x - \\frac{1}{2}}{x - \\frac{\\pi}{3}}\\) by recognizing the limit as a derivative.",
+        "answer": "\\(-\\frac{\\sqrt{3}}{2}\\)",
+        "steps": [
+          "Recall the alternative limit definition of derivative: \\(f'(a) = \\lim_{x \\to a} \\frac{f(x) - f(a)}{x - a}\\).",
+          "Identify \\(f(x) = \\cos x\\), \\(a = \\frac{\\pi}{3}\\), and \\(f(a) = \\cos\\left(\\frac{\\pi}{3}\\right) = \\frac{1}{2}\\).",
+          "The given limit represents \\(f'\\left(\\frac{\\pi}{3}\\right)\\) for \\(f(x) = \\cos x\\).",
+          "Compute the derivative: \\(f'(x) = -\\sin x\\).",
+          "Evaluate at \\(x = \\frac{\\pi}{3}\\): \\(f'\\left(\\frac{\\pi}{3}\\right) = -\\sin\\left(\\frac{\\pi}{3}\\right) = -\\frac{\\sqrt{3}}{2}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "dc4d05217054",
+        "prompt": "Find the equation of the line tangent to the curve \\(f(x) = 3x^3 - 5x^2 + 2x - 7\\) at \\(x = 2\\).",
+        "answer": "\\(y = 18x - 35\\)",
+        "steps": [
+          "Find the point of tangency by calculating \\(f(2)\\): \\(f(2) = 3(2)^3 - 5(2)^2 + 2(2) - 7 = 24 - 20 + 4 - 7 = 1\\). Point: \\((2, 1)\\).",
+          "Find the derivative function \\(f'(x)\\): \\(f'(x) = 9x^2 - 10x + 2\\).",
+          "Find the slope of the tangent line at \\(x = 2\\): \\(m = f'(2) = 9(2)^2 - 10(2) + 2 = 36 - 20 + 2 = 18\\).",
+          "Use point-slope form: \\(y - 1 = 18(x - 2) \\implies y - 1 = 18x - 36 \\implies y = 18x - 35\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "9e8bcde340cf",
+        "prompt": "Classify all points of discontinuity for \\(h(x) = \\frac{x^2 - 4}{x^3 - 2x^2 - 4x + 8}\\) as removable, jump, or infinite.",
+        "answer": "Removable discontinuity at \\(x = -2\\); Infinite discontinuity at \\(x = 2\\)",
+        "steps": [
+          "Factor the numerator and denominator completely: Numerator: \\(x^2 - 4 = (x-2)(x+2)\\). Denominator: \\(x^2(x-2) - 4(x-2) = (x-2)(x^2-4) = (x-2)^2(x+2)\\).",
+          "The domain excludes \\(x = 2\\) and \\(x = -2\\). Simplified function for \\(x \\neq \\pm 2\\): \\[h(x) = \\frac{(x-2)(x+2)}{(x-2)^2(x+2)} = \\frac{1}{x-2}\\]",
+          "At \\(x = -2\\): \\(\\lim_{x \\to -2} h(x) = \\frac{1}{-2-2} = -\\frac{1}{4}\\). Since the limit exists but \\(h(-2)\\) is undefined, \\(x = -2\\) is a removable discontinuity.",
+          "At \\(x = 2\\): \\(\\lim_{x \\to 2^+} \\frac{1}{x-2} = +\\infty\\) and \\(\\lim_{x \\to 2^-} \\frac{1}{x-2} = -\\infty\\). Since the limits are infinite, \\(x = 2\\) is an infinite discontinuity."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "db90fcfdb696",
+        "prompt": "Use the Intermediate Value Theorem to show that \\(f(x) = x^4 - 4x - 1\\) has at least one real zero in the interval \\([1, 2]\\).",
+        "answer": "Since \\(f(x)\\) is continuous on \\([1, 2]\\) and \\(f(1) = -4 < 0 < f(2) = 7\\), by the IVT there exists at least one \\(c \\in (1, 2)\\) such that \\(f(c) = 0\\).",
+        "steps": [
+          "State the hypothesis: \\(f(x) = x^4 - 4x - 1\\) is a polynomial, so it is continuous everywhere, including on the closed interval \\([1, 2]\\).",
+          "Evaluate \\(f(x)\\) at the endpoints: \\(f(1) = (1)^4 - 4(1) - 1 = -4\\) and \\(f(2) = (2)^4 - 4(2) - 1 = 16 - 8 - 1 = 7\\).",
+          "Observe that \\(f(1) = -4 < 0\\) and \\(f(2) = 7 > 0\\), so \\(N = 0\\) lies strictly between \\(f(1)\\) and \\(f(2)\\).",
+          "Conclude by IVT: There must exist at least one real number \\(c \\in (1, 2)\\) such that \\(f(c) = 0\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "cb2b318c5db0",
+        "prompt": "Find the equation of the normal line to the curve \\(f(x) = \\frac{x + 1}{x - 2}\\) at \\(x = 3\\).",
+        "answer": "\\(y = \\frac{1}{3}x + 3\\)",
+        "steps": [
+          "Find the point on the curve: \\(f(3) = \\frac{3+1}{3-2} = 4\\). Point: \\((3, 4)\\).",
+          "Find the derivative using the quotient rule: \\[f'(x) = \\frac{(1)(x-2) - (x+1)(1)}{(x-2)^2} = \\frac{x - 2 - x - 1}{(x-2)^2} = \\frac{-3}{(x-2)^2}\\]",
+          "Evaluate the slope of the tangent line at \\(x = 3\\): \\(m_{\\text{tan}} = f'(3) = \\frac{-3}{(3-2)^2} = -3\\).",
+          "The slope of the normal line is the negative reciprocal: \\(m_{\\perp} = -\\frac{1}{-3} = \\frac{1}{3}\\).",
+          "Write the line equation: \\(y - 4 = \\frac{1}{3}(x - 3) \\implies y = \\frac{1}{3}x - 1 + 4 \\implies y = \\frac{1}{3}x + 3\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "c2fd1b579c03",
+        "prompt": "Use the alternative limit definition of derivative, \\(f'(a) = \\lim_{x \\to a} \\frac{f(x) - f(a)}{x - a}\\), to find \\(f'(4)\\) for \\(f(x) = \\sqrt{2x + 1}\\).",
+        "answer": "\\(f'(4) = \\frac{1}{3}\\)",
+        "steps": [
+          "Calculate \\(f(4) = \\sqrt{2(4)+1} = \\sqrt{9} = 3\\).",
+          "Set up the limit definition: \\[f'(4) = \\lim_{x \\to 4} \\frac{\\sqrt{2x+1} - 3}{x - 4}\\]",
+          "Multiply the numerator and denominator by the conjugate \\(\\sqrt{2x+1} + 3\\): \\[f'(4) = \\lim_{x \\to 4} \\frac{(\\sqrt{2x+1} - 3)(\\sqrt{2x+1} + 3)}{(x - 4)(\\sqrt{2x+1} + 3)} = \\lim_{x \\to 4} \\frac{(2x + 1) - 9}{(x - 4)(\\sqrt{2x+1} + 3)}\\]",
+          "Simplify the numerator: \\(2x - 8 = 2(x - 4)\\).",
+          "Cancel factor \\((x - 4)\\): \\[f'(4) = \\lim_{x \\to 4} \\frac{2(x - 4)}{(x - 4)(\\sqrt{2x+1} + 3)} = \\lim_{x \\to 4} \\frac{2}{\\sqrt{2x+1} + 3}\\]",
+          "Evaluate the limit: \\[f'(4) = \\frac{2}{\\sqrt{9} + 3} = \\frac{2}{3 + 3} = \\frac{2}{6} = \\frac{1}{3}\\]"
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "**Continuity at a Point**: A function \\(f(x)\\) is continuous at \\(x = c\\) if and only if three conditions are met: 1. \\(f(c)\\) is defined, 2. \\(\\lim_{x \\to c} f(x)\\) exists, and 3. \\(\\lim_{x \\to c} f(x) = f(c)\\).",
+      "**Limit Definitions of the Derivative**: The derivative of \\(f(x)\\) at \\(x = a\\) is defined as \\(f'(a) = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}\\) or equivalently \\(f'(a) = \\lim_{x \\to a} \\frac{f(x) - f(a)}{x - a}\\). As a function, \\(f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}\\).",
+      "**Differentiability and Continuity**: If a function \\(f(x)\\) is differentiable at \\(x = c\\), then \\(f(x)\\) must be continuous at \\(x = c\\). However, continuity does not imply differentiability (e.g., sharp corners, cusps, or vertical tangents).",
+      "**Tangent and Normal Lines**: The equation of the line tangent to \\(y = f(x)\\) at \\((a, f(a))\\) is \\(y - f(a) = f'(a)(x - a)\\). The normal line is perpendicular to the tangent line and has slope \\(m_{\\perp} = -\\frac{1}{f'(a)}\\) (provided \\(f'(a) \\neq 0\\))."
+    ],
+    "asked_solution": null
+  },
+  "topic::limits and calculus: areas & integrals": {
+    "source": "gunn",
+    "topic": "analysis",
+    "original": {
+      "id": "ce831bcaffd1",
+      "prompt": "Consider the region \\(\\mathcal{R}\\) bounded by the function \\(f(x) = \\frac{x^3}{3}\\) and the x-axis on the interval \\([0, 3]\\).\\a) Find the area \\(A_1\\) of the region consisting of three rectangles of width 1 whose upper right corners lie on the graph of \\(y = f(x)\\).\\b) State whether the area of region \\(\\mathcal{R}\\) is smaller or greater than \\(A_1\\).\\c) Find an algebraic expression in terms of \\(n\\) for the area \\(A_n\\) consisting of \\(3n\\) rectangles of width \\(\\frac{1}{n}\\) whose upper right corners lie on \\(y = f(x)\\).\\d) Determine the exact area of region \\(\\mathcal{R}\\) by evaluating \\(\\lim_{n \\to \\infty} A_n\\).",
+      "answer": "a) \\(A_1 = 12\\)\\b) Smaller\\c) \\(A_n = \\frac{3(3n+1)^2}{4n^2}\\)\\d) \\(\\frac{27}{4} = 6.75\\)",
+      "steps": [
+        "a) Width \\(\\Delta x = 1\\). Right endpoints are \\(x = 1, 2, 3\\). Heights are \\(f(1) = \\frac{1}{3}\\), \\(f(2) = \\frac{8}{3}\\), \\(f(3) = 9\\). Sum of rectangle areas: \\(A_1 = 1 \\cdot \\left(\\frac{1}{3} + \\frac{8}{3} + 9\\right) = 12\\).",
+        "b) Since \\(f(x) = \\frac{x^3}{3}\\) is strictly increasing on \\([0, 3]\\), the right Riemann sum circumscribes the curve, so the area of \\(\\mathcal{R}\\) is smaller than \\(A_1\\).",
+        "c) For \\(3n\\) rectangles each of width \\(\\Delta x = \\frac{1}{n}\\), the right endpoints are \\(x_k = \\frac{k}{n}\\) for \\(k = 1, 2, \\dots, 3n\\). The sum is \\(A_n = \\sum_{k=1}^{3n} f\\left(\\frac{k}{n}\\right) \\frac{1}{n} = \\sum_{k=1}^{3n} \\frac{(k/n)^3}{3} \\cdot \\frac{1}{n} = \\frac{1}{3n^4} \\sum_{k=1}^{3n} k^3\\).",
+        "Using \\(\\sum_{k=1}^N k^3 = \\left[\\frac{N(N+1)}{2}\\right]^2\\) with \\(N = 3n\\): \\(A_n = \\frac{1}{3n^4} \\left[\\frac{3n(3n+1)}{2}\\right]^2 = \\frac{1}{3n^4} \\cdot \\frac{9n^2(3n+1)^2}{4} = \\frac{3(3n+1)^2}{4n^2}\\).",
+        "d) Taking the limit: \\(\\lim_{n \\to \\infty} A_n = \\lim_{n \\to \\infty} \\frac{3(9n^2 + 6n + 1)}{4n^2} = \\frac{27}{4}\\)."
+      ],
+      "unit": null,
+      "diagram": null
+    },
+    "practice": [
+      {
+        "id": "395b303ea4b2",
+        "prompt": "Find the Right Riemann sum approximation (RRAM) for \\(f(x) = x^2 + 1\\) on the interval \\([0, 2]\\) using \\(n = 4\\) subintervals of equal width.",
+        "answer": "\\(R_4 = 5.75\\)",
+        "steps": [
+          "Calculate subinterval width: \\(\\Delta x = \\frac{2 - 0}{4} = 0.5\\).",
+          "Identify right endpoints: \\(x_1 = 0.5, x_2 = 1.0, x_3 = 1.5, x_4 = 2.0\\).",
+          "Evaluate function values: \\(f(0.5) = 1.25\\), \\(f(1.0) = 2.0\\), \\(f(1.5) = 3.25\\), \\(f(2.0) = 5.0\\).",
+          "Calculate sum: \\(R_4 = 0.5 \\cdot (1.25 + 2.0 + 3.25 + 5.0) = 0.5 \\cdot 11.5 = 5.75\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "f8891e7d2b7f",
+        "prompt": "Let \\(f(x) = 4 - x^2\\) on \\([0, 2]\\). Calculate the Left Riemann sum \\(L_4\\) using 4 subintervals of equal length. Is \\(L_4\\) an overestimate or an underestimate of the actual area under the curve?",
+        "answer": "\\(L_4 = 6.25\\); Overestimate",
+        "steps": [
+          "Width \\(\\Delta x = \\frac{2 - 0}{4} = 0.5\\). Left endpoints are \\(x_0 = 0, x_1 = 0.5, x_2 = 1, x_3 = 1.5\\).",
+          "Heights: \\(f(0) = 4\\), \\(f(0.5) = 3.75\\), \\(f(1) = 3\\), \\(f(1.5) = 1.75\\).",
+          "\\(L_4 = 0.5 \\cdot (4 + 3.75 + 3 + 1.75) = 0.5 \\cdot 12.5 = 6.25\\).",
+          "Since \\(f(x)\\) is strictly decreasing on \\([0, 2]\\), left endpoints yield rectangles that extend above the curve, making \\(L_4\\) an overestimate."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "3735ad47d820",
+        "prompt": "Simplify the expression \\(\\sum_{k=1}^{n} (6k^2 - 4k)\\) into a fully factored closed-form polynomial in terms of \\(n\\).",
+        "answer": "\\(n(n+1)(2n-1)\\)",
+        "steps": [
+          "Split the summation: \\(\\sum_{k=1}^n (6k^2 - 4k) = 6 \\sum_{k=1}^n k^2 - 4 \\sum_{k=1}^n k\\).",
+          "Apply standard formulas: \\(6 \\left(\\frac{n(n+1)(2n+1)}{6}\\right) - 4 \\left(\\frac{n(n+1)}{2}\\right)\\).",
+          "Simplify: \\(n(n+1)(2n+1) - 2n(n+1) = n(n+1)[(2n+1) - 2] = n(n+1)(2n-1)\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "1f19dc114fba",
+        "prompt": "Express the limit \\(\\lim_{n \\to \\infty} \\sum_{k=1}^n \\left(2 + \\frac{3k}{n}\\right)^2 \\frac{3}{n}\\) as a definite integral with lower limit \\(a = 2\\).",
+        "answer": "\\(\\int_2^5 x^2 \\, dx\\)",
+        "steps": [
+          "Identify \\(\\Delta x = \\frac{3}{n}\\), which implies the interval width is \\(b - a = 3\\).",
+          "With lower limit \\(a = 2\\), the upper limit is \\(b = 2 + 3 = 5\\).",
+          "The right endpoint formula is \\(x_k = 2 + \\frac{3k}{n}\\).",
+          "The expression inside the sum is \\((x_k)^2 \\Delta x\\), so \\(f(x) = x^2\\).",
+          "The limit of the sum equals \\(\\int_2^5 x^2 \\, dx\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "7467bb2ad730",
+        "prompt": "Find an algebraic expression in terms of \\(n\\) for the Right Riemann sum \\(R_n\\) of \\(f(x) = 3x\\) on the interval \\([0, 2]\\).",
+        "answer": "\\(R_n = 6 + \\frac{6}{n}\\)",
+        "steps": [
+          "Width \\(\\Delta x = \\frac{2 - 0}{n} = \\frac{2}{n}\\). Right endpoints \\(x_k = \\frac{2k}{n}\\).",
+          "\\(R_n = \\sum_{k=1}^n f\\left(\\frac{2k}{n}\\right) \\frac{2}{n} = \\sum_{k=1}^n 3\\left(\\frac{2k}{n}\\right) \\frac{2}{n} = \\frac{12}{n^2} \\sum_{k=1}^n k\\).",
+          "Substitute \\(\\sum_{k=1}^n k = \\frac{n(n+1)}{2}\\): \\(R_n = \\frac{12}{n^2} \\cdot \\frac{n(n+1)}{2} = \\frac{6(n+1)}{n} = 6 + \\frac{6}{n}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "29ec2868b7e6",
+        "prompt": "Using the definition of the definite integral as a limit of right Riemann sums, evaluate \\(\\int_0^3 (2x + 1) \\, dx\\).",
+        "answer": "12",
+        "steps": [
+          "Set \\(\\Delta x = \\frac{3}{n}\\) and \\(x_k = \\frac{3k}{n}\\).",
+          "Express sum: \\(R_n = \\sum_{k=1}^n \\left[2\\left(\\frac{3k}{n}\\right) + 1\\right] \\frac{3}{n} = \\frac{3}{n} \\sum_{k=1}^n \\left(\\frac{6k}{n} + 1\\right) = \\frac{18}{n^2} \\sum_{k=1}^n k + \\frac{3}{n} \\sum_{k=1}^n 1\\).",
+          "Substitute summation formulas: \\(R_n = \\frac{18}{n^2} \\cdot \\frac{n(n+1)}{2} + \\frac{3}{n} \\cdot n = 9\\left(1 + \\frac{1}{n}\\right) + 3\\).",
+          "Evaluate limit: \\(\\lim_{n \\to \\infty} R_n = \\lim_{n \\to \\infty} \\left(9 + \\frac{9}{n} + 3\\right) = 12\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "4ab82e165815",
+        "prompt": "Given that \\(\\int_1^5 f(x) \\, dx = 8\\) and \\(\\int_3^5 f(x) \\, dx = 3\\), find the value of \\(\\int_1^3 (2f(x) - 4) \\, dx\\).",
+        "answer": "2",
+        "steps": [
+          "Use interval additivity: \\(\\int_1^5 f(x) \\, dx = \\int_1^3 f(x) \\, dx + \\int_3^5 f(x) \\, dx\\).",
+          "Substitute values: \\(8 = \\int_1^3 f(x) \\, dx + 3 \\implies \\int_1^3 f(x) \\, dx = 5\\).",
+          "Apply linearity: \\(\\int_1^3 (2f(x) - 4) \\, dx = 2 \\int_1^3 f(x) \\, dx - \\int_1^3 4 \\, dx\\).",
+          "Compute: \\(2(5) - 4(3 - 1) = 10 - 8 = 2\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      },
+      {
+        "id": "5b91d68f69bf",
+        "prompt": "Approximate the area under \\(f(x) = \\sqrt{x}\\) on \\([0, 4]\\) using a Midpoint Riemann sum (MRAM) with \\(n = 2\\) subintervals.",
+        "answer": "\\(2 + 2\\sqrt{3} \\approx 5.464\\)",
+        "steps": [
+          "Subinterval width \\(\\Delta x = \\frac{4 - 0}{2} = 2\\).",
+          "Subintervals are \\([0, 2]\\) and \\([2, 4]\\). Their midpoints are \\(m_1 = 1\\) and \\(m_2 = 3\\).",
+          "Evaluate function at midpoints: \\(f(1) = \\sqrt{1} = 1\\) and \\(f(3) = \\sqrt{3}\\).",
+          "Calculate MRAM: \\(2 \\cdot (f(1) + f(3)) = 2(1 + \\sqrt{3}) = 2 + 2\\sqrt{3}\\)."
+        ],
+        "unit": null,
+        "diagram": null
+      }
+    ],
+    "concept_review": [
+      "Right Riemann Sum (RRAM) uses right endpoints: \\(R_n = \\sum_{k=1}^n f(x_k) \\Delta x\\), where \\(\\Delta x = \\frac{b-a}{n}\\) and \\(x_k = a + k \\Delta x\\).",
+      "For a strictly increasing function on \\([a, b]\\), RRAM gives an overestimate and LRAM gives an underestimate. For a strictly decreasing function, RRAM gives an underestimate and LRAM gives an overestimate.",
+      "Essential summation formulas: \\(\\sum_{k=1}^n 1 = n\\), \\(\\sum_{k=1}^n k = \\frac{n(n+1)}{2}\\), \\(\\sum_{k=1}^n k^2 = \\frac{n(n+1)(2n+1)}{6}\\), and \\(\\sum_{k=1}^n k^3 = \\left[\\frac{n(n+1)}{2}\\right]^2\\).",
+      "The exact net signed area under \\(y = f(x)\\) on \\([a, b]\\) is defined by the definite integral \\(\\int_a^b f(x) \\, dx = \\lim_{n \\to \\infty} \\sum_{k=1}^n f(x_k) \\Delta x\\)."
+    ],
+    "asked_solution": null
   }
 }

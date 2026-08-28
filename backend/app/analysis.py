@@ -26,9 +26,9 @@ import httpx
 from pydantic import ValidationError
 
 # Analysis Honors units, mirroring the Gunn Maths course
-# (https://www.gunnmaths.org/analysis). Most units are a single browsable
-# topic; AtPS is split into subsections so its large problem set is grouped.
-# Each topic id maps to cached content built from real past quizzes/tests.
+# (https://www.gunnmaths.org/analysis). Each unit is split into 2-3 subsections
+# so its problem set is grouped by subject matter. Each subsection id maps to
+# cached content built from real past quizzes/tests.
 _ANALYSIS_UNITS: list[tuple[str, list[str]]] = [
     (
         "Algebra Through Problem Solving (AtPS)",
@@ -39,24 +39,77 @@ _ANALYSIS_UNITS: list[tuple[str, list[str]]] = [
         ],
     ),
     (
-        "Other Analysis Units",
+        "Probability",
         [
-            "Probability",
-            "Polar and 3D",
-            "Vectors and Parametrics",
-            "Growth",
-            "Matrices",
-            "A Geometric Approach to Matrices (GAtM)",
-            "Limits and Calculus",
+            "Probability: Counting & Combinatorics",
+            "Probability: Probability & Expected Value",
+        ],
+    ),
+    (
+        "Polar and 3D",
+        [
+            "Polar and 3D: Polar Coordinates & Curves",
+            "Polar and 3D: Complex Numbers & 3D Coordinates",
+        ],
+    ),
+    (
+        "Vectors and Parametrics",
+        [
+            "Vectors and Parametrics: Vectors & Dot/Cross Products",
+            "Vectors and Parametrics: Parametric & Vector Equations",
+        ],
+    ),
+    (
+        "Growth",
+        [
+            "Growth: Exponentials & Logarithms",
+            "Growth: Power Functions & Modeling",
+        ],
+    ),
+    (
+        "Matrices",
+        [
+            "Matrices: Operations & Determinants",
+            "Matrices: Systems & Inverses",
+            "Matrices: Eigenvalues & Transformations",
+        ],
+    ),
+    (
+        "A Geometric Approach to Matrices (GAtM)",
+        [
+            "GAtM: Complex Numbers Geometrically",
+            "GAtM: Countability & Cardinality",
+        ],
+    ),
+    (
+        "Limits and Calculus",
+        [
+            "Limits and Calculus: Sequences & Limits",
+            "Limits and Calculus: Continuity & Derivatives",
+            "Limits and Calculus: Areas & Integrals",
         ],
     ),
 ]
 
 
 def analysis_units() -> list[dict]:
-    """Return Analysis units with their topics for the topic browser."""
+    """Return Analysis units with their topics for the topic browser.
+
+    Subsection ids are prefixed with the unit name (e.g. "Probability:
+    Counting & Combinatorics") so cache keys stay unique, but the display
+    title drops that redundant prefix since it sits under the unit header.
+    """
+    def _title(unit: str, topic: str) -> str:
+        # subsection ids are "<prefix>: <name>"; drop the prefix for display.
+        if ": " in topic:
+            return topic.split(": ", 1)[1]
+        return topic
+
     return [
-        {"unit": name, "topics": [{"id": t, "title": t} for t in topics]}
+        {
+            "unit": name,
+            "topics": [{"id": t, "title": _title(name, t)} for t in topics],
+        }
         for name, topics in _ANALYSIS_UNITS
     ]
 
