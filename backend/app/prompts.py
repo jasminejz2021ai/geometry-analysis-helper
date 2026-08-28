@@ -185,6 +185,13 @@ def _clean(text: str) -> str:
     text = re.sub(r"\\[nr](?=[A-Za-z0-9][.)])", "\x00", text)  # \na)  \n3.
     text = re.sub(r"\\[nr](?![A-Za-z])", "\x00", text)          # \n(   \n$
     text = re.sub(r"\\t(?![A-Za-z])", " ", text)
+    # Multi-part questions sometimes come back with the part label escaped as a
+    # lone backslash, e.g. "...Jar B.\a) Find... \b) Give...". Here "\a"/"\b"/...
+    # is not LaTeX; it's a line break before the "a)"/"b)" label. Turn a
+    # backslash + single letter + ")" into (newline + "letter)"). Guard: only a
+    # SINGLE letter directly before ")" (real LaTeX commands like \left) or
+    # \right) have several letters), so \a) \b) \c) are caught but \right) isn't.
+    text = re.sub(r"\\([a-z])\)(?![A-Za-z])", "\x00\\1)", text)
     # Collapse remaining runs of real whitespace to single spaces, then restore
     # the intended line breaks (also collapsing any duplicates/space around them).
     text = re.sub(r"\s+", " ", text).strip()
@@ -204,8 +211,9 @@ def _clean(text: str) -> str:
     )
     # A backslash immediately followed by a space is a LaTeX control-space; when
     # it leaks into plain prose (e.g. "= 75\ cm") it renders as a literal "\".
-    # Collapse "\ " to a single space so units read cleanly.
-    text = re.sub(r"\\ +", " ", text)
+    # Collapse a lone "\ " to a single space so units read cleanly, but do NOT
+    # touch "\\ " which is a matrix/aligned row separator.
+    text = re.sub(r"(?<!\\)\\ +(?!\\)", " ", text)
     # Remove spaces immediately inside inline/display math delimiters.
     text = re.sub(r"\\\(\s+", r"\\(", text)
     text = re.sub(r"\s+\\\)", r"\\)", text)
