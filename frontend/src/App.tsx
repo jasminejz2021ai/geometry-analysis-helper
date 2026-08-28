@@ -65,7 +65,10 @@ export default function App() {
       setResult(null);
       setPractice([]);
       setConceptReview([]);
-      setError(e instanceof Error ? e.message : "Something went wrong.");
+      setError(
+        (e instanceof Error ? e.message : "Something went wrong.") +
+          " In the meantime, pick any topic from the sidebar — those work instantly.",
+      );
     } finally {
       setLoading(false);
     }
@@ -87,7 +90,10 @@ export default function App() {
       setResult(null);
       setPractice([]);
       setConceptReview([]);
-      setError(e instanceof Error ? e.message : "Could not solve from photo.");
+      setError(
+        (e instanceof Error ? e.message : "Could not solve from photo.") +
+          " In the meantime, pick any topic from the sidebar — those work instantly.",
+      );
     } finally {
       setLoading(false);
     }

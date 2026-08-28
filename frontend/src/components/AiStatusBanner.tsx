@@ -45,10 +45,12 @@ export default function AiStatusBanner() {
         <line x1="12" y1="17" x2="12.01" y2="17" />
       </svg>
       <div>
-        <p className="font-medium">The AI tutor is offline right now.</p>
+        <p className="font-medium">The live AI tutor is offline right now.</p>
         <p className="mt-0.5 text-amber-800">
-          AI answers, Analysis, chat, and photo solving are unavailable.
-          Geometry topics with built-in templates still work.
+          Typing a brand-new question, photo solving, and free-form chat are
+          temporarily unavailable. Everything in the <strong>Topics</strong>{" "}
+          sidebar still works — all Geometry topics and Analysis subsections have
+          worked examples and practice problems ready to go.
         </p>
       </div>
     </div>
