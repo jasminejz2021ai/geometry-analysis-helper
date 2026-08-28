@@ -25,6 +25,8 @@ from .llm import (
     solve_image_local,
 )
 from .models import (
+    AnalysisMoreRequest,
+    AnalysisMoreResponse,
     AnalysisSolveRequest,
     AnalysisTopicRequest,
     ChatRequest,
@@ -33,6 +35,7 @@ from .models import (
     CheckResponse,
     GenerateMoreRequest,
     GenerateMoreResponse,
+    Problem,
     SolveRequest,
     SolveResponse,
 )
@@ -387,7 +390,12 @@ async def analysis_solve_image(
 def analysis_practice(req: AnalysisTopicRequest) -> SolveResponse:
     cached = get_cached_topic(req.topic)
     if cached is not None:
-        return SolveResponse.model_validate(cached)
+        # Serve only the first ``count`` practice problems up front; the rest of
+        # the cached bank is revealed via /api/analysis/more-practice so the
+        # "Generate more problems" button has something instant to show.
+        resp = SolveResponse.model_validate(cached)
+        resp.practice = resp.practice[: req.count]
+        return resp
 
     _require_ai()
     result = practice_analysis_topic(req.topic, req.count)
@@ -403,4 +411,49 @@ def analysis_practice(req: AnalysisTopicRequest) -> SolveResponse:
         original=original,
         practice=practice,
         concept_review=review,
+    )
+
+
+@app.post("/api/analysis/more-practice", response_model=AnalysisMoreResponse)
+def analysis_more_practice(req: AnalysisMoreRequest) -> AnalysisMoreResponse:
+    """Reveal the next slice of practice problems for an Analysis topic.
+
+    First draws from the cached bank (instant). Once the client has seen the
+    whole bank, falls back to generating fresh problems with the AI provider
+    when it is online; otherwise reports that no more are available.
+    """
+    cached = get_cached_topic(req.topic)
+    if cached is not None:
+        bank = [Problem.model_validate(p) for p in cached.get("practice", [])]
+        if req.have < len(bank):
+            nxt = bank[req.have : req.have + req.count]
+            return AnalysisMoreResponse(
+                source="gunn",
+                topic="analysis",
+                practice=nxt,
+                more_available=req.have + len(nxt) < len(bank),
+            )
+
+    # Bank exhausted (or unknown topic): try the live AI for genuinely new ones.
+    if not llm_available() or not ai_reachable():
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "You've seen all the ready-made problems for this topic. Generating "
+                "brand-new ones needs the AI tutor, which is offline right now — "
+                "try another topic or check back later."
+            ),
+        )
+    result = practice_analysis_topic(req.topic, req.count)
+    if result is None:
+        raise HTTPException(
+            status_code=502,
+            detail="The AI tutor could not generate more practice right now. Try again.",
+        )
+    _, practice, _ = result
+    return AnalysisMoreResponse(
+        source="llm",
+        topic="analysis",
+        practice=practice,
+        more_available=True,
     )

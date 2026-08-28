@@ -58,6 +58,13 @@ export type GenerateMoreResponse = {
   concept_review?: string[];
 };
 
+export type AnalysisMoreResponse = {
+  source: "gunn" | "llm";
+  topic: string;
+  practice: Problem[];
+  more_available: boolean;
+};
+
 export type CheckResponse = {
   correct: boolean;
   feedback: string;

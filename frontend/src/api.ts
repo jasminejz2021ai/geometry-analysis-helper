@@ -1,5 +1,6 @@
 import type {
   AiStatus,
+  AnalysisMoreResponse,
   ChatResponse,
   ChatTurn,
   CheckResponse,
@@ -104,6 +105,18 @@ export function analysisPractice(
   count = 5,
 ): Promise<SolveResponse> {
   return post<SolveResponse>("/api/analysis/practice", { topic, count });
+}
+
+export function analysisMorePractice(
+  topic: string,
+  have: number,
+  count = 4,
+): Promise<AnalysisMoreResponse> {
+  return post<AnalysisMoreResponse>("/api/analysis/more-practice", {
+    topic,
+    have,
+    count,
+  });
 }
 
 export async function analysisSolveImage(

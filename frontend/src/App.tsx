@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import {
+  analysisMorePractice,
   analysisPractice,
   analysisSolveImage,
   fetchAnalysisTopics,
@@ -31,6 +32,8 @@ export default function App() {
   // When a topic is picked from the browser we track it here (no worked example).
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
   const [topicTitle, setTopicTitle] = useState<string | null>(null);
+  // Whether more Analysis practice can still be revealed for the active topic.
+  const [moreAvailable, setMoreAvailable] = useState(false);
 
   const isAnalysis = subject === "analysis";
 
@@ -41,6 +44,7 @@ export default function App() {
     setConceptReview([]);
     setActiveTopic(null);
     setTopicTitle(null);
+    setMoreAvailable(false);
   }
 
   function switchSubject(next: Subject) {
@@ -106,13 +110,17 @@ export default function App() {
     setConceptReview([]);
     setActiveTopic(topicId);
     setTopicTitle(title);
+    setMoreAvailable(false);
     try {
       if (isAnalysis) {
-        const res = await analysisPractice(topicId, 5);
+        const res = await analysisPractice(topicId, 4);
         // Show the AI worked example plus its practice set.
         setResult(res);
         setPractice(res.practice);
         setConceptReview(res.concept_review ?? []);
+        // The cached bank holds more than the initial slice, and the AI can
+        // generate further problems, so offer "Generate more".
+        setMoreAvailable(true);
       } else {
         const res = await generateMore(topicId, 5);
         setPractice(res.practice);
@@ -128,6 +136,25 @@ export default function App() {
   }
 
   async function handleGenerateMore() {
+    // Analysis topics reveal more from the cached bank (then fall back to AI);
+    // geometry uses the template generator.
+    if (isAnalysis) {
+      const topic = activeTopic;
+      if (!topic) return;
+      setGenerating(true);
+      setError(null);
+      try {
+        const res = await analysisMorePractice(topic, practice.length, 4);
+        setPractice((prev) => [...prev, ...res.practice]);
+        setMoreAvailable(res.more_available || res.source === "llm");
+      } catch (e) {
+        setError(e instanceof Error ? e.message : "Could not generate more.");
+        setMoreAvailable(false);
+      } finally {
+        setGenerating(false);
+      }
+      return;
+    }
     // Only template-backed geometry solves and topic browsing support "more".
     const topic =
       activeTopic ?? (result?.source === "template" ? result.topic : null);
@@ -143,9 +170,11 @@ export default function App() {
     }
   }
 
-  // Analysis practice comes as a fixed batch from the AI, so no incremental "more".
-  const canGenerateMore =
-    !isAnalysis && (activeTopic !== null || result?.source === "template");
+  // Geometry: template solves and topic browsing support "more". Analysis:
+  // topic browsing reveals more from the cached bank (tracked by moreAvailable).
+  const canGenerateMore = isAnalysis
+    ? activeTopic !== null && moreAvailable
+    : activeTopic !== null || result?.source === "template";
 
   const fetchTopics = useCallback(
     () => (isAnalysis ? fetchAnalysisTopics() : fetchGroupedTopics()),

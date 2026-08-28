@@ -126,3 +126,20 @@ class AnalysisSolveRequest(BaseModel):
 class AnalysisTopicRequest(BaseModel):
     topic: str = Field(..., min_length=1)
     count: int = Field(default=4, ge=1, le=8)
+
+
+class AnalysisMoreRequest(BaseModel):
+    topic: str = Field(..., min_length=1)
+    # How many practice problems the client already has for this topic, so we
+    # can serve the next slice from the cached bank.
+    have: int = Field(default=0, ge=0)
+    count: int = Field(default=4, ge=1, le=8)
+
+
+class AnalysisMoreResponse(BaseModel):
+    # "gunn" = served from the cached bank; "llm" = freshly AI-generated.
+    source: Literal["gunn", "llm"]
+    topic: str
+    practice: list[Problem]
+    # True when more cached problems remain beyond what was just returned.
+    more_available: bool = False

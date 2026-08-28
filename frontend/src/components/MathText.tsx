@@ -12,20 +12,36 @@ type Segment = { type: "text" | "math"; value: string; display: boolean };
 const DELIMITED =
   /\\\[([\s\S]+?)\\\]|\$\$([\s\S]+?)\$\$|\\\(([\s\S]+?)\\\)|\$([^$]+?)\$/g;
 
-// Heuristic for math written WITHOUT delimiters: subscripts/superscripts,
-// LaTeX commands (\ge, \frac, \sum, \pi ...), or fraction-like tokens.
-// Matches a run of non-space math-ish characters, e.g. "F_{n-1}", "x^2",
-// "\ge", "F_0". We keep it conservative so ordinary prose is left alone.
+// Heuristic for math written WITHOUT delimiters. Two cases:
+//  1. a LaTeX command, optionally with a braced argument: \pi, \sqrt{4},
+//     \text{Use }, \Rightarrow, \frac{a}{b} (we grab following {...} groups).
+//  2. tokens with sub/superscripts: F_{n-1}, x^2, F_0.
+// Kept conservative so ordinary prose is left alone, but broad enough that a
+// step like "b = \sqrt{68^2 - 32^2}" or "\text{Use } a^2 = c^2" renders.
 const BARE_MATH =
-  /(\\[a-zA-Z]+(?:\s*\{[^}]*\})?|[A-Za-z0-9()]+(?:[_^]\{[^}]*\}|[_^][A-Za-z0-9]+)+|[A-Za-z0-9]+[_^][A-Za-z0-9{}+\-]+)/g;
+  /(\\[a-zA-Z]+(?:\s*\{[^{}]*\})*|[A-Za-z0-9()]+(?:[_^]\{[^}]*\}|[_^][A-Za-z0-9]+)+|[A-Za-z0-9]+[_^][A-Za-z0-9{}+\-]+)/g;
+
+// Does a run contain any LaTeX command? If so we widen the math span to cover
+// neighbouring math-ish tokens (numbers, operators, =, +, -, parentheses) so
+// something like "b = \sqrt{68^2 - 32^2} = 60" renders as one expression
+// instead of leaving "= 60" or a stray "\text" outside the math.
+const HAS_COMMAND = /\\[a-zA-Z]+/;
 
 function pushText(segments: Segment[], value: string) {
   if (!value) return;
   // A LaTeX control-space ("\ ") that leaked into prose renders as a literal
   // backslash; collapse it to a normal space here as a safety net.
   value = value.replace(/\\ +/g, " ");
-  // Within a plain-text run, promote bare-LaTeX tokens to math segments so
-  // outputs like "F_{n} = F_{n-1} + F_{n-2}" render instead of showing markup.
+  // If the run contains any LaTeX command (e.g. an undelimited step like
+  // "b = \sqrt{68^2 - 32^2} = 60 \text{cm}"), render the ENTIRE run as one
+  // math expression. KaTeX handles the surrounding "=", numbers and text fine,
+  // and this avoids leaving stray "\sqrt"/"\text" tokens as literal prose.
+  if (HAS_COMMAND.test(value)) {
+    segments.push({ type: "math", value: value.trim(), display: false });
+    return;
+  }
+  // Otherwise promote only bare-LaTeX tokens (subscripts/superscripts like
+  // "F_{n-1}", "x^2") to math and keep the rest as plain text.
   let last = 0;
   let m: RegExpExecArray | null;
   BARE_MATH.lastIndex = 0;
