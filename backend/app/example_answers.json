@@ -5754,8 +5754,8 @@
       }
     ],
     "concept_review": [
-      "**Pascal's Identity**: For any integers \\(n \\ge k \\ge 0\\), \\([ \\binom{n}{k} + \\binom{n}{k+1} = \\binom{n+1}{k+1}\\])",
-      "**Hockey-Stick Identity**: Summing along a diagonal in Pascal's Triangle starting at a boundary 1 yields the entry diagonally down and in the opposite direction: \\([ \\sum_{k=r}^n \\binom{k}{r} = \\binom{n+1}{r+1} \\quad \\text{and} \\quad \\sum_{k=0}^n \\binom{r+k}{k} = \\binom{r+n+1}{n}\\])",
+      "**Pascal's Identity**: For any integers \\(n \\ge k \\ge 0\\), \\[ \\binom{n}{k} + \\binom{n}{k+1} = \\binom{n+1}{k+1} \\]",
+      "**Hockey-Stick Identity**: Summing along a diagonal in Pascal's Triangle starting at a boundary 1 yields the entry diagonally down and in the opposite direction: \\[ \\sum_{k=r}^n \\binom{k}{r} = \\binom{n+1}{r+1} \\quad \\text{and} \\quad \\sum_{k=0}^n \\binom{r+k}{k} = \\binom{r+n+1}{n} \\]",
       "**Triangular Numbers**: The \\(n\\)-th triangular number is defined as \\(T_n = 1 + 2 + 3 + \\dots + n = \\frac{n(n+1)}{2} = \\binom{n+1}{2}\\).",
       "**Odd Number Triangle**: Row \\(n\\) contains \\(n\\) consecutive odd integers. The sum of the elements in row \\(n\\) is equal to \\(n^3\\), the median (middle term) is \\(n^2\\), and the first entry of row \\(n\\) is \\(n^2 - n + 1\\)."
     ],

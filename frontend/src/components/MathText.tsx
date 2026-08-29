@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, type ReactNode } from "react";
 import katex from "katex";
 
 type Props = {
@@ -93,6 +93,27 @@ function renderMath(value: string, display: boolean): string {
   }
 }
 
+// Render a plain-text run, turning Markdown-style **bold** into real bold text
+// (LLMs sometimes leave these markers, which otherwise show as literal "**").
+function renderTextRun(value: string, keyBase: number): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  const re = /\*\*([\s\S]+?)\*\*/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let idx = 0;
+  while ((m = re.exec(value)) !== null) {
+    if (m.index > last) {
+      nodes.push(<span key={`${keyBase}-t${idx++}`}>{value.slice(last, m.index)}</span>);
+    }
+    nodes.push(<strong key={`${keyBase}-b${idx++}`}>{m[1]}</strong>);
+    last = re.lastIndex;
+  }
+  if (last < value.length) {
+    nodes.push(<span key={`${keyBase}-t${idx++}`}>{value.slice(last)}</span>);
+  }
+  return nodes;
+}
+
 export default function MathText({ text, className }: Props) {
   // Split into lines first (real newlines mark intended breaks, e.g. multiple-
   // choice options), then render each line's inline math/text segments. Lines
@@ -109,7 +130,7 @@ export default function MathText({ text, className }: Props) {
       {perLine.map((segments, li) => {
         const inner = segments.map((seg, i) =>
           seg.type === "text" ? (
-            <span key={i}>{seg.value}</span>
+            <span key={i}>{renderTextRun(seg.value, i)}</span>
           ) : (
             <span
               key={i}
