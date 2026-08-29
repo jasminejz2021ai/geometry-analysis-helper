@@ -112,3 +112,22 @@ gh repo create geometry-tutor --private --source=. --remote=origin --push
 - For a fully cloud-independent deploy, switch `LLM_API_BASE`/`LLM_API_KEY` to a
   hosted OpenAI-compatible API and set `LLM_MODEL`/`LLM_VISION_MODEL` to a
   hosted model (e.g. `gpt-4o-mini` / `gpt-4o`). No tunnel needed then.
+
+---
+
+## "Report a problem" email (optional)
+
+The site has a **Report a problem** button (header and footer). Submitted
+reports are emailed to you via [Resend](https://resend.com) when configured;
+otherwise they're written to the Render server logs (always, as a backup).
+
+To receive reports by email, set these env vars on Render:
+
+- `RESEND_API_KEY` — a key from <https://resend.com/api-keys> (free tier is fine)
+- `REPORT_EMAIL_TO` — the inbox that should receive reports
+- `REPORT_EMAIL_FROM` — optional; defaults to Resend's shared sender
+  `Problem Reports <onboarding@resend.dev>` (works without domain verification
+  for low volume). To send from your own domain, verify it in Resend first.
+
+Each report includes the user's description, their optional email, a UTC
+timestamp, and auto-captured context (current subject/topic, page URL, browser).

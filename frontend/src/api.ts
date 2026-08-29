@@ -85,6 +85,14 @@ export function fetchAiStatus(): Promise<AiStatus> {
   return get<AiStatus>("/api/ai-status");
 }
 
+export function reportProblem(
+  description: string,
+  email?: string,
+  context?: string,
+): Promise<{ ok: boolean; delivery: "email" | "logged" }> {
+  return post("/api/report", { description, email, context });
+}
+
 export function fetchGroupedTopics(): Promise<GroupedTopicsResponse> {
   return get<GroupedTopicsResponse>("/api/topics-grouped");
 }

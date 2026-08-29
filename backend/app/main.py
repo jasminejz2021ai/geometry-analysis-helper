@@ -1,6 +1,10 @@
 """FastAPI application for the geometry tutor."""
 from __future__ import annotations
 
+import logging
+from datetime import datetime, timezone
+
+import httpx
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -36,6 +40,8 @@ from .models import (
     GenerateMoreRequest,
     GenerateMoreResponse,
     Problem,
+    ReportRequest,
+    ReportResponse,
     SolveRequest,
     SolveResponse,
 )
@@ -275,6 +281,57 @@ def chat(req: ChatRequest) -> ChatResponse:
             detail="Sorry, I couldn't answer that right now. Please try again.",
         )
     return ChatResponse(answer=answer)
+
+
+logger = logging.getLogger("uvicorn.error")
+
+
+def _send_report_email(subject: str, body: str) -> bool:
+    """Email a problem report via Resend. Returns True on success."""
+    cfg = get_settings()
+    if not cfg.report_email_enabled:
+        return False
+    try:
+        resp = httpx.post(
+            "https://api.resend.com/emails",
+            headers={
+                "Authorization": f"Bearer {cfg.resend_api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "from": cfg.report_email_from,
+                "to": [cfg.report_email_to],
+                "subject": subject,
+                "text": body,
+            },
+            timeout=15.0,
+        )
+        resp.raise_for_status()
+        return True
+    except httpx.HTTPError as exc:
+        logger.error("Failed to send report email: %s", exc)
+        return False
+
+
+@app.post("/api/report", response_model=ReportResponse)
+def report(req: ReportRequest) -> ReportResponse:
+    """Accept a user's problem report; email it if configured, else log it."""
+    when = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    reporter = req.email.strip() if req.email else "(not provided)"
+    body = (
+        f"New problem report from the Geometry & Analysis Helper\n"
+        f"Time: {when}\n"
+        f"Reporter email: {reporter}\n"
+        f"Context: {req.context or '(none)'}\n\n"
+        f"Description:\n{req.description.strip()}\n"
+    )
+    # Always log so reports survive even when email isn't configured (and as a
+    # backup on Render's ephemeral disk).
+    logger.info("PROBLEM REPORT\n%s", body)
+
+    if _send_report_email("Geometry/Analysis Helper — problem report", body):
+        return ReportResponse(ok=True, delivery="email")
+    return ReportResponse(ok=True, delivery="logged")
 
 
 @app.get("/api/topics")

@@ -116,6 +116,24 @@ class ChatResponse(BaseModel):
 
 
 # ---------------------------------------------------------------------------
+# Problem reports ("Report a problem" page)
+# ---------------------------------------------------------------------------
+class ReportRequest(BaseModel):
+    # What went wrong, in the user's words.
+    description: str = Field(..., min_length=1, max_length=5000)
+    # Optional email so we can follow up.
+    email: Optional[str] = Field(default=None, max_length=254)
+    # Auto-captured context from the frontend (subject, topic, URL, browser).
+    context: Optional[str] = Field(default=None, max_length=2000)
+
+
+class ReportResponse(BaseModel):
+    ok: bool
+    # "email" when sent to the inbox, "logged" when only written to the log.
+    delivery: Literal["email", "logged"]
+
+
+# ---------------------------------------------------------------------------
 # Analysis (AI-only subject)
 # ---------------------------------------------------------------------------
 class AnalysisSolveRequest(BaseModel):

@@ -15,6 +15,7 @@ import AiStatusBanner from "./components/AiStatusBanner";
 import ImageUpload from "./components/ImageUpload";
 import LoadingPanel from "./components/LoadingPanel";
 import QuestionInput from "./components/QuestionInput";
+import ReportModal from "./components/ReportModal";
 import ResultTabs from "./components/ResultTabs";
 import TopicBrowser from "./components/TopicBrowser";
 import type { Problem, SolveResponse } from "./types";
@@ -34,6 +35,7 @@ export default function App() {
   const [topicTitle, setTopicTitle] = useState<string | null>(null);
   // Whether more Analysis practice can still be revealed for the active topic.
   const [moreAvailable, setMoreAvailable] = useState(false);
+  const [reportOpen, setReportOpen] = useState(false);
 
   const isAnalysis = subject === "analysis";
 
@@ -204,24 +206,37 @@ export default function App() {
         </svg>
 
         <div className="relative mx-auto flex max-w-6xl flex-col gap-5 px-4 py-8">
-          <div className="flex items-center gap-3">
-            {/* Compass / protractor style badge */}
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 ring-1 ring-white/25 backdrop-blur">
-              <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <path d="M12 3 L20 19 L4 19 Z" />
-                <circle cx="12" cy="3" r="1.4" fill="currentColor" stroke="none" />
-              </svg>
-            </span>
-            <div>
-              <h1 className="text-3xl font-bold tracking-tight">
-                {isAnalysis ? "Analysis Helper" : "Geometry Helper"}
-              </h1>
-              <p className="mt-1 text-sm text-brand-50/90">
-                {isAnalysis
-                  ? "Ask an Analysis (Honors) question or pick a topic, and the AI tutor walks you through the steps and gives you practice."
-                  : "Ask a geometry question or pick an Honors topic, learn the steps, then practice with similar problems."}
-              </p>
+          <div className="flex items-start justify-between gap-3">
+            <div className="flex items-center gap-3">
+              {/* Compass / protractor style badge */}
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 ring-1 ring-white/25 backdrop-blur">
+                <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M12 3 L20 19 L4 19 Z" />
+                  <circle cx="12" cy="3" r="1.4" fill="currentColor" stroke="none" />
+                </svg>
+              </span>
+              <div>
+                <h1 className="text-3xl font-bold tracking-tight">
+                  {isAnalysis ? "Analysis Helper" : "Geometry Helper"}
+                </h1>
+                <p className="mt-1 text-sm text-brand-50/90">
+                  {isAnalysis
+                    ? "Ask an Analysis (Honors) question or pick a topic, and the AI tutor walks you through the steps and gives you practice."
+                    : "Ask a geometry question or pick an Honors topic, learn the steps, then practice with similar problems."}
+                </p>
+              </div>
             </div>
+            <button
+              onClick={() => setReportOpen(true)}
+              className="flex shrink-0 items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 text-sm font-medium text-white ring-1 ring-white/25 backdrop-blur transition hover:bg-white/25"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              Report a problem
+            </button>
           </div>
 
           {/* Subject switcher */}
@@ -296,10 +311,29 @@ export default function App() {
       </main>
 
       <footer className="mx-auto max-w-6xl px-4 py-8 text-center text-xs text-slate-400">
-        {isAnalysis
-          ? "Covers the Analysis Honors syllabus (induction, series, polar, probability, matrices, vectors, groups, limits, and derivatives). Every question is guided by the AI tutor."
-          : "Covers the Honors Geometry syllabus. Numeric topics get instant step-by-step practice; proofs and other conceptual questions are handled by the AI tutor."}
+        <p>
+          {isAnalysis
+            ? "Covers the Analysis Honors syllabus (induction, series, polar, probability, matrices, vectors, groups, limits, and derivatives). Every question is guided by the AI tutor."
+            : "Covers the Honors Geometry syllabus. Numeric topics get instant step-by-step practice; proofs and other conceptual questions are handled by the AI tutor."}
+        </p>
+        <button
+          onClick={() => setReportOpen(true)}
+          className="mt-3 text-xs font-medium text-brand-600 underline-offset-2 transition hover:underline"
+        >
+          Report a problem
+        </button>
       </footer>
+
+      <ReportModal
+        open={reportOpen}
+        onClose={() => setReportOpen(false)}
+        context={
+          `Subject: ${subject}` +
+          (topicTitle ? ` | Topic: ${topicTitle}` : "") +
+          (activeTopic ? ` | TopicId: ${activeTopic}` : "") +
+          (result?.source ? ` | Source: ${result.source}` : "")
+        }
+      />
     </div>
   );
 }

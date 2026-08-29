@@ -38,6 +38,15 @@ class Settings(BaseSettings):
     # Comma-separated list of allowed CORS origins for the frontend dev server.
     cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
 
+    # "Report a problem" delivery via Resend (https://resend.com). When these
+    # are unset, reports are written to the server log instead of emailed.
+    resend_api_key: Optional[str] = None
+    # The address reports are sent TO (your inbox).
+    report_email_to: Optional[str] = None
+    # The verified FROM address for Resend. Defaults to Resend's shared sender,
+    # which works without domain verification for low volume.
+    report_email_from: str = "Problem Reports <onboarding@resend.dev>"
+
     @property
     def cors_origin_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
@@ -45,6 +54,11 @@ class Settings(BaseSettings):
     @property
     def dify_enabled(self) -> bool:
         return bool(self.dify_api_key)
+
+    @property
+    def report_email_enabled(self) -> bool:
+        """True when problem reports can be emailed (Resend fully configured)."""
+        return bool(self.resend_api_key) and bool(self.report_email_to)
 
     @property
     def direct_llm_enabled(self) -> bool:
