@@ -19,7 +19,8 @@ class LLMProblem(BaseModel):
 
 class LLMPayload(BaseModel):
     original: LLMProblem
-    practice: list[LLMProblem]
+    # Optional so an "answer only" (fast) response with no practice validates.
+    practice: list[LLMProblem] = []
     concept_review: list[str] = []
 
 
@@ -40,12 +41,24 @@ SYSTEM_PROMPT = (
 )
 
 
+def _practice_clause(count: int) -> str:
+    """Tail of a solve prompt controlling practice generation.
+
+    When ``count <= 0`` we ask for NO practice problems so the response stays
+    small and fast (practice is fetched separately/lazily). Otherwise we ask
+    for ``count`` similar problems inline.
+    """
+    if count and count > 0:
+        return f" Then produce {count} similar practice problems in 'practice'. Return JSON only."
+    return ' Set "practice" to an empty array []. Do not generate any practice problems. Return JSON only.'
+
+
 def build_user_prompt(question: str, count: int) -> str:
     return (
         f"Student question: {question}\n\n"
-        f"First write a short 'concept_review' (2-4 bullets) of the concepts and "
-        f"formulas needed, then solve it in 'original', then produce {count} similar "
-        "practice problems in 'practice'. Return JSON only."
+        "First write a short 'concept_review' (2-4 bullets) of the concepts and "
+        "formulas needed, then solve it step by step in 'original'."
+        + _practice_clause(count)
     )
 
 
@@ -54,8 +67,8 @@ def build_image_prompt(count: int) -> str:
         "The attached image is a photo of a geometry problem. Read the problem "
         "from the image, restate it clearly in the 'original.prompt' field, add a "
         "short 'concept_review' (2-4 bullets) of the concepts/formulas needed, and "
-        "solve it step by step in 'original.steps'. Then produce "
-        f"{count} similar practice problems in 'practice'. Return JSON only."
+        "solve it step by step in 'original.steps'."
+        + _practice_clause(count)
     )
 
 
@@ -66,9 +79,35 @@ def build_analysis_image_prompt(count: int) -> str:
         "matrices, vectors, groups, limits, or derivatives. Read the problem from "
         "the image, restate it clearly in the 'original.prompt' field, add a short "
         "'concept_review' (2-4 bullets) of the concepts/definitions/formulas "
-        "needed, and solve it step by step in 'original.steps'. Then produce "
-        f"{count} similar practice problems in 'practice'. When you write math, "
-        "wrap it in \\( \\) so it renders. Return JSON only."
+        "needed, and solve it step by step in 'original.steps'. When you write "
+        "math, wrap it in \\( \\) so it renders."
+        + _practice_clause(count)
+    )
+
+
+def build_one_practice_prompt(question: str, variety: int, analysis: bool) -> str:
+    """Prompt for generating a SINGLE practice problem similar to ``question``.
+
+    Kept deliberately small: one problem per call is fast and parses reliably,
+    which lets us generate several in parallel instead of one huge, slow, and
+    failure-prone response.
+    """
+    subject = "Analysis (Honors)" if analysis else "geometry"
+    math_rule = (
+        "Write ALL mathematics using LaTeX wrapped in \\( \\) inline and \\[ \\] "
+        "for displayed equations."
+        if analysis
+        else "You may use LaTeX inside steps (without surrounding $)."
+    )
+    return (
+        f"A student is practicing this {subject} question:\n{question}\n\n"
+        "Create ONE new practice problem that tests the same concept at a similar "
+        "difficulty, but with different numbers or wording "
+        f"(variation #{variety + 1}). "
+        "Respond with STRICT JSON only, no prose, no markdown fences, matching: "
+        '{"prompt": <string>, "answer": <string>, "steps": [<string>, ...]}. '
+        "'steps' is the full worked solution, one step per array element. "
+        + math_rule
     )
 
 
@@ -229,6 +268,11 @@ def _to_problem(p: LLMProblem) -> Problem:
         answer=_clean(p.answer),
         steps=[_clean(s) for s in p.steps if s and s.strip()],
     )
+
+
+def to_problem(p: LLMProblem) -> Problem:
+    """Public wrapper: convert a parsed LLM problem into a cleaned ``Problem``."""
+    return _to_problem(p)
 
 
 def to_problems(payload: LLMPayload, count: int) -> tuple[Problem, list[Problem]]:

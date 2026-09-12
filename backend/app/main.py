@@ -23,6 +23,7 @@ from .llm import (
     active_provider,
     ai_reachable,
     chat_reply,
+    generate_practice,
     llm_available,
     local_vision_available,
     solve_fallback,
@@ -39,6 +40,8 @@ from .models import (
     CheckResponse,
     GenerateMoreRequest,
     GenerateMoreResponse,
+    PracticeForRequest,
+    PracticeForResponse,
     Problem,
     ReportRequest,
     ReportResponse,
@@ -161,9 +164,11 @@ def solve(req: SolveRequest) -> SolveResponse:
             )
 
     # No template matched -> route to the configured fallback (Dify or LLM).
+    # Ask for the answer only (count=0); practice problems are fetched lazily
+    # via /api/practice so the student sees their answer fast.
     if llm_available() and not ai_reachable():
         raise HTTPException(status_code=503, detail=_AI_OFFLINE)
-    result = solve_fallback(req.question, req.count)
+    result = solve_fallback(req.question, 0)
     if result is not None:
         source, original, practice, review = result
         return SolveResponse(
@@ -210,11 +215,11 @@ async def solve_image(
     if len(content) > 10 * 1024 * 1024:
         raise HTTPException(status_code=422, detail="Image too large (max 10 MB).")
 
-    count = max(1, min(count, 8))
     if local_vision_available() and not ai_reachable():
         raise HTTPException(status_code=503, detail=_AI_OFFLINE)
+    # Read + solve the photo answer only (count=0); practice is fetched lazily.
     result = _solve_photo(
-        content, image.filename or "problem.jpg", content_type, count, analysis=False
+        content, image.filename or "problem.jpg", content_type, 0, analysis=False
     )
     if result is None:
         raise HTTPException(
@@ -250,6 +255,27 @@ def generate_more(req: GenerateMoreRequest) -> GenerateMoreResponse:
         practice=problems,
         concept_review=template_concept_review(req.topic),
     )
+
+
+@app.post("/api/practice", response_model=PracticeForResponse)
+def practice_for(req: PracticeForRequest) -> PracticeForResponse:
+    """Generate practice problems for a question the AI just answered.
+
+    Called as a fast follow-up after /api/solve or /api/analysis/solve returns
+    the answer, so the student sees their answer immediately while practice
+    problems load in the background.
+    """
+    if not llm_available():
+        raise HTTPException(
+            status_code=422,
+            detail="Generating practice needs an AI provider. Configure one in the .env.",
+        )
+    if not ai_reachable():
+        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
+    problems = generate_practice(
+        req.question, req.count, analysis=(req.subject == "analysis")
+    )
+    return PracticeForResponse(practice=problems)
 
 
 @app.post("/api/check", response_model=CheckResponse)
@@ -376,7 +402,8 @@ def analysis_solve(req: AnalysisSolveRequest) -> SolveResponse:
         return SolveResponse.model_validate(cached)
 
     _require_ai()
-    result = solve_analysis_question(req.question, req.count)
+    # Answer only (count=0); practice is fetched lazily via /api/practice.
+    result = solve_analysis_question(req.question, 0)
     if result is None:
         raise HTTPException(
             status_code=502,
@@ -417,11 +444,11 @@ async def analysis_solve_image(
     if len(content) > 10 * 1024 * 1024:
         raise HTTPException(status_code=422, detail="Image too large (max 10 MB).")
 
-    count = max(1, min(count, 8))
     if local_vision_available() and not ai_reachable():
         raise HTTPException(status_code=503, detail=_AI_OFFLINE)
+    # Read + solve the photo answer only (count=0); practice is fetched lazily.
     result = _solve_photo(
-        content, image.filename or "problem.jpg", content_type, count, analysis=True
+        content, image.filename or "problem.jpg", content_type, 0, analysis=True
     )
     if result is None:
         raise HTTPException(

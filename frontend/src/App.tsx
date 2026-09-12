@@ -6,6 +6,7 @@ import {
   fetchAnalysisTopics,
   fetchGroupedTopics,
   generateMore,
+  generatePractice,
   solve,
   solveAnalysis,
   solveImage,
@@ -29,6 +30,9 @@ export default function App() {
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<SolveResponse | null>(null);
   const [practice, setPractice] = useState<Problem[]>([]);
+  // True while practice problems are being generated in the background after a
+  // fast answer has already been shown.
+  const [practiceLoading, setPracticeLoading] = useState(false);
   const [conceptReview, setConceptReview] = useState<string[]>([]);
   // When a topic is picked from the browser we track it here (no worked example).
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
@@ -43,10 +47,25 @@ export default function App() {
     setError(null);
     setResult(null);
     setPractice([]);
+    setPracticeLoading(false);
     setConceptReview([]);
     setActiveTopic(null);
     setTopicTitle(null);
     setMoreAvailable(false);
+  }
+
+  // Phase 2: fetch practice problems in the background after the answer shows.
+  async function loadPractice(question: string) {
+    setPracticeLoading(true);
+    try {
+      const res = await generatePractice(question, subject, 4);
+      setPractice(res.practice);
+    } catch {
+      // Practice is a bonus; if it fails, leave the answer as-is.
+      setPractice([]);
+    } finally {
+      setPracticeLoading(false);
+    }
   }
 
   function switchSubject(next: Subject) {
@@ -60,6 +79,8 @@ export default function App() {
     setError(null);
     setActiveTopic(null);
     setTopicTitle(null);
+    setPractice([]);
+    setPracticeLoading(false);
     try {
       const res = isAnalysis
         ? await solveAnalysis(question, 4)
@@ -67,6 +88,11 @@ export default function App() {
       setResult(res);
       setPractice(res.practice);
       setConceptReview(res.concept_review ?? []);
+      // Templates already include instant practice; AI answers come back with
+      // none, so fetch practice in the background without blocking the answer.
+      if (res.practice.length === 0 && res.source !== "template") {
+        void loadPractice(question);
+      }
     } catch (e) {
       setResult(null);
       setPractice([]);
@@ -85,6 +111,8 @@ export default function App() {
     setError(null);
     setActiveTopic(null);
     setTopicTitle(null);
+    setPractice([]);
+    setPracticeLoading(false);
     try {
       const res = isAnalysis
         ? await analysisSolveImage(file, 4)
@@ -92,6 +120,11 @@ export default function App() {
       setResult(res);
       setPractice(res.practice);
       setConceptReview(res.concept_review ?? []);
+      // Photo answers are AI-generated; load practice for the restated problem
+      // in the background so the answer appears right away.
+      if (res.practice.length === 0 && res.original?.prompt) {
+        void loadPractice(res.original.prompt);
+      }
     } catch (e) {
       setResult(null);
       setPractice([]);
@@ -290,6 +323,7 @@ export default function App() {
             result={result}
             conceptReview={conceptReview}
             practice={practice}
+            practiceLoading={practiceLoading}
             topicTitle={topicTitle}
             canGenerateMore={canGenerateMore}
             onGenerateMore={handleGenerateMore}

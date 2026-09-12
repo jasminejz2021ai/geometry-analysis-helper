@@ -161,3 +161,17 @@ class AnalysisMoreResponse(BaseModel):
     practice: list[Problem]
     # True when more cached problems remain beyond what was just returned.
     more_available: bool = False
+
+
+# ---------------------------------------------------------------------------
+# Lazy practice generation (second-phase request after a fast answer)
+# ---------------------------------------------------------------------------
+class PracticeForRequest(BaseModel):
+    # The question (or restated photo problem) to generate practice similar to.
+    question: str = Field(..., min_length=1)
+    subject: Literal["geometry", "analysis"] = "analysis"
+    count: int = Field(default=4, ge=1, le=8)
+
+
+class PracticeForResponse(BaseModel):
+    practice: list[Problem]

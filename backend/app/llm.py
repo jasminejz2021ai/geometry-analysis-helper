@@ -8,6 +8,7 @@ disabled when not configured.
 from __future__ import annotations
 
 import json
+from concurrent.futures import ThreadPoolExecutor
 from typing import Optional
 
 import httpx
@@ -19,10 +20,13 @@ from .models import Problem
 from .prompts import (
     SYSTEM_PROMPT,
     LLMPayload,
+    LLMProblem,
     build_image_prompt,
+    build_one_practice_prompt,
     build_user_prompt,
     loads_lenient,
     strip_fences,
+    to_problem,
     to_result,
 )
 
@@ -228,6 +232,84 @@ def solve_fallback(
         original, practice, review = result
         return "llm", original, practice, review
     return None
+
+
+# ---------------------------------------------------------------------------
+# Lazy practice generation: one small problem per call, run in parallel.
+#
+# Generating a single problem keeps each response small, so it is fast and
+# parses reliably (a big "answer + N problems" response is slow and often gets
+# truncated). We fan out ``count`` of these concurrently.
+# ---------------------------------------------------------------------------
+_ONE_PRACTICE_SYSTEM = (
+    "You are a math tutor creating exactly one practice problem. Respond with "
+    "STRICT JSON only — no prose, no markdown fences — matching this schema: "
+    '{"prompt": <string>, "answer": <string>, "steps": [<string>, ...]}.'
+)
+
+
+def _post_chat_json(query: str, system: str, timeout: float = 90.0) -> str:
+    """One OpenAI-compatible chat completion constrained to return JSON."""
+    settings = get_settings()
+    base = (settings.llm_api_base or "https://api.openai.com/v1").rstrip("/")
+    headers = {"Content-Type": "application/json"}
+    if settings.llm_api_key:
+        headers["Authorization"] = f"Bearer {settings.llm_api_key}"
+    if "qwen3" in settings.llm_model.lower():
+        system = system + " /no_think"
+    resp = httpx.post(
+        f"{base}/chat/completions",
+        headers=headers,
+        json={
+            "model": settings.llm_model,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": query},
+            ],
+            "temperature": 0.8,
+            "response_format": {"type": "json_object"},
+            "stream": False,
+        },
+        timeout=timeout,
+    )
+    resp.raise_for_status()
+    return resp.json()["choices"][0]["message"]["content"]
+
+
+def generate_one_practice(
+    question: str, analysis: bool, variety: int = 0
+) -> Optional[Problem]:
+    """Generate a single practice problem similar to ``question``."""
+    if not get_settings().direct_llm_enabled:
+        return None
+    query = build_one_practice_prompt(question, variety, analysis)
+    try:
+        raw = _post_chat_json(query, _ONE_PRACTICE_SYSTEM)
+        data = loads_lenient(strip_fences(raw))
+        return to_problem(LLMProblem.model_validate(data))
+    except (json.JSONDecodeError, ValidationError, KeyError, httpx.HTTPError) as exc:
+        print(f"[llm] one-practice failed: {exc}")
+        return None
+
+
+def generate_practice(question: str, count: int, analysis: bool) -> list[Problem]:
+    """Return up to ``count`` practice problems similar to ``question``.
+
+    Uses one small LLM call per problem, fanned out concurrently for speed and
+    reliability. Falls back to the Dify bulk solver when Dify is the provider.
+    """
+    count = max(1, min(count, 8))
+    if active_provider() == "dify":
+        result = solve_with_dify(question, count)
+        return result[1] if result is not None else []
+
+    with ThreadPoolExecutor(max_workers=count) as pool:
+        futures = [
+            pool.submit(generate_one_practice, question, analysis, i)
+            for i in range(count)
+        ]
+        problems = [f.result() for f in futures]
+    return [p for p in problems if p is not None]
 
 
 # ---------------------------------------------------------------------------

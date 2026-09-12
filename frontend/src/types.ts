@@ -65,6 +65,10 @@ export type AnalysisMoreResponse = {
   more_available: boolean;
 };
 
+export type PracticeForResponse = {
+  practice: Problem[];
+};
+
 export type CheckResponse = {
   correct: boolean;
   feedback: string;

@@ -6,6 +6,7 @@ import type {
   CheckResponse,
   GenerateMoreResponse,
   GroupedTopicsResponse,
+  PracticeForResponse,
   SolveResponse,
 } from "./types";
 
@@ -106,6 +107,16 @@ export function solveAnalysis(
   count = 4,
 ): Promise<SolveResponse> {
   return post<SolveResponse>("/api/analysis/solve", { question, count });
+}
+
+// Second-phase request: generate practice problems for a question the AI just
+// answered, so the answer can appear immediately and practice loads after.
+export function generatePractice(
+  question: string,
+  subject: "geometry" | "analysis",
+  count = 4,
+): Promise<PracticeForResponse> {
+  return post<PracticeForResponse>("/api/practice", { question, subject, count });
 }
 
 export function analysisPractice(

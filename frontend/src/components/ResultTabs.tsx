@@ -9,6 +9,7 @@ type Props = {
   result: SolveResponse | null;
   conceptReview: string[];
   practice: Problem[];
+  practiceLoading?: boolean;
   topicTitle: string | null;
   canGenerateMore: boolean;
   onGenerateMore: () => void;
@@ -26,6 +27,7 @@ export default function ResultTabs({
   result,
   conceptReview,
   practice,
+  practiceLoading = false,
   topicTitle,
   canGenerateMore,
   onGenerateMore,
@@ -43,10 +45,10 @@ export default function ResultTabs({
     if (conceptReview.length > 0) list.push({ id: "concept", label: "Concept review" });
     if (workedIsDistinct) list.push({ id: "worked", label: "Worked example" });
     if (asked) list.push({ id: "solutions", label: "Solutions" });
-    if (practice.length > 0)
+    if (practice.length > 0 || practiceLoading)
       list.push({ id: "practice", label: "Extra practice problems" });
     return list;
-  }, [conceptReview.length, workedIsDistinct, asked, practice.length]);
+  }, [conceptReview.length, workedIsDistinct, asked, practice.length, practiceLoading]);
 
   const [active, setActive] = useState<TabId | null>(null);
 
@@ -143,13 +145,28 @@ export default function ResultTabs({
                 your answers and reveal steps as needed.
               </p>
             )}
-            <PracticeList
-              problems={practice}
-              canGenerateMore={canGenerateMore}
-              onGenerateMore={onGenerateMore}
-              generating={generating}
-              embedded
-            />
+            {practiceLoading && practice.length === 0 ? (
+              <div className="flex items-center gap-3 rounded-xl border border-brand-100 bg-brand-50/60 px-4 py-4 text-sm text-brand-700">
+                <svg
+                  className="h-5 w-5 shrink-0 animate-spin text-brand-600"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                >
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4H4z" />
+                </svg>
+                Generating practice problems for you…
+              </div>
+            ) : (
+              <PracticeList
+                problems={practice}
+                canGenerateMore={canGenerateMore}
+                onGenerateMore={onGenerateMore}
+                generating={generating}
+                embedded
+              />
+            )}
             <ChatBox
               key="chat-practice"
               subject="these practice problems"

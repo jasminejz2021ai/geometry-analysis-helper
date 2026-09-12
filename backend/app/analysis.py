@@ -129,13 +129,24 @@ _REVIEW_INSTRUCTION = (
 
 
 def _build_analysis_query(question: str, count: int) -> str:
+    # count <= 0 => answer only (no practice) so the response is small and fast;
+    # practice problems are fetched separately/lazily.
+    if count and count > 0:
+        practice_clause = (
+            f"Solve it step by step in 'original', then produce {count} similar "
+            "practice problems in 'practice'. "
+        )
+    else:
+        practice_clause = (
+            "Solve it step by step in 'original'. Set 'practice' to an empty "
+            "array [] and do not generate any practice problems. "
+        )
     return (
         "This is a high school Analysis (Honors) course question, covering topics "
         "like induction, series, polar/3-D graphing, probability, matrices, "
         "vectors, groups, limits, and derivatives.\n\n"
         f"Student question: {question}\n\n"
-        f"Solve it step by step in 'original', then produce {count} similar "
-        "practice problems in 'practice'. "
+        + practice_clause
         + _REVIEW_INSTRUCTION
         + " "
         + _MATH_INSTRUCTION
