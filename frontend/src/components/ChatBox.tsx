@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { chat } from "../api";
 import type { ChatTurn } from "../types";
+import MathSymbolBar from "./MathSymbolBar";
 import MathText from "./MathText";
 
 type Props = {
@@ -17,6 +18,7 @@ export default function ChatBox({ context, subject = "this" }: Props) {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   async function send() {
     const q = input.trim();
@@ -112,6 +114,7 @@ export default function ChatBox({ context, subject = "this" }: Props) {
 
           <div className="flex items-end gap-2">
             <textarea
+              ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => {
@@ -131,6 +134,14 @@ export default function ChatBox({ context, subject = "this" }: Props) {
             >
               Send
             </button>
+          </div>
+
+          <div className="mt-2">
+            <MathSymbolBar
+              targetRef={inputRef}
+              value={input}
+              onChange={setInput}
+            />
           </div>
         </div>
       )}

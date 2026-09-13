@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import MathSymbolBar from "./MathSymbolBar";
 
 const GEOMETRY_EXAMPLES = [
   "Find the hypotenuse of a right triangle with legs 6 and 8",
@@ -17,71 +18,6 @@ const ANALYSIS_EXAMPLES = [
   "Evaluate the limit of (sin x)/x as x approaches 0",
 ];
 
-// A palette entry: what's shown on the button, what gets inserted, and a
-// tooltip name. A "▮" in `insert` marks where the cursor lands (and where any
-// selected text is wrapped), e.g. "√(▮)".
-type Sym = { label: string; insert: string; name: string };
-
-const BASIC: Sym[] = [
-  { label: "×", insert: "×", name: "times" },
-  { label: "÷", insert: "÷", name: "divide" },
-  { label: "±", insert: "±", name: "plus–minus" },
-  { label: "·", insert: "·", name: "dot / multiply" },
-  { label: "√", insert: "√(▮)", name: "square root" },
-  { label: "xⁿ", insert: "^", name: "exponent (power)" },
-  { label: "xₙ", insert: "_", name: "subscript" },
-  { label: "a/b", insert: "(▮)/()", name: "fraction" },
-  { label: "≤", insert: "≤", name: "less than or equal" },
-  { label: "≥", insert: "≥", name: "greater than or equal" },
-  { label: "≠", insert: "≠", name: "not equal" },
-  { label: "≈", insert: "≈", name: "approximately" },
-  { label: "∞", insert: "∞", name: "infinity" },
-  { label: "°", insert: "°", name: "degree" },
-  { label: "|x|", insert: "|▮|", name: "absolute value" },
-];
-
-const GREEK: Sym[] = [
-  { label: "π", insert: "π", name: "pi" },
-  { label: "θ", insert: "θ", name: "theta" },
-  { label: "α", insert: "α", name: "alpha" },
-  { label: "β", insert: "β", name: "beta" },
-  { label: "γ", insert: "γ", name: "gamma" },
-  { label: "λ", insert: "λ", name: "lambda" },
-  { label: "μ", insert: "μ", name: "mu" },
-  { label: "σ", insert: "σ", name: "sigma" },
-  { label: "φ", insert: "φ", name: "phi" },
-  { label: "ω", insert: "ω", name: "omega" },
-  { label: "Δ", insert: "Δ", name: "Delta" },
-  { label: "Σ", insert: "Σ", name: "Sigma (sum)" },
-];
-
-const ANALYSIS_SYMS: Sym[] = [
-  { label: "∫", insert: "∫", name: "integral" },
-  { label: "∑", insert: "∑", name: "summation" },
-  { label: "∏", insert: "∏", name: "product" },
-  { label: "∂", insert: "∂", name: "partial derivative" },
-  { label: "∇", insert: "∇", name: "nabla / gradient" },
-  { label: "lim", insert: "lim ", name: "limit" },
-  { label: "→", insert: "→", name: "approaches / to" },
-  { label: "∈", insert: "∈", name: "element of" },
-  { label: "∉", insert: "∉", name: "not an element of" },
-  { label: "∪", insert: "∪", name: "union" },
-  { label: "∩", insert: "∩", name: "intersection" },
-  { label: "∀", insert: "∀", name: "for all" },
-  { label: "∃", insert: "∃", name: "there exists" },
-  { label: "≡", insert: "≡", name: "equivalent / congruent" },
-];
-
-const GEOMETRY_SYMS: Sym[] = [
-  { label: "∠", insert: "∠", name: "angle" },
-  { label: "△", insert: "△", name: "triangle" },
-  { label: "⊥", insert: "⊥", name: "perpendicular" },
-  { label: "∥", insert: "∥", name: "parallel" },
-  { label: "≅", insert: "≅", name: "congruent" },
-  { label: "∼", insert: "∼", name: "similar" },
-  { label: "→", insert: "→", name: "vector / ray" },
-];
-
 type Props = {
   onSubmit: (question: string) => void;
   loading: boolean;
@@ -93,44 +29,6 @@ export default function QuestionInput({ onSubmit, loading, subject }: Props) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const isAnalysis = subject === "analysis";
   const examples = isAnalysis ? ANALYSIS_EXAMPLES : GEOMETRY_EXAMPLES;
-
-  // Symbol groups shown for the current subject.
-  const groups: { key: string; syms: Sym[] }[] = [
-    { key: "basic", syms: BASIC },
-    { key: "subject", syms: isAnalysis ? ANALYSIS_SYMS : GEOMETRY_SYMS },
-    { key: "greek", syms: GREEK },
-  ];
-
-  function insertSymbol(snippet: string) {
-    const ta = textareaRef.current;
-    // Fallback: no ref -> append to the end.
-    if (!ta) {
-      setValue((v) => v + snippet.replace("▮", ""));
-      return;
-    }
-    const start = ta.selectionStart ?? value.length;
-    const end = ta.selectionEnd ?? value.length;
-    const selected = value.slice(start, end);
-
-    const caretMarker = snippet.indexOf("▮");
-    // Replace the marker with any currently-selected text (so a symbol like
-    // √(▮) wraps a highlighted expression), or drop the marker.
-    const inserted = snippet.replace("▮", selected);
-    const next = value.slice(0, start) + inserted + value.slice(end);
-    setValue(next);
-
-    // Where the cursor should end up after inserting.
-    const caret =
-      caretMarker >= 0
-        ? start + caretMarker + selected.length
-        : start + inserted.length;
-
-    // Restore focus + caret on the next frame (after React re-renders).
-    requestAnimationFrame(() => {
-      ta.focus();
-      ta.setSelectionRange(caret, caret);
-    });
-  }
 
   function submit() {
     const q = value.trim();
@@ -160,35 +58,13 @@ export default function QuestionInput({ onSubmit, loading, subject }: Props) {
         }}
       />
 
-      {/* Math symbol palette: click to insert at the cursor. */}
-      <div className="mt-2 rounded-xl border border-slate-200 bg-slate-50/70 p-2">
-        <p className="px-1 pb-1 text-[11px] font-medium uppercase tracking-wide text-slate-400">
-          Math symbols
-        </p>
-        <div className="flex flex-wrap items-center gap-1">
-          {groups.map((group, gi) => (
-            <div key={group.key} className="flex flex-wrap items-center gap-1">
-              {gi > 0 && (
-                <span
-                  aria-hidden
-                  className="mx-1 h-6 w-px self-center bg-slate-200"
-                />
-              )}
-              {group.syms.map((sym) => (
-                <button
-                  key={group.key + sym.label}
-                  type="button"
-                  title={sym.name}
-                  aria-label={`Insert ${sym.name}`}
-                  onClick={() => insertSymbol(sym.insert)}
-                  className="flex h-8 min-w-[2rem] items-center justify-center rounded-md border border-slate-200 bg-white px-1.5 text-sm text-slate-700 shadow-sm transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700"
-                >
-                  {sym.label}
-                </button>
-              ))}
-            </div>
-          ))}
-        </div>
+      <div className="mt-2">
+        <MathSymbolBar
+          targetRef={textareaRef}
+          value={value}
+          onChange={setValue}
+          defaultOpen
+        />
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-2">

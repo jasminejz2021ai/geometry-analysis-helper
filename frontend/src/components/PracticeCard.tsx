@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { check } from "../api";
 import type { Problem } from "../types";
 import DiagramSVG from "./DiagramSVG";
+import MathSymbolBar from "./MathSymbolBar";
 import MathText from "./MathText";
 
 type Props = {
@@ -11,6 +12,7 @@ type Props = {
 
 export default function PracticeCard({ problem, index }: Props) {
   const [answer, setAnswer] = useState("");
+  const answerRef = useRef<HTMLTextAreaElement>(null);
   const [result, setResult] = useState<
     { correct: boolean; feedback: string } | null
   >(null);
@@ -48,6 +50,7 @@ export default function PracticeCard({ problem, index }: Props) {
 
       <div className="mt-3 flex flex-col gap-2">
         <textarea
+          ref={answerRef}
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
           onKeyDown={(e) => {
@@ -60,6 +63,11 @@ export default function PracticeCard({ problem, index }: Props) {
               : "Write your answer and work here…"
           }
           className="w-full min-h-[7rem] resize-y rounded-lg border border-slate-300 px-3 py-2 font-mono text-sm leading-relaxed outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+        />
+        <MathSymbolBar
+          targetRef={answerRef}
+          value={answer}
+          onChange={setAnswer}
         />
         <div className="flex flex-wrap items-center gap-2">
           <button
