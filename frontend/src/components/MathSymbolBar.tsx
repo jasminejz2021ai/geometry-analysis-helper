@@ -1,8 +1,13 @@
 import { Suspense, lazy, useState, type RefObject } from "react";
+import MathText from "./MathText";
 
 // Lazy-loaded so MathQuill (and its jQuery dependency) only download when the
 // user actually opens the formula editor, keeping the initial bundle small.
 const FormulaEditor = lazy(() => import("./FormulaEditor"));
+
+// Does the text contain LaTeX (a \( \) / \[ \] group, or a \command)? If so we
+// show a live rendered preview, since the raw LaTeX in the box is hard to read.
+const HAS_LATEX = /\\\(|\\\[|\\[a-zA-Z]/;
 
 // A palette entry: what's shown on the button, what gets inserted, and a
 // tooltip name. A "▮" in `insert` marks where the cursor lands (and where any
@@ -94,6 +99,7 @@ export default function MathSymbolBar({
 }: Props) {
   const [open, setOpen] = useState(defaultOpen);
   const [formulaOpen, setFormulaOpen] = useState(false);
+  const showPreview = HAS_LATEX.test(value);
 
   function insertSymbol(snippet: string) {
     const ta = targetRef.current;
@@ -156,6 +162,18 @@ export default function MathSymbolBar({
             onInsert={(latex) => insertSymbol(latex + " ")}
           />
         </Suspense>
+      )}
+
+      {showPreview && (
+        <div className="mt-2 flex items-start gap-2 rounded-lg border border-brand-100 bg-white px-3 py-2">
+          <span className="mt-0.5 shrink-0 text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+            Preview
+          </span>
+          <MathText
+            text={value}
+            className="text-sm leading-relaxed text-slate-800"
+          />
+        </div>
       )}
 
       {open && (
