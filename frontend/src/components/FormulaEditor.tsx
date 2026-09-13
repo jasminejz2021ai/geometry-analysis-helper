@@ -29,6 +29,17 @@ const STRUCTURES: Ins[] = [
   { label: "∞", latex: "\\infty", name: "infinity" },
 ];
 
+const FUNCTIONS: Ins[] = [
+  { label: "sin", latex: "\\sin", name: "sine" },
+  { label: "cos", latex: "\\cos", name: "cosine" },
+  { label: "tan", latex: "\\tan", name: "tangent" },
+  { label: "sec", latex: "\\sec", name: "secant" },
+  { label: "csc", latex: "\\csc", name: "cosecant" },
+  { label: "cot", latex: "\\cot", name: "cotangent" },
+  { label: "log", latex: "\\log", name: "log" },
+  { label: "ln", latex: "\\ln", name: "natural log" },
+];
+
 const GREEK: Ins[] = [
   { label: "α", latex: "\\alpha", name: "alpha" },
   { label: "β", latex: "\\beta", name: "beta" },
@@ -105,6 +116,7 @@ const GEOMETRY: Ins[] = [
 
 const PALETTE: { title: string; items: Ins[] }[] = [
   { title: "Structures", items: STRUCTURES },
+  { title: "Functions", items: FUNCTIONS },
   { title: "Greek", items: GREEK },
   { title: "Relations", items: RELATIONS },
   { title: "Sets & logic", items: SETS },
@@ -149,13 +161,13 @@ export default function FormulaEditor({ open, onInsert, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center bg-slate-900/40 p-4 pt-24 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-slate-900/40 p-4 pt-8 backdrop-blur-sm sm:pt-16"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
     >
       <div
-        className="w-full max-w-xl rounded-2xl bg-white p-5 shadow-xl"
+        className="flex max-h-[calc(100dvh-2rem)] w-full max-w-xl flex-col rounded-2xl bg-white p-5 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-3 flex items-center justify-between">
@@ -202,7 +214,7 @@ export default function FormulaEditor({ open, onInsert, onClose }: Props) {
           Click a symbol to add it, or just type. Press Enter or “Insert”.
         </p>
 
-        <div className="mt-2 max-h-56 space-y-2 overflow-y-auto rounded-lg border border-slate-100 bg-slate-50/60 p-2">
+        <div className="mt-2 min-h-0 flex-1 space-y-2 overflow-y-auto rounded-lg border border-slate-100 bg-slate-50/60 p-2">
           {PALETTE.map((group) => (
             <div key={group.title}>
               <p className="mb-1 px-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-400">
