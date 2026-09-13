@@ -6,7 +6,7 @@ addStyles();
 
 type Props = {
   open: boolean;
-  // Called with a LaTeX string (already wrapped in \( \)) to insert.
+  // Called with the raw LaTeX to insert (the input renders it as a chip).
   onInsert: (latex: string) => void;
   onClose: () => void;
 };
@@ -55,7 +55,7 @@ export default function FormulaEditor({ open, onInsert, onClose }: Props) {
   function insert() {
     const l = latex.trim();
     if (!l) return;
-    onInsert(`\\(${l}\\)`);
+    onInsert(l);
     onClose();
   }
 

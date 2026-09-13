@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import MathInput, { type MathInputHandle } from "./MathInput";
 import MathSymbolBar from "./MathSymbolBar";
 
 const GEOMETRY_EXAMPLES = [
@@ -26,7 +27,7 @@ type Props = {
 
 export default function QuestionInput({ onSubmit, loading, subject }: Props) {
   const [value, setValue] = useState("");
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const editorRef = useRef<MathInputHandle>(null);
   const isAnalysis = subject === "analysis";
   const examples = isAnalysis ? ANALYSIS_EXAMPLES : GEOMETRY_EXAMPLES;
 
@@ -42,29 +43,22 @@ export default function QuestionInput({ onSubmit, loading, subject }: Props) {
           ? "Ask an Analysis (Honors) question"
           : "Ask a geometry question"}
       </label>
-      <textarea
-        ref={textareaRef}
-        className="mt-2 w-full resize-none rounded-xl border border-slate-300 p-3 text-slate-900 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
-        rows={3}
+      <MathInput
+        ref={editorRef}
+        value={value}
+        onChange={setValue}
+        onCmdEnter={submit}
+        ariaLabel={isAnalysis ? "Analysis question" : "Geometry question"}
         placeholder={
           isAnalysis
             ? "e.g. Prove 1 + 2 + ... + n = n(n+1)/2 by induction"
             : "e.g. Find the hypotenuse of a right triangle with legs 3 and 4"
         }
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit();
-        }}
+        className="mt-2 min-h-[5.25rem] w-full rounded-xl border border-slate-300 p-3 text-slate-900 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
       />
 
       <div className="mt-2">
-        <MathSymbolBar
-          targetRef={textareaRef}
-          value={value}
-          onChange={setValue}
-          defaultOpen
-        />
+        <MathSymbolBar editorRef={editorRef} defaultOpen />
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-2">

@@ -68,3 +68,31 @@ body {
     animation: none;
   }
 }
+
+/* Rich math input: a contenteditable that renders inserted formulas inline as
+   typeset "chips" while ordinary typing stays as text. */
+.math-input {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.math-input:empty::before {
+  content: attr(data-placeholder);
+  color: rgb(148 163 184); /* slate-400 */
+  pointer-events: none;
+}
+/* An inserted formula, rendered with KaTeX. contenteditable=false makes it an
+   atomic unit (one Backspace deletes the whole formula). */
+.math-chip {
+  display: inline-block;
+  padding: 0.05rem 0.25rem;
+  margin: 0 1px;
+  vertical-align: middle;
+  border-radius: 5px;
+  background: rgb(238 242 255); /* indigo-50 */
+  box-shadow: inset 0 0 0 1px rgb(224 231 255); /* indigo-100 */
+  cursor: default;
+  user-select: all;
+}
+.math-chip .katex {
+  font-size: 1.02em;
+}

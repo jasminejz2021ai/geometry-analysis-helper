@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { check } from "../api";
 import type { Problem } from "../types";
 import DiagramSVG from "./DiagramSVG";
+import MathInput, { type MathInputHandle } from "./MathInput";
 import MathSymbolBar from "./MathSymbolBar";
 import MathText from "./MathText";
 
@@ -12,7 +13,7 @@ type Props = {
 
 export default function PracticeCard({ problem, index }: Props) {
   const [answer, setAnswer] = useState("");
-  const answerRef = useRef<HTMLTextAreaElement>(null);
+  const answerRef = useRef<MathInputHandle>(null);
   const [result, setResult] = useState<
     { correct: boolean; feedback: string } | null
   >(null);
@@ -49,26 +50,20 @@ export default function PracticeCard({ problem, index }: Props) {
       )}
 
       <div className="mt-3 flex flex-col gap-2">
-        <textarea
+        <MathInput
           ref={answerRef}
           value={answer}
-          onChange={(e) => setAnswer(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit();
-          }}
-          rows={4}
+          onChange={setAnswer}
+          onCmdEnter={submit}
+          ariaLabel="Your answer"
           placeholder={
             problem.unit
               ? `Write your answer and work (${problem.unit})`
               : "Write your answer and work here…"
           }
-          className="w-full min-h-[7rem] resize-y rounded-lg border border-slate-300 px-3 py-2 font-mono text-sm leading-relaxed outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+          className="w-full min-h-[7rem] rounded-lg border border-slate-300 px-3 py-2 text-sm leading-relaxed outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
         />
-        <MathSymbolBar
-          targetRef={answerRef}
-          value={answer}
-          onChange={setAnswer}
-        />
+        <MathSymbolBar editorRef={answerRef} />
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={submit}

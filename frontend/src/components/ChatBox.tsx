@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { chat } from "../api";
 import type { ChatTurn } from "../types";
+import MathInput, { type MathInputHandle } from "./MathInput";
 import MathSymbolBar from "./MathSymbolBar";
 import MathText from "./MathText";
 
@@ -18,7 +19,7 @@ export default function ChatBox({ context, subject = "this" }: Props) {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const inputRef = useRef<MathInputHandle>(null);
 
   async function send() {
     const q = input.trim();
@@ -113,19 +114,14 @@ export default function ChatBox({ context, subject = "this" }: Props) {
           )}
 
           <div className="flex items-end gap-2">
-            <textarea
+            <MathInput
               ref={inputRef}
               value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  send();
-                }
-              }}
-              rows={1}
+              onChange={setInput}
+              onEnter={send}
+              ariaLabel="Your question"
               placeholder="Type your question… (Enter to send)"
-              className="min-h-[40px] flex-1 resize-none rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+              className="min-h-[40px] flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
             />
             <button
               onClick={send}
@@ -137,11 +133,7 @@ export default function ChatBox({ context, subject = "this" }: Props) {
           </div>
 
           <div className="mt-2">
-            <MathSymbolBar
-              targetRef={inputRef}
-              value={input}
-              onChange={setInput}
-            />
+            <MathSymbolBar editorRef={inputRef} />
           </div>
         </div>
       )}
