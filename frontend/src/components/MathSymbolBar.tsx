@@ -1,4 +1,8 @@
-import { useState, type RefObject } from "react";
+import { Suspense, lazy, useState, type RefObject } from "react";
+
+// Lazy-loaded so MathQuill (and its jQuery dependency) only download when the
+// user actually opens the formula editor, keeping the initial bundle small.
+const FormulaEditor = lazy(() => import("./FormulaEditor"));
 
 // A palette entry: what's shown on the button, what gets inserted, and a
 // tooltip name. A "▮" in `insert` marks where the cursor lands (and where any
@@ -89,6 +93,7 @@ export default function MathSymbolBar({
   defaultOpen = false,
 }: Props) {
   const [open, setOpen] = useState(defaultOpen);
+  const [formulaOpen, setFormulaOpen] = useState(false);
 
   function insertSymbol(snippet: string) {
     const ta = targetRef.current;
@@ -122,18 +127,36 @@ export default function MathSymbolBar({
 
   return (
     <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-2">
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-1 text-[11px] font-medium uppercase tracking-wide text-slate-400 transition hover:text-slate-600"
-        aria-expanded={open}
-      >
-        <span className="flex items-center gap-1.5">
+      <div className="flex items-center justify-between gap-2 px-1">
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-slate-400 transition hover:text-slate-600"
+          aria-expanded={open}
+        >
           <span className="text-sm normal-case text-slate-500">∑</span>
           Math symbols
-        </span>
-        <span className="text-slate-400">{open ? "Hide ▲" : "Show ▼"}</span>
-      </button>
+          <span className="text-slate-400">{open ? "▲" : "▼"}</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => setFormulaOpen(true)}
+          className="flex items-center gap-1 rounded-md border border-brand-200 bg-white px-2 py-1 text-xs font-medium text-brand-700 shadow-sm transition hover:border-brand-300 hover:bg-brand-50"
+          title="Open a live editor to build a formula visually (fractions, roots, integrals…)"
+        >
+          <span className="italic">fx</span> Insert formula
+        </button>
+      </div>
+
+      {formulaOpen && (
+        <Suspense fallback={null}>
+          <FormulaEditor
+            open={formulaOpen}
+            onClose={() => setFormulaOpen(false)}
+            onInsert={(latex) => insertSymbol(latex + " ")}
+          />
+        </Suspense>
+      )}
 
       {open && (
         <div className="mt-2 flex flex-wrap items-center gap-1">
