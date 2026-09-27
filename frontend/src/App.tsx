@@ -143,6 +143,8 @@ export default function App() {
     setLoading(true);
     setError(null);
     setResult(null);
+    setPractice([]);
+    setPracticeLoading(false);
     setConceptReview([]);
     setActiveTopic(topicId);
     setTopicTitle(title);

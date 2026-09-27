@@ -52,6 +52,12 @@ export default function ResultTabs({
 
   const [active, setActive] = useState<TabId | null>(null);
 
+  // A new answer or topic starts on the first tab (usually Concept review),
+  // rather than staying on whichever tab the previous one was left on.
+  useEffect(() => {
+    setActive(null);
+  }, [result, topicTitle]);
+
   // Keep the active tab valid as content changes; default to the first tab.
   useEffect(() => {
     if (tabs.length === 0) {
