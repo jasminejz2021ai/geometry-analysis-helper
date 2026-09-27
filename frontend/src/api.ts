@@ -35,6 +35,16 @@ async function get<T>(url: string): Promise<T> {
   return res.json() as Promise<T>;
 }
 
+export type VisitsResponse = { visits: number | null };
+
+export function recordVisit(): Promise<VisitsResponse> {
+  return post<VisitsResponse>("/api/visit", {});
+}
+
+export function fetchVisits(): Promise<VisitsResponse> {
+  return get<VisitsResponse>("/api/visits");
+}
+
 export function solve(question: string, count = 4): Promise<SolveResponse> {
   return post<SolveResponse>("/api/solve", { question, count });
 }

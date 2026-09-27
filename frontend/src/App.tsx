@@ -19,6 +19,7 @@ import QuestionInput from "./components/QuestionInput";
 import ReportModal from "./components/ReportModal";
 import ResultTabs from "./components/ResultTabs";
 import TopicBrowser from "./components/TopicBrowser";
+import VisitCounter from "./components/VisitCounter";
 import type { Problem, SolveResponse } from "./types";
 
 type Subject = "geometry" | "analysis";
@@ -356,6 +357,9 @@ export default function App() {
         >
           Report a problem
         </button>
+        <div>
+          <VisitCounter />
+        </div>
       </footer>
 
       <ReportModal

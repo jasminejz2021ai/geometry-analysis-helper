@@ -18,6 +18,7 @@ from .analysis import (
     solve_analysis_question,
 )
 from .dify import dify_available, solve_image_with_dify
+from .visits import current_visits, record_visit
 from .example_cache import get_cached, get_cached_topic
 from .llm import (
     active_provider,
@@ -76,6 +77,16 @@ def health() -> dict:
         "fallback_provider": active_provider(),
         "fallback_enabled": llm_available(),
     }
+
+
+@app.post("/api/visit")
+def visit() -> dict:
+    return {"visits": record_visit()}
+
+
+@app.get("/api/visits")
+def visits() -> dict:
+    return {"visits": current_visits()}
 
 
 # Message shown when the AI provider is configured but unreachable (e.g. the

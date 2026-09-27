@@ -47,6 +47,14 @@ class Settings(BaseSettings):
     # which works without domain verification for low volume.
     report_email_from: str = "Problem Reports <onboarding@resend.dev>"
 
+    # Visit counter, stored in Abacus (https://abacus.jasoncameron.dev) because
+    # Render's free-tier disk is wiped on every restart. The displayed total is
+    # visit_count_base + the Abacus count.
+    visit_counter_api: str = "https://abacus.jasoncameron.dev"
+    visit_counter_namespace: str = "geometry-analysis-helper"
+    visit_counter_key: str = "visits"
+    visit_count_base: int = 2000
+
     @property
     def cors_origin_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
