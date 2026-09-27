@@ -123,8 +123,9 @@ class ReportRequest(BaseModel):
     description: str = Field(..., min_length=1, max_length=5000)
     # Optional email so we can follow up.
     email: Optional[str] = Field(default=None, max_length=254)
-    # Auto-captured context from the frontend (subject, topic, URL, browser).
-    context: Optional[str] = Field(default=None, max_length=2000)
+    # Auto-captured context from the frontend (subject, topic, URL, browser,
+    # and for "Report errors" the full problem + solution steps).
+    context: Optional[str] = Field(default=None, max_length=8000)
 
 
 class ReportResponse(BaseModel):

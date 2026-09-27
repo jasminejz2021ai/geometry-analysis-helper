@@ -5,6 +5,7 @@ import DiagramSVG from "./DiagramSVG";
 import MathInput, { type MathInputHandle } from "./MathInput";
 import MathSymbolBar from "./MathSymbolBar";
 import MathText from "./MathText";
+import ReportErrorButton from "./ReportErrorButton";
 
 type Props = {
   problem: Problem;
@@ -105,6 +106,9 @@ export default function PracticeCard({ problem, index }: Props) {
           ))}
           <li className="pt-1 text-sm font-semibold text-neutral-900">
             Answer: <MathText text={problem.answer} />
+          </li>
+          <li className="flex justify-end pt-1">
+            <ReportErrorButton problem={problem} where={`Practice problem #${index + 1}`} />
           </li>
         </ol>
       )}

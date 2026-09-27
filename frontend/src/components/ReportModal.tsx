@@ -6,9 +6,19 @@ type Props = {
   onClose: () => void;
   // Context about what the user is currently looking at, so a report is useful.
   context?: string;
+  title?: string;
+  intro?: string;
+  placeholder?: string;
 };
 
-export default function ReportModal({ open, onClose, context }: Props) {
+export default function ReportModal({
+  open,
+  onClose,
+  context,
+  title = "Report a problem",
+  intro = "Found a wrong answer, a rendering glitch, or something confusing? Tell us what happened.",
+  placeholder = "Describe the problem. Include the topic or problem number if you can.",
+}: Props) {
   const [description, setDescription] = useState("");
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -69,12 +79,12 @@ export default function ReportModal({ open, onClose, context }: Props) {
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Report a problem"
+        aria-label={title}
         className="w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-neutral-200"
         onMouseDown={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-4">
-          <h2 className="text-lg font-semibold text-neutral-900">Report a problem</h2>
+          <h2 className="text-lg font-semibold text-neutral-900">{title}</h2>
           <button
             onClick={onClose}
             aria-label="Close"
@@ -104,10 +114,7 @@ export default function ReportModal({ open, onClose, context }: Props) {
           </div>
         ) : (
           <>
-            <p className="mt-1 text-sm text-neutral-500">
-              Found a wrong answer, a rendering glitch, or something confusing?
-              Tell us what happened.
-            </p>
+            <p className="mt-1 text-sm text-neutral-500">{intro}</p>
 
             <label className="mt-4 block text-sm font-medium text-neutral-700">
               What went wrong?
@@ -116,7 +123,7 @@ export default function ReportModal({ open, onClose, context }: Props) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 rows={5}
-                placeholder="Describe the problem. Include the topic or problem number if you can."
+                placeholder={placeholder}
                 className="mt-1 w-full resize-y rounded-lg border border-neutral-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
               />
             </label>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { Problem } from "../types";
 import DiagramSVG from "./DiagramSVG";
 import MathText from "./MathText";
+import ReportErrorButton from "./ReportErrorButton";
 
 type Props = {
   problem: Problem;
@@ -144,6 +145,10 @@ export default function SolutionView({
             Show answer
           </button>
         )}
+      </div>
+
+      <div className="mt-3 flex justify-end">
+        <ReportErrorButton problem={problem} where={heading} />
       </div>
     </div>
   );
