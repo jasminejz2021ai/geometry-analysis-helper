@@ -260,7 +260,7 @@ export default function App() {
                 </p>
               </div>
             </div>
-            <div className="flex shrink-0 flex-col items-end gap-2 sm:flex-row sm:items-center">
+            <div className="flex shrink-0 flex-col items-end gap-2">
               <VisitCounter />
               <button
                 onClick={() => setReportOpen(true)}
