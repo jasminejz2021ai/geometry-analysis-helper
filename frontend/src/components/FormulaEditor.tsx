@@ -161,7 +161,7 @@ export default function FormulaEditor({ open, onInsert, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-slate-900/40 p-4 pt-8 backdrop-blur-sm sm:pt-16"
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-neutral-900/40 p-4 pt-8 backdrop-blur-sm sm:pt-16"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -171,26 +171,26 @@ export default function FormulaEditor({ open, onInsert, onClose }: Props) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-3 flex items-center justify-between">
-          <h3 className="text-sm font-semibold text-slate-800">
+          <h3 className="text-sm font-semibold text-neutral-800">
             Insert a formula
           </h3>
           <button
             onClick={onClose}
-            className="text-slate-400 transition hover:text-slate-600"
+            className="text-neutral-400 transition hover:text-neutral-600"
             aria-label="Close"
           >
             ✕
           </button>
         </div>
 
-        <p className="mb-3 text-xs leading-relaxed text-slate-500">
-          Type it visually, like Desmos: <code className="rounded bg-slate-100 px-1">/</code>{" "}
-          makes a fraction, <code className="rounded bg-slate-100 px-1">^</code> a
-          power, <code className="rounded bg-slate-100 px-1">_</code> a subscript,
-          and typing <code className="rounded bg-slate-100 px-1">sqrt</code>,{" "}
-          <code className="rounded bg-slate-100 px-1">pi</code>,{" "}
-          <code className="rounded bg-slate-100 px-1">int</code>,{" "}
-          <code className="rounded bg-slate-100 px-1">sum</code> turns into symbols.
+        <p className="mb-3 text-xs leading-relaxed text-neutral-500">
+          Type it visually, like Desmos: <code className="rounded bg-neutral-100 px-1">/</code>{" "}
+          makes a fraction, <code className="rounded bg-neutral-100 px-1">^</code> a
+          power, <code className="rounded bg-neutral-100 px-1">_</code> a subscript,
+          and typing <code className="rounded bg-neutral-100 px-1">sqrt</code>,{" "}
+          <code className="rounded bg-neutral-100 px-1">pi</code>,{" "}
+          <code className="rounded bg-neutral-100 px-1">int</code>,{" "}
+          <code className="rounded bg-neutral-100 px-1">sum</code> turns into symbols.
         </p>
 
         <EditableMathField
@@ -207,17 +207,17 @@ export default function FormulaEditor({ open, onInsert, onClose }: Props) {
             autoOperatorNames: "sin cos tan sec csc cot log ln lim",
             handlers: { enter: () => insert() },
           }}
-          className="block w-full rounded-lg border border-slate-300 p-3 text-xl focus-within:border-brand-500 focus-within:ring-2 focus-within:ring-brand-100"
+          className="block w-full rounded-lg border border-neutral-300 p-3 text-xl focus-within:border-brand-500 focus-within:ring-2 focus-within:ring-brand-100"
         />
 
-        <p className="mt-2 text-xs text-slate-400">
+        <p className="mt-2 text-xs text-neutral-400">
           Click a symbol to add it, or just type. Press Enter or “Insert”.
         </p>
 
-        <div className="mt-2 min-h-0 flex-1 space-y-2 overflow-y-auto rounded-lg border border-slate-100 bg-slate-50/60 p-2">
+        <div className="mt-2 min-h-0 flex-1 space-y-2 overflow-y-auto rounded-lg border border-neutral-100 bg-neutral-50/60 p-2">
           {PALETTE.map((group) => (
             <div key={group.title}>
-              <p className="mb-1 px-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+              <p className="mb-1 px-0.5 text-[10px] font-semibold uppercase tracking-wide text-neutral-400">
                 {group.title}
               </p>
               <div className="flex flex-wrap gap-1">
@@ -229,7 +229,7 @@ export default function FormulaEditor({ open, onInsert, onClose }: Props) {
                     aria-label={item.name}
                     onMouseDown={(e) => e.preventDefault()}
                     onClick={() => ins(item)}
-                    className="flex h-8 min-w-[2rem] items-center justify-center rounded-md border border-slate-200 bg-white px-2 text-sm text-slate-700 shadow-sm transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700"
+                    className="flex h-8 min-w-[2rem] items-center justify-center rounded-md border border-neutral-200 bg-white px-2 text-sm text-neutral-700 shadow-sm transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700"
                   >
                     {item.label}
                   </button>
@@ -242,14 +242,14 @@ export default function FormulaEditor({ open, onInsert, onClose }: Props) {
         <div className="mt-4 flex justify-end gap-2">
           <button
             onClick={onClose}
-            className="rounded-lg border border-slate-200 px-4 py-2 text-sm text-slate-600 transition hover:bg-slate-50"
+            className="rounded-lg border border-neutral-200 px-4 py-2 text-sm text-neutral-600 transition hover:bg-neutral-50"
           >
             Cancel
           </button>
           <button
             onClick={insert}
             disabled={!latex.trim()}
-            className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
+            className="btn-primary px-4 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50"
           >
             Insert
           </button>

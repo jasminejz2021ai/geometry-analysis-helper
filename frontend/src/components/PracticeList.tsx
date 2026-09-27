@@ -30,7 +30,7 @@ export default function PracticeList({
     <div>
       <div className="mb-3 flex items-center justify-between">
         {!embedded && (
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-neutral-900">
             Practice problems
           </h2>
         )}
@@ -46,7 +46,7 @@ export default function PracticeList({
       </div>
 
       {problems.length === 0 ? (
-        <p className="text-sm text-slate-500">No practice problems yet.</p>
+        <p className="text-sm text-neutral-500">No practice problems yet.</p>
       ) : (
         <div>
           <div
@@ -64,7 +64,7 @@ export default function PracticeList({
                   className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
                     isActive
                       ? "bg-brand-100 text-brand-700 ring-1 ring-brand-300"
-                      : "bg-slate-100 text-slate-500 hover:bg-slate-200 hover:text-slate-700"
+                      : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200 hover:text-neutral-700"
                   }`}
                 >
                   Problem {i + 1}

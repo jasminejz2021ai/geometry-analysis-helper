@@ -90,7 +90,7 @@ export default function ChatBox({ context, subject = "this" }: Props) {
                     className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm ${
                       t.role === "user"
                         ? "bg-brand-600 text-white"
-                        : "bg-white text-slate-800 ring-1 ring-slate-200"
+                        : "bg-white text-neutral-800 ring-1 ring-neutral-200"
                     }`}
                   >
                     <MathText text={t.content} />
@@ -99,7 +99,7 @@ export default function ChatBox({ context, subject = "this" }: Props) {
               ))}
               {sending && (
                 <div className="flex justify-start">
-                  <div className="rounded-2xl bg-white px-3 py-2 text-sm text-slate-400 ring-1 ring-slate-200">
+                  <div className="rounded-2xl bg-white px-3 py-2 text-sm text-neutral-400 ring-1 ring-neutral-200">
                     Thinking…
                   </div>
                 </div>
@@ -121,12 +121,12 @@ export default function ChatBox({ context, subject = "this" }: Props) {
               onEnter={send}
               ariaLabel="Your question"
               placeholder="Type your question… (Enter to send)"
-              className="min-h-[40px] flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+              className="min-h-[40px] flex-1 rounded-lg border border-neutral-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
             />
             <button
               onClick={send}
               disabled={sending || !input.trim()}
-              className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-700 disabled:opacity-50"
+              className="btn-primary px-4 py-2 text-sm disabled:opacity-50"
             >
               Send
             </button>

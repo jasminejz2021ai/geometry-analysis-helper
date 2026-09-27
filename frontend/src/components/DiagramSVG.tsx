@@ -6,8 +6,8 @@ import type {
   TriangleDiagram,
 } from "../types";
 
-const STROKE = "#4f46e5";
-const FILL = "#e0e7ff";
+const STROKE = "#c8102e";
+const FILL = "#ffe0e3";
 
 function Triangle({ d }: { d: TriangleDiagram }) {
   // Draw a generic right triangle. Vertices: right angle at bottom-left.

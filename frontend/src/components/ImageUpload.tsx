@@ -29,8 +29,8 @@ export default function ImageUpload({ onSubmit, loading }: Props) {
   }
 
   return (
-    <div className="rounded-2xl bg-white/80 p-6 shadow-lg shadow-brand-900/5 ring-1 ring-white/60 backdrop-blur-sm">
-      <p className="block text-sm font-medium text-slate-700">
+    <div className="card p-6">
+      <p className="block text-sm font-medium text-neutral-700">
         Or upload a photo of a problem
       </p>
 
@@ -41,7 +41,7 @@ export default function ImageUpload({ onSubmit, loading }: Props) {
             e.preventDefault();
             pick(e.dataTransfer.files?.[0] ?? null);
           }}
-          className="mt-2 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50/60 px-4 py-8 text-center transition hover:border-brand-400 hover:bg-brand-50/50"
+          className="mt-2 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-neutral-300 bg-neutral-50/60 px-4 py-8 text-center transition hover:border-brand-400 hover:bg-brand-50/50"
         >
           <svg
             className="h-8 w-8 text-brand-500"
@@ -53,10 +53,10 @@ export default function ImageUpload({ onSubmit, loading }: Props) {
             <path d="M3 16.5V19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2.5" />
             <path d="M12 3v13M7 8l5-5 5 5" />
           </svg>
-          <span className="text-sm text-slate-600">
+          <span className="text-sm text-neutral-600">
             Tap to take a photo or choose an image
           </span>
-          <span className="text-xs text-slate-400">PNG or JPG, up to 10 MB</span>
+          <span className="text-xs text-neutral-400">PNG or JPG, up to 10 MB</span>
           <input
             ref={inputRef}
             type="file"
@@ -73,20 +73,20 @@ export default function ImageUpload({ onSubmit, loading }: Props) {
           <img
             src={preview}
             alt="Problem preview"
-            className="max-h-64 w-full rounded-xl object-contain ring-1 ring-slate-200"
+            className="max-h-64 w-full rounded-xl object-contain ring-1 ring-neutral-200"
           />
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <button
               onClick={() => file && onSubmit(file)}
               disabled={loading || !file}
-              className="rounded-xl bg-brand-600 px-5 py-2 font-medium text-white shadow-sm transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
+              className="btn-primary px-5 py-2 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? "Reading photo..." : "Solve from photo"}
             </button>
             <button
               onClick={clear}
               disabled={loading}
-              className="rounded-xl border border-slate-200 px-4 py-2 text-sm text-slate-600 transition hover:bg-slate-50 disabled:opacity-50"
+              className="rounded-xl border border-neutral-200 px-4 py-2 text-sm text-neutral-600 transition hover:bg-neutral-50 disabled:opacity-50"
             >
               Choose a different photo
             </button>

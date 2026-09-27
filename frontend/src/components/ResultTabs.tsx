@@ -66,10 +66,10 @@ export default function ResultTabs({
   if (tabs.length === 0) return null;
 
   return (
-    <div className="rounded-2xl bg-white/80 shadow-lg shadow-brand-900/5 ring-1 ring-white/60 backdrop-blur-sm">
+    <div className="card">
       <div
         role="tablist"
-        className="flex flex-wrap gap-1 border-b border-slate-200/70 p-2"
+        className="flex flex-wrap gap-1 border-b border-neutral-200/70 p-2"
       >
         {tabs.map((t) => {
           const isActive = t.id === active;
@@ -82,7 +82,7 @@ export default function ResultTabs({
               className={`rounded-lg px-3.5 py-2 text-sm font-medium transition ${
                 isActive
                   ? "bg-brand-600 text-white shadow-sm"
-                  : "text-slate-600 hover:bg-brand-50 hover:text-brand-700"
+                  : "text-neutral-600 hover:bg-brand-50 hover:text-brand-700"
               }`}
             >
               {t.label}
@@ -140,7 +140,7 @@ export default function ResultTabs({
         {active === "practice" && (
           <div className="space-y-3">
             {topicTitle && (
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-neutral-500">
                 Practice problems{topicTitle ? ` for ${topicTitle}` : ""}. Check
                 your answers and reveal steps as needed.
               </p>

@@ -19,7 +19,7 @@ export default function LoadingPanel({ label = "Working on it" }: Props) {
   }, []);
 
   return (
-    <div className="rounded-2xl bg-white/80 p-6 shadow-lg shadow-brand-900/5 ring-1 ring-white/60 backdrop-blur-sm">
+    <div className="card p-6">
       <div className="flex items-center gap-3">
         <svg
           className="h-5 w-5 animate-spin text-brand-600"
@@ -42,20 +42,20 @@ export default function LoadingPanel({ label = "Working on it" }: Props) {
           />
         </svg>
         <div>
-          <p className="font-medium text-slate-900">
+          <p className="font-medium text-neutral-900">
             {label}
-            <span className="ml-2 tabular-nums text-sm font-normal text-slate-500">
+            <span className="ml-2 tabular-nums text-sm font-normal text-neutral-500">
               {seconds}s
             </span>
           </p>
-          <p className="mt-0.5 text-sm text-slate-500">
+          <p className="mt-0.5 text-sm text-neutral-500">
             The AI tutor runs on a local model, so a fresh answer can take up to
             ~2 minutes. Example questions are instant.
           </p>
         </div>
       </div>
 
-      <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+      <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-neutral-100">
         <div className="h-full w-1/3 animate-pulse rounded-full bg-brand-400" />
       </div>
     </div>

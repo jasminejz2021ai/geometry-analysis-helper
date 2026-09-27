@@ -27,14 +27,14 @@ export default function ConceptReview({ items, embedded = false }: Props) {
             <path d="M9 21h6" />
           </svg>
         </span>
-        <h2 className="text-lg font-semibold text-slate-900">Concept review</h2>
+        <h2 className="text-lg font-semibold text-neutral-900">Concept review</h2>
       </div>
-      <p className="mb-3 text-sm text-slate-500">
+      <p className="mb-3 text-sm text-neutral-500">
         Key ideas and formulas to know before the worked example.
       </p>
       <ul className="space-y-2">
         {items.map((item, i) => (
-          <li key={i} className="flex items-start gap-2 text-slate-800">
+          <li key={i} className="flex items-start gap-2 text-neutral-800">
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
             <MathText text={item} />
           </li>

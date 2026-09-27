@@ -4,18 +4,32 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Gunn High red.
         brand: {
-          50: "#eef2ff",
-          100: "#e0e7ff",
-          200: "#c7d2fe",
-          300: "#a5b4fc",
-          400: "#818cf8",
-          500: "#6366f1",
-          600: "#4f46e5",
-          700: "#4338ca",
-          800: "#3730a3",
-          900: "#312e81",
+          50: "#fff1f2",
+          100: "#ffe0e3",
+          200: "#fec6cc",
+          300: "#fb9aa5",
+          400: "#f45d6f",
+          500: "#e62e45",
+          600: "#c8102e",
+          700: "#a80c26",
+          800: "#8b0e24",
+          900: "#730f22",
+          950: "#40040f",
         },
+        ink: "#111111",
+        paper: "#faf8f4",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ['"Bricolage Grotesque"', "Inter", "ui-sans-serif", "sans-serif"],
+        chalk: ["Caveat", "cursive"],
+      },
+      boxShadow: {
+        sticker: "4px 4px 0 0 #111111",
+        "sticker-sm": "2px 2px 0 0 #111111",
+        "sticker-red": "4px 4px 0 0 #c8102e",
       },
     },
   },

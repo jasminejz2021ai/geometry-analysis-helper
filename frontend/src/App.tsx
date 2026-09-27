@@ -217,46 +217,57 @@ export default function App() {
     [isAnalysis],
   );
 
+  const tagline = isAnalysis
+    ? "Ask an Analysis (Honors) question or pick a topic, and the AI tutor walks you through the steps and gives you practice."
+    : "Ask a geometry question or pick an Honors topic, learn the steps, then practice with similar problems.";
+
   return (
     <div className="min-h-full">
       <GeometryBackground />
 
-      <header className="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-brand-700 via-brand-600 to-indigo-500 text-white shadow-lg">
-        {/* Decorative shapes inside the hero */}
+      <header className="relative overflow-hidden bg-ink text-white">
+        {/* Chalkboard doodles */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 select-none font-chalk text-white/[0.13]">
+          <span className="absolute left-[3%] top-3 -rotate-6 text-3xl">a² + b² = c²</span>
+          <span className="absolute right-[30%] top-2 rotate-3 text-4xl">∫₀¹ x² dx = ⅓</span>
+          <span className="absolute bottom-10 left-[40%] -rotate-3 hidden text-3xl md:block">e^(iπ) + 1 = 0</span>
+          <span className="absolute bottom-8 right-[4%] rotate-6 hidden text-3xl lg:block">Σ 1/n² = π²/6</span>
+          <span className="absolute bottom-6 left-[6%] rotate-2 hidden text-2xl sm:block">sin²θ + cos²θ = 1</span>
+        </div>
         <svg
           aria-hidden="true"
-          className="pointer-events-none absolute -right-10 -top-10 h-56 w-56 text-white/10"
+          className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 text-brand-600/25"
           viewBox="0 0 100 100"
         >
-          <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" strokeWidth="4" />
-          <polygon points="50,10 90,80 10,80" fill="none" stroke="currentColor" strokeWidth="3" />
-        </svg>
-        <svg
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-12 left-1/3 h-48 w-48 text-white/10"
-          viewBox="0 0 100 100"
-        >
-          <rect x="10" y="10" width="80" height="80" rx="10" fill="none" stroke="currentColor" strokeWidth="4" transform="rotate(18 50 50)" />
+          <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" strokeWidth="3" />
+          <polygon points="50,10 90,80 10,80" fill="none" stroke="currentColor" strokeWidth="2.5" />
         </svg>
 
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-5 px-4 py-8">
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-4 pb-9 pt-8">
           <div className="flex items-start justify-between gap-3">
-            <div className="flex items-center gap-3">
-              {/* Compass / protractor style badge */}
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 ring-1 ring-white/25 backdrop-blur">
-                <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+            <div className="flex min-w-0 items-center gap-4">
+              {/* Compass-style badge */}
+              <span className="hidden h-14 w-14 shrink-0 -rotate-3 items-center justify-center rounded-2xl border-2 border-white bg-brand-600 shadow-[3px_3px_0_0_#ffffff] sm:flex">
+                <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M12 3 L20 19 L4 19 Z" />
                   <circle cx="12" cy="3" r="1.4" fill="currentColor" stroke="none" />
                 </svg>
               </span>
               <div>
-                <h1 className="text-3xl font-bold tracking-tight">
-                  {isAnalysis ? "Analysis Helper" : "Geometry Helper"}
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
+                  Honors math tutor
+                </p>
+                <h1 className="mt-0.5 text-3xl font-extrabold tracking-tight sm:text-5xl">
+                  {isAnalysis ? "Analysis" : "Geometry"}{" "}
+                  <span className="relative inline-block text-brand-500">
+                    Helper
+                    <svg aria-hidden="true" className="absolute -bottom-2 left-0 h-3 w-full text-brand-600" viewBox="0 0 100 12" preserveAspectRatio="none">
+                      <path d="M2 8 Q 25 2 50 7 T 98 5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                    </svg>
+                  </span>
                 </h1>
-                <p className="mt-1 text-sm text-brand-50/90">
-                  {isAnalysis
-                    ? "Ask an Analysis (Honors) question or pick a topic, and the AI tutor walks you through the steps and gives you practice."
-                    : "Ask a geometry question or pick an Honors topic, learn the steps, then practice with similar problems."}
+                <p className="mt-3 hidden max-w-xl text-sm text-white/70 sm:block">
+                  {tagline}
                 </p>
               </div>
             </div>
@@ -276,18 +287,22 @@ export default function App() {
             </div>
           </div>
 
+          <p className="-mt-2 text-sm text-white/70 sm:hidden">
+            {tagline}
+          </p>
+
           {/* Subject switcher */}
-          <div className="inline-flex w-fit rounded-xl bg-white/15 p-1 ring-1 ring-white/25 backdrop-blur">
+          <div className="inline-flex w-fit gap-1 rounded-xl border-2 border-white/80 p-1">
             {(["geometry", "analysis"] as const).map((s) => {
               const active = s === subject;
               return (
                 <button
                   key={s}
                   onClick={() => switchSubject(s)}
-                  className={`rounded-lg px-4 py-1.5 text-sm font-semibold transition ${
+                  className={`rounded-lg px-4 py-1.5 text-sm font-bold transition ${
                     active
-                      ? "bg-white text-brand-700 shadow"
-                      : "text-white/90 hover:bg-white/10"
+                      ? "bg-brand-600 text-white"
+                      : "text-white/80 hover:bg-white/10 hover:text-white"
                   }`}
                 >
                   {s === "geometry" ? "Geometry" : "Analysis Honors"}
@@ -295,6 +310,13 @@ export default function App() {
               );
             })}
           </div>
+        </div>
+
+        {/* Varsity stripe */}
+        <div aria-hidden="true" className="relative">
+          <div className="h-1.5 bg-brand-600" />
+          <div className="h-1 bg-white" />
+          <div className="h-1.5 bg-brand-600" />
         </div>
       </header>
 
@@ -348,18 +370,21 @@ export default function App() {
         />
       </main>
 
-      <footer className="mx-auto max-w-6xl px-4 py-8 text-center text-xs text-slate-400">
-        <p>
-          {isAnalysis
-            ? "Covers the Analysis Honors syllabus (induction, series, polar, probability, matrices, vectors, groups, limits, and derivatives). Every question is guided by the AI tutor."
-            : "Covers the Honors Geometry syllabus. Numeric topics get instant step-by-step practice; proofs and other conceptual questions are handled by the AI tutor."}
-        </p>
-        <button
-          onClick={() => setReportOpen(true)}
-          className="mt-3 text-xs font-medium text-brand-600 underline-offset-2 transition hover:underline"
-        >
-          Report a problem
-        </button>
+      <footer className="mt-4 bg-ink text-white">
+        <div aria-hidden="true" className="h-1.5 bg-brand-600" />
+        <div className="mx-auto max-w-6xl px-4 py-8 text-center text-xs text-white/60">
+          <p className="mx-auto max-w-2xl">
+            {isAnalysis
+              ? "Covers the Analysis Honors syllabus (induction, series, polar, probability, matrices, vectors, groups, limits, and derivatives). Every question is guided by the AI tutor."
+              : "Covers the Honors Geometry syllabus. Numeric topics get instant step-by-step practice; proofs and other conceptual questions are handled by the AI tutor."}
+          </p>
+          <button
+            onClick={() => setReportOpen(true)}
+            className="mt-3 text-xs font-semibold text-brand-400 underline-offset-2 transition hover:text-brand-300 hover:underline"
+          >
+            Report a problem
+          </button>
+        </div>
       </footer>
 
       <ReportModal

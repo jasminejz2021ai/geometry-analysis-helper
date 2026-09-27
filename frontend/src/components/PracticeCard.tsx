@@ -35,16 +35,16 @@ export default function PracticeCard({ problem, index }: Props) {
   }
 
   return (
-    <div className="rounded-2xl bg-white/80 p-5 shadow-lg shadow-brand-900/5 ring-1 ring-white/60 backdrop-blur-sm">
+    <div className="card p-5">
       <div className="flex items-start justify-between gap-4">
-        <p className="font-medium text-slate-900">
+        <p className="font-medium text-neutral-900">
           <span className="mr-2 text-brand-600">#{index + 1}</span>
           <MathText text={problem.prompt} />
         </p>
       </div>
 
       {problem.diagram && (
-        <div className="my-3 flex justify-center rounded-xl bg-slate-50 p-3">
+        <div className="my-3 flex justify-center rounded-xl bg-neutral-50 p-3">
           <DiagramSVG diagram={problem.diagram} />
         </div>
       )}
@@ -61,24 +61,24 @@ export default function PracticeCard({ problem, index }: Props) {
               ? `Write your answer and work (${problem.unit})`
               : "Write your answer and work here…"
           }
-          className="w-full min-h-[7rem] rounded-lg border border-slate-300 px-3 py-2 text-sm leading-relaxed outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+          className="w-full min-h-[7rem] rounded-lg border border-neutral-300 px-3 py-2 text-sm leading-relaxed outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
         />
         <MathSymbolBar editorRef={answerRef} />
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={submit}
             disabled={checking || !answer.trim()}
-            className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-700 disabled:opacity-50"
+            className="btn-primary px-4 py-2 text-sm disabled:opacity-50"
           >
             {checking ? "Checking..." : "Check"}
           </button>
           <button
             onClick={() => setShowSteps((s) => !s)}
-            className="rounded-lg border border-slate-200 px-4 py-2 text-sm text-slate-600 transition hover:bg-slate-50"
+            className="rounded-lg border border-neutral-200 px-4 py-2 text-sm text-neutral-600 transition hover:bg-neutral-50"
           >
             {showSteps ? "Hide steps" : "Show steps"}
           </button>
-          <span className="text-xs text-slate-400">
+          <span className="text-xs text-neutral-400">
             Tip: press ⌘/Ctrl + Enter to check
           </span>
         </div>
@@ -97,13 +97,13 @@ export default function PracticeCard({ problem, index }: Props) {
       )}
 
       {showSteps && (
-        <ol className="mt-3 space-y-1.5 border-t border-slate-100 pt-3">
+        <ol className="mt-3 space-y-1.5 border-t border-neutral-100 pt-3">
           {problem.steps.map((step, i) => (
-            <li key={i} className="text-sm text-slate-700">
+            <li key={i} className="text-sm text-neutral-700">
               <MathText text={step} />
             </li>
           ))}
-          <li className="pt-1 text-sm font-semibold text-slate-900">
+          <li className="pt-1 text-sm font-semibold text-neutral-900">
             Answer: <MathText text={problem.answer} />
           </li>
         </ol>

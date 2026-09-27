@@ -98,17 +98,17 @@ export default function MathSymbolBar({ editorRef, defaultOpen = false }: Props)
   }
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-2">
+    <div className="rounded-xl border border-neutral-200 bg-neutral-50/70 p-2">
       <div className="flex items-center justify-between gap-2 px-1">
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
-          className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-slate-400 transition hover:text-slate-600"
+          className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-neutral-400 transition hover:text-neutral-600"
           aria-expanded={open}
         >
-          <span className="text-sm normal-case text-slate-500">∑</span>
+          <span className="text-sm normal-case text-neutral-500">∑</span>
           Math symbols
-          <span className="text-slate-400">{open ? "▲" : "▼"}</span>
+          <span className="text-neutral-400">{open ? "▲" : "▼"}</span>
         </button>
         <button
           type="button"
@@ -138,7 +138,7 @@ export default function MathSymbolBar({ editorRef, defaultOpen = false }: Props)
               {gi > 0 && (
                 <span
                   aria-hidden
-                  className="mx-1 h-6 w-px self-center bg-slate-200"
+                  className="mx-1 h-6 w-px self-center bg-neutral-200"
                 />
               )}
               {group.syms.map((sym) => (
@@ -149,7 +149,7 @@ export default function MathSymbolBar({ editorRef, defaultOpen = false }: Props)
                   aria-label={`Insert ${sym.name}`}
                   onMouseDown={(e) => e.preventDefault()}
                   onClick={() => insertSym(sym.insert)}
-                  className="flex h-8 min-w-[2rem] items-center justify-center rounded-md border border-slate-200 bg-white px-1.5 text-sm text-slate-700 shadow-sm transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700"
+                  className="flex h-8 min-w-[2rem] items-center justify-center rounded-md border border-neutral-200 bg-white px-1.5 text-sm text-neutral-700 shadow-sm transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700"
                 >
                   {sym.label}
                 </button>

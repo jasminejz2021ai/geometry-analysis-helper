@@ -30,7 +30,7 @@ export default class ErrorBoundary extends Component<Props, State> {
           </pre>
           <button
             onClick={() => this.setState({ error: null })}
-            className="mt-4 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700"
+            className="mt-4 btn-primary px-4 py-2 text-sm"
           >
             Try again
           </button>

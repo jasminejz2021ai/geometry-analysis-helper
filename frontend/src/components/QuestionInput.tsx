@@ -37,8 +37,8 @@ export default function QuestionInput({ onSubmit, loading, subject }: Props) {
   }
 
   return (
-    <div className="rounded-2xl bg-white/80 p-6 shadow-lg shadow-brand-900/5 ring-1 ring-white/60 backdrop-blur-sm">
-      <label className="block text-sm font-medium text-slate-700">
+    <div className="card p-6">
+      <label className="block text-sm font-medium text-neutral-700">
         {isAnalysis
           ? "Ask an Analysis (Honors) question"
           : "Ask a geometry question"}
@@ -54,7 +54,7 @@ export default function QuestionInput({ onSubmit, loading, subject }: Props) {
             ? "e.g. Prove 1 + 2 + ... + n = n(n+1)/2 by induction"
             : "e.g. Find the hypotenuse of a right triangle with legs 3 and 4"
         }
-        className="mt-2 min-h-[5.25rem] w-full rounded-xl border border-slate-300 p-3 text-slate-900 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+        className="mt-2 min-h-[5.25rem] w-full rounded-xl border border-neutral-300 p-3 text-neutral-900 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
       />
 
       <div className="mt-2">
@@ -65,15 +65,15 @@ export default function QuestionInput({ onSubmit, loading, subject }: Props) {
         <button
           onClick={submit}
           disabled={loading || !value.trim()}
-          className="rounded-xl bg-brand-600 px-5 py-2 font-medium text-white shadow-sm transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
+          className="btn-primary px-5 py-2 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {loading ? "Thinking..." : "Get help + practice"}
         </button>
-        <span className="text-xs text-slate-400">Tip: Cmd/Ctrl + Enter</span>
+        <span className="text-xs text-neutral-400">Tip: Cmd/Ctrl + Enter</span>
       </div>
 
       <div className="mt-4">
-        <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+        <p className="text-xs font-medium uppercase tracking-wide text-neutral-400">
           Try an example
         </p>
         <div className="mt-2 flex flex-wrap gap-2">
@@ -81,7 +81,7 @@ export default function QuestionInput({ onSubmit, loading, subject }: Props) {
             <button
               key={ex}
               onClick={() => setValue(ex)}
-              className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-600 transition hover:border-brand-300 hover:bg-brand-50"
+              className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-600 transition hover:border-brand-300 hover:bg-brand-50"
             >
               {ex}
             </button>
