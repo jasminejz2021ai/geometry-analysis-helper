@@ -29,9 +29,9 @@ export default function VisitCounter() {
   if (visits == null) return null;
 
   return (
-    <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white/70 px-3 py-1 text-xs text-slate-500 ring-1 ring-slate-200">
+    <p className="flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 text-sm text-white/90 ring-1 ring-white/25 backdrop-blur">
       <span aria-hidden>👀</span>
-      <span className="font-semibold tabular-nums text-brand-700">
+      <span className="font-semibold tabular-nums text-white">
         {visits.toLocaleString()}
       </span>
       visits
