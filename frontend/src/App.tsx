@@ -35,6 +35,11 @@ export default function App() {
   // True while practice problems are being generated in the background after a
   // fast answer has already been shown.
   const [practiceLoading, setPracticeLoading] = useState(false);
+  // For AI answers, practice is generated only when the student opens the
+  // practice tab (saves ~4 AI requests per question). This holds the question
+  // to generate practice for until then.
+  const [pendingPracticeFor, setPendingPracticeFor] = useState<string | null>(null);
+  const [practiceError, setPracticeError] = useState<string | null>(null);
   const [conceptReview, setConceptReview] = useState<string[]>([]);
   // When a topic is picked from the browser we track it here (no worked example).
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
@@ -50,24 +55,33 @@ export default function App() {
     setResult(null);
     setPractice([]);
     setPracticeLoading(false);
+    setPendingPracticeFor(null);
+    setPracticeError(null);
     setConceptReview([]);
     setActiveTopic(null);
     setTopicTitle(null);
     setMoreAvailable(false);
   }
 
-  // Phase 2: fetch practice problems in the background after the answer shows.
   async function loadPractice(question: string) {
+    setPendingPracticeFor(null);
+    setPracticeError(null);
     setPracticeLoading(true);
     try {
       const res = await generatePractice(question, subject, 4);
       setPractice(res.practice);
-    } catch {
-      // Practice is a bonus; if it fails, leave the answer as-is.
+    } catch (e) {
+      // Keep it pending so the student can retry from the practice tab.
       setPractice([]);
+      setPendingPracticeFor(question);
+      setPracticeError(e instanceof Error ? e.message : "Could not make practice problems.");
     } finally {
       setPracticeLoading(false);
     }
+  }
+
+  function loadPendingPractice() {
+    if (pendingPracticeFor) void loadPractice(pendingPracticeFor);
   }
 
   function switchSubject(next: Subject) {
@@ -83,6 +97,8 @@ export default function App() {
     setTopicTitle(null);
     setPractice([]);
     setPracticeLoading(false);
+    setPendingPracticeFor(null);
+    setPracticeError(null);
     try {
       const res = isAnalysis
         ? await solveAnalysis(question, 4)
@@ -91,9 +107,9 @@ export default function App() {
       setPractice(res.practice);
       setConceptReview(res.concept_review ?? []);
       // Templates already include instant practice; AI answers come back with
-      // none, so fetch practice in the background without blocking the answer.
+      // none, so practice is made when the student opens the practice tab.
       if (res.practice.length === 0 && res.source !== "template") {
-        void loadPractice(question);
+        setPendingPracticeFor(question);
       }
     } catch (e) {
       setResult(null);
@@ -115,6 +131,8 @@ export default function App() {
     setTopicTitle(null);
     setPractice([]);
     setPracticeLoading(false);
+    setPendingPracticeFor(null);
+    setPracticeError(null);
     try {
       const res = isAnalysis
         ? await analysisSolveImage(file, 4)
@@ -122,10 +140,10 @@ export default function App() {
       setResult(res);
       setPractice(res.practice);
       setConceptReview(res.concept_review ?? []);
-      // Photo answers are AI-generated; load practice for the restated problem
-      // in the background so the answer appears right away.
+      // Photo answers are AI-generated; practice for the restated problem is
+      // made when the student opens the practice tab.
       if (res.practice.length === 0 && res.original?.prompt) {
-        void loadPractice(res.original.prompt);
+        setPendingPracticeFor(res.original.prompt);
       }
     } catch (e) {
       setResult(null);
@@ -146,6 +164,8 @@ export default function App() {
     setResult(null);
     setPractice([]);
     setPracticeLoading(false);
+    setPendingPracticeFor(null);
+    setPracticeError(null);
     setConceptReview([]);
     setActiveTopic(topicId);
     setTopicTitle(title);
@@ -354,6 +374,9 @@ export default function App() {
             conceptReview={conceptReview}
             practice={practice}
             practiceLoading={practiceLoading}
+            practicePending={pendingPracticeFor !== null}
+            practiceError={practiceError}
+            onLoadPractice={loadPendingPractice}
             topicTitle={topicTitle}
             canGenerateMore={canGenerateMore}
             onGenerateMore={handleGenerateMore}

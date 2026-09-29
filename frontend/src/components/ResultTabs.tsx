@@ -10,6 +10,10 @@ type Props = {
   conceptReview: string[];
   practice: Problem[];
   practiceLoading?: boolean;
+  // Practice can be generated on request (AI answers), with the last error.
+  practicePending?: boolean;
+  practiceError?: string | null;
+  onLoadPractice?: () => void;
   topicTitle: string | null;
   canGenerateMore: boolean;
   onGenerateMore: () => void;
@@ -28,6 +32,9 @@ export default function ResultTabs({
   conceptReview,
   practice,
   practiceLoading = false,
+  practicePending = false,
+  practiceError = null,
+  onLoadPractice,
   topicTitle,
   canGenerateMore,
   onGenerateMore,
@@ -45,10 +52,10 @@ export default function ResultTabs({
     if (conceptReview.length > 0) list.push({ id: "concept", label: "Concept review" });
     if (workedIsDistinct) list.push({ id: "worked", label: "Worked example" });
     if (asked) list.push({ id: "solutions", label: "Solutions" });
-    if (practice.length > 0 || practiceLoading)
+    if (practice.length > 0 || practiceLoading || practicePending)
       list.push({ id: "practice", label: "Extra practice problems" });
     return list;
-  }, [conceptReview.length, workedIsDistinct, asked, practice.length, practiceLoading]);
+  }, [conceptReview.length, workedIsDistinct, asked, practice.length, practiceLoading, practicePending]);
 
   const [active, setActive] = useState<TabId | null>(null);
 
@@ -84,7 +91,13 @@ export default function ResultTabs({
               key={t.id}
               role="tab"
               aria-selected={isActive}
-              onClick={() => setActive(t.id)}
+              onClick={() => {
+                setActive(t.id);
+                // Opening the tab is what triggers generation, so problems a
+                // student never looks at don't use up AI quota. After a failure
+                // it waits for "Try again" instead of retrying on every click.
+                if (t.id === "practice" && practicePending && !practiceError) onLoadPractice?.();
+              }}
               className={`rounded-lg px-3.5 py-2 text-sm font-medium transition ${
                 isActive
                   ? "bg-brand-600 text-white shadow-sm"
@@ -151,7 +164,16 @@ export default function ResultTabs({
                 your answers and reveal steps as needed.
               </p>
             )}
-            {practiceLoading && practice.length === 0 ? (
+            {!practiceLoading && practice.length === 0 && practicePending ? (
+              <div className="rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-4 text-sm text-neutral-600">
+                {practiceError && (
+                  <p className="mb-3 rounded-lg bg-rose-50 px-3 py-2 text-rose-700">{practiceError}</p>
+                )}
+                <button onClick={() => onLoadPractice?.()} className="btn-primary px-4 py-2 text-sm">
+                  {practiceError ? "Try again" : "Make practice problems"}
+                </button>
+              </div>
+            ) : practiceLoading && practice.length === 0 ? (
               <div className="flex items-center gap-3 rounded-xl border border-brand-100 bg-brand-50/60 px-4 py-4 text-sm text-brand-700">
                 <svg
                   className="h-5 w-5 shrink-0 animate-spin text-brand-600"
