@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import GeminiKeySettings from "./GeminiKeySettings";
 import MathInput, { type MathInputHandle } from "./MathInput";
 import MathSymbolBar from "./MathSymbolBar";
 
@@ -71,6 +72,8 @@ export default function QuestionInput({ onSubmit, loading, subject }: Props) {
         </button>
         <span className="text-xs text-neutral-400">Tip: Cmd/Ctrl + Enter</span>
       </div>
+
+      <GeminiKeySettings />
 
       <div className="mt-4">
         <p className="text-xs font-medium uppercase tracking-wide text-neutral-400">

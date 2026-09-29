@@ -1,30 +1,49 @@
 import { useEffect, useState } from "react";
 import { fetchAiStatus } from "../api";
+import { onUserKeyChange } from "../userKey";
 
 // Polls the backend AI status and warns when the AI provider is configured but
-// unreachable (e.g. the local Ollama tunnel or host machine is offline).
+// unreachable, or when the student's own Gemini key is being rejected.
 export default function AiStatusBanner() {
   const [offline, setOffline] = useState(false);
+  const [ownKey, setOwnKey] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
     async function poll() {
       try {
         const s = await fetchAiStatus();
-        if (!cancelled) setOffline(s.configured && !s.online);
+        if (cancelled) return;
+        setOffline(s.configured && !s.online);
+        setOwnKey(s.using_user_key === true);
       } catch {
         // Ignore transient errors; don't show a false alarm on a hiccup.
       }
     }
     poll();
     const id = setInterval(poll, 30000);
+    const stopListening = onUserKeyChange(poll);
     return () => {
       cancelled = true;
       clearInterval(id);
+      stopListening();
     };
   }, []);
 
   if (!offline) return null;
+
+  if (ownKey) {
+    return (
+      <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+        <p className="font-medium">Your Gemini API key isn't working.</p>
+        <p className="mt-0.5 text-amber-800">
+          Google rejected it, so AI answers won't load. Use{" "}
+          <strong>Change</strong> under the question box to fix it, or remove it
+          to go back to the shared key.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
@@ -50,7 +69,8 @@ export default function AiStatusBanner() {
           Typing a brand-new question, photo solving, and free-form chat are
           temporarily unavailable. Everything in the <strong>Topics</strong>{" "}
           sidebar still works — all Geometry topics and Analysis subsections have
-          worked examples and practice problems ready to go.
+          worked examples and practice problems ready to go. You can also add
+          your own free Gemini key under the question box.
         </p>
       </div>
     </div>

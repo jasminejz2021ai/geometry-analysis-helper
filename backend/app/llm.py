@@ -9,11 +9,13 @@ from __future__ import annotations
 
 import json
 from concurrent.futures import ThreadPoolExecutor
+from contextvars import copy_context
 from typing import Optional
 
 import httpx
 from pydantic import ValidationError
 
+from . import ai_request
 from .config import get_settings
 from .dify import solve_with_dify
 from .models import Problem
@@ -29,6 +31,11 @@ from .prompts import (
     to_problem,
     to_result,
 )
+
+
+def _api_key() -> Optional[str]:
+    """The student's own key for this request if they supplied one, else ours."""
+    return ai_request.user_api_key() or get_settings().llm_api_key
 
 
 def llm_available() -> bool:
@@ -55,13 +62,15 @@ def ai_reachable(timeout: float = 4.0) -> bool:
     base = settings.llm_api_base
     if not base:
         # Real OpenAI/Anthropic with a key: assume reachable (network is fine).
-        return bool(settings.llm_api_key)
+        return bool(_api_key())
     try:
         url = base.rstrip("/") + "/models"
         headers = {}
-        if settings.llm_api_key:
-            headers["Authorization"] = f"Bearer {settings.llm_api_key}"
+        if _api_key():
+            headers["Authorization"] = f"Bearer {_api_key()}"
         resp = httpx.get(url, headers=headers, timeout=timeout)
+        if resp.status_code != 200:
+            ai_request.record_status(resp.status_code)
         return resp.status_code == 200
     except httpx.HTTPError:
         return False
@@ -80,8 +89,8 @@ def _call_openai(question: str, count: int) -> str:
     base = (settings.llm_api_base or "https://api.openai.com/v1").rstrip("/")
     headers = {"Content-Type": "application/json"}
     # Local servers like Ollama need no key; only send auth when we have one.
-    if settings.llm_api_key:
-        headers["Authorization"] = f"Bearer {settings.llm_api_key}"
+    if _api_key():
+        headers["Authorization"] = f"Bearer {_api_key()}"
     resp = httpx.post(
         f"{base}/chat/completions",
         headers=headers,
@@ -106,7 +115,7 @@ def _call_anthropic(question: str, count: int) -> str:
     resp = httpx.post(
         "https://api.anthropic.com/v1/messages",
         headers={
-            "x-api-key": settings.llm_api_key or "",
+            "x-api-key": _api_key() or "",
             "anthropic-version": "2023-06-01",
         },
         json={
@@ -134,8 +143,8 @@ def _call_openai_raw(query: str, count: int) -> str:
     settings = get_settings()
     base = (settings.llm_api_base or "https://api.openai.com/v1").rstrip("/")
     headers = {"Content-Type": "application/json"}
-    if settings.llm_api_key:
-        headers["Authorization"] = f"Bearer {settings.llm_api_key}"
+    if _api_key():
+        headers["Authorization"] = f"Bearer {_api_key()}"
     resp = httpx.post(
         f"{base}/chat/completions",
         headers=headers,
@@ -160,7 +169,7 @@ def _call_anthropic_raw(query: str) -> str:
     resp = httpx.post(
         "https://api.anthropic.com/v1/messages",
         headers={
-            "x-api-key": settings.llm_api_key or "",
+            "x-api-key": _api_key() or "",
             "anthropic-version": "2023-06-01",
         },
         json={
@@ -206,6 +215,7 @@ def _solve_direct(
             payload = LLMPayload.model_validate(loads_lenient(strip_fences(raw)))
             return to_result(payload, count)
         except (json.JSONDecodeError, ValidationError, KeyError, httpx.HTTPError) as exc:
+            ai_request.record_error(exc)
             last_err = exc
             continue
     print(f"[llm] fallback failed: {last_err}")
@@ -253,8 +263,8 @@ def _post_chat_json(query: str, system: str, timeout: float = 90.0) -> str:
     settings = get_settings()
     base = (settings.llm_api_base or "https://api.openai.com/v1").rstrip("/")
     headers = {"Content-Type": "application/json"}
-    if settings.llm_api_key:
-        headers["Authorization"] = f"Bearer {settings.llm_api_key}"
+    if _api_key():
+        headers["Authorization"] = f"Bearer {_api_key()}"
     if "qwen3" in settings.llm_model.lower():
         system = system + " /no_think"
     resp = httpx.post(
@@ -288,6 +298,7 @@ def generate_one_practice(
         data = loads_lenient(strip_fences(raw))
         return to_problem(LLMProblem.model_validate(data))
     except (json.JSONDecodeError, ValidationError, KeyError, httpx.HTTPError) as exc:
+        ai_request.record_error(exc)
         print(f"[llm] one-practice failed: {exc}")
         return None
 
@@ -305,7 +316,9 @@ def generate_practice(question: str, count: int, analysis: bool) -> list[Problem
 
     with ThreadPoolExecutor(max_workers=count) as pool:
         futures = [
-            pool.submit(generate_one_practice, question, analysis, i)
+            # Each worker runs in a copy of this request's context so it uses
+            # the same (possibly student-supplied) API key.
+            pool.submit(copy_context().run, generate_one_practice, question, analysis, i)
             for i in range(count)
         ]
         problems = [f.result() for f in futures]
@@ -324,8 +337,8 @@ def _call_openai_vision(
     settings = get_settings()
     base = (settings.llm_api_base or "https://api.openai.com/v1").rstrip("/")
     headers = {"Content-Type": "application/json"}
-    if settings.llm_api_key:
-        headers["Authorization"] = f"Bearer {settings.llm_api_key}"
+    if _api_key():
+        headers["Authorization"] = f"Bearer {_api_key()}"
     b64 = base64.b64encode(content).decode("ascii")
     data_uri = f"data:{content_type};base64,{b64}"
     resp = httpx.post(
@@ -375,6 +388,7 @@ def solve_image_local(
             payload = LLMPayload.model_validate(loads_lenient(strip_fences(raw)))
             return to_result(payload, count)
         except (json.JSONDecodeError, ValidationError, KeyError, httpx.HTTPError) as exc:
+            ai_request.record_error(exc)
             last_err = exc
             continue
     print(f"[llm] local vision solve failed: {last_err}")
@@ -405,8 +419,8 @@ def _chat_openai(messages: list[dict], system: str) -> str:
     settings = get_settings()
     base = (settings.llm_api_base or "https://api.openai.com/v1").rstrip("/")
     headers = {"Content-Type": "application/json"}
-    if settings.llm_api_key:
-        headers["Authorization"] = f"Bearer {settings.llm_api_key}"
+    if _api_key():
+        headers["Authorization"] = f"Bearer {_api_key()}"
     if "qwen3" in settings.llm_model.lower():
         system = system + " /no_think"
     resp = httpx.post(
@@ -429,7 +443,7 @@ def _chat_anthropic(messages: list[dict], system: str) -> str:
     resp = httpx.post(
         "https://api.anthropic.com/v1/messages",
         headers={
-            "x-api-key": settings.llm_api_key or "",
+            "x-api-key": _api_key() or "",
             "anthropic-version": "2023-06-01",
         },
         json={
@@ -483,6 +497,7 @@ def chat_reply(
         else:
             raw = _chat_openai(messages, system)
     except httpx.HTTPError as exc:
+        ai_request.record_error(exc)
         print(f"[llm] chat failed: {exc}")
         return None
     return _strip_think(raw)

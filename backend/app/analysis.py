@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from typing import Optional
 
+from . import ai_request
 from .dify import _upload_file, dify_available
 from .llm import llm_available, raw_chat_query
 from .models import Problem
@@ -180,6 +181,7 @@ def _solve_query(
             payload = LLMPayload.model_validate(loads_lenient(strip_fences(raw)))
             return to_result(payload, count)
         except (json.JSONDecodeError, ValidationError, KeyError, httpx.HTTPError) as exc:
+            ai_request.record_error(exc)
             last_err = exc
             continue
     print(f"[analysis] solve failed: {last_err}")
@@ -239,6 +241,7 @@ def solve_analysis_image(
     try:
         file_id = _upload_file(content, filename, content_type)
     except httpx.HTTPError as exc:
+        ai_request.record_error(exc)
         print(f"[analysis] image upload failed: {exc}")
         return None
 
@@ -249,6 +252,7 @@ def solve_analysis_image(
             payload = LLMPayload.model_validate(loads_lenient(strip_fences(raw)))
             return to_result(payload, count)
         except (json.JSONDecodeError, ValidationError, KeyError, httpx.HTTPError) as exc:
+            ai_request.record_error(exc)
             last_err = exc
             continue
     print(f"[analysis] image solve failed: {last_err}")

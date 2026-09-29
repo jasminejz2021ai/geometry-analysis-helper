@@ -9,11 +9,12 @@ import type {
   PracticeForResponse,
   SolveResponse,
 } from "./types";
+import { userKeyHeaders } from "./userKey";
 
 async function post<T>(url: string, body: unknown): Promise<T> {
   const res = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...userKeyHeaders() },
     body: JSON.stringify(body),
   });
   if (!res.ok) {
@@ -30,7 +31,7 @@ async function post<T>(url: string, body: unknown): Promise<T> {
 }
 
 async function get<T>(url: string): Promise<T> {
-  const res = await fetch(url);
+  const res = await fetch(url, { headers: userKeyHeaders() });
   if (!res.ok) throw new Error(`Request failed (${res.status})`);
   return res.json() as Promise<T>;
 }
@@ -56,7 +57,11 @@ export async function solveImage(
   const form = new FormData();
   form.append("image", file);
   form.append("count", String(count));
-  const res = await fetch("/api/solve-image", { method: "POST", body: form });
+  const res = await fetch("/api/solve-image", {
+    method: "POST",
+    headers: userKeyHeaders(),
+    body: form,
+  });
   if (!res.ok) {
     let detail = `Request failed (${res.status})`;
     try {
@@ -157,6 +162,7 @@ export async function analysisSolveImage(
   form.append("count", String(count));
   const res = await fetch("/api/analysis/solve-image", {
     method: "POST",
+    headers: userKeyHeaders(),
     body: form,
   });
   if (!res.ok) {

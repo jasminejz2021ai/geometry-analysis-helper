@@ -55,6 +55,18 @@ class Settings(BaseSettings):
     visit_counter_key: str = "visits"
     visit_count_base: int = 2000
 
+    # Let students supply their own Gemini API key (sent per request, never
+    # stored) so AI questions use their quota instead of ours.
+    allow_user_api_keys: bool = True
+
+    @property
+    def accepts_user_gemini_keys(self) -> bool:
+        # Only forward a student's Gemini key to Google's own endpoint, never to
+        # some other provider we might be configured for.
+        return self.allow_user_api_keys and "generativelanguage.googleapis.com" in (
+            self.llm_api_base or ""
+        )
+
     @property
     def cors_origin_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]

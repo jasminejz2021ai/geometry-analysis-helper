@@ -5,9 +5,10 @@ import logging
 from datetime import datetime, timezone
 
 import httpx
-from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 
+from . import ai_request
 from .checker import check_answer
 from .classifier import classify
 from .config import get_settings
@@ -70,6 +71,18 @@ app.add_middleware(
 )
 
 
+@app.middleware("http")
+async def ai_request_scope(request: Request, call_next):
+    """Make a student-supplied Gemini key available to AI calls for this request."""
+    key = request.headers.get(ai_request.USER_KEY_HEADER, "").strip()
+    accepted = key if key and len(key) <= 200 and settings.accepts_user_gemini_keys else None
+    token = ai_request.begin(accepted)
+    try:
+        return await call_next(request)
+    finally:
+        ai_request.end(token)
+
+
 @app.get("/api/health")
 def health() -> dict:
     return {
@@ -92,10 +105,41 @@ def visits() -> dict:
 # Message shown when the AI provider is configured but unreachable (e.g. the
 # local Ollama tunnel or the host machine is down).
 _AI_OFFLINE = (
-    "The AI tutor is offline right now. This app's AI runs on a local machine "
-    "that isn't reachable at the moment. Geometry topics with built-in "
-    "templates still work — please try one of those, or check back later."
+    "The AI tutor is offline right now. Topics in the sidebar still work — "
+    "please try one of those, or check back later."
 )
+
+
+def _ai_error(status_code: int, detail: str) -> HTTPException:
+    """Explain an AI failure, using the provider's error code when we have one."""
+    status = ai_request.last_error_status()
+    own_key = ai_request.user_api_key() is not None
+    if status == 429:
+        if own_key:
+            return HTTPException(
+                status_code=429,
+                detail=(
+                    "Your Gemini API key has used up its quota for now. Wait a "
+                    "minute and try again, or check your limits in Google AI Studio."
+                ),
+            )
+        return HTTPException(
+            status_code=429,
+            detail=(
+                "The shared AI tutor has reached its usage limit. Add your own "
+                "free Gemini API key (\"Use my Gemini key\" under the question box) "
+                "to keep going, or try again later."
+            ),
+        )
+    if own_key and status in (400, 401, 403):
+        return HTTPException(
+            status_code=401,
+            detail=(
+                "Your Gemini API key didn't work. Check it under \"Use my Gemini "
+                "key\", or remove it to use the shared key."
+            ),
+        )
+    return HTTPException(status_code=status_code, detail=detail)
 
 
 @app.get("/api/ai-status")
@@ -107,6 +151,8 @@ def ai_status() -> dict:
         "configured": configured,
         "online": online,
         "provider": active_provider(),
+        "accepts_user_key": settings.accepts_user_gemini_keys,
+        "using_user_key": ai_request.user_api_key() is not None,
     }
 
 
@@ -178,7 +224,7 @@ def solve(req: SolveRequest) -> SolveResponse:
     # Ask for the answer only (count=0); practice problems are fetched lazily
     # via /api/practice so the student sees their answer fast.
     if llm_available() and not ai_reachable():
-        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
+        raise _ai_error(503, _AI_OFFLINE)
     result = solve_fallback(req.question, 0)
     if result is not None:
         source, original, practice, review = result
@@ -191,6 +237,10 @@ def solve(req: SolveRequest) -> SolveResponse:
             asked_solution=original,
         )
 
+    if llm_available():
+        raise _ai_error(
+            502, "The AI tutor couldn't answer that right now. Try rephrasing or try again."
+        )
     raise HTTPException(
         status_code=422,
         detail=(
@@ -227,15 +277,15 @@ async def solve_image(
         raise HTTPException(status_code=422, detail="Image too large (max 10 MB).")
 
     if local_vision_available() and not ai_reachable():
-        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
+        raise _ai_error(503, _AI_OFFLINE)
     # Read + solve the photo answer only (count=0); practice is fetched lazily.
     result = _solve_photo(
         content, image.filename or "problem.jpg", content_type, 0, analysis=False
     )
     if result is None:
-        raise HTTPException(
-            status_code=502,
-            detail=(
+        raise _ai_error(
+            502,
+            (
                 "Could not read or solve the problem from the photo. Try a "
                 "clearer image, or type the question instead."
             ),
@@ -282,10 +332,12 @@ def practice_for(req: PracticeForRequest) -> PracticeForResponse:
             detail="Generating practice needs an AI provider. Configure one in the .env.",
         )
     if not ai_reachable():
-        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
+        raise _ai_error(503, _AI_OFFLINE)
     problems = generate_practice(
         req.question, req.count, analysis=(req.subject == "analysis")
     )
+    if not problems and ai_request.last_error_status() is not None:
+        raise _ai_error(502, "Could not generate practice problems right now.")
     return PracticeForResponse(practice=problems)
 
 
@@ -306,17 +358,14 @@ def chat(req: ChatRequest) -> ChatResponse:
             ),
         )
     if not ai_reachable():
-        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
+        raise _ai_error(503, _AI_OFFLINE)
     answer = chat_reply(
         req.question,
         context=req.context,
         history=[t.model_dump() for t in req.history],
     )
     if not answer:
-        raise HTTPException(
-            status_code=502,
-            detail="Sorry, I couldn't answer that right now. Please try again.",
-        )
+        raise _ai_error(502, "Sorry, I couldn't answer that right now. Please try again.")
     return ChatResponse(answer=answer)
 
 
@@ -398,7 +447,7 @@ def _require_ai() -> None:
             ),
         )
     if not ai_reachable():
-        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
+        raise _ai_error(503, _AI_OFFLINE)
 
 
 @app.get("/api/analysis-topics")
@@ -416,10 +465,7 @@ def analysis_solve(req: AnalysisSolveRequest) -> SolveResponse:
     # Answer only (count=0); practice is fetched lazily via /api/practice.
     result = solve_analysis_question(req.question, 0)
     if result is None:
-        raise HTTPException(
-            status_code=502,
-            detail="The AI tutor could not answer that Analysis question. Try rephrasing.",
-        )
+        raise _ai_error(502, "The AI tutor could not answer that Analysis question. Try rephrasing.")
     original, practice, review = result
     return SolveResponse(
         source=_ai_source(),
@@ -456,15 +502,15 @@ async def analysis_solve_image(
         raise HTTPException(status_code=422, detail="Image too large (max 10 MB).")
 
     if local_vision_available() and not ai_reachable():
-        raise HTTPException(status_code=503, detail=_AI_OFFLINE)
+        raise _ai_error(503, _AI_OFFLINE)
     # Read + solve the photo answer only (count=0); practice is fetched lazily.
     result = _solve_photo(
         content, image.filename or "problem.jpg", content_type, 0, analysis=True
     )
     if result is None:
-        raise HTTPException(
-            status_code=502,
-            detail=(
+        raise _ai_error(
+            502,
+            (
                 "Could not read or solve the Analysis problem from the photo. "
                 "Try a clearer image, or type the question instead."
             ),
@@ -495,10 +541,7 @@ def analysis_practice(req: AnalysisTopicRequest) -> SolveResponse:
     _require_ai()
     result = practice_analysis_topic(req.topic, req.count)
     if result is None:
-        raise HTTPException(
-            status_code=502,
-            detail="The AI tutor could not generate practice for that topic. Try again.",
-        )
+        raise _ai_error(502, "The AI tutor could not generate practice for that topic. Try again.")
     original, practice, review = result
     return SolveResponse(
         source=_ai_source(),
@@ -531,9 +574,9 @@ def analysis_more_practice(req: AnalysisMoreRequest) -> AnalysisMoreResponse:
 
     # Bank exhausted (or unknown topic): try the live AI for genuinely new ones.
     if not llm_available() or not ai_reachable():
-        raise HTTPException(
-            status_code=503,
-            detail=(
+        raise _ai_error(
+            503,
+            (
                 "You've seen all the ready-made problems for this topic. Generating "
                 "brand-new ones needs the AI tutor, which is offline right now — "
                 "try another topic or check back later."
@@ -541,10 +584,7 @@ def analysis_more_practice(req: AnalysisMoreRequest) -> AnalysisMoreResponse:
         )
     result = practice_analysis_topic(req.topic, req.count)
     if result is None:
-        raise HTTPException(
-            status_code=502,
-            detail="The AI tutor could not generate more practice right now. Try again.",
-        )
+        raise _ai_error(502, "The AI tutor could not generate more practice right now. Try again.")
     _, practice, _ = result
     return AnalysisMoreResponse(
         source="llm",

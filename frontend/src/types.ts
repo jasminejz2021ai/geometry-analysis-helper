@@ -87,6 +87,10 @@ export type AiStatus = {
   configured: boolean;
   online: boolean;
   provider: string;
+  // Whether the server accepts a student's own Gemini key, and whether this
+  // request used one.
+  accepts_user_key?: boolean;
+  using_user_key?: boolean;
 };
 
 export type TopicRef = {
