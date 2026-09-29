@@ -127,7 +127,7 @@ def _ai_error(status_code: int, detail: str) -> HTTPException:
             status_code=429,
             detail=(
                 "The shared AI tutor has reached its usage limit. Add your own "
-                "free Gemini API key (\"Use my Gemini key\" under the question box) "
+                "free Gemini API key (Settings, top right) "
                 "to keep going, or try again later."
             ),
         )
@@ -135,8 +135,8 @@ def _ai_error(status_code: int, detail: str) -> HTTPException:
         return HTTPException(
             status_code=401,
             detail=(
-                "Your Gemini API key didn't work. Check it under \"Use my Gemini "
-                "key\", or remove it to use the shared key."
+                "Your Gemini API key didn't work. Check it in Settings (top right), "
+                "or remove it to use the shared key."
             ),
         )
     return HTTPException(status_code=status_code, detail=detail)

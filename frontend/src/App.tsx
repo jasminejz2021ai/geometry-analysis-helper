@@ -13,6 +13,7 @@ import {
 } from "./api";
 import GeometryBackground from "./components/GeometryBackground";
 import AiStatusBanner from "./components/AiStatusBanner";
+import { SettingsButton } from "./components/GeminiKeySettings";
 import ImageUpload from "./components/ImageUpload";
 import LoadingPanel from "./components/LoadingPanel";
 import QuestionInput from "./components/QuestionInput";
@@ -286,6 +287,7 @@ export default function App() {
                 </svg>
                 Report a problem
               </button>
+              <SettingsButton />
             </div>
           </div>
 

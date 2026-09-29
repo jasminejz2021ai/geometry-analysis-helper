@@ -37,9 +37,9 @@ export default function AiStatusBanner() {
       <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
         <p className="font-medium">Your Gemini API key isn't working.</p>
         <p className="mt-0.5 text-amber-800">
-          Google rejected it, so AI answers won't load. Use{" "}
-          <strong>Change</strong> under the question box to fix it, or remove it
-          to go back to the shared key.
+          Google rejected it, so AI answers won't load. Open{" "}
+          <strong>Settings</strong> (top right) to fix it, or remove it to go
+          back to the shared key.
         </p>
       </div>
     );
@@ -70,7 +70,7 @@ export default function AiStatusBanner() {
           temporarily unavailable. Everything in the <strong>Topics</strong>{" "}
           sidebar still works — all Geometry topics and Analysis subsections have
           worked examples and practice problems ready to go. You can also add
-          your own free Gemini key under the question box.
+          your own free Gemini key in <strong>Settings</strong> (top right).
         </p>
       </div>
     </div>

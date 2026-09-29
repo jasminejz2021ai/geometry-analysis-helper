@@ -18,17 +18,58 @@ function maskKey(key: string): string {
   return key.length <= 8 ? "••••" : `${key.slice(0, 4)}••••${key.slice(-4)}`;
 }
 
-export default function GeminiKeySettings() {
+// Whether the server accepts a student's own key (only when it uses Gemini).
+function useAcceptsUserKey(): boolean {
   const [accepts, setAccepts] = useState(false);
-  const [savedKey, setSavedKey] = useState<string | null>(getUserKey());
-  const [open, setOpen] = useState(false);
-
   useEffect(() => {
     fetchAiStatus()
       .then((s) => setAccepts(s.accepts_user_key === true))
       .catch(() => {});
-    return onUserKeyChange(() => setSavedKey(getUserKey()));
   }, []);
+  return accepts;
+}
+
+function useSavedKey(): string | null {
+  const [savedKey, setSavedKey] = useState<string | null>(getUserKey());
+  useEffect(() => onUserKeyChange(() => setSavedKey(getUserKey())), []);
+  return savedKey;
+}
+
+// Header "Settings" button; opens the same key dialog.
+export function SettingsButton() {
+  const accepts = useAcceptsUserKey();
+  const savedKey = useSavedKey();
+  const [open, setOpen] = useState(false);
+
+  if (!accepts) return null;
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="flex shrink-0 items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 text-sm font-medium text-white ring-1 ring-white/25 backdrop-blur transition hover:bg-white/25"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+        Settings
+        {savedKey && (
+          <span className="rounded bg-brand-600 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide">
+            Own key
+          </span>
+        )}
+      </button>
+      {open && <KeyDialog savedKey={savedKey} onClose={() => setOpen(false)} />}
+    </>
+  );
+}
+
+export default function GeminiKeySettings() {
+  const accepts = useAcceptsUserKey();
+  const savedKey = useSavedKey();
+  const [open, setOpen] = useState(false);
 
   if (!accepts) return null;
 
