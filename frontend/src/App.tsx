@@ -289,6 +289,11 @@ export default function App() {
                     </svg>
                   </span>
                 </h1>
+                {isAnalysis && (
+                  <p className="mt-3 text-sm font-semibold text-white/90 sm:text-base">
+                    Guide through major topics of Analysis Honors class at Gunn High School.
+                  </p>
+                )}
                 <p className="mt-3 hidden max-w-xl text-sm text-white/70 sm:block">
                   {tagline}
                 </p>
